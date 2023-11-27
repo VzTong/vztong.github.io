@@ -18,8 +18,8 @@
 body {
     height: 100vh;
     overflow: hidden;
-    background: url("../pics/sys/=]]]]s.jpg") no-repeat center;
-    background-color: rgba(12, 94, 156, 0.15);
+    background: url("../pics/sys/Nền.jpg") no-repeat center;
+    background-color: rgba(80, 153, 210, 0.05);
     background-size: cover;
     background-blend-mode: screen;
     position: relative;
@@ -43,7 +43,7 @@ body {
     overflow: hidden;
     border-radius: 5px;
     border: none;
-    box-shadow: -7px 7px 15px rgba(63, 0, 0, 0.25);
+    box-shadow: -7px 7px 15px rgba(165, 162, 162, 0.25);
 
     &>img {
         width: 100%;
@@ -63,7 +63,8 @@ body {
         width: 100%;
         height: inherit;
         position: absolute;
-        background-color: rgba(255, 255, 255, 0.7);
+        // background-color: rgba(255, 255, 255, 0.7); // dùng khi avata nền tối
+        background-color: rgba(1, 1, 1, 0.7);
         transition: all 0.5s;
         top: 100%;
         left: 0;
@@ -74,7 +75,8 @@ body {
         user-select: none;
         border-radius: 20px;
         transform: scale(0);
-        color: rgb(71, 71, 71);
+        // color: rgb(71, 71, 71);
+        color: rgb(125, 229, 210);
         font-size: 2rem;
     }
 }
@@ -82,7 +84,7 @@ body {
 .box {
     width: 700px;
     height: 350px;
-    background-color: white;
+    background-color: rgba(1, 1, 1, 0.75);
     @include center-absolute();
     display: flex;
     border-radius: 7px;
@@ -124,11 +126,12 @@ body {
 
         &>.about-me {
             margin-top: 20px;
+            margin-left: 5px;
 
             &>h1 {
-                font-size: 3.75rem;
+                font-size: 3.95rem;
                 font-weight: 500;
-                color: rgb(44, 56, 66);
+                color: #48B5B0;
                 position: relative;
                 display: inline-block;
 
@@ -137,7 +140,8 @@ body {
                     content: '';
                     width: 105%;
                     height: 8px;
-                    background-color: rgb(125, 255, 175);
+                    background-color: #F56C25;
+                    border-radius: 10px;
                     bottom: 21px;
                     left: -5px;
                     z-index: -1;
@@ -146,15 +150,16 @@ body {
 
             &>p {
                 padding-top: 10px;
-                font-size: 1.75rem;
+                font-size: 1.95rem;
                 font-weight: 100;
-                color: rgb(65, 88, 109);
+                color: #48B5B0;
             }
         }
 
         &>.info {
             padding: 10px 20px 20px 0;
             display: flex;
+            color: white;
 
             &>ul {
                 width: 50%;
@@ -175,7 +180,7 @@ body {
                         width: 40px;
                         font-size: 1.4rem;
                         text-align: center;
-                        color: rgb(52, 52, 53);
+                        color: rgb(163, 218, 230);
                     }
 
                     &:hover {
