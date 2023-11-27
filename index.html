@@ -32,17 +32,19 @@
               href="https://www.facebook.com/TongNhaVy.tnvy"
               data-title="Facebook"
               target="_blank"
-              ><i class="fab fa-2x fa-facebook-square"></i
-            ></a>
-            <a href="#" data-title="Instagram" target="_blank"
-              ><i class="fab fa-2x fa-instagram-square"></i
-            ></a>
+            >
+              <i class="fab fa-2x fa-facebook-square"></i>
+            </a>
+            <a href="#" data-title="Instagram" target="_blank">
+                <i class="fab fa-2x fa-instagram"></i>
+            </a>
             <a
               href="https://github.com/VzTong"
               data-title="Github"
               target="_blank"
-              ><i class="fab fa-2x fa-github"></i
-            ></a>
+              >
+              <i class="fab fa-2x fa-github"></i>
+            </a>
           </div>
         </div>
         <div class="box-half-right">
@@ -61,12 +63,13 @@
             </ul>
             <ul>
               <li data-title="❤">
-                <i class="fa fa-heart color-orangered"></i>Cẩu độc thân
+                <!-- <i class="fa fa-heart color-orangered"></i> -->
+                <i class="far fa-heart"></i> Cẩu độc thân
               </li>
               <li data-title="vzz95559@gmail.com">
                 <i class="fa fa-at"></i> vzz95559@gmail.com
               </li>
-              <li><i class="fa fa-map-marked"></i>Kiên Giang</li>
+              <li><i class="fa fa-map-marked"></i> Kiên Giang</li>
               <li data-title="Đọc sách, gõ code">
                 <i class="fa fa-bookmark"></i> Đọc sách, gõ code
               </li>
@@ -76,27 +79,6 @@
       </div>
     </div>
     <div class="tooltip"></div>
-
-    <script>
-      var eles = document.querySelectorAll("a[data-title], li[data-title]");
-      var tooltip = document.querySelector(".tooltip");
-      eles.forEach((item, index) => {
-        item.addEventListener("mousemove", function (e) {
-          if (e.target.getAttribute("data-title")) {
-            tooltip.innerText = e.target.getAttribute("data-title");
-          } else {
-            tooltip.innerText =
-              e.target.parentElement.getAttribute("data-title");
-          }
-          tooltip.style.display = "inline-block";
-          tooltip.style.top = e.pageY - tooltip.clientHeight - 20 + "px";
-          tooltip.style.left = e.pageX - tooltip.clientWidth / 2 + "px";
-        });
-        item.addEventListener("mouseleave", function (e) {
-          tooltip.style.display = "";
-        });
-      });
-    </script>
     <script src="/lib/js/bootstrap.min.js"></script>
     <script src="/lib/js/jquery-3.3.1.min.js"></script>
     <script src="/lib/js/jquery.nice-select.min.js"></script>
