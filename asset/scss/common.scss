@@ -1,11 +1,13 @@
 @font-face {
     font-family: FSNorthLand;
-    src: url('../asset/fonts/FS\ North\ Land.otf');
+    // src: url('../asset/fonts/FS\ North\ Land.otf');
+    src: url('/asset/fonts/FS\ North\ Land.otf');
 }
 
 @font-face {
     font-family: Andes;
-    src: url('../asset/fonts/AndesRoundedLight.otf');
+    // src: url('../asset/fonts/AndesRoundedLight.otf');
+    src: url('asset/fonts/AndesRoundedLight.otf');
 }
 
 * {
