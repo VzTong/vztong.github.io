@@ -1,11 +1,11 @@
 @font-face {
     font-family: FSNorthLand;
-    src: url('../fonts/FS\ North\ Land.otf');
+    src: url('../asset/fonts/FS\ North\ Land.otf');
 }
 
 @font-face {
     font-family: Andes;
-    src: url('../fonts/AndesRoundedLight.otf');
+    src: url('../asset/fonts/AndesRoundedLight.otf');
 }
 
 * {
@@ -30,75 +30,6 @@ body {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-}
-
-
-/* Preloder */
-
-#preloder {
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	z-index: 999999;
-    background: url("../pics/sys/Nền2.jpg") no-repeat center;
-    background-color: rgba(80, 153, 210, 1);
-    background-size: cover;
-    background-blend-mode: screen;
-    position: relative;
-}
-
-.loader {
-	width: 40px;
-	height: 40px;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	margin-top: -13px;
-	margin-left: -13px;
-	border-radius: 60px;
-	animation: loader 0.8s linear infinite;
-	-webkit-animation: loader 0.8s linear infinite;
-}
-
-@keyframes loader {
-	0% {
-		-webkit-transform: rotate(0deg);
-		transform: rotate(0deg);
-		border: 4px solid #f44336;
-		border-left-color: transparent;
-	}
-	50% {
-		-webkit-transform: rotate(180deg);
-		transform: rotate(180deg);
-		border: 4px solid #673ab7;
-		border-left-color: transparent;
-	}
-	100% {
-		-webkit-transform: rotate(360deg);
-		transform: rotate(360deg);
-		border: 4px solid #f44336;
-		border-left-color: transparent;
-	}
-}
-
-@-webkit-keyframes loader {
-	0% {
-		-webkit-transform: rotate(0deg);
-		border: 4px solid #f44336;
-		border-left-color: transparent;
-	}
-	50% {
-		-webkit-transform: rotate(180deg);
-		border: 4px solid #673ab7;
-		border-left-color: transparent;
-	}
-	100% {
-		-webkit-transform: rotate(360deg);
-		border: 4px solid #f44336;
-		border-left-color: transparent;
-	}
 }
 
 .avatar {
