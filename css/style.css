@@ -253,9 +253,13 @@ h6 {
   font-family: "Poppins", sans-serif;
 }
 
-#header h1 a,
-#header h1 a:hover {
+#header h1 a{
   color: #fff;
+  line-height: 1;
+  display: inline-block;
+}
+#header h1 a:hover{
+  color: rgba(24, 210, 111, 0.785);
   line-height: 1;
   display: inline-block;
 }
