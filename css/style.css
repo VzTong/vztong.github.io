@@ -656,7 +656,7 @@ section .container {
 }
 
 .avatar>.slogan {
-  width: 27.3%;
+  width: 27.5%;
   margin-right: 20px !important;
   height: inherit;
   position: absolute;
