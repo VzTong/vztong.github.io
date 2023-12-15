@@ -9,6 +9,12 @@
   "use strict";
 
   /**
+   * Thay đổi theme
+   */
+  document.querySelector(".theme-btn").addEventListener("click", () => {
+    document.body.classList.toggle("light-mode");
+  })
+  /**
    * Preloader
    */
   const preloader = document.querySelector("#preloader");
