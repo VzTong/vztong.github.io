@@ -76,11 +76,13 @@
   --color-background-8: rgba(0, 0, 0, 0.5);
   --color-background-9: rgba(0, 0, 0, 0.11);
   --color-background-body-before: rgba(255, 255, 255, 0.5);
+  --color-background-slogan: rgba(254, 254, 254, .7);
   --color-background-services-icon-box: rgba(51, 51, 51, 0.1);
   --color-box-mini: rgba(1, 1, 1, 0.08);
   --color-box-mini-2: rgba(1, 1, 1, 0.1);
   --color-text: #F56692;
   --color-text-shadow: #c1174a;
+  --color-text-slogan: #0cc7a5;
   --color-text-background: #bbc1c566;
   --color-hover: #E44273;
   --color-hover-2: rgba(245, 102, 146, 0.785);
