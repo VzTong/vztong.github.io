@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="pics/sys/icon.png" type="image/x-icon" />
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="lib/fontawesome-free-5.14.0-web/css/all.css" />
+
   </head>
 
   <body>
@@ -30,8 +31,8 @@
             >
               <i class="fab fa-2x fa-facebook-square"></i>
             </a>
-            <a href="#" data-title="Instagram" target="_blank">
-                <i class="fab fa-2x fa-instagram"></i>
+            <a href="https://www.linkedin.com/in/nh%C3%A3-vy-t%E1%BB%91ng-1a626030a/" data-title="Linkedin" target="_blank">
+                <i class="fab fa-2x fa-linkedin"></i>
             </a>
             <a
               href="https://github.com/VzTong"
@@ -65,8 +66,8 @@
                 <i class="fa fa-at"></i> vzz95559@gmail.com
               </li>
               <li><i class="fa fa-map-marked"></i> Kiên Giang</li>
-              <li data-title="Viết Code, 'Banhda =]'">
-                <i class="fa fa-bookmark"></i> Viết Code, 'Banhda =]'
+              <li data-title="Viết Code, 'Billard =]'">
+                <i class="fa fa-bookmark"></i> Viết Code, 'Billard =]'
               </li>
             </ul>
           </div>
@@ -74,6 +75,28 @@
       </div>
     </div>
     <div class="tooltip"></div>
+
+    <script>
+      var eles = document.querySelectorAll("a[data-title], li[data-title]");
+      var tooltip = document.querySelector(".tooltip");
+      eles.forEach((item, index) => {
+          item.addEventListener('mousemove', function (e) {
+              if (e.target.getAttribute("data-title")) {
+                  tooltip.innerText = e.target.getAttribute("data-title");
+              }
+              else {
+                  tooltip.innerText = e.target.parentElement.getAttribute("data-title");
+              }
+              tooltip.style.display = 'inline-block';
+              tooltip.style.top = e.pageY - tooltip.clientHeight - 20 + 'px';
+              tooltip.style.left = e.pageX - tooltip.clientWidth / 2 + 'px';
+          });
+          item.addEventListener('mouseleave', function(e){
+              tooltip.style.display='';
+          })
+      })
+  </script>
+
     <script src="lib/js/bootstrap.min.js"></script>
     <script src="lib/js/jquery-3.3.1.min.js"></script>
     <script src="lib/js/jquery.nice-select.min.js"></script>

@@ -220,15 +220,15 @@ body {
 
 .tooltip {
   position: absolute;
-  background-color: white;
+  background-color: rgba(1, 1, 1, 0.9);
   padding: 7px 10px 5px 10px;
-  border: 1px solid rgb(206, 206, 206);
+  border: 1px solid #353535;
   border-radius: 3px;
   font-family: Andes;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   z-index: 1000;
   font-size: 0.9rem;
-  color: rgb(53, 53, 53);
+  color: #d2f7f0;
   display: none;
 }
 
