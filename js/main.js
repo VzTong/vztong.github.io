@@ -349,3 +349,14 @@
    */
   new PureCounter();
 })();
+
+function printCV() {
+  // Open a new window for printing
+  var printWindow = window.open('cv.html', '_blank');
+
+  // Close the document after printing
+  printWindow.document.close();
+
+  // Print the window
+  printWindow.print();
+}

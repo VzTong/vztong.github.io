@@ -26,7 +26,7 @@
   scroll-behavior: smooth;
 
   /* Dãy màu nền mặc đinh - Nền Đen */
-  --background: #040404 url("../pics/sys/=0.jpg") top right no-repeat;
+  --background: #040404 url("../pics/sys/pic3.jpg") top right no-repeat;
   --color-background-2: rgba(0, 0, 0, 0.9);
   --color-background-3: rgba(0, 0, 0, 0.831);
   --color-background-4: rgba(255, 255, 255, 0.12);
@@ -66,7 +66,7 @@
 
 .light-mode {
   /* Dãy màu nền thay đổi - Nền Trắng */
-  --background: #FFFFFF url("../pics/sys/=00.jpg") top right no-repeat;
+  --background: #FFFFFF url("../pics/sys/pic4.jpg") top right no-repeat;
   --color-background-2: rgba(255, 255, 255, 0.9);
   --color-background-3: rgba(255, 255, 255, 0.831);
   --color-background-4: rgba(0, 0, 0, 0.12);
@@ -741,7 +741,8 @@ section .container {
 }
 
 .avatar {
-  height: 400px;
+  width: 245px;
+  height: 350px;
   background-color: var(--color-black);
   z-index: 1;
   top: -20%;
@@ -769,7 +770,7 @@ section .container {
 }
 
 .avatar>.slogan {
-  width: 27.5%;
+  width: 17.5%;
   margin-right: 20px !important;
   height: inherit;
   position: absolute;
@@ -897,6 +898,71 @@ section .container {
     right: 17%;
   }
 }
+
+/*--------------------------------------------------------------
+# Btn CV
+--------------------------------------------------------------*/
+.btn-cv {
+  display: flex;
+  align-self: flex-start;
+  margin-top: 5%;
+}
+
+.main-btn {
+  border-radius: 30px;
+  color: var(--color-white);
+  background-color: var(--color-background-2);
+  font-weight: 600;
+  position: relative;
+  border: 1.5px solid var(--color-text);
+  display: flex;
+  align-self: flex-start;
+  align-items: center;
+  overflow: hidden;
+  height: 50px;
+
+  transition: .3s ease-in-out;
+  transition-delay: .15s;
+  box-shadow: var(--shadow);
+}
+
+.main-btn .btn-text {
+  padding: 0 2rem;
+}
+
+.main-btn .btn-icon {
+  background-color: var(--color-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  padding: 1rem;
+}
+
+.main-btn::before {
+  content: '';
+  display: block;
+  font-weight: 600;
+  position: absolute;
+  width: 200%;
+  height: 500%;
+  border-radius: 100%;
+  transition: .36s cubic-bezier(0.4, 0.0, 1, 1);
+  transform: translate(40%,-50%) translateZ(0)
+}
+
+.main-btn:hover {
+  background-color: var(--color-text);
+}
+
+.main-btn:hover::before {
+  transform: translate(-45%,-34%) translateZ(0)
+}
+
+.main-title {
+  text-align: center;
+}
+
 
 /*--------------------------------------------------------------
 # Counts
