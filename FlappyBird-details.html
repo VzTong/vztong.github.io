@@ -6,95 +6,152 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Halo, I'm Vy (VzTong)</title>
   <link rel="shortcut icon" href="pics/sys/icon.png" type="image/x-icon" />
-  <link rel="stylesheet" href="lib/fontawesome-free-5.14.0-web/css/all.css" />
-  <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Poppins:300,400,600,700"
     rel="stylesheet">
-  <link href="/asset/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="/asset/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="/asset/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="/asset/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="/asset/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="/asset/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
 
+  <style>
+    .portfolio-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .carousel-item img,
+    .carousel-item video {
+      height: 500px;
+      border-radius: 8px;
+    }
+
+    .portfolio-info ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .portfolio-info ul li {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    .portfolio-info ul li strong {
+      font-weight: bold;
+    }
+
+    /* Giữ phần carousel nằm trong một khung ảnh */
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      /* Đảm bảo ảnh không tràn ra ngoài */
+    }
+
+    /* Tạo hình tròn cho icon */
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      background-color: #000000;
+      /* Màu trắng cho icon */
+      border-radius: 50%;
+      /* Làm tròn icon */
+      padding: 10px;
+      /* Tăng kích thước icon */
+    }
+
+    /* Đảm bảo hình ảnh không bị biến dạng */
+    .carousel-item img {
+      object-fit: cover;
+      /* Cắt ảnh để vừa khung mà không bị biến dạng */
+    }
+  </style>
 </head>
 
 <body>
-
   <main id="main">
-
-    <!-- ======= Portfolio Details ======= -->
+    <!-- Portfolio Details -->
     <div id="portfolio-details" class="portfolio-details">
-      <div class="container">
+      <div class="container py-5">
+        <div class="row g-4">
 
-        <div class="row">
-
+          <!-- Left Column: Media -->
           <div class="col-lg-8">
-            <h2 class="portfolio-title">This is a description of the Flappy Bird game</h2>
-
-            <div class="portfolio-details-slider swiper">
-              <div class="swiper-wrapper align-items-center">
-
-                <div class="swiper-slide">
-                  <img src="pics/portfolio/FlappyBird-details-1.png" class="img-fluid" alt="">
-                  <video id="player"
-                      playsinline
-                      controls
-                      data-poster="pics/portfolio/FlappyBird-details-3.png"
-                      class="img-fluid mt-3">
-                    <source src="/vid/FlappyBird-details-3.mp4" type="video/mp4"/>
-                 </video>
+            <h2 class="portfolio-title mb-4">This is a description of the Flappy Bird game</h2>
+            <!-- Bootstrap Carousel -->
+            <div id="portfolioCarousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <!-- Slide 1 -->
+                <div class="carousel-item active">
+                  <img src="pics/portfolio/FlappyBirdPic/FlappyBird-details.png" class="d-block w-100 img-fluid"
+                    alt="Flappy Bird Image 1">
                 </div>
-
-                <div class="swiper-slide">
-                  <img src="pics/portfolio/FlappyBird-details-3.png" class="img-fluid" alt="">
+                <!-- Slide 2 -->
+                <div class="carousel-item">
+                  <img src="pics/portfolio/FlappyBirdPic/FlappyBird-details-1.png" class="d-block w-100 img-fluid"
+                    alt="Flappy Bird Image 2">
                 </div>
-
-                <div class="swiper-slide">
-                  <img src="pics/portfolio/FlappyBird-details-2.png" class="img-fluid" alt="">
-                </div>
-
               </div>
-              <div class="swiper-pagination"></div>
+              <!-- Controls -->
+              <button class="carousel-control-prev" type="button" data-bs-target="#portfolioCarousel"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#portfolioCarousel"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
             </div>
 
+            <!-- Video -->
+            <video id="player" playsinline controls data-poster="pics/portfolio/FlappyBirdPic/FlappyBird-details-3.png"
+              class="img-fluid mt-4">
+              <source src="/vid/FlappyBird-details-3.mp4" type="video/mp4" />
+            </video>
           </div>
 
-          <div class="col-lg-4 portfolio-info">
-            <h3>Project information</h3>
-            <ul>
+          <!-- Right Column: Project Info -->
+          <div class="col-lg-4 portfolio-info" style="top: 0">
+            <h3 class="mb-4">Project information</h3>
+            <ul class="list-unstyled">
               <li><strong>Category</strong>: Game design</li>
               <li><strong>Client</strong>: VzTong</li>
               <li><strong>Project date</strong>: 09 December, 2023</li>
-              <li><strong>Project URL</strong>: <a href="https://github.com/VzTong/FileGame_FlappyBird">https://github.com/VzTong/FileGame_FlappyBird</a></li>
+              <li><strong>Project URL</strong>: <a href="https://github.com/VzTong/FileGame_FlappyBird" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+              </li>
             </ul>
-
-            <p>
-              This is a really frustrating game =]],
-              So please think twice before downloading and playing =}}
+            <p class="mt-3">
+              This is a really frustrating game =]],<br>
+              So please think twice before downloading and playing =}}<br>
+              Watch the gameplay video below 👇<br>
               Tks
             </p>
           </div>
 
         </div>
-
       </div>
-    </div><!-- End Portfolio Details -->
-
-  </main><!-- End #main -->
+    </div>
+  </main>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Template Main JS File -->
-  <script src="js/main.js"></script>
+  <script>
+    $(document).ready(function () {
+      // Tự động chuyển slide (autoplay)
+      $('#portfolioCarousel').carousel({
+        interval: 2000, // Thời gian giữa các slide (ms)
+        wrap: true,     // Quay vòng các slide
+        pause: false    // Không dừng khi hover
+      });
+
+      // Điều khiển Dots (Pagination)
+      $('.carousel-indicators li').on('click', function () {
+        const targetIndex = $(this).data('bs-slide-to');
+        $('#portfolioCarousel').carousel(targetIndex);
+      });
+    });
+  </script>
 
 </body>
 
