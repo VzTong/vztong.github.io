@@ -36,6 +36,7 @@
   --color-background-8: rgba(255, 255, 255, 0.5);
   --color-background-9: rgba(255, 255, 255, 0.11);
   --color-background-body-before: rgba(0, 0, 0, 0.5);
+  --color-background-modal-cv: rgb(41 38 38 / 70%);
   --color-background-slogan: rgba(1, 1, 1, .7);          /* Dùng cho ảnh nền trắng*/
   --color-background-services-icon-box: rgba(204, 204, 204, 0.1);
   --color-box-mini: rgba(255, 255, 255, 0.08);
@@ -76,6 +77,7 @@
   --color-background-8: rgba(0, 0, 0, 0.5);
   --color-background-9: rgba(0, 0, 0, 0.11);
   --color-background-body-before: rgba(255, 255, 255, 0.5);
+  --color-background-modal-cv: rgb(255 243 252 / 70%);
   --color-background-slogan: rgba(254, 254, 254, .7);
   --color-background-services-icon-box: rgba(51, 51, 51, 0.1);
   --color-box-mini: rgba(1, 1, 1, 0.08);
@@ -100,6 +102,30 @@
   --border: 2px solid rgba(0, 0, 0, 0.2);
   --shadow: rgb(0 0 0 / 10%);
   --box-shadow: -7px 7px 15px rgba(0, 0, 0, 0.25);
+}
+
+/*--------------------------------------------------------------
+# Custom scrollbar
+--------------------------------------------------------------*/
+/* Dark Mode Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background:  var(--color-background-2);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color:  var(--color-text);
+  border-radius: 10px;
+  border: 3px solid var(--color-background-2);
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-text) var(--color-background-2);
 }
 
 /*--------------------------------------------------------------
@@ -920,7 +946,6 @@ section .container {
   align-items: center;
   overflow: hidden;
   height: 50px;
-
   transition: .3s ease-in-out;
   transition-delay: .15s;
   box-shadow: var(--shadow);
@@ -932,37 +957,141 @@ section .container {
 
 .main-btn .btn-icon {
   background-color: var(--color-text);
+  color: var(--color-white);
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
   padding: 1rem;
+  z-index: 1;
 }
 
 .main-btn::before {
   content: '';
   display: block;
-  font-weight: 600;
   position: absolute;
-  width: 200%;
-  height: 500%;
-  border-radius: 100%;
-  transition: .36s cubic-bezier(0.4, 0.0, 1, 1);
-  transform: translate(40%,-50%) translateZ(0)
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-text);
+  transition: transform 0.5s ease;
+  transform: translateX(100%);
+}
+
+.main-btn:hover::before {
+  transform: translateX(0);
 }
 
 .main-btn:hover {
   background-color: var(--color-text);
+  color: var(--color-white);
 }
 
-.main-btn:hover::before {
-  transform: translate(-45%,-34%) translateZ(0)
+.main-btn:hover .btn-text,
+.main-btn:hover .btn-icon {
+  color: var(--color-white);
+  z-index: 1;
 }
 
 .main-title {
   text-align: center;
 }
 
+/*--------------------------------------------------------------
+# Modal cv
+--------------------------------------------------------------*/
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  overflow: hidden; /* Tránh thanh cuộn */
+  background-color: var(--background);
+  background-color: var(--color-background-body-before);
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  transform: scale(0);
+  opacity: 0;
+}
+
+.modal-content {
+  display: grid;
+  background-color: var(--color-background-modal-cv);
+  color: var(--color-white);
+  margin: 15% auto;
+  padding: 20px;
+  width: 20%;
+}
+
+.close {
+  color: var(--color-grey-1);
+  float: left;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: var(--color-white);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal.show {
+  display: block;
+  transform: scale(1);
+  opacity: 1;
+}
+
+.modal.hide {
+  transform: scale(0);
+  opacity: 0;
+}
+
+.modal-btn {
+  border-radius: 30px;
+  color: var(--color-white);
+  background-color: var(--color-background-2);
+  font-weight: 600;
+  position: relative;
+  border: 1.5px solid var(--color-text);
+  display: flex;
+  align-self: flex-start;
+  align-items: center;
+  overflow: hidden;
+  height: 50px;
+  transition: background-color .3s ease-in-out, color .3s ease-in-out;
+  box-shadow: var(--shadow);
+}
+
+.modal-btn .btn-text {
+  padding: 0 2rem;
+}
+
+.modal-btn .btn-icon {
+  background-color: var(--color-text);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  padding: 1rem;
+  z-index: 1;
+}
+
+.modal-btn:hover {
+  background-color: var(--color-text);
+  color: var(--color-white);
+}
+
+.modal-btn:hover .btn-text,
+.modal-btn:hover .btn-icon {
+  color: var(--color-white);
+}
 
 /*--------------------------------------------------------------
 # Counts

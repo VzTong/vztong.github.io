@@ -118,11 +118,26 @@
           <p>
             I'm now living and studying in Can Tho. I'm a third-year student at Nam Can Tho University studying information technology.  Programming and foreign languages pique my attention.
           </p>
+
           <div class="btn-cv">
             <button onclick="printCV()" class="main-btn">
                 <span class="btn-text">Print CV</span>
                 <span class="btn-icon"><i class="bi bi-printer-fill"></i></span>
             </button>
+          </div>
+
+          <!-- Modal for print options -->
+          <div id="printOptionsModal" class="modal">
+            <div class="modal-content">
+              <span class="close" onclick="closePrintOptions()">&times;</span>
+              <h2>Select Language</h2>
+              <button onclick="printCVWithLanguage('en')" class="modal-btn d-block mb-3">
+                <span class="btn-text">English</span>
+              </button>
+              <button onclick="printCVWithLanguage('vi')" class="modal-btn d-block">
+                <span class="btn-text">Vietnamese</span>
+              </button>
+            </div>
           </div>
 
         </div>
@@ -668,6 +683,23 @@
             </div>
           </div>
         </div> -->
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+          <div class="portfolio-wrap">
+            <img src="pics/portfolio/MoviePic/MovieWatchingWebsitePic1.png" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Booking hotel website</h4>
+              <p>Web</p>
+              <div class="portfolio-links">
+                <a href="pics/portfolio/MoviePic/MovieWatchingWebsitePic1.png" data-gallery="portfolioGallery" class="portfolio-lightbox"
+                  title="Booking hotel website"><i class="bx bx-plus"></i></a>
+                <a href="Booking-details.html" data-gallery="portfolioDetailsGallery"
+                  data-glightbox="type: external" class="portfolio-details-lightbox" title="Portfolio Details"><i
+                    class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-web">
           <div class="portfolio-wrap">

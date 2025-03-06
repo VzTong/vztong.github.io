@@ -350,13 +350,40 @@
   new PureCounter();
 })();
 
+function closePrintOptions() {
+  const modal = document.getElementById('printOptionsModal');
+  modal.classList.add('hide');
+  setTimeout(() => {
+    modal.style.display = 'none';
+    modal.classList.remove('show', 'hide');
+  }, 300);
+}
+
 function printCV() {
+  const modal = document.getElementById('printOptionsModal');
+  modal.style.display = 'block';
+  setTimeout(() => {
+    modal.classList.add('show');
+  }, 10);
+}
+
+function printCVWithLanguage(language) {
+  let url = '';
+  if (language === 'en') {
+    url = 'CV_TongNhaVy_InternBackend_EN.pdf';
+  } else if (language === 'vi') {
+    url = 'CV_TongNhaVy_InternBackend_VI.pdf';
+  }
+
   // Open a new window for printing
-  var printWindow = window.open('CV_TongNhaVy_InternBackend.pdf', '_blank');
+  var printWindow = window.open(url, '_blank');
 
   // Close the document after printing
   printWindow.document.close();
 
   // Print the window
   printWindow.print();
+
+  // Close the modal
+  closePrintOptions();
 }
