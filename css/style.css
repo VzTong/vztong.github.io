@@ -26,7 +26,7 @@
   scroll-behavior: smooth;
 
   /* Dãy màu nền mặc đinh - Nền Đen */
-  --background: #040404 url("../pics/sys/pic3.jpg") top right no-repeat;
+  --background: #040404 url("../pics/sys/pic.jpg") top right no-repeat;
   --color-background-2: rgba(0, 0, 0, 0.9);
   --color-background-3: rgba(0, 0, 0, 0.831);
   --color-background-4: rgba(255, 255, 255, 0.12);
@@ -44,6 +44,7 @@
   --color-text: #18d26e;
   --color-text-shadow: #15BB62;
   --color-text-slogan: #7de5d2;
+  --color-portfolio-links: #63eda3;
   --color-text-background: #3b434a66;
   --color-hover: #35e888;
   --color-hover-2: rgba(24, 210, 111, 0.785);
@@ -67,7 +68,7 @@
 
 .light-mode {
   /* Dãy màu nền thay đổi - Nền Trắng */
-  --background: #FFFFFF url("../pics/sys/pic4.jpg") top right no-repeat;
+  --background: #FFFFFF url("../pics/sys/pic2.jpg") top right no-repeat;
   --color-background-2: rgba(255, 255, 255, 0.9);
   --color-background-3: rgba(255, 255, 255, 0.831);
   --color-background-4: rgba(0, 0, 0, 0.12);
@@ -84,13 +85,14 @@
   --color-box-mini-2: rgba(1, 1, 1, 0.1);
   --color-text: #F56692;
   --color-text-shadow: #c1174a;
-  --color-text-slogan: #0cc7a5;
+  --color-text-slogan: #F56692;
+  --color-portfolio-links: #ed63a8;
   --color-text-background: #bbc1c566;
   --color-hover: #E44273;
   --color-hover-2: rgba(245, 102, 146, 0.785);
-  --color-white: #454e56;
-  --color-white-2: rgba(69, 78, 86, 0.7);
-  --color-white-3: rgba(69, 78, 86, 0.8);
+  --color-white: #20252a;
+  --color-white-2: rgba(28, 31, 35, 0.7);
+  --color-white-3: rgba(25, 29, 32, 0.8);
   --color-black: #000;
   --color-grey0: #aaaaaa;
   --color-grey-1: #6c7983;
@@ -787,7 +789,7 @@ section .container {
 }
 
 .avatar:hover>.slogan {
-  top: 11%;
+  top: 10%;
   left: 7.3%;
   height: 38.1%;
   opacity: 1;
@@ -1478,7 +1480,7 @@ section .container {
 }
 
 .portfolio .portfolio-wrap .portfolio-links a:hover {
-  color: #63eda3;
+  color: var(--color-portfolio-links);
 }
 
 .portfolio .portfolio-wrap:hover::before {
@@ -1587,7 +1589,7 @@ section .container {
 
 .contact .info-box i.bx {
   font-size: 24px;
-  color: #18d26e;
+  color: var(--color-text);
   border-radius: 50%;
   padding: 14px;
   float: left;
@@ -1624,7 +1626,7 @@ section .container {
 }
 
 .contact .info-box .social-links a:hover {
-  color: #18d26e;
+  color: var(--color-text);
 }
 
 .contact .php-email-form {
