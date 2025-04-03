@@ -84,10 +84,10 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-          <h3>Chicks practice coding</h3>
+        <div class="col-lg-8 pt-4 pt-lg-0 content" style="width: 75%;" data-aos="fade-left">
+          <h3>A wandering developer fixing code and travel plans. 😆</h3>
           <p class="fst-italic">
-            Make an effort to become a developer
+            Trying to become a skilled developer
           </p>
           <div class="row">
             <div class="col-lg-6">
@@ -108,7 +108,7 @@
             </div>
             <div class="col-lg-6">
               <ul>
-                <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>21</span></li>
+                <li id="app"><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>{{age}}</span></li>
                 <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Newbie</span></li>
                 <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>vz95559@gmail.com</span></li>
                 <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
@@ -116,7 +116,9 @@
             </div>
           </div>
           <p>
-            I'm now living and studying in Can Tho. I'm a third-year student at Nam Can Tho University studying information technology.  Programming and foreign languages pique my attention.
+            I am a passionate programmer who loves technology, particularly .NET, C#, and backend development. I enjoy exploring new technologies, learning different programming languages, and improving my coding skills every day.
+            <br/>
+            When I’m not in front of my screen writing code, I enjoy taking trips and going on adventures. For me, both coding and traveling bring a sense of freedom and excitement.
           </p>
 
           <div class="btn-cv">
@@ -825,6 +827,22 @@
   <!-- Main JS File -->
   <script src="js/main.js"></script>
 
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script>
+        Vue.createApp({
+            data: () => ({
+              birthYear: 2003
+            }),
+
+            computed: {
+                age(){
+                    let now = new Date()
+                    return now.getFullYear() - this.birthYear
+                }
+            }
+        }).mount('#app');
+</script>
 </body>
 
 </html>
