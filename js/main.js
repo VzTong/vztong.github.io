@@ -370,9 +370,9 @@ function printCV() {
 function printCVWithLanguage(language) {
   let url = '';
   if (language === 'en') {
-    url = 'CV_TongNhaVy_InternBackend_EN.pdf';
+    url = 'CV_TongNhaVy_FresherBackend_EN.pdf';
   } else if (language === 'vi') {
-    url = 'CV_TongNhaVy_InternBackend_VI.pdf';
+    url = 'CV_TongNhaVy_FresherBackend_VI.pdf';
   }
 
   // Open a new window for printing
