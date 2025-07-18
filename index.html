@@ -889,6 +889,94 @@
       }
     }).mount('#app');
   </script>
+
+  <!-- Test chat -->
+  <!-- DNS prefetch và preconnect cho tối ưu hóa network -->
+  <link rel="dns-prefetch" href="//170.64.160.231">
+  <link rel="preconnect" href="http://170.64.160.231:5000" crossorigin>
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+  <!-- Chat Widget CSS -->
+  <link rel="stylesheet" href="./css/chat-widget.css">
+
+  <!-- Chat Widget js-->
+  <script src="./js/chat-widget.js"></script>
+
+    <!-- Chat Widget HTML (fallback nếu JS không load) -->
+    <div class="chat-widget" id="fallbackChatWidget" style="display: none;">
+        <button class="chat-widget-button" onclick="toggleFallbackWidget()">
+            <i class="fas fa-comments"></i>
+        </button>
+        <div class="chat-widget-container" id="fallbackContainer">
+            <div class="chat-widget-header">
+                <div class="header-info">
+                    <div class="avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="header-text">
+                        <h4>RAGBot Assistant</h4>
+                        <p><span class="status-indicator"></span>Online • Sẵn sàng hỗ trợ</p>
+                    </div>
+                </div>
+                <div class="chat-widget-controls">
+                    <button class="chat-widget-close" onclick="closeFallbackWidget()" title="Đóng">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="chat-widget-messages">
+                <div class="welcome-message">
+                    <i class="fas fa-robot"></i>
+                    <h4>Xin chào! 👋</h4>
+                    <p>Tôi là RAGBot, trợ lý AI của bạn. Hãy hỏi tôi bất cứ điều gì bạn muốn biết!</p>
+                </div>
+            </div>
+            <div class="chat-widget-input-area">
+                <div class="chat-widget-form">
+                    <textarea
+                        class="chat-widget-input"
+                        placeholder="Nhập tin nhắn của bạn..."
+                        rows="1"
+                    ></textarea>
+                    <button type="button" class="chat-widget-send-btn" title="Gửi tin nhắn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    // Fallback widget functions
+    function toggleFallbackWidget() {
+        const container = document.getElementById('fallbackContainer');
+        const isVisible = container.style.display === 'flex';
+        container.style.display = isVisible ? 'none' : 'flex';
+        if (!isVisible) {
+            container.classList.add('show');
+        } else {
+            container.classList.remove('show');
+        }
+    }
+
+    function closeFallbackWidget() {
+        document.getElementById('fallbackContainer').style.display = 'none';
+    }
+
+    function minimizeFallbackWidget() {
+        const container = document.getElementById('fallbackContainer');
+        container.classList.toggle('minimized');
+    }
+
+    // Show fallback if main widget doesn't load within 3 seconds
+    setTimeout(() => {
+        if (!window.chatWidget) {
+            document.getElementById('fallbackChatWidget').style.display = 'block';
+            console.log('Fallback chat widget activated');
+        }
+    }, 3000);
+    </script>
 </body>
 
 </html>
