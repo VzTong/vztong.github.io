@@ -350,12 +350,18 @@
   new PureCounter();
 })();
 
+// CV Modal State
+let selectedLanguage = '';
+let selectedCVType = '';
+
 function closePrintOptions() {
   const modal = document.getElementById('printOptionsModal');
   modal.classList.add('hide');
   setTimeout(() => {
     modal.style.display = 'none';
     modal.classList.remove('show', 'hide');
+    // Reset selections
+    resetCVSelections();
   }, 300);
 }
 
@@ -365,6 +371,111 @@ function printCV() {
   setTimeout(() => {
     modal.classList.add('show');
   }, 10);
+}
+
+function selectLanguage(language) {
+  selectedLanguage = language;
+
+  // Update UI
+  document.querySelectorAll('.cv-option-btn[data-lang]').forEach(btn => {
+    btn.classList.remove('selected');
+  });
+  document.querySelector(`[data-lang="${language}"]`).classList.add('selected');
+
+  // Check if download button should be enabled
+  updateDownloadButton();
+}
+
+function selectCVType(cvType) {
+  selectedCVType = cvType;
+
+  // Update UI
+  document.querySelectorAll('.cv-option-btn[data-type]').forEach(btn => {
+    btn.classList.remove('selected');
+  });
+  document.querySelector(`[data-type="${cvType}"]`).classList.add('selected');
+
+  // Check if download button should be enabled
+  updateDownloadButton();
+}
+
+function updateDownloadButton() {
+  const downloadBtn = document.getElementById('downloadCVBtn');
+  const previewBtn = document.getElementById('previewCVBtn');
+
+  if (selectedLanguage && selectedCVType) {
+    // Enable both buttons
+    downloadBtn.disabled = false;
+    previewBtn.disabled = false;
+
+    // Update button text
+    const cvTypeText = selectedCVType.charAt(0).toUpperCase() + selectedCVType.slice(1);
+    downloadBtn.querySelector('.btn-text').textContent = `Download ${cvTypeText} CV`;
+    previewBtn.querySelector('.btn-text').textContent = `Preview ${cvTypeText} CV`;
+  } else {
+    // Disable both buttons
+    downloadBtn.disabled = true;
+    previewBtn.disabled = true;
+
+    // Reset button text
+    downloadBtn.querySelector('.btn-text').textContent = 'Download CV';
+    previewBtn.querySelector('.btn-text').textContent = 'Preview CV';
+  }
+}
+
+function previewSelectedCV() {
+  if (!selectedLanguage || !selectedCVType) {
+    alert('Please select both language and CV type');
+    return;
+  }
+
+  let url = '';
+  const langFolder = selectedLanguage === 'en' ? 'en' : 'vi';
+  const cvType = selectedCVType.charAt(0).toUpperCase() + selectedCVType.slice(1);
+  const langCode = selectedLanguage === 'en' ? 'EN' : 'VI';
+
+  url = `CV/${langFolder}/CV_TongNhaVy_${cvType}_${langCode}.pdf`;
+
+  // Open PDF in new tab for preview
+  window.open(url, '_blank');
+}
+
+function downloadSelectedCV() {
+  if (!selectedLanguage || !selectedCVType) {
+    alert('Please select both language and CV type');
+    return;
+  }
+
+  let url = '';
+  const langFolder = selectedLanguage === 'en' ? 'en' : 'vi';
+  const cvType = selectedCVType.charAt(0).toUpperCase() + selectedCVType.slice(1);
+  const langCode = selectedLanguage === 'en' ? 'EN' : 'VI';
+
+  url = `CV/${langFolder}/CV_TongNhaVy_${cvType}_${langCode}.pdf`;
+
+  // Create a temporary anchor element and trigger download
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `CV_TongNhaVy_${cvType}_${langCode}.pdf`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+
+  // Close the modal
+  closePrintOptions();
+}
+
+function resetCVSelections() {
+  selectedLanguage = '';
+  selectedCVType = '';
+
+  // Remove all selected classes
+  document.querySelectorAll('.cv-option-btn').forEach(btn => {
+    btn.classList.remove('selected');
+  });
+
+  // Reset download button
+  updateDownloadButton();
 }
 
 function printCVWithLanguage(language) {

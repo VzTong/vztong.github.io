@@ -48,6 +48,8 @@
   --color-text-background: #3b434a66;
   --color-hover: #35e888;
   --color-hover-2: rgba(24, 210, 111, 0.785);
+  --color-preview: #359CA0;
+  --color-preview-hover: #2a7e82;
   --color-white: #FFFFFF;
   --color-white-2: rgba(255, 255, 255, 0.7);
   --color-white-3: rgba(255, 255, 255, 0.8);
@@ -90,6 +92,8 @@
   --color-text-background: #bbc1c566;
   --color-hover: #E44273;
   --color-hover-2: rgba(245, 102, 146, 0.785);
+  --color-preview: #359CA0;
+  --color-preview-hover: #2a7e82;
   --color-white: #20252a;
   --color-white-2: rgba(28, 31, 35, 0.7);
   --color-white-3: rgba(25, 29, 32, 0.8);
@@ -951,6 +955,7 @@ section .container {
   transition: .3s ease-in-out;
   transition-delay: .15s;
   box-shadow: var(--shadow);
+  cursor: pointer;
 }
 
 .main-btn .btn-text {
@@ -1000,19 +1005,55 @@ section .container {
   text-align: center;
 }
 
+/* Responsive for main button */
+@media (max-width: 768px) {
+  .btn-cv {
+    margin-top: 8%;
+    justify-content: center;
+  }
+
+  .main-btn {
+    height: 45px;
+    font-size: 0.9rem;
+  }
+
+  .main-btn .btn-text {
+    padding: 0 1.5rem;
+  }
+
+  .main-btn .btn-icon {
+    padding: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-btn {
+    height: 40px;
+    font-size: 0.8rem;
+  }
+
+  .main-btn .btn-text {
+    padding: 0 1rem;
+  }
+
+  .main-btn .btn-icon {
+    padding: 0.6rem;
+  }
+}
+
 /*--------------------------------------------------------------
 # Modal cv
 --------------------------------------------------------------*/
 .modal {
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 1000;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   overflow: auto;
-  overflow: hidden; /* Tránh thanh cuộn */
+  overflow: hidden;
   background-color: var(--background);
   background-color: var(--color-background-body-before);
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
@@ -1021,26 +1062,32 @@ section .container {
 }
 
 .modal-content {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   background-color: var(--color-background-modal-cv);
   color: var(--color-white);
-  margin: 15% auto;
-  padding: 20px;
-  width: 20%;
+  margin: 5% auto;
+  padding: 30px;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .close {
   color: var(--color-grey-1);
-  float: left;
+  float: right;
   font-size: 28px;
   font-weight: bold;
+  align-self: flex-end;
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
 
 .close:hover,
 .close:focus {
   color: var(--color-white);
   text-decoration: none;
-  cursor: pointer;
 }
 
 .modal.show {
@@ -1054,6 +1101,70 @@ section .container {
   opacity: 0;
 }
 
+.modal-content h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--color-text);
+}
+
+.modal-content h3 {
+  margin-bottom: 15px;
+  color: var(--color-white);
+  font-size: 1.1rem;
+}
+
+.cv-option-group {
+  margin-bottom: 25px;
+}
+
+.cv-options {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.cv-option-btn {
+  flex: 1;
+  min-width: 120px;
+  padding: 15px;
+  border: 2px solid var(--color-background-4);
+  border-radius: 10px;
+  background-color: var(--color-background-2);
+  color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.cv-option-btn:hover {
+  border-color: var(--color-text);
+  background-color: var(--color-background-5);
+  transform: translateY(-2px);
+}
+
+.cv-option-btn.selected {
+  border-color: var(--color-text);
+  background-color: var(--color-text);
+  color: var(--color-white);
+}
+
+.cv-option-btn i {
+  font-size: 1.5rem;
+}
+
+.cv-action-section {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
 .modal-btn {
   border-radius: 30px;
   color: var(--color-white);
@@ -1061,13 +1172,27 @@ section .container {
   font-weight: 600;
   position: relative;
   border: 1.5px solid var(--color-text);
-  display: flex;
-  align-self: flex-start;
+  display: inline-flex;
   align-items: center;
   overflow: hidden;
   height: 50px;
   transition: background-color .3s ease-in-out, color .3s ease-in-out;
   box-shadow: var(--shadow);
+  cursor: pointer;
+  flex: 1;
+  min-width: 140px;
+  max-width: 200px;
+}
+
+.modal-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  border-color: var(--color-background-4);
+}
+
+.modal-btn:disabled:hover {
+  background-color: var(--color-background-2);
+  color: var(--color-white);
 }
 
 .modal-btn .btn-text {
@@ -1085,14 +1210,114 @@ section .container {
   z-index: 1;
 }
 
-.modal-btn:hover {
+.preview-btn {
+  border-color: var(--color-preview);
+}
+
+.preview-btn .btn-icon {
+  background-color: var(--color-preview);
+}
+
+.preview-btn:hover:not(:disabled) {
+  background-color: var(--color-preview-hover);
+  border-color: var(--color-preview-hover);
+}
+
+.preview-btn:hover:not(:disabled) .btn-icon {
+  background-color: var(--color-preview-hover);
+}
+
+.preview-btn:disabled .btn-icon {
+  background-color: var(--color-background-4);
+}
+
+.download-btn {
+  border-color: var(--color-text);
+}
+
+.download-btn .btn-icon {
   background-color: var(--color-text);
+}
+
+.download-btn:hover:not(:disabled) {
+  background-color: var(--color-text);
+  border-color: var(--color-text);
+}
+
+.download-btn:hover:not(:disabled) .btn-icon {
+  background-color: var(--color-text);
+}
+
+.download-btn:disabled .btn-icon {
+  background-color: var(--color-background-4);
+}
+
+.modal-btn:hover:not(:disabled) .btn-text,
+.modal-btn:hover:not(:disabled) .btn-icon {
   color: var(--color-white);
 }
 
-.modal-btn:hover .btn-text,
-.modal-btn:hover .btn-icon {
-  color: var(--color-white);
+/* Responsive for modal */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 95%;
+    margin: 10% auto;
+    padding: 20px;
+  }
+
+  .cv-options {
+    flex-direction: column;
+  }
+
+  .cv-option-btn {
+    min-width: 100%;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .cv-option-btn i {
+    margin-right: 10px;
+  }
+
+  .cv-action-section {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .modal-btn {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    width: 98%;
+    margin: 15% auto;
+    padding: 15px;
+  }
+
+  .modal-content h2 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+
+  .cv-option-btn {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+
+  .modal-btn {
+    height: 45px;
+    font-size: 0.9rem;
+  }
+
+  .modal-btn .btn-text {
+    padding: 0 1.5rem;
+  }
+
+  .modal-btn .btn-icon {
+    padding: 0.8rem;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -1731,6 +1956,87 @@ section .container {
 
   100% {
     transform: rotate(360deg);
+  }
+}
+
+/*--------------------------------------------------------------
+# About Section Responsive
+--------------------------------------------------------------*/
+@media (max-width: 992px) {
+  .about-me .content {
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .about-me .content h3 {
+    font-size: 22px;
+  }
+
+  .avatar {
+    width: 200px;
+    height: 300px;
+    margin: 0 auto;
+    position: relative;
+    left: 0;
+    top: 0;
+  }
+
+  .slogan {
+    position: relative !important;
+    left: 0 !important;
+    top: 10px !important;
+    width: 100% !important;
+    height: auto !important;
+    padding: 15px;
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-me .content h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .about-me .content ul li {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .about-me .content p {
+    text-align: justify;
+    margin-bottom: 20px;
+  }
+
+  .avatar {
+    width: 180px;
+    height: 270px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-me .content h3 {
+    font-size: 18px;
+  }
+
+  .about-me .content ul li {
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+  }
+
+  .about-me .content p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .avatar {
+    width: 150px;
+    height: 230px;
+  }
+
+  .slogan {
+    font-size: 0.8rem !important;
+    padding: 10px;
   }
 }
 

@@ -17,7 +17,7 @@
   <link href="/asset/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="/asset/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
-
+  <link rel="stylesheet" href="css/chat-widget.css" />
 </head>
 
 <body>
@@ -127,8 +127,8 @@
 
           <div class="btn-cv">
             <button onclick="printCV()" class="main-btn">
-              <span class="btn-text">Print CV</span>
-              <span class="btn-icon"><i class="bi bi-printer-fill"></i></span>
+              <span class="btn-text">Download CV</span>
+              <span class="btn-icon"><i class="bi bi-download"></i></span>
             </button>
           </div>
 
@@ -136,13 +136,49 @@
           <div id="printOptionsModal" class="modal">
             <div class="modal-content">
               <span class="close" onclick="closePrintOptions()">&times;</span>
-              <h2>Select Language</h2>
-              <button onclick="printCVWithLanguage('en')" class="modal-btn d-block mb-3">
-                <span class="btn-text">English</span>
-              </button>
-              <button onclick="printCVWithLanguage('vi')" class="modal-btn d-block">
-                <span class="btn-text">Vietnamese</span>
-              </button>
+              <h2>Select CV Options</h2>
+
+              <!-- Language Selection -->
+              <div class="cv-option-group">
+                <h3>Language</h3>
+                <div class="cv-options">
+                  <button class="cv-option-btn" data-lang="en" onclick="selectLanguage('en')">
+                    <i class="bi bi-translate"></i>
+                    <span>English</span>
+                  </button>
+                  <button class="cv-option-btn" data-lang="vi" onclick="selectLanguage('vi')">
+                    <i class="bi bi-translate"></i>
+                    <span>Vietnamese</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- CV Type Selection -->
+              <div class="cv-option-group">
+                <h3>CV Type</h3>
+                <div class="cv-options">
+                  <button class="cv-option-btn" data-type="fresher" onclick="selectCVType('fresher')">
+                    <i class="bi bi-person-badge"></i>
+                    <span>Fresher</span>
+                  </button>
+                  <button class="cv-option-btn" data-type="intern" onclick="selectCVType('intern')">
+                    <i class="bi bi-person-workspace"></i>
+                    <span>Intern</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Action Buttons -->
+              <div class="cv-action-section">
+                <button id="previewCVBtn" class="modal-btn preview-btn" onclick="previewSelectedCV()" disabled>
+                  <span class="btn-text">Preview CV</span>
+                  <span class="btn-icon"><i class="bi bi-eye"></i></span>
+                </button>
+                <button id="downloadCVBtn" class="modal-btn download-btn" onclick="downloadSelectedCV()" disabled>
+                  <span class="btn-text">Download CV</span>
+                  <span class="btn-icon"><i class="bi bi-download"></i></span>
+                </button>
+              </div>
             </div>
           </div>
 
@@ -853,6 +889,85 @@
       }
     }).mount('#app');
   </script>
+
+  <!-- Test chat -->
+   <!-- Chat Widget js-->
+    <script src="./js/chat-widget.js"></script>
+
+    <!-- Chat Widget HTML (fallback nếu JS không load) -->
+    <div class="chat-widget" id="fallbackChatWidget" style="display: none;">
+        <button class="chat-widget-button" onclick="toggleFallbackWidget()">
+            <i class="fas fa-comments"></i>
+        </button>
+        <div class="chat-widget-container" id="fallbackContainer">
+            <div class="chat-widget-header">
+                <div class="header-info">
+                    <div class="avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="header-text">
+                        <h4>RAGBot Assistant</h4>
+                        <p><span class="status-indicator"></span>Online • Sẵn sàng hỗ trợ</p>
+                    </div>
+                </div>
+                <div class="chat-widget-controls">
+                    <button class="chat-widget-close" onclick="closeFallbackWidget()" title="Đóng">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="chat-widget-messages">
+                <div class="welcome-message">
+                    <i class="fas fa-robot"></i>
+                    <h4>Xin chào! 👋</h4>
+                    <p>Tôi là RAGBot, trợ lý AI của bạn. Hãy hỏi tôi bất cứ điều gì bạn muốn biết!</p>
+                </div>
+            </div>
+            <div class="chat-widget-input-area">
+                <div class="chat-widget-form">
+                    <textarea
+                        class="chat-widget-input"
+                        placeholder="Nhập tin nhắn của bạn..."
+                        rows="1"
+                    ></textarea>
+                    <button type="button" class="chat-widget-send-btn" title="Gửi tin nhắn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    // Fallback widget functions
+    function toggleFallbackWidget() {
+        const container = document.getElementById('fallbackContainer');
+        const isVisible = container.style.display === 'flex';
+        container.style.display = isVisible ? 'none' : 'flex';
+        if (!isVisible) {
+            container.classList.add('show');
+        } else {
+            container.classList.remove('show');
+        }
+    }
+
+    function closeFallbackWidget() {
+        document.getElementById('fallbackContainer').style.display = 'none';
+    }
+
+    function minimizeFallbackWidget() {
+        const container = document.getElementById('fallbackContainer');
+        container.classList.toggle('minimized');
+    }
+
+    // Show fallback if main widget doesn't load within 3 seconds
+    setTimeout(() => {
+        if (!window.chatWidget) {
+            document.getElementById('fallbackChatWidget').style.display = 'block';
+            console.log('Fallback chat widget activated');
+        }
+    }, 3000);
+    </script>
 </body>
 
 </html>
