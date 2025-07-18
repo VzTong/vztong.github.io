@@ -620,7 +620,7 @@ class ChatWidget {
 }
 
 // Initialize chat widget when DOM is loaded with performance optimization
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('Load', function() {
     // Performance optimization: Load widget asynchronously
     const loadWidget = () => {
         // Check if Font Awesome is loaded, if not load it
