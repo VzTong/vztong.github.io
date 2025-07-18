@@ -54,7 +54,7 @@ class ChatWidget {
         const widgetHTML = `
             <div class="chat-widget">
                 <button class="chat-widget-button" id="chatWidgetToggle">
-                    <i class="fas fa-comments"></i>
+                    <i class="fa-solid fa-robot"></i>
                 </button>
                 <div class="chat-widget-container" id="chatWidgetContainer">
                     <div class="chat-widget-header">
