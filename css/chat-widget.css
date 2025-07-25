@@ -1134,21 +1134,21 @@
     margin: 10px 0;
     padding: 12px;
   }
-  
+
   .quick-questions-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 6px;
   }
-  
+
   .quick-question-btn {
     padding: 8px 6px;
     min-height: 60px;
   }
-  
+
   .quick-question-btn i {
     font-size: 14px;
   }
-  
+
   .quick-question-btn span {
     font-size: 10px;
   }
@@ -1159,7 +1159,7 @@
     grid-template-columns: 1fr;
     gap: 8px;
   }
-  
+
   .quick-question-btn {
     flex-direction: row;
     justify-content: flex-start;
@@ -1167,7 +1167,7 @@
     padding: 10px 12px;
     gap: 10px;
   }
-  
+
   .quick-question-btn span {
     font-size: 12px;
     text-align: left;

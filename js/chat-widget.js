@@ -248,13 +248,13 @@ class ChatWidget {
     handleQuickQuestion(question) {
         // Hide quick questions
         this.hideQuickQuestions();
-        
+
         // Add user message
         this.addMessage(question, 'user');
-        
+
         // Update status
         this.updateStatus('<span class="status-indicator"></span>Đang suy nghĩ...');
-        
+
         // Send to API
         this.sendToAPI(question);
     }
@@ -802,7 +802,7 @@ ChatWidget.prototype.resetChat = function() {
     // Clear messages
     this.messages = [];
     const messagesContainer = document.getElementById('chatWidgetMessages');
-    
+
     // Restore welcome message and quick questions
     messagesContainer.innerHTML = `
         <div class="welcome-message">
@@ -842,10 +842,10 @@ ChatWidget.prototype.resetChat = function() {
             </div>
         </div>
     `;
-    
+
     // Clear cache
     this.messageCache.clear();
-    
+
     console.log('Chat reset successfully');
 };
 
