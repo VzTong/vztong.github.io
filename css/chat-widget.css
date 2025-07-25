@@ -1028,3 +1028,170 @@
     font-size: 16px;
   }
 }
+
+/* Quick Questions Styles */
+.quick-questions {
+  margin: 15px 0;
+  padding: 15px;
+  background: var(--color-bg-2);
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  transition: all 0.3s ease;
+}
+
+.quick-questions-header {
+  margin-bottom: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.quick-questions-header span {
+  color: var(--color-hover);
+}
+
+.quick-questions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.quick-question-btn {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 10px 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+  min-height: 70px;
+  position: relative;
+  overflow: hidden;
+}
+
+.quick-question-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.quick-question-btn:hover::before {
+  left: 100%;
+}
+
+.quick-question-btn:hover {
+  background: var(--color-hover);
+  color: var(--color-white);
+  border-color: var(--color-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--color-hover-2);
+}
+
+.quick-question-btn i {
+  font-size: 16px;
+  color: var(--color-hover);
+  transition: all 0.3s ease;
+}
+
+.quick-question-btn:hover i {
+  color: var(--color-white);
+  transform: scale(1.1);
+}
+
+.quick-question-btn span {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--color-text);
+  transition: all 0.3s ease;
+  line-height: 1.2;
+}
+
+.quick-question-btn:hover span {
+  color: var(--color-white);
+  font-weight: 600;
+}
+
+.quick-question-btn:active {
+  transform: translateY(0);
+  transition: transform 0.1s ease;
+}
+
+/* Mobile responsive cho quick questions */
+@media (max-width: 768px) {
+  .quick-questions {
+    margin: 10px 0;
+    padding: 12px;
+  }
+  
+  .quick-questions-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+  }
+  
+  .quick-question-btn {
+    padding: 8px 6px;
+    min-height: 60px;
+  }
+  
+  .quick-question-btn i {
+    font-size: 14px;
+  }
+  
+  .quick-question-btn span {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .quick-questions-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  
+  .quick-question-btn {
+    flex-direction: row;
+    justify-content: flex-start;
+    min-height: 45px;
+    padding: 10px 12px;
+    gap: 10px;
+  }
+  
+  .quick-question-btn span {
+    font-size: 12px;
+    text-align: left;
+  }
+}
+
+/* Animation cho quick questions khi hiển thị */
+.quick-questions {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover effects cho toàn bộ quick questions */
+.quick-questions:hover {
+  border-color: var(--color-hover-2);
+  box-shadow: 0 2px 8px var(--color-hover-2);
+}

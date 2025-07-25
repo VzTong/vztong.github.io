@@ -5,7 +5,7 @@ window.ChatConfig = {
         LOCAL: '/api/chat.php',
         LOCAL_WITH_PORT: 'http://localhost:8000/api/chat.php',
         EXTERNAL: 'http://170.64.160.231:5000/api/chat',
-        DEFAULT: 'http://170.64.160.231:5000/api/chat'
+        DEFAULT: '/api/chat.php'
     },
 
     // Widget Settings

@@ -6,8 +6,8 @@
 class ChatWidget {
     constructor() {
         this.isOpen = false;
-        // API URL - sử dụng external server thay vì local
-        this.apiUrl = 'http://170.64.160.231:5000/api/chat'; // External API server
+        // API URL - mặc định sử dụng local chat.php
+        this.apiUrl = '/api/chat.php'; // Local PHP API
         this.messages = [];
         this.useRealAPI = true; // Set false để dùng mock responses
 
@@ -78,6 +78,37 @@ class ChatWidget {
                             <h4>Xin chào! 👋</h4>
                             <p>Tôi là AI Assistant, trợ lý thông minh của bạn. Hãy hỏi tôi bất cứ điều gì bạn muốn biết!</p>
                         </div>
+                        <div class="quick-questions" id="quickQuestions">
+                            <div class="quick-questions-header">
+                                <span>💡 Câu hỏi gợi ý</span>
+                            </div>
+                            <div class="quick-questions-grid">
+                                <button class="quick-question-btn" data-question="Giới thiệu về bạn">
+                                    <i class="fas fa-user"></i>
+                                    <span>Giới thiệu về bạn</span>
+                                </button>
+                                <button class="quick-question-btn" data-question="Các dự án đã làm">
+                                    <i class="fas fa-project-diagram"></i>
+                                    <span>Các dự án đã làm</span>
+                                </button>
+                                <button class="quick-question-btn" data-question="Kỹ năng lập trình">
+                                    <i class="fas fa-code"></i>
+                                    <span>Kỹ năng lập trình</span>
+                                </button>
+                                <button class="quick-question-btn" data-question="Thông tin liên hệ">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>Thông tin liên hệ</span>
+                                </button>
+                                <button class="quick-question-btn" data-question="Kinh nghiệm làm việc">
+                                    <i class="fas fa-briefcase"></i>
+                                    <span>Kinh nghiệm làm việc</span>
+                                </button>
+                                <button class="quick-question-btn" data-question="Học vấn">
+                                    <i class="fas fa-graduation-cap"></i>
+                                    <span>Học vấn</span>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                     <div class="chat-widget-input-area">
                         <form class="chat-widget-form" id="chatWidgetForm">
@@ -123,6 +154,15 @@ class ChatWidget {
         // Prevent widget from closing when clicking inside
         document.getElementById('chatWidgetContainer').addEventListener('click', (e) => {
             e.stopPropagation();
+        });
+
+        // Quick questions event listeners
+        document.addEventListener('click', (e) => {
+            if (e.target.closest('.quick-question-btn')) {
+                const btn = e.target.closest('.quick-question-btn');
+                const question = btn.getAttribute('data-question');
+                this.handleQuickQuestion(question);
+            }
         });
     }
 
@@ -204,6 +244,37 @@ class ChatWidget {
         }
     }
 
+    // Handle quick question button clicks
+    handleQuickQuestion(question) {
+        // Hide quick questions
+        this.hideQuickQuestions();
+        
+        // Add user message
+        this.addMessage(question, 'user');
+        
+        // Update status
+        this.updateStatus('<span class="status-indicator"></span>Đang suy nghĩ...');
+        
+        // Send to API
+        this.sendToAPI(question);
+    }
+
+    // Hide quick questions after first interaction
+    hideQuickQuestions() {
+        const quickQuestions = document.getElementById('quickQuestions');
+        if (quickQuestions) {
+            quickQuestions.style.display = 'none';
+        }
+    }
+
+    // Show quick questions again (for reset or when needed)
+    showQuickQuestions() {
+        const quickQuestions = document.getElementById('quickQuestions');
+        if (quickQuestions) {
+            quickQuestions.style.display = 'block';
+        }
+    }
+
     autoResizeTextarea(textarea) {
         textarea.style.height = 'auto';
         const maxHeight = window.innerWidth <= 768 ? 60 : 80; // Smaller max height on mobile
@@ -251,10 +322,16 @@ class ChatWidget {
     addMessage(content, sender, timestamp = null) {
         const messagesContainer = document.getElementById('chatWidgetMessages');
         const welcomeMessage = messagesContainer.querySelector('.welcome-message');
+        const quickQuestions = messagesContainer.querySelector('.quick-questions');
 
-        // Remove welcome message on first user message
-        if (sender === 'user' && welcomeMessage) {
-            welcomeMessage.remove();
+        // Remove welcome message and quick questions on first user message
+        if (sender === 'user') {
+            if (welcomeMessage) {
+                welcomeMessage.remove();
+            }
+            if (quickQuestions) {
+                quickQuestions.remove();
+            }
         }
 
         const time = timestamp || this.formatTime(new Date());
@@ -710,6 +787,78 @@ window.clearWidgetCache = function() {
     return false;
 };
 
+// Reset chat function
+window.resetChatWidget = function() {
+    if (window.chatWidget) {
+        window.chatWidget.resetChat();
+        console.log('Chat widget reset');
+        return true;
+    }
+    return false;
+};
+
+// Reset chat method for ChatWidget class
+ChatWidget.prototype.resetChat = function() {
+    // Clear messages
+    this.messages = [];
+    const messagesContainer = document.getElementById('chatWidgetMessages');
+    
+    // Restore welcome message and quick questions
+    messagesContainer.innerHTML = `
+        <div class="welcome-message">
+            <i class="fas fa-robot"></i>
+            <h4>Xin chào! 👋</h4>
+            <p>Tôi là AI Assistant, trợ lý thông minh của bạn. Hãy hỏi tôi bất cứ điều gì bạn muốn biết!</p>
+        </div>
+        <div class="quick-questions" id="quickQuestions">
+            <div class="quick-questions-header">
+                <span>💡 Câu hỏi gợi ý</span>
+            </div>
+            <div class="quick-questions-grid">
+                <button class="quick-question-btn" data-question="Giới thiệu về bạn">
+                    <i class="fas fa-user"></i>
+                    <span>Giới thiệu về bạn</span>
+                </button>
+                <button class="quick-question-btn" data-question="Các dự án đã làm">
+                    <i class="fas fa-project-diagram"></i>
+                    <span>Các dự án đã làm</span>
+                </button>
+                <button class="quick-question-btn" data-question="Kỹ năng lập trình">
+                    <i class="fas fa-code"></i>
+                    <span>Kỹ năng lập trình</span>
+                </button>
+                <button class="quick-question-btn" data-question="Thông tin liên hệ">
+                    <i class="fas fa-envelope"></i>
+                    <span>Thông tin liên hệ</span>
+                </button>
+                <button class="quick-question-btn" data-question="Kinh nghiệm làm việc">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Kinh nghiệm làm việc</span>
+                </button>
+                <button class="quick-question-btn" data-question="Học vấn">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Học vấn</span>
+                </button>
+            </div>
+        </div>
+    `;
+    
+    // Clear cache
+    this.messageCache.clear();
+    
+    console.log('Chat reset successfully');
+};
+
+// Clear cache function
+window.clearWidgetCache = function() {
+    if (window.chatWidget) {
+        window.chatWidget.messageCache.clear();
+        console.log('Widget cache cleared');
+        return true;
+    }
+    return false;
+};
+
 // Console info for developers
 console.log('🤖 AI Assistant Chat Widget loaded!');
 console.log('Available functions:');
@@ -723,3 +872,4 @@ console.log('- sendMessageToWidget(message) - Send a message to widget');
 console.log('- getChatWidgetStatus() - Get widget status');
 console.log('- getWidgetPerformance() - Get performance metrics');
 console.log('- clearWidgetCache() - Clear message cache');
+console.log('- resetChatWidget() - Reset chat to initial state with quick questions');
