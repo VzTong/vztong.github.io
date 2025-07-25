@@ -812,6 +812,8 @@ section .container {
   left: 0;
   opacity: 0;
   display: flex;
+  padding: 1rem;
+  text-align: center;
   justify-content: center;
   align-items: center;
   -webkit-user-select: none;

@@ -75,10 +75,9 @@
 
 .chat-widget-container {
   position: absolute;
-  bottom: 80px;
   right: -30px;
   width: 380px;
-  height: 500px;
+  height: 650px;
   background: var(--color-background-2);
   border-radius: 15px;
   box-shadow: var(--box-shadow);
