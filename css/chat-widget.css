@@ -643,8 +643,8 @@
 /* Mobile First Approach */
 @media (max-width: 480px) {
   .chat-widget {
-    bottom: 20px;
-    right: 20px;
+  bottom: 20px;
+  right: 60px;
   }
 
   .chat-widget-button {
@@ -736,8 +736,8 @@
 /* Very Small Mobile Screens */
 @media (max-width: 375px) {
   .chat-widget {
-    bottom: 15px;
-    right: 15px;
+  bottom: 15px;
+  right: 50px;
   }
 
   .chat-widget-button {
@@ -789,8 +789,8 @@
 /* Tablet Portrait */
 @media (min-width: 481px) and (max-width: 768px) {
   .chat-widget {
-    bottom: 25px;
-    right: 30px;
+  bottom: 25px;
+  right: 70px;
   }
 
   .chat-widget-button {
@@ -822,8 +822,8 @@
 /* Tablet Landscape */
 @media (min-width: 769px) and (max-width: 1024px) {
   .chat-widget {
-    bottom: 30px;
-    right: 80px;
+  bottom: 30px;
+  right: 120px;
   }
 
   .chat-widget-container {
@@ -841,8 +841,8 @@
 /* Desktop Small */
 @media (min-width: 1025px) and (max-width: 1366px) {
   .chat-widget {
-    bottom: 30px;
-    right: 90px;
+  bottom: 30px;
+  right: 130px;
   }
 
   .chat-widget-container {
@@ -856,8 +856,8 @@
 /* Desktop Large */
 @media (min-width: 1367px) {
   .chat-widget {
-    bottom: 30px;
-    right: 100px;
+  bottom: 30px;
+  right: 140px;
   }
 
   .chat-widget-container {
@@ -876,8 +876,8 @@
 /* Ultra Wide Screens */
 @media (min-width: 1920px) {
   .chat-widget {
-    bottom: 40px;
-    right: 120px;
+  bottom: 40px;
+  right: 180px;
   }
 
   .chat-widget-container {

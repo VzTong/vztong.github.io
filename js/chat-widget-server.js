@@ -143,6 +143,8 @@ class ChatWidget {
         // Trigger reflow để animation hoạt động
         container.offsetHeight;
         container.classList.add('show');
+        container.style.height = '630px';
+        container.style.bottom = '0px';
 
         // Ẩn button khi widget mở để tăng không gian
         widget.classList.add('widget-open');

@@ -72,14 +72,14 @@ class ChatWidget {
                         </div>
                     </div>
                     <div class="chat-widget-input-area">
-                        <div id="quickQuestionsInput" style="gap: 10px; display: flex;">
+                        <div id="quickQuestionsInput" style="gap: 10px; display: flex; flex-wrap: wrap; width: 100%">
                             <div style="display: flex;">
-                                <button class="quick-question-btn btn-cv" data-vi="Giới thiệu về Vy" data-en="About Vy"><i class="fas fa-user"></i><span>Giới thiệu / About</span></button>
-                                <button class="quick-question-btn btn-cv" data-vi="Kỹ năng của Vy" data-en="Vy skills"><i class="fas fa-lightbulb"></i><span>Kỹ năng / Skills</span></button>
-                                <button class="quick-question-btn btn-cv" data-vi="Các dự án của Vy" data-en="Vy projects"><i class="fas fa-tasks"></i><span>Dự án / Projects</span></button>
-                                <button class="quick-question-btn btn-cv" data-vi="Kinh nghiệm của Vy" data-en="Vy experience"><i class="fas fa-briefcase"></i><span>Kinh nghiệm / Experience</span></button>
-                                <button class="quick-question-btn btn-cv" data-vi="Học vấn của Vy" data-en="Vy education"><i class="fas fa-graduation-cap"></i><span>Học vấn / Education</span></button>
-                                <button class="quick-question-btn btn-cv" data-vi="Liên hệ với Vy" data-en="Contact Vy"><i class="fas fa-envelope"></i><span>Liên hệ / Contact</span></button>
+                                <button class="quick-question-btn btn-cv" style="margin: 0px 2px !important;padding: 0px !important;display: grid;text-align: center; bottom: 5px" data-vi="Giới thiệu về Vy" data-en="About Vy"><i class="fas fa-user"></i><span style="text-align: inherit;">Giới thiệu / About</span></button>
+                                <button class="quick-question-btn btn-cv" style="margin: 0px !important;padding: 0px !important;display: grid;text-align: center; bottom: 5px" data-vi="Kỹ năng của Vy" data-en="Vy skills"><i class="fas fa-lightbulb"></i><span style="text-align: inherit;">Kỹ năng / Skills</span></button>
+                                <button class="quick-question-btn btn-cv" style="margin: 0px !important;padding: 0px !important;display: grid;text-align: center; bottom: 5px" data-vi="Các dự án của Vy" data-en="Vy projects"><i class="fas fa-tasks"></i><span style="text-align: inherit;">Dự án / Projects</span></button>
+                                <button class="quick-question-btn btn-cv" style="margin: 0px !important;padding: 0px !important;display: grid;text-align: center; bottom: 5px" data-vi="Kinh nghiệm của Vy" data-en="Vy experience"><i class="fas fa-briefcase"></i><span style="text-align: inherit;">Kinh nghiệm / Experience</span></button>
+                                <button class="quick-question-btn btn-cv" style="margin: 0px !important;padding: 0px !important;display: grid;text-align: center; bottom: 5px" data-vi="Học vấn của Vy" data-en="Vy education"><i class="fas fa-graduation-cap"></i><span style="text-align: inherit;">Học vấn / Education</span></button>
+                                <button class="quick-question-btn btn-cv" style="margin: 0px !important;padding: 0px !important;display: grid;text-align: center; bottom: 5px" data-vi="Liên hệ với Vy" data-en="Contact Vy"><i class="fas fa-envelope"></i><span style="text-align: inherit;">Liên hệ / Contact</span></button>
                             </div>
                         </div>
                         <form class="chat-widget-form" id="chatWidgetForm">
@@ -145,6 +145,8 @@ class ChatWidget {
         container.style.display = 'flex';
         container.offsetHeight;
         container.classList.add('show');
+        container.style.height = '630px';
+        container.style.bottom = '0px'; // Ensure it sticks to the bottom
         widget.classList.add('widget-open');
         this.isOpen = true;
         if (window.innerWidth <= 768) {
