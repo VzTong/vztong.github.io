@@ -197,6 +197,11 @@ class ChatWidget {
         input.style.height = 'auto';
         this.addMessage(message, 'user');
         this.updateStatus('<span class="status-indicator"></span>Đang suy nghĩ...');
+        if (!this.chatbotData) {
+            this.addMessage('Dữ liệu chưa sẵn sàng, vui lòng thử lại sau vài giây.', 'bot');
+            this.updateStatus('<span class="status-indicator"></span>Online • Sẵn sàng hỗ trợ');
+            return;
+        }
         this.handleStaticChat(message);
     }
 
@@ -262,6 +267,8 @@ class ChatWidget {
             return;
         }
         const msg = message.toLowerCase();
+        // Chuẩn hóa để nhận diện các nút quick question
+        const msgNoSpace = msg.replace(/\s+/g, '');
         if (msg.includes('english') || msg.includes('tiếng anh')) {
             this.lang = 'en';
             this.addMessage('Switched to English 🇺🇸', 'bot');
@@ -273,7 +280,17 @@ class ChatWidget {
             return;
         }
         let reply = '';
-        if (msg.includes('chào') || msg.includes('hello') || msg.includes('hi')) {
+        // Ưu tiên kiểm tra kinh nghiệm trước giới thiệu
+        if (
+            msg.includes('kinh nghiệm') ||
+            msg.includes('experience') ||
+            msg.includes('làm việc') ||
+            msg.includes('work') ||
+            msgNoSpace.includes('kinhnghiệmcủavy') ||
+            msgNoSpace.includes('vyexperience')
+        ) {
+            reply = this.chatbotData.experience[this.lang];
+        } else if (msg.includes('chào') || msg.includes('hello') || msg.includes('hi')) {
             reply = this.chatbotData.greeting[this.lang];
         } else if (msg.includes('giới thiệu') || msg.includes('about') || msg.includes('về bạn') || msg.includes('who is')) {
             reply = this.chatbotData.about[this.lang];
@@ -283,8 +300,6 @@ class ChatWidget {
             reply = this.chatbotData.skills[this.lang];
         } else if (msg.includes('liên hệ') || msg.includes('contact') || msg.includes('email')) {
             reply = this.chatbotData.contact[this.lang];
-        } else if (msg.includes('kinh nghiệm') || msg.includes('experience') || msg.includes('làm việc') || msg.includes('work')) {
-            reply = this.chatbotData.experience[this.lang];
         } else if (msg.includes('học vấn') || msg.includes('education') || msg.includes('trường') || msg.includes('university')) {
             reply = this.chatbotData.education[this.lang];
         } else {
