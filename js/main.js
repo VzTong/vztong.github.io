@@ -481,9 +481,9 @@ function resetCVSelections() {
 function printCVWithLanguage(language) {
   let url = '';
   if (language === 'en') {
-    url = 'CV_TongNhaVy_FresherBackend_EN.pdf';
+    url = 'CV_TongNhaVy_Fresher_EN.pdf';
   } else if (language === 'vi') {
-    url = 'CV_TongNhaVy_FresherBackend_VI.pdf';
+    url = 'CV_TongNhaVy_Fresher_VI.pdf';
   }
 
   // Open a new window for printing
