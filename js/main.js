@@ -382,6 +382,31 @@ function selectLanguage(language) {
   });
   document.querySelector(`[data-lang="${language}"]`).classList.add('selected');
 
+  // Show/hide CV type options based on language
+  const fresherBtn = document.querySelector('[data-type="fresher"]');
+  const internBtn = document.querySelector('[data-type="intern"]');
+  const apiDevBtn = document.querySelector('[data-type="apidev"]');
+
+  if (language === 'vi') {
+    // VI only has fresher
+    fresherBtn.style.display = 'flex';
+    internBtn.style.display = 'none';
+    if (apiDevBtn) apiDevBtn.style.display = 'none';
+
+    // Reset CV type selection if it's not available
+    if (selectedCVType === 'intern' || selectedCVType === 'apidev') {
+      selectedCVType = '';
+      document.querySelectorAll('.cv-option-btn[data-type]').forEach(btn => {
+        btn.classList.remove('selected');
+      });
+    }
+  } else if (language === 'en') {
+    // EN has all types
+    fresherBtn.style.display = 'flex';
+    internBtn.style.display = 'flex';
+    if (apiDevBtn) apiDevBtn.style.display = 'flex';
+  }
+
   // Check if download button should be enabled
   updateDownloadButton();
 }
@@ -408,10 +433,19 @@ function updateDownloadButton() {
     downloadBtn.disabled = false;
     previewBtn.disabled = false;
 
+    // Map CV type to position name for display
+    let positionText = '';
+    if (selectedCVType === 'fresher') {
+      positionText = 'Fresher';
+    } else if (selectedCVType === 'intern') {
+      positionText = 'Intern';
+    } else if (selectedCVType === 'apidev') {
+      positionText = 'API Developer';
+    }
+
     // Update button text
-    const cvTypeText = selectedCVType.charAt(0).toUpperCase() + selectedCVType.slice(1);
-    downloadBtn.querySelector('.btn-text').textContent = `Download ${cvTypeText} CV`;
-    previewBtn.querySelector('.btn-text').textContent = `Preview ${cvTypeText} CV`;
+    downloadBtn.querySelector('.btn-text').textContent = `Download ${positionText} CV`;
+    previewBtn.querySelector('.btn-text').textContent = `Preview ${positionText} CV`;
   } else {
     // Disable both buttons
     downloadBtn.disabled = true;
@@ -431,10 +465,19 @@ function previewSelectedCV() {
 
   let url = '';
   const langFolder = selectedLanguage === 'en' ? 'en' : 'vi';
-  const cvType = selectedCVType.charAt(0).toUpperCase() + selectedCVType.slice(1);
   const langCode = selectedLanguage === 'en' ? 'EN' : 'VI';
 
-  url = `CV/${langFolder}/CV_TongNhaVy_${cvType}_${langCode}.pdf`;
+  // Map CV type to actual file position name
+  let position = '';
+  if (selectedCVType === 'fresher') {
+    position = 'NETBackendFresher';
+  } else if (selectedCVType === 'intern') {
+    position = 'NETBackendIntern';
+  } else if (selectedCVType === 'apidev') {
+    position = 'BackEndAPIDeveloper';
+  }
+
+  url = `CV/${langFolder}/CV_TongNhaVy_${position}_${langCode}.pdf`;
 
   // Open PDF in new tab for preview
   window.open(url, '_blank');
@@ -448,15 +491,24 @@ function downloadSelectedCV() {
 
   let url = '';
   const langFolder = selectedLanguage === 'en' ? 'en' : 'vi';
-  const cvType = selectedCVType.charAt(0).toUpperCase() + selectedCVType.slice(1);
   const langCode = selectedLanguage === 'en' ? 'EN' : 'VI';
 
-  url = `CV/${langFolder}/CV_TongNhaVy_${cvType}_${langCode}.pdf`;
+  // Map CV type to actual file position name
+  let position = '';
+  if (selectedCVType === 'fresher') {
+    position = 'NETBackendFresher';
+  } else if (selectedCVType === 'intern') {
+    position = 'NETBackendIntern';
+  } else if (selectedCVType === 'apidev') {
+    position = 'BackEndAPIDeveloper';
+  }
+
+  url = `CV/${langFolder}/CV_TongNhaVy_${position}_${langCode}.pdf`;
 
   // Create a temporary anchor element and trigger download
   const a = document.createElement('a');
   a.href = url;
-  a.download = `CV_TongNhaVy_${cvType}_${langCode}.pdf`;
+  a.download = `CV_TongNhaVy_${position}_${langCode}.pdf`;
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
@@ -476,25 +528,4 @@ function resetCVSelections() {
 
   // Reset download button
   updateDownloadButton();
-}
-
-function printCVWithLanguage(language) {
-  let url = '';
-  if (language === 'en') {
-    url = 'CV_TongNhaVy_Fresher_EN.pdf';
-  } else if (language === 'vi') {
-    url = 'CV_TongNhaVy_Fresher_VI.pdf';
-  }
-
-  // Open a new window for printing
-  var printWindow = window.open(url, '_blank');
-
-  // Close the document after printing
-  printWindow.document.close();
-
-  // Print the window
-  printWindow.print();
-
-  // Close the modal
-  closePrintOptions();
 }
