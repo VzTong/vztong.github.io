@@ -57,6 +57,37 @@
   };
 
   /**
+   * Modal event listeners
+   */
+  window.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('printOptionsModal');
+
+    // Close modal when clicking outside
+    window.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closePrintOptions();
+      }
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('show')) {
+        closePrintOptions();
+      }
+    });
+
+    // Handle orientation change on mobile
+    window.addEventListener('orientationchange', () => {
+      if (modal.classList.contains('show')) {
+        setTimeout(() => {
+          // Recalculate modal position if needed
+          modal.scrollTop = 0;
+        }, 100);
+      }
+    });
+  });
+
+  /**
    * Easy on scroll event listener
    */
   const onscroll = (el, listener) => {
@@ -352,11 +383,15 @@
 
 // CV Modal State
 let selectedLanguage = '';
-let selectedCVType = '';
 
 function closePrintOptions() {
   const modal = document.getElementById('printOptionsModal');
   modal.classList.add('hide');
+
+  // Re-enable body scroll
+  document.body.style.overflow = '';
+  document.body.style.position = '';
+
   setTimeout(() => {
     modal.style.display = 'none';
     modal.classList.remove('show', 'hide');
@@ -368,57 +403,38 @@ function closePrintOptions() {
 function printCV() {
   const modal = document.getElementById('printOptionsModal');
   modal.style.display = 'block';
+
+  // Prevent body scroll on mobile
+  if (window.innerWidth <= 768) {
+    document.body.style.overflow = 'hidden';
+    document.body.style.position = 'fixed';
+    document.body.style.width = '100%';
+  }
+
   setTimeout(() => {
     modal.classList.add('show');
   }, 10);
+
+  // Focus trap for accessibility
+  const firstButton = modal.querySelector('.cv-option-btn');
+  if (firstButton) {
+    firstButton.focus();
+  }
 }
 
 function selectLanguage(language) {
   selectedLanguage = language;
+
+  // Haptic feedback on mobile
+  if ('vibrate' in navigator) {
+    navigator.vibrate(50);
+  }
 
   // Update UI
   document.querySelectorAll('.cv-option-btn[data-lang]').forEach(btn => {
     btn.classList.remove('selected');
   });
   document.querySelector(`[data-lang="${language}"]`).classList.add('selected');
-
-  // Show/hide CV type options based on language
-  const fresherBtn = document.querySelector('[data-type="fresher"]');
-  const internBtn = document.querySelector('[data-type="intern"]');
-  const apiDevBtn = document.querySelector('[data-type="apidev"]');
-
-  if (language === 'vi') {
-    // VI only has fresher
-    fresherBtn.style.display = 'flex';
-    internBtn.style.display = 'none';
-    if (apiDevBtn) apiDevBtn.style.display = 'none';
-
-    // Reset CV type selection if it's not available
-    if (selectedCVType === 'intern' || selectedCVType === 'apidev') {
-      selectedCVType = '';
-      document.querySelectorAll('.cv-option-btn[data-type]').forEach(btn => {
-        btn.classList.remove('selected');
-      });
-    }
-  } else if (language === 'en') {
-    // EN has all types
-    fresherBtn.style.display = 'flex';
-    internBtn.style.display = 'flex';
-    if (apiDevBtn) apiDevBtn.style.display = 'flex';
-  }
-
-  // Check if download button should be enabled
-  updateDownloadButton();
-}
-
-function selectCVType(cvType) {
-  selectedCVType = cvType;
-
-  // Update UI
-  document.querySelectorAll('.cv-option-btn[data-type]').forEach(btn => {
-    btn.classList.remove('selected');
-  });
-  document.querySelector(`[data-type="${cvType}"]`).classList.add('selected');
 
   // Check if download button should be enabled
   updateDownloadButton();
@@ -428,24 +444,15 @@ function updateDownloadButton() {
   const downloadBtn = document.getElementById('downloadCVBtn');
   const previewBtn = document.getElementById('previewCVBtn');
 
-  if (selectedLanguage && selectedCVType) {
+  if (selectedLanguage) {
     // Enable both buttons
     downloadBtn.disabled = false;
     previewBtn.disabled = false;
 
-    // Map CV type to position name for display
-    let positionText = '';
-    if (selectedCVType === 'fresher') {
-      positionText = 'Fresher';
-    } else if (selectedCVType === 'intern') {
-      positionText = 'Intern';
-    } else if (selectedCVType === 'apidev') {
-      positionText = 'API Developer';
-    }
-
     // Update button text
-    downloadBtn.querySelector('.btn-text').textContent = `Download ${positionText} CV`;
-    previewBtn.querySelector('.btn-text').textContent = `Preview ${positionText} CV`;
+    const langText = selectedLanguage === 'en' ? 'English' : 'Vietnamese';
+    downloadBtn.querySelector('.btn-text').textContent = `Download ${langText} CV`;
+    previewBtn.querySelector('.btn-text').textContent = `Preview ${langText} CV`;
   } else {
     // Disable both buttons
     downloadBtn.disabled = true;
@@ -458,50 +465,59 @@ function updateDownloadButton() {
 }
 
 function previewSelectedCV() {
-  if (!selectedLanguage || !selectedCVType) {
-    alert('Please select both language and CV type');
+  if (!selectedLanguage) {
+    alert('Please select a language');
     return;
   }
+
+  // Show loading state
+  const previewBtn = document.getElementById('previewCVBtn');
+  const originalText = previewBtn.querySelector('.btn-text').textContent;
+  previewBtn.querySelector('.btn-text').textContent = 'Opening...';
+  previewBtn.disabled = true;
 
   let url = '';
   const langFolder = selectedLanguage === 'en' ? 'en' : 'vi';
   const langCode = selectedLanguage === 'en' ? 'EN' : 'VI';
 
-  // Map CV type to actual file position name
-  let position = '';
-  if (selectedCVType === 'fresher') {
-    position = 'NETBackendFresher';
-  } else if (selectedCVType === 'intern') {
-    position = 'NETBackendIntern';
-  } else if (selectedCVType === 'apidev') {
-    position = 'BackEndAPIDeveloper';
-  }
+  // Fixed position for all CVs
+  const position = 'NETBackendFresher';
 
   url = `CV/${langFolder}/CV_TongNhaVy_${position}_${langCode}.pdf`;
 
   // Open PDF in new tab for preview
   window.open(url, '_blank');
+
+  // Reset button state
+  setTimeout(() => {
+    previewBtn.querySelector('.btn-text').textContent = originalText;
+    previewBtn.disabled = false;
+  }, 1000);
 }
 
 function downloadSelectedCV() {
-  if (!selectedLanguage || !selectedCVType) {
-    alert('Please select both language and CV type');
+  if (!selectedLanguage) {
+    alert('Please select a language');
     return;
+  }
+
+  // Show loading state
+  const downloadBtn = document.getElementById('downloadCVBtn');
+  const originalText = downloadBtn.querySelector('.btn-text').textContent;
+  downloadBtn.querySelector('.btn-text').textContent = 'Downloading...';
+  downloadBtn.disabled = true;
+
+  // Haptic feedback on mobile
+  if ('vibrate' in navigator) {
+    navigator.vibrate([100, 50, 100]);
   }
 
   let url = '';
   const langFolder = selectedLanguage === 'en' ? 'en' : 'vi';
   const langCode = selectedLanguage === 'en' ? 'EN' : 'VI';
 
-  // Map CV type to actual file position name
-  let position = '';
-  if (selectedCVType === 'fresher') {
-    position = 'NETBackendFresher';
-  } else if (selectedCVType === 'intern') {
-    position = 'NETBackendIntern';
-  } else if (selectedCVType === 'apidev') {
-    position = 'BackEndAPIDeveloper';
-  }
+  // Fixed position for all CVs
+  const position = 'NETBackendFresher';
 
   url = `CV/${langFolder}/CV_TongNhaVy_${position}_${langCode}.pdf`;
 
@@ -513,13 +529,14 @@ function downloadSelectedCV() {
   a.click();
   document.body.removeChild(a);
 
-  // Close the modal
-  closePrintOptions();
-}
-
-function resetCVSelections() {
+  // Reset button state and close modal
+  setTimeout(() => {
+    downloadBtn.querySelector('.btn-text').textContent = originalText;
+    downloadBtn.disabled = false;
+    closePrintOptions();
+  }, 1500);
+}function resetCVSelections() {
   selectedLanguage = '';
-  selectedCVType = '';
 
   // Remove all selected classes
   document.querySelectorAll('.cv-option-btn').forEach(btn => {
