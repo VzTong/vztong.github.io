@@ -450,7 +450,7 @@ function updateDownloadButton() {
     previewBtn.disabled = false;
 
     // Update button text
-    const langText = selectedLanguage === 'en' ? 'English' : 'Vietnamese';
+    const langText = selectedLanguage === 'us' ? 'English' : 'Vietnamese';
     downloadBtn.querySelector('.btn-text').textContent = `Download ${langText} CV`;
     previewBtn.querySelector('.btn-text').textContent = `Preview ${langText} CV`;
   } else {
@@ -477,8 +477,8 @@ function previewSelectedCV() {
   previewBtn.disabled = true;
 
   let url = '';
-  const langFolder = selectedLanguage === 'en' ? 'en' : 'vi';
-  const langCode = selectedLanguage === 'en' ? 'EN' : 'VI';
+  const langFolder = selectedLanguage === 'us' ? 'us' : 'vn';
+  const langCode = selectedLanguage === 'us' ? 'US' : 'VN';
 
   // Fixed position for all CVs
   const position = 'NETBackendFresher';
@@ -513,8 +513,8 @@ function downloadSelectedCV() {
   }
 
   let url = '';
-  const langFolder = selectedLanguage === 'en' ? 'en' : 'vi';
-  const langCode = selectedLanguage === 'en' ? 'EN' : 'VI';
+  const langFolder = selectedLanguage === 'us' ? 'us' : 'vn';
+  const langCode = selectedLanguage === 'us' ? 'US' : 'VN';
 
   // Fixed position for all CVs
   const position = 'NETBackendFresher';
