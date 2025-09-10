@@ -134,7 +134,7 @@
   if (typed) {
     let typed_strings = typed.getAttribute("data-typed-items");
     typed_strings = typed_strings.split(",");
-    new Typed(".typed", {
+    window.typedInstance = new Typed(".typed", {
       strings: typed_strings,
       loop: true,
       typeSpeed: 100,
@@ -379,6 +379,96 @@
    * Initiate Pure Counter
    */
   new PureCounter();
+
+// function cho đếm vô hạn với scroll trigger
+function initInfinityCounter(elementId) {
+  const el = document.getElementById(elementId);
+  if (!el) return;
+
+  const start = Number(el.dataset.start ?? 0);
+  const rawEnd = (el.dataset.end ?? '').toString().trim().toLowerCase();
+  const duration = Math.max(100, Number(el.dataset.duration ?? 1500)); // ms
+
+  // Nếu data-end đặt "infty" hoặc "∞" => sẽ hiển thị vô hạn sau khi đếm
+  const toInfinity = (rawEnd === 'infty' || rawEnd === '∞');
+
+  // Giá trị hiển thị tạm thời (nếu bạn muốn nhìn thấy đếm)
+  // Bạn có thể thay displayMax thành một số lớn hơn nếu muốn
+  const displayMax = Number(el.dataset.displaymax ?? 520);
+
+  // Set initial value
+  el.textContent = start.toLocaleString();
+
+  // Easing (smooth)
+  function easeOutQuad(t) { return t*(2-t); }
+
+  function animateCount(from, to, ms, onUpdate, onComplete) {
+    const startTime = performance.now();
+    function frame(now) {
+      const elapsed = now - startTime;
+      const t = Math.min(1, elapsed / ms);
+      const eased = easeOutQuad(t);
+      const value = Math.floor(from + (to - from) * eased);
+      onUpdate(value);
+      if (t < 1) requestAnimationFrame(frame);
+      else onComplete && onComplete();
+    }
+    requestAnimationFrame(frame);
+  }
+
+  function startAnimation() {
+    // Prevent multiple animations
+    if (el.classList.contains('animated')) return;
+    el.classList.add('animated');
+
+    // Hành vi khi muốn vô cực: đếm từ start -> displayMax trong `duration`, sau đó chuyển sang "∞"
+    if (toInfinity) {
+      el.classList.add('counting');
+      const endValue = Math.max(displayMax, start + 1);
+
+      animateCount(start, endValue, duration, (v) => {
+        el.textContent = v.toLocaleString(); // format có dấu phân cách hàng nghìn
+      }, () => {
+        // small fade then show infinity
+        el.classList.add('fading');
+        setTimeout(() => {
+          // show infinity symbol với hiệu ứng
+          el.innerHTML = '<span class="infty-symbol" title="vô cực">∞</span>';
+          el.classList.remove('counting','fading');
+        }, 200);
+      });
+
+      // optional: nếu muốn lặp (đếm lại rồi ∞) bỏ comment phần sau
+      // setInterval(() => { /* có thể lặp lại animateCount nếu cần */ }, duration + 1500);
+    } else {
+      // Nếu không phải "infty", đếm tới số bình thường (dùng data-end numeric)
+      const endNum = Number(el.dataset.end ?? displayMax);
+      animateCount(start, endNum, duration, (v) => {
+        el.textContent = v.toLocaleString();
+      });
+    }
+  }
+
+  // Create Intersection Observer to trigger animation on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        startAnimation();
+        observer.unobserve(entry.target); // Stop observing after animation starts
+      }
+    });
+  }, {
+    threshold: 0.3, // Trigger when 30% of element is visible
+    rootMargin: '0px 0px -50px 0px' // Start slightly before element comes into view
+  });
+
+  observer.observe(el);
+}
+
+// Initialize all infinity counters
+initInfinityCounter('working-hours-infty');
+initInfinityCounter('coffee-cups-infty');
+
 })();
 
 // CV Modal State
@@ -449,31 +539,52 @@ function updateDownloadButton() {
     downloadBtn.disabled = false;
     previewBtn.disabled = false;
 
-    // Update button text
-    const langText = selectedLanguage === 'us' ? 'English' : 'Vietnamese';
-    downloadBtn.querySelector('.btn-text').textContent = `Download ${langText} CV`;
-    previewBtn.querySelector('.btn-text').textContent = `Preview ${langText} CV`;
+    // Get current language from LanguageSwitcher
+    const currentLang = localStorage.getItem('language') || 'us';
+    const isVietnamese = currentLang === 'vn';
+
+    // Dynamic text based on current website language
+    const langText = selectedLanguage === 'us' ?
+      (isVietnamese ? 'Tiếng Anh' : 'English') :
+      (isVietnamese ? 'Tiếng Việt' : 'Vietnamese');
+
+    const downloadText = isVietnamese ? 'Tải CV' : 'Download CV';
+    const previewText = isVietnamese ? 'Xem trước CV' : 'Preview CV';
+
+    downloadBtn.querySelector('.btn-text').textContent = `${downloadText} ${langText}`;
+    previewBtn.querySelector('.btn-text').textContent = `${previewText} ${langText}`;
   } else {
     // Disable both buttons
     downloadBtn.disabled = true;
     previewBtn.disabled = true;
 
-    // Reset button text
-    downloadBtn.querySelector('.btn-text').textContent = 'Download CV';
-    previewBtn.querySelector('.btn-text').textContent = 'Preview CV';
+    // Reset button text based on current language
+    const currentLang = localStorage.getItem('language') || 'us';
+    const isVietnamese = currentLang === 'vn';
+
+    downloadBtn.querySelector('.btn-text').textContent = isVietnamese ? 'Tải CV' : 'Download CV';
+    previewBtn.querySelector('.btn-text').textContent = isVietnamese ? 'Xem trước CV' : 'Preview CV';
   }
 }
 
 function previewSelectedCV() {
   if (!selectedLanguage) {
-    alert('Please select a language');
+    // Dynamic alert message based on current language
+    const currentLang = localStorage.getItem('language') || 'us';
+    const alertMessage = currentLang === 'vn' ? 'Vui lòng chọn ngôn ngữ' : 'Please select a language';
+    alert(alertMessage);
     return;
   }
 
   // Show loading state
   const previewBtn = document.getElementById('previewCVBtn');
   const originalText = previewBtn.querySelector('.btn-text').textContent;
-  previewBtn.querySelector('.btn-text').textContent = 'Opening...';
+
+  // Dynamic loading text
+  const currentLang = localStorage.getItem('language') || 'us';
+  const loadingText = currentLang === 'vn' ? 'Đang mở...' : 'Opening...';
+
+  previewBtn.querySelector('.btn-text').textContent = loadingText;
   previewBtn.disabled = true;
 
   let url = '';
@@ -497,14 +608,22 @@ function previewSelectedCV() {
 
 function downloadSelectedCV() {
   if (!selectedLanguage) {
-    alert('Please select a language');
+    // Dynamic alert message based on current language
+    const currentLang = localStorage.getItem('language') || 'us';
+    const alertMessage = currentLang === 'vn' ? 'Vui lòng chọn ngôn ngữ' : 'Please select a language';
+    alert(alertMessage);
     return;
   }
 
   // Show loading state
   const downloadBtn = document.getElementById('downloadCVBtn');
   const originalText = downloadBtn.querySelector('.btn-text').textContent;
-  downloadBtn.querySelector('.btn-text').textContent = 'Downloading...';
+
+  // Dynamic loading text
+  const currentLang = localStorage.getItem('language') || 'us';
+  const loadingText = currentLang === 'vn' ? 'Đang tải...' : 'Downloading...';
+
+  downloadBtn.querySelector('.btn-text').textContent = loadingText;
   downloadBtn.disabled = true;
 
   // Haptic feedback on mobile

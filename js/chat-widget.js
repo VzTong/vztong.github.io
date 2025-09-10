@@ -4,9 +4,43 @@ class ChatWidget {
         this.isOpen = false;
         this.messages = [];
         this.chatbotData = null;
-        this.lang = 'vi';
+        this.lang = this.getCurrentLanguage();
         this.init();
         this.loadChatbotData();
+        this.bindLanguageEvents();
+    }
+
+    // Lấy ngôn ngữ hiện tại từ localStorage (được set bởi language-switcher)
+    getCurrentLanguage() {
+        const storedLang = localStorage.getItem('language') || 'us';
+        return storedLang === 'us' ? 'us' : 'vn'; // Map 'vi' to 'vn' for consistency
+    }
+
+    // Lắng nghe sự thay đổi ngôn ngữ từ language switcher
+    bindLanguageEvents() {
+        // Listen for storage changes (khi language switcher thay đổi localStorage)
+        window.addEventListener('storage', (e) => {
+            if (e.key === 'language') {
+                this.updateLanguage(e.newValue);
+            }
+        });
+
+        // Cũng check định kỳ để đảm bảo đồng bộ
+        setInterval(() => {
+            const currentLang = this.getCurrentLanguage();
+            if (currentLang !== this.lang) {
+                this.updateLanguage(currentLang);
+            }
+        }, 1000);
+    }
+
+    // Cập nhật ngôn ngữ và refresh UI
+    updateLanguage(newLang) {
+        const mappedLang = newLang === 'us' ? 'us' : 'vn';
+        if (mappedLang !== this.lang) {
+            this.lang = mappedLang;
+            this.updateChatUI();
+        }
     }
 
     loadChatbotData() {
@@ -53,12 +87,12 @@ class ChatWidget {
                                 <i class="fas fa-robot"></i>
                             </div>
                             <div class="header-text">
-                                <h4>AI Assistant</h4>
-                                <p id="widgetStatus"><span class="status-indicator"></span>Online • Sẵn sàng hỗ trợ</p>
+                                <h4 id="chatAssistantTitle">AI Assistant</h4>
+                                <p id="widgetStatus"><span class="status-indicator"></span><span id="chatOnlineStatus">${this.getOnlineText()}</span></p>
                             </div>
                         </div>
                         <div class="chat-widget-controls">
-                            <button class="chat-widget-close" id="chatWidgetClose" title="Đóng">
+                            <button class="chat-widget-close" id="chatWidgetClose" title="${this.getCloseText()}">
                                 <i class="fas fa-times"></i>
                             </button>
                         </div>
@@ -66,30 +100,47 @@ class ChatWidget {
                     <div class="chat-widget-messages" id="chatWidgetMessages">
                         <div class="welcome-message">
                             <i class="fas fa-robot"></i>
-                            <h4>Xin chào! 👋 / Hello! 👋</h4>
-                            <p>Tôi là AI Assistant, trợ lý thông minh của bạn. Hãy hỏi tôi bất cứ điều gì bạn muốn biết!</p>
-                            <p><em>I'm your AI Assistant! Ask me anything you want to know!</em></p>
+                            <h4 id="chatWelcomeTitle">${this.getWelcomeTitle()}</h4>
+                            <p id="chatWelcomeText1">${this.getWelcomeText1()}</p>
                         </div>
                     </div>
                     <div class="chat-widget-input-area">
-                        <div id="quickQuestionsInput" style="gap: 10px; display: flex; flex-wrap: wrap; width: 100%">
-                            <div style="display: flex;">
-                                <button class="quick-question-btn btn-cv" style="margin: 0px 2px !important;padding: 0px !important;display: grid;text-align: center; bottom: 5px" data-vi="Giới thiệu về Vy" data-en="About Vy"><i class="fas fa-user"></i><span style="text-align: inherit;">Giới thiệu / About</span></button>
-                                <button class="quick-question-btn btn-cv" style="margin: 0px !important;padding: 0px !important;display: grid;text-align: center; bottom: 5px" data-vi="Kỹ năng của Vy" data-en="Vy skills"><i class="fas fa-lightbulb"></i><span style="text-align: inherit;">Kỹ năng / Skills</span></button>
-                                <button class="quick-question-btn btn-cv" style="margin: 0px !important;padding: 0px !important;display: grid;text-align: center; bottom: 5px" data-vi="Các dự án của Vy" data-en="Vy projects"><i class="fas fa-tasks"></i><span style="text-align: inherit;">Dự án / Projects</span></button>
-                                <button class="quick-question-btn btn-cv" style="margin: 0px !important;padding: 0px !important;display: grid;text-align: center; bottom: 5px" data-vi="Kinh nghiệm của Vy" data-en="Vy experience"><i class="fas fa-briefcase"></i><span style="text-align: inherit;">Kinh nghiệm / Experience</span></button>
-                                <button class="quick-question-btn btn-cv" style="margin: 0px !important;padding: 0px !important;display: grid;text-align: center; bottom: 5px" data-vi="Học vấn của Vy" data-en="Vy education"><i class="fas fa-graduation-cap"></i><span style="text-align: inherit;">Học vấn / Education</span></button>
-                                <button class="quick-question-btn btn-cv" style="margin: 0px !important;padding: 0px !important;display: grid;text-align: center; bottom: 5px" data-vi="Liên hệ với Vy" data-en="Contact Vy"><i class="fas fa-envelope"></i><span style="text-align: inherit;">Liên hệ / Contact</span></button>
+                        <div id="quickQuestionsInput" class="quick-questions-container">
+                            <div class="quick-buttons-row">
+                                <button class="quick-question-btn btn-cv" data-vi="Giới thiệu về Vy" data-en="About Vy">
+                                    <i class="fas fa-user"></i>
+                                    <span id="quickBtn1">${this.getQuickBtnText(1)}</span>
+                                </button>
+                                <button class="quick-question-btn btn-cv" data-vi="Kỹ năng của Vy" data-en="Vy skills">
+                                    <i class="fas fa-lightbulb"></i>
+                                    <span id="quickBtn2">${this.getQuickBtnText(2)}</span>
+                                </button>
+                                <button class="quick-question-btn btn-cv" data-vi="Các dự án của Vy" data-en="Vy projects">
+                                    <i class="fas fa-tasks"></i>
+                                    <span id="quickBtn3">${this.getQuickBtnText(3)}</span>
+                                </button>
+                                <button class="quick-question-btn btn-cv" data-vi="Kinh nghiệm của Vy" data-en="Vy experience">
+                                    <i class="fas fa-briefcase"></i>
+                                    <span id="quickBtn4">${this.getQuickBtnText(4)}</span>
+                                </button>
+                                <button class="quick-question-btn btn-cv" data-vi="Học vấn của Vy" data-en="Vy education">
+                                    <i class="fas fa-graduation-cap"></i>
+                                    <span id="quickBtn5">${this.getQuickBtnText(5)}</span>
+                                </button>
+                                <button class="quick-question-btn btn-cv" data-vi="Liên hệ với Vy" data-en="Contact Vy">
+                                    <i class="fas fa-envelope"></i>
+                                    <span id="quickBtn6">${this.getQuickBtnText(6)}</span>
+                                </button>
                             </div>
                         </div>
                         <form class="chat-widget-form" id="chatWidgetForm">
                             <textarea
                                 class="chat-widget-input"
                                 id="chatWidgetInput"
-                                placeholder="Nhập tin nhắn của bạn..."
+                                placeholder="${this.getPlaceholderText()}"
                                 rows="1"
                             ></textarea>
-                            <button type="submit" class="chat-widget-send-btn" id="chatWidgetSend" title="Gửi tin nhắn">
+                            <button type="submit" class="chat-widget-send-btn" id="chatWidgetSend" title="${this.getSendText()}">
                                 <i class="fas fa-paper-plane"></i>
                             </button>
                         </form>
@@ -123,12 +174,86 @@ class ChatWidget {
         const quickBtns = document.querySelectorAll('#quickQuestionsInput .quick-question-btn');
         quickBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                const msg = this.lang === 'vi' ? btn.getAttribute('data-vi') : btn.getAttribute('data-en');
+                const msg = this.lang === 'vn' ? btn.getAttribute('data-vi') : btn.getAttribute('data-en');
                 const input = document.getElementById('chatWidgetInput');
                 input.value = msg;
                 this.handleSubmit({ preventDefault: () => {} });
             });
         });
+    }
+
+    // Các hàm helper để lấy text theo ngôn ngữ
+    getOnlineText() {
+        return this.lang === 'vn' ? 'Online • Sẵn sàng hỗ trợ' : 'Online • Ready to help';
+    }
+
+    getCloseText() {
+        return this.lang === 'vn' ? 'Đóng' : 'Close';
+    }
+
+    getWelcomeTitle() {
+        return this.lang === 'vn' ? 'Xin chào! 👋' : 'Hello! 👋';
+    }
+
+    getWelcomeText1() {
+        return this.lang === 'vn'
+            ? 'Tôi là AI Assistant, trợ lý thông minh của bạn. Hãy hỏi tôi bất cứ điều gì bạn muốn biết!'
+            : 'I\'m your AI Assistant! Ask me anything you want to know!';
+    }
+
+    getWelcomeText2() {
+        return this.lang === 'vn'
+            ? 'I\'m your AI Assistant! Ask me anything you want to know!'
+            : 'Tôi là AI Assistant, trợ lý thông minh của bạn. Hãy hỏi tôi bất cứ điều gì bạn muốn biết!';
+    }
+
+    getQuickBtnText(btnNumber) {
+        const texts = {
+            vn: ['Giới thiệu', 'Kỹ năng', 'Dự án', 'Kinh nghiệm', 'Học vấn', 'Liên hệ'],
+            us: ['About', 'Skills', 'Projects', 'Experience', 'Education', 'Contact']
+        };
+        return texts[this.lang][btnNumber - 1] || texts.us[btnNumber - 1];
+    }
+
+    getPlaceholderText() {
+        return this.lang === 'vn' ? 'Nhập tin nhắn của bạn...' : 'Type your message...';
+    }
+
+    getSendText() {
+        return this.lang === 'vn' ? 'Gửi tin nhắn' : 'Send message';
+    }
+
+    // Cập nhật UI khi thay đổi ngôn ngữ
+    updateChatUI() {
+        // Cập nhật các text elements
+        const elements = {
+            'chatAssistantTitle': 'AI Assistant',
+            'chatOnlineStatus': this.getOnlineText(),
+            'chatWelcomeTitle': this.getWelcomeTitle(),
+            'chatWelcomeText1': this.getWelcomeText1(),
+            'chatWelcomeText2': this.getWelcomeText2()
+        };
+
+        Object.entries(elements).forEach(([id, text]) => {
+            const element = document.getElementById(id);
+            if (element) element.textContent = text;
+        });
+
+        // Cập nhật quick buttons
+        for (let i = 1; i <= 6; i++) {
+            const btn = document.getElementById(`quickBtn${i}`);
+            if (btn) btn.textContent = this.getQuickBtnText(i);
+        }
+
+        // Cập nhật placeholder và title
+        const input = document.getElementById('chatWidgetInput');
+        if (input) input.placeholder = this.getPlaceholderText();
+
+        const sendBtn = document.getElementById('chatWidgetSend');
+        if (sendBtn) sendBtn.title = this.getSendText();
+
+        const closeBtn = document.getElementById('chatWidgetClose');
+        if (closeBtn) closeBtn.title = this.getCloseText();
     }
 
     toggleWidget() {
@@ -154,7 +279,7 @@ class ChatWidget {
             document.body.style.overflow = 'hidden';
         }
         this.removeNotificationBadge();
-        this.updateStatus('<span class="status-indicator"></span>Online • Đang trò chuyện');
+        this.updateStatus(`<span class="status-indicator"></span>${this.lang === 'vn' ? 'Online • Đang trò chuyện' : 'Online • Chatting'}`);
         setTimeout(() => {
             const input = document.getElementById('chatWidgetInput');
             if (input && window.innerWidth > 768) input.focus();
@@ -174,7 +299,7 @@ class ChatWidget {
             container.style.display = 'none';
         }, 400);
         this.isOpen = false;
-        this.updateStatus('<span class="status-indicator"></span>Offline');
+        this.updateStatus(`<span class="status-indicator"></span>${this.lang === 'vn' ? 'Offline' : 'Offline'}`);
     }
 
     updateStatus(status) {
@@ -196,10 +321,10 @@ class ChatWidget {
         input.value = '';
         input.style.height = 'auto';
         this.addMessage(message, 'user');
-        this.updateStatus('<span class="status-indicator"></span>Đang suy nghĩ...');
+        this.updateStatus(`<span class="status-indicator"></span>${this.lang === 'vn' ? 'Đang suy nghĩ...' : 'Thinking...'}`);
         if (!this.chatbotData) {
-            this.addMessage('Dữ liệu chưa sẵn sàng, vui lòng thử lại sau vài giây.', 'bot');
-            this.updateStatus('<span class="status-indicator"></span>Online • Sẵn sàng hỗ trợ');
+            this.addMessage(this.lang === 'vn' ? 'Dữ liệu chưa sẵn sàng, vui lòng thử lại sau vài giây.' : 'Data not ready, please try again in a few seconds.', 'bot');
+            this.updateStatus(`<span class="status-indicator"></span>${this.getOnlineText()}`);
             return;
         }
         this.handleStaticChat(message);
@@ -263,20 +388,24 @@ class ChatWidget {
 
     handleStaticChat(message) {
         if (!this.chatbotData) {
-            this.addMessage('Đang tải dữ liệu...', 'bot');
+            this.addMessage(this.lang === 'vn' ? 'Đang tải dữ liệu...' : 'Loading data...', 'bot');
             return;
         }
         const msg = message.toLowerCase();
         // Chuẩn hóa để nhận diện các nút quick question
         const msgNoSpace = msg.replace(/\s+/g, '');
         if (msg.includes('english') || msg.includes('tiếng anh')) {
-            this.lang = 'en';
+            this.lang = 'us';
+            localStorage.setItem('language', 'us'); // Sync với language switcher
             this.addMessage('Switched to English 🇺🇸', 'bot');
+            this.updateChatUI();
             return;
         }
         if (msg.includes('vietnamese') || msg.includes('tiếng việt')) {
-            this.lang = 'vi';
+            this.lang = 'vn';
+            localStorage.setItem('language', 'vn'); // Sync với language switcher
             this.addMessage('Đã chuyển sang tiếng Việt 🇻🇳', 'bot');
+            this.updateChatUI();
             return;
         }
         let reply = '';
@@ -303,11 +432,12 @@ class ChatWidget {
         } else if (msg.includes('học vấn') || msg.includes('education') || msg.includes('trường') || msg.includes('university')) {
             reply = this.chatbotData.education[this.lang];
         } else {
-            reply = this.lang === 'vi'
+            reply = this.lang === 'vn'
                 ? 'Bạn có thể hỏi về: Giới thiệu, Kỹ năng, Dự án, Kinh nghiệm, Học vấn, Liên hệ của Vy nhé!'
                 : 'You can ask about: About, Skills, Projects, Experience, Education, or Contact Vy!';
         }
         this.addMessage(reply, 'bot');
+        this.updateStatus(`<span class="status-indicator"></span>${this.getOnlineText()}`);
     }
 }
 

@@ -9,6 +9,51 @@
   font-family: "Open Sans", sans-serif;
 }
 
+/* Enhanced positioning to avoid conflicts */
+@media (max-width: 1366px) {
+  .chat-widget {
+    right: 80px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .chat-widget {
+    right: 70px;
+  }
+}
+
+@media (max-width: 992px) {
+  .chat-widget {
+    right: 65px;
+  }
+}
+
+@media (max-width: 768px) {
+  .chat-widget {
+    bottom: 20px;
+    right: 70px; /* More space from edge on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .chat-widget {
+    bottom: 30px;
+    right: 75px; /* Avoid back-to-top button */
+  }
+}
+
+@media (max-width: 360px) {
+  .chat-widget {
+    bottom: 30px;
+    right: 80px;
+  }
+
+  .chat-widget-container {
+    width: 250px !important;
+    height: 550px !important;
+  }
+}
+
 .chat-widget-button {
   width: 60px;
   height: 60px;
@@ -561,7 +606,55 @@
   color: var(--color-white-2);
 }
 
-/* Hiệu ứng pulse khi có tin nhắn mới */
+/* Quick Questions Responsive */
+@media (max-width: 992px) {
+  .quick-buttons-row .quick-question-btn {
+    max-width: calc(33.333% - 8px); /* 3 buttons per row on tablet */
+    min-height: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .quick-buttons-row {
+    gap: 6px;
+  }
+
+  .quick-buttons-row .quick-question-btn {
+    max-width: calc(50% - 6px); /* 2 buttons per row on mobile */
+    min-height: 55px;
+    padding: 6px 4px;
+    font-size: 10px;
+  }
+
+  .quick-buttons-row .quick-question-btn i {
+    font-size: 12px;
+    margin-bottom: 2px;
+  }
+}
+
+@media (max-width: 480px) {
+  .quick-buttons-row .quick-question-btn {
+    flex-direction: row;
+    justify-content: flex-start;
+    text-align: left;
+    min-height: 40px;
+    padding: 8px 10px;
+    gap: 8px;
+    max-width: calc(50% - 6px);
+  }
+
+  .quick-buttons-row .quick-question-btn i {
+    margin-bottom: 0;
+    margin-right: 0;
+  }
+
+  .quick-buttons-row .quick-question-btn span {
+    text-align: left;
+    font-size: 11px;
+  }
+}
+
+/* Animation cho quick questions khi hiển thị */
 .chat-widget-button.has-notification {
   animation: pulse 2s infinite;
 }
@@ -643,8 +736,8 @@
 /* Mobile First Approach */
 @media (max-width: 480px) {
   .chat-widget {
-  bottom: 20px;
-  right: 60px;
+  bottom: 30px; /* Updated to match new positioning */
+  right: 75px; /* Updated to match new positioning */
   }
 
   .chat-widget-button {
@@ -736,8 +829,8 @@
 /* Very Small Mobile Screens */
 @media (max-width: 375px) {
   .chat-widget {
-  bottom: 15px;
-  right: 50px;
+  bottom: 30px;
+  right: 80px; /* Updated positioning */
   }
 
   .chat-widget-button {
@@ -789,8 +882,8 @@
 /* Tablet Portrait */
 @media (min-width: 481px) and (max-width: 768px) {
   .chat-widget {
-  bottom: 25px;
-  right: 70px;
+  bottom: 30px;
+  right: 70px; /* Updated positioning */
   }
 
   .chat-widget-button {
@@ -823,7 +916,7 @@
 @media (min-width: 769px) and (max-width: 1024px) {
   .chat-widget {
   bottom: 30px;
-  right: 120px;
+  right: 80px; /* Updated positioning */
   }
 
   .chat-widget-container {
@@ -1173,7 +1266,48 @@
   }
 }
 
-/* Animation cho quick questions khi hiển thị */
+/* Quick Questions Container - Clean CSS without inline styles */
+.quick-questions-container {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.quick-buttons-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.quick-buttons-row .quick-question-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0;
+  padding: 8px 6px;
+  min-width: 50px;
+  min-height: 55px;
+  flex: 1;
+  max-width: calc(16.666% - 8px); /* 6 buttons per row with gap */
+  border-radius: 8px;
+  font-size: 11px;
+  line-height: 1.2;
+}
+
+.quick-buttons-row .quick-question-btn i {
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+.quick-buttons-row .quick-question-btn span {
+  text-align: center;
+  font-weight: 500;
+  word-wrap: break-word;
+  hyphens: auto;
+}
 .quick-questions {
   animation: fadeInUp 0.5s ease-out;
 }

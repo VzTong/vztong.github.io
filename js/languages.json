@@ -1,0 +1,258 @@
+{
+  "us": {
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "resume": "Resume",
+      "portfolio": "Portfolio",
+      "contact": "Contact"
+    },
+    "hero": {
+      "title": "Tong Nha Vy"
+    },
+    "about": {
+      "title": "About",
+      "subtitle": "Learn more about me",
+      "description": "Code by day, debug by night, dreaming of getaways in between!",
+      "trying": "I'm a passionate programmer who loves technology, particularly .NET, C#, and backend development. I enjoy exploring new technologies, learning different programming languages, and improving my coding skills every day.",
+      "travel": "When I'm not in front of my screen writing code, I enjoy taking trips and going on adventures. For me, both coding and traveling bring a sense of freedom and excitement.",
+      "slogan": "Enjoy the freedom, keep learning forward"
+    },
+    "resume": {
+      "title": "Resume",
+      "subtitle": "Check My Resume",
+      "summary": "Summary",
+      "summaryText": "I love diving into books and discovering new, creative things. I don't have tons of friends, but hey — the ones I do have are absolute gems. I can handle most things on my own without needing much help. People say I'm easy to get along with, but at the same time, I'm pretty independent too.",
+      "education": "Education",
+      "educationText": "Learning about information technology at university is a colorful and intriguing trip. In this world, knowledge is more than simply statistics and source code; it is also a voyage of discovering creativity and teamwork. Every discussion, activity, and challenge provides an opportunity to widen my horizons and enhance my connections. University is a journey that entails not only obtaining knowledge, but also growing oneself and connecting with a community of technology aficionados.",
+      "experience": "Professional Experience",
+      "company": "365 Ecosystem Joint Stock Company (365 EJSC)",
+      "jobDescription": "Internship focusing on backend development with .NET Core, EF Core, and gRPC. Contributed to building and maintaining internal systems that supported business operations.",
+      "achievements": [
+        "Developed internal APIs for user & transaction modules using ASP.NET Core + EF Core, improving response handling.",
+        "Applied Clean Architecture, DDD, CQRS to separate layers and enhance scalability.",
+        "Built a validation pipeline with FluentValidation for DTOs, reducing input errors.",
+        "Wrote Unit Tests for core services to ensure stability.",
+        "Integrated gRPC for inter-service communication, improving performance compared to REST."
+      ],
+      "openToWork": "Open to Work",
+      "openToWorkText": [
+        "I'm on the lookout for some exciting job opportunities in Can Tho! If you know of anything, I'd love to hear about it. Thank you!",
+        "I'm excited to bring my passion for coding and a great sense of humor to your team!",
+        "If you're looking to add to your team, I'd love to hear from you! Feel free to send me an email or give me a call. I might be teammate you're searching for!"
+      ]
+    },
+    "portfolio": {
+      "title": "Portfolio",
+      "subtitle": "My Works",
+      "all": "All",
+      "web": "Web",
+      "game": "Game",
+      "bookingTitle": "Booking hotel website",
+      "movieTitle": "Movie watching website"
+    },
+    "contact": {
+      "title": "Contact",
+      "subtitle": "Contact Me",
+      "address": "My Address",
+      "social": "Social Profiles",
+      "email": "Email Me",
+      "call": "Call Me"
+    },
+    "buttons": {
+      "downloadCV": "Download CV",
+      "backToTop": "Back to top"
+    },
+    "cvModal": {
+      "title": "Select CV Options",
+      "language": "Language",
+      "englishOption": "English",
+      "vietnameseOption": "Vietnamese",
+      "previewCV": "Preview CV",
+      "downloadCV": "Download CV"
+    },
+    "portfolioDetails": {
+      "booking": {
+        "projectInfo": "Project information",
+        "category": "Category",
+        "categoryValue": "Web development",
+        "teamSize": "Team size",
+        "projectDate": "Project date",
+        "projectDateValue": "October, 2024",
+        "role": "Role",
+        "roleValue": "Team Leader & Backend Developer",
+        "techStack": "Tech stack",
+        "projectURL": "Project URL",
+        "description": "Description:",
+        "descriptionText": "An online hotel booking website that allows customers to search rooms by date, type, and price; book and cancel reservations; track booking history; and leave hotel reviews. The admin panel supports hotel, branch, room, booking, user, comment, and report management. Built as a monolithic ASP.NET Core MVC project with a 3-layer architecture.",
+        "contributions": "Contributions:",
+        "contributionsList": [
+          "Designed system architecture and database schema with EF Core Code-First.",
+          "Built CRUD for hotels, branches, rooms, users, and admins using ASP.NET Core MVC + EF Core.",
+          "Implemented booking workflows with secure session handling and role-based authorization.",
+          "Applied Repository Pattern, Fluent API, AutoMapper for cleaner data management.",
+          "Integrated AdminLTE dashboard with pagination, statistics, and notifications."
+        ],
+        "moreInfo": "See more pictures via my GitHub profile"
+      },
+      "movie": {
+        "projectInfo": "Project information",
+        "category": "Category",
+        "categoryValue": "Personal project",
+        "projectDate": "Project date",
+        "projectDateValue": "March, 2024",
+        "role": "Role",
+        "roleValue": "Fullstack Developer",
+        "techStack": "Tech stack",
+        "projectURL": "Project URL",
+        "description": "Description:",
+        "descriptionText": "An online movie streaming website where users can browse by genre, search movies, view details, follow episodes, and comment. The admin panel supports movie, user, and role management with statistics. Built as a monolithic ASP.NET Core MVC project.",
+        "contributions": "Contributions:",
+        "contributionsList": [
+          "Designed relational database with EF Core (many-to-many: film-actor, film-genre).",
+          "Developed CRUD for movies and users with ASP.NET Core MVC + EF Core, including search, pagination, and soft delete.",
+          "Implemented authentication & authorization with cookie/session (Admin/User).",
+          "Developed responsive UI with Bootstrap, HTML, CSS, JavaScript."
+        ],
+        "moreInfo": "See more screenshots via my GitHub profile"
+      },
+      "flappybird": {
+        "projectInfo": "Project information",
+        "category": "Category",
+        "categoryValue": "Game design",
+        "projectDate": "Project date",
+        "projectDateValue": "09 December, 2023",
+        "projectURL": "Project URL",
+        "description": "This is a really frustrating game =]],<br>So please think twice before downloading and playing =}}<br>The above code is code from the internet =]]<br>Watch the gameplay video below 👇<br>Tks"
+      }
+    }
+  },
+  "vn": {
+    "nav": {
+      "home": "Trang chủ",
+      "about": "Giới thiệu",
+      "resume": "Hồ sơ",
+      "portfolio": "Dự án",
+      "contact": "Liên hệ"
+    },
+    "hero": {
+      "title": "Tống Nhã Vy"
+    },
+    "about": {
+      "title": "Giới thiệu",
+      "subtitle": "Tìm hiểu thêm về tôi",
+      "description": "Ban ngày code, ban đêm debug, còn xen giữa thì mơ mộng những chuyến đi chơi!",
+      "trying": "Tôi là một lập trình viên đam mê công nghệ, đặc biệt là .NET, C# và phát triển backend. Tôi thích khám phá những công nghệ mới, học hỏi nhiều ngôn ngữ lập trình khác nhau và trau dồi kỹ năng coding mỗi ngày.",
+      "travel": "Khi không ngồi trước màn hình để viết code, tôi thích đi du lịch và khám phá những hành trình mới. Với tôi, cả việc lập trình lẫn du lịch đều mang lại cảm giác tự do và hứng khởi.",
+      "slogan": "Hãy tận hưởng tự do và luôn tiến bước trong hành trình học tập."
+    },
+    "resume": {
+      "title": "Hồ sơ",
+      "subtitle": "Xem hồ sơ của tôi",
+      "summary": "Tóm tắt",
+      "summaryText": "Tôi thích đắm mình trong sách và khám phá những điều mới mẻ, sáng tạo. Tôi không có quá nhiều bạn bè, nhưng mà — bạn nào của tôi thì toàn hàng chất lượng 😆. Tôi có thể tự lo được hầu hết mọi thứ mà không cần nhờ vả nhiều. Người ta nói tôi dễ hòa đồng, nhưng đồng thời cũng khá độc lập.",
+      "education": "Học vấn",
+      "educationText": "Học về công nghệ thông tin ở trường đại học là một hành trình đầy màu sắc và thú vị. Trong thế giới này, tri thức không chỉ đơn thuần là những con số hay dòng mã nguồn, mà còn là chuyến đi để khám phá sự sáng tạo và tinh thần đồng đội. Mỗi cuộc thảo luận, hoạt động hay thử thách đều mang đến cơ hội để mở rộng tầm nhìn và gắn kết nhiều hơn. Đại học không chỉ là nơi tiếp thu kiến thức, mà còn là hành trình phát triển bản thân và kết nối với cộng đồng những người đam mê công nghệ.",
+      "experience": "Kinh nghiệm nghề nghiệp",
+      "company": "Công ty Cổ phần Hệ sinh thái 365 (365 EJSC)",
+      "jobDescription": "Thực tập với trọng tâm là phát triển backend bằng .NET Core, EF Core và gRPC. Tham gia xây dựng và duy trì các hệ thống nội bộ hỗ trợ hoạt động kinh doanh.",
+      "achievements": [
+        "Phát triển API nội bộ cho các module người dùng & giao dịch bằng ASP.NET Core + EF Core, cải thiện khả năng xử lý phản hồi.",
+        "Áp dụng Clean Architecture, DDD, CQRS để tách biệt các tầng và tăng khả năng mở rộng.",
+        "Xây dựng pipeline kiểm tra dữ liệu với FluentValidation cho DTOs, giảm thiểu lỗi đầu vào.",
+        "Viết Unit Test cho các dịch vụ cốt lõi nhằm đảm bảo tính ổn định.",
+        "Tích hợp gRPC cho giao tiếp giữa các service, cải thiện hiệu năng so với REST."
+      ],
+      "openToWork": "Sẵn sàng làm việc",
+      "openToWorkText": [
+        "Mình đang tìm kiếm những cơ hội việc làm thú vị ở Cần Thơ! Nếu bạn biết chỗ nào phù hợp, mình rất mong được nghe tin. Cảm ơn nhé!",
+        "Mình háo hức mang niềm đam mê lập trình và chút khiếu hài hước đến đội ngũ của bạn!",
+        "Nếu bạn đang muốn bổ sung thành viên cho team, mình rất vui được kết nối! Gửi email hoặc gọi cho mình cũng được — biết đâu mình chính là đồng đội bạn đang tìm!"
+      ]
+    },
+    "portfolio": {
+      "title": "Dự án",
+      "subtitle": "Công việc của tôi",
+      "all": "Tất cả",
+      "web": "Web",
+      "game": "Game",
+      "bookingTitle": "Trang web đặt phòng khách sạn",
+      "movieTitle": "Trang web xem phim"
+    },
+    "contact": {
+      "title": "Liên hệ",
+      "subtitle": "Liên hệ với tôi",
+      "address": "Địa chỉ của tôi",
+      "social": "Mạng xã hội",
+      "email": "Email của tôi",
+      "call": "Gọi điện"
+    },
+    "buttons": {
+      "downloadCV": "Tải CV",
+      "backToTop": "Về đầu trang"
+    },
+    "cvModal": {
+      "title": "Chọn tùy chọn CV",
+      "language": "Ngôn ngữ",
+      "englishOption": "Tiếng Anh",
+      "vietnameseOption": "Tiếng Việt",
+      "previewCV": "Xem trước CV",
+      "downloadCV": "Tải CV"
+    },
+    "portfolioDetails": {
+      "booking": {
+        "projectInfo": "Thông tin dự án",
+        "category": "Danh mục",
+        "categoryValue": "Phát triển web",
+        "teamSize": "Số thành viên",
+        "projectDate": "Thời gian thực hiện",
+        "projectDateValue": "Tháng 10, 2024",
+        "role": "Vai trò",
+        "roleValue": "Team Leader & Backend Developer",
+        "techStack": "Tech stack",
+        "projectURL": "URL dự án",
+        "description": "Mô tả dự án:",
+        "descriptionText": "Website đặt phòng khách sạn trực tuyến, cho phép khách hàng tìm kiếm phòng theo ngày, loại phòng, giá cả; đặt và hủy phòng; theo dõi lịch sử đặt phòng; và để lại đánh giá khách sạn. Bảng quản trị hỗ trợ quản lý khách sạn, chi nhánh, phòng, đặt phòng, người dùng, bình luận và báo cáo. Dự án được xây dựng theo kiến trúc 3 tầng monolithic với ASP.NET Core MVC.",
+        "contributions": "Đóng góp của tôi:",
+        "contributionsList": [
+          "Thiết kế kiến trúc hệ thống và sơ đồ cơ sở dữ liệu bằng EF Core Code-First.",
+          "Xây dựng CRUD cho khách sạn, chi nhánh, phòng, người dùng và admin bằng ASP.NET Core MVC + EF Core.",
+          "Triển khai quy trình đặt phòng với xử lý session an toàn và phân quyền dựa trên vai trò.",
+          "Áp dụng Repository Pattern, Fluent API, AutoMapper để quản lý dữ liệu sạch và hiệu quả hơn.",
+          "Tích hợp dashboard AdminLTE với phân trang, thống kê và thông báo."
+        ],
+        "moreInfo": "Xem thêm hình ảnh tại: GitHub profile"
+      },
+      "movie": {
+        "projectInfo": "Thông tin dự án",
+        "category": "Danh mục",
+        "categoryValue": "Dự án cá nhân",
+        "projectDate": "Thời gian thực hiện",
+        "projectDateValue": "Tháng 3, 2024",
+        "role": "Vai trò",
+        "roleValue": "Fullstack Developer",
+        "techStack": "Tech stack",
+        "projectURL": "URL dự án",
+        "description": "Mô tả dự án:",
+        "descriptionText": "Website xem phim trực tuyến, cho phép người dùng duyệt phim theo thể loại, tìm kiếm phim, xem chi tiết, theo dõi các tập phim và bình luận. Bảng quản trị hỗ trợ quản lý phim, người dùng và vai trò cùng thống kê dữ liệu. Dự án được xây dựng theo kiến trúc monolithic với ASP.NET Core MVC.",
+        "contributions": "Đóng góp của tôi:",
+        "contributionsList": [
+          "Thiết kế cơ sở dữ liệu quan hệ bằng EF Core (nhiều-nhiều: phim-diễn viên, phim-thể loại).",
+          "Phát triển CRUD cho phim và người dùng bằng ASP.NET Core MVC + EF Core, bao gồm tìm kiếm, phân trang và xóa mềm (soft delete).",
+          "Triển khai xác thực và phân quyền với cookie/session (Admin/User).",
+          "Xây dựng giao diện responsive với Bootstrap, HTML, CSS và JavaScript."
+        ],
+        "moreInfo": "Xem thêm ảnh màn hình tại: GitHub profile"
+      },
+      "flappybird": {
+        "projectInfo": "Thông tin dự án",
+        "category": "Danh mục",
+        "categoryValue": "Thiết kế game",
+        "projectDate": "Thời gian thực hiện",
+        "projectDateValue": "09 tháng 12, 2023",
+        "projectURL": "URL dự án",
+        "description": "Đây là một trò chơi cực kỳ \"cay cú\" =]]<br>Nên hãy suy nghĩ kỹ trước khi tải về và chơi =}}<br>Code ở trên là mình lấy từ trên mạng =]]<br>Xem video gameplay bên dưới 👇<br>Cảm ơn nhé!"
+      }
+    }
+  }
+}

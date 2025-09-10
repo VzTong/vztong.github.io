@@ -39,8 +39,15 @@
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
-      <div class="theme-btn">
-        <i class="fas fa-adjust"></i>
+      <div class="controls-container">
+        <div class="lang-toggle" title="Switch Language">
+          <img id="currentFlag" src="https://flagcdn.com/w20/us.png" alt="EN" width="20" height="15">
+          <span class="hover-hint">Click to switch</span>
+        </div>
+
+        <div class="theme-btn">
+          <i class="fas fa-adjust"></i>
+        </div>
       </div>
 
       <div class="social-links">
@@ -78,12 +85,12 @@
         <div class="col-lg-3" data-aos="fade-right">
           <div class="avatar">
             <img src="pics/user/=]]]].jpg" class="img-fluid" />
-            <div class="slogan img-fluid slogan-font" style="width: 15.3rem;height: 22rem;left: 8.3rem;">
+            <div class="slogan img-fluid slogan-font" style="width: 15.3rem;height: 22rem;left: 9.9rem;">
               <i>"Enjoy the freedom, keep learning forward"</i>
             </div>
           </div>
         </div>
-        <div class="col-lg-8 pt-4 pt-lg-0 content" style="width: 75%;" data-aos="fade-left">
+        <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
           <h3>Code by day, debug by night, dreaming of getaways in between!😆</h3>
           <p class="fst-italic">
             Trying to become a skilled developer
@@ -139,11 +146,11 @@
               <div class="cv-option-group">
                 <h3>Language</h3>
                 <div class="cv-options">
-                  <button class="cv-option-btn" data-lang="en" onclick="selectLanguage('en')">
+                  <button class="cv-option-btn" data-lang="us" onclick="selectLanguage('us')">
                     <i class="bi bi-translate"></i>
                     <span>English</span>
                   </button>
-                  <button class="cv-option-btn" data-lang="vi" onclick="selectLanguage('vi')">
+                  <button class="cv-option-btn" data-lang="vn" onclick="selectLanguage('vn')">
                     <i class="bi bi-translate"></i>
                     <span>Vietnamese</span>
                   </button>
@@ -193,7 +200,7 @@
         <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
           <div class="count-box">
             <i class="bi bi-journal-richtext"></i>
-            <span data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="1"
+            <span data-purecounter-start="0" data-purecounter-end="25" data-purecounter-duration="1"
               class="purecounter"></span>
             <p>Projects</p>
           </div>
@@ -202,8 +209,13 @@
         <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
           <div class="count-box">
             <i class="bi bi-clock-history"></i>
-            <span data-purecounter-start="0" data-purecounter-end="7200" data-purecounter-duration="1"
-              class="purecounter"></span>
+            <span id="working-hours-infty"
+              data-start="0"
+              data-end="infty"
+              data-duration="2000"
+              aria-live="polite"
+              style="font-weight:700; font-size:2rem;">
+            0</span>
             <p>Working Hours</p>
           </div>
         </div>
@@ -211,8 +223,13 @@
         <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
           <div class="count-box">
             <i class="bi bi-cup-hot-fill"></i>
-            <span data-purecounter-start="0" data-purecounter-end="2700" data-purecounter-duration="1"
-              class="purecounter"></span>
+            <span id="coffee-cups-infty"
+              data-start="0"
+              data-end="infty"
+              data-duration="2000"
+              aria-live="polite"
+              style="font-weight:700; font-size:2rem;">
+            0</span>
             <p>Coffee Cups</p>
           </div>
         </div>
@@ -253,35 +270,6 @@
             <span class="skill">
               <span class="progress-text" id="animatedText">
                 <i class="bi bi-chevron-right"></i>
-                HTML | CSS | JavaScript
-              </span>
-            </span>
-          </div>
-
-          <div class="progress">
-            <span class="skill">
-              <span class="progress-text" id="animatedText">
-                <i class="bi bi-chevron-right"></i>
-                PHP | Laravel
-              </span>
-            </span>
-          </div>
-
-          <div class="progress">
-            <span class="skill">
-              <span class="progress-text" id="animatedText">
-                <i class="bi bi-chevron-right"></i>
-                EF | LINQ
-              </span>
-            </span>
-          </div>
-        </div>
-
-        <div class="col-lg-6">
-          <div class="progress">
-            <span class="skill">
-              <span class="progress-text" id="animatedText">
-                <i class="bi bi-chevron-right"></i>
                 C# | ASP.NET Core | ASP.NET Framework
               </span>
             </span>
@@ -291,23 +279,90 @@
             <span class="skill">
               <span class="progress-text" id="animatedText">
                 <i class="bi bi-chevron-right"></i>
-                RESTs API | gRPC
+                Entity Framework Core | LINQ
               </span>
             </span>
           </div>
-        </div>
 
-        <div class="progress">
-          <span class="skill">
-            <span class="progress-text" id="animatedText">
-              <i class="bi bi-chevron-right"></i>
-              SOLID
+          <div class="progress">
+            <span class="skill">
+              <span class="progress-text" id="animatedText">
+                <i class="bi bi-chevron-right"></i>
+                REST APIs | gRPC
+              </span>
             </span>
-          </span>
-        </div>
-      </div>
+          </div>
 
-    </div>
+          <div class="progress">
+            <span class="skill">
+              <span class="progress-text" id="animatedText">
+                <i class="bi bi-chevron-right"></i>
+                SQL Server | MySQL
+              </span>
+            </span>
+          </div>
+
+          <div class="progress">
+            <span class="skill">
+              <span class="progress-text" id="animatedText">
+                <i class="bi bi-chevron-right"></i>
+                Git | GitHub | Postman
+              </span>
+            </span>
+          </div>
+
+        </div>
+
+        <div class="col-lg-6">
+
+          <div class="progress">
+            <span class="skill">
+              <span class="progress-text" id="animatedText">
+                <i class="bi bi-chevron-right"></i>
+                Clean Architecture | DDD | CQRS
+              </span>
+            </span>
+          </div>
+
+          <div class="progress">
+            <span class="skill">
+              <span class="progress-text" id="animatedText">
+                <i class="bi bi-chevron-right"></i>
+                SOLID Principles | Design Patterns
+              </span>
+            </span>
+          </div>
+
+          <div class="progress">
+            <span class="skill">
+              <span class="progress-text" id="animatedText">
+                <i class="bi bi-chevron-right"></i>
+                Unit Testing | FluentValidation
+              </span>
+            </span>
+          </div>
+
+          <div class="progress">
+            <span class="skill">
+              <span class="progress-text" id="animatedText">
+                <i class="bi bi-chevron-right"></i>
+                HTML | CSS | JavaScript | Bootstrap
+              </span>
+            </span>
+          </div>
+
+          <div class="progress">
+            <span class="skill">
+              <span class="progress-text" id="animatedText">
+                <i class="bi bi-chevron-right"></i>
+                Postman | AutoMapper | Repository Pattern
+              </span>
+            </span>
+          </div>
+
+        </div>
+
+      </div>
 
     </div><!-- End Skills -->
 
@@ -414,10 +469,7 @@
             <h4>Tong Nha Vy</h4>
             <p>
               <em>
-                I enjoy immersing myself in reading and discovering new and innovative things. I don't have many
-                friends, yet I'm not entirely alone. It's simply that I can still accomplish a lot of things on my own
-                without needing assistance. I am known to be adaptable to others, yet I am also self-sufficient in all
-                respects.
+                I love diving into books and discovering new, creative things. I don’t have tons of friends, but hey — the ones I do have are absolute gems. I can handle most things on my own without needing much help. People say I’m easy to get along with, but at the same time, I’m pretty independent too.
               </em>
             </p>
             <p>
@@ -869,6 +921,9 @@
   <script src="js/main.js"></script>
   <!-- <script src="js/chat-widget-server.js"></script> -->
   <script src="js/chat-widget.js"></script>
+
+  <!-- Language Switcher -->
+  <script src="js/language-switcher.js"></script>
 
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
