@@ -40,7 +40,10 @@
   --color-background-slogan: rgba(1, 1, 1, .7);          /* Dùng cho ảnh nền trắng*/
   --color-background-services-icon-box: rgba(204, 204, 204, 0.1);
   --color-box-mini: rgba(255, 255, 255, 0.08);
+  --color-box-mini-1: rgba(255, 255, 255, 0.05);
   --color-box-mini-2: rgba(255, 255, 255, 0.1);
+  --color-box-mini-3: rgba(255, 255, 255, 0.2);
+  --color-box-mini-4: rgba(0, 0, 0, 0.1);
   --color-text: #18d26e;
   --color-text-shadow: #15BB62;
   --color-text-slogan: #7de5d2;
@@ -84,7 +87,10 @@
   --color-background-slogan: rgba(254, 254, 254, .7);
   --color-background-services-icon-box: rgba(51, 51, 51, 0.1);
   --color-box-mini: rgba(1, 1, 1, 0.08);
+  --color-box-mini-1: rgba(1, 1, 1, 0.05);
   --color-box-mini-2: rgba(1, 1, 1, 0.1);
+  --color-box-mini-3: rgba(1, 1, 1, 0.2);
+  --color-box-mini-4: rgba(255, 255, 255, 0.1);
   --color-text: #F56692;
   --color-text-shadow: #c1174a;
   --color-text-slogan: #F56692;
@@ -1902,20 +1908,43 @@ section .container {
 # Skills
 --------------------------------------------------------------*/
 .skills .progress {
-  height: 60px;
+  height: auto;
   display: block;
-  background: none;
-  border-radius: 0;
+  background: linear-gradient(135deg, var(--color-box-mini-2), var(--color-box-mini-1));
+  border-radius: 15px;
+  margin-bottom: 15px;
+  padding: 20px 25px;
+  box-shadow: 0 8px 32px var(--color-box-mini-4);
+  backdrop-filter: blur(20px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.skills .progress:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--color-primary) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
 }
 
 .skills .progress .skill {
-  padding: 10px 0;
+  padding: 0;
   margin: 0;
-  text-transform: uppercase;
   display: block;
-  font-weight: 600;
+  font-weight: 500;
   font-family: "Poppins", sans-serif;
   color: var(--color-white);
+  font-size: 16px;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 2;
 }
 
 .skills .progress .skill .val {
@@ -1925,12 +1954,19 @@ section .container {
 
 .progress-text {
   opacity: 1;
-  transform: translateX(-100%);
-  transition: opacity 0.5s, transform 0.5s;
+  transform: translateX(0);
+  transition: all 0.5s ease;
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 .progress-text i {
-  color: var(--color-text);
+  color: var(--color-primary);
+  font-size: 20px;
+  font-weight: bold;
+  min-width: 20px;
+  text-shadow: 0 0 10px var(--color-primary);
 }
 
 .show {
@@ -1938,54 +1974,90 @@ section .container {
   transform: translateX(0);
 }
 
+/* Force chevron color */
+.bi-chevron-right {
+  color: var(--color-text) !important;
+  font-weight: 900 !important;
+}
+
+/* Skills container styling */
+.skills-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.skills-content .col-lg-6 {
+  flex: 0 0 calc(50% - 10px);
+  max-width: calc(50% - 10px);
+  padding: 0 10px;
+}
+
+/* Responsive layout for skills */
+@media (max-width: 991px) {
+  .skills-content .col-lg-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
 /* Enhanced Skills Responsive Design */
 @media (max-width: 768px) {
   .skills .progress {
-    height: 50px;
-    margin-bottom: 15px;
+    padding: 15px 20px;
+    margin-bottom: 12px;
   }
 
   .skills .progress .skill {
-    padding: 8px 0;
     font-size: 14px;
+    letter-spacing: 0.8px;
   }
 
   .progress-text i {
-    font-size: 14px;
+    font-size: 18px;
+  }
+
+  .progress-text {
+    gap: 12px;
   }
 }
 
 @media (max-width: 480px) {
   .skills .progress {
-    height: 45px;
-    margin-bottom: 12px;
+    padding: 12px 18px;
+    margin-bottom: 10px;
   }
 
   .skills .progress .skill {
-    padding: 6px 0;
     font-size: 13px;
+    letter-spacing: 0.6px;
   }
 
   .progress-text {
-    font-size: 13px;
+    gap: 10px;
   }
 
   .progress-text i {
-    font-size: 12px;
+    font-size: 16px;
+  }
+
+  .skills-content .col-lg-6 {
+    padding: 0 5px;
   }
 }
 
 @media (max-width: 360px) {
   .skills .progress {
-    height: 40px;
+    padding: 10px 15px;
   }
 
   .skills .progress .skill {
     font-size: 12px;
+    letter-spacing: 0.5px;
   }
 
-  .progress-text {
-    font-size: 12px;
+  .progress-text i {
+    font-size: 15px;
   }
 }
 
@@ -3136,69 +3208,180 @@ section .container {
 }
 
 @media (max-width: 480px) {
-  .about-me .content h3 {
-    font-size: 18px;
-    line-height: 1.3;
+  /* Stack layout for mobile */
+  .about-me .row {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 20px;
   }
 
-  .about-me .content ul li {
-    margin-bottom: 12px;
-    font-size: 0.9rem;
+  .about-me .col-lg-3,
+  .about-me .col-lg-8 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 0 15px !important;
+  }
+
+  /* Center avatar section */
+  .about-me .col-lg-3 {
+    display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-  }
-
-  .about-me .content ul li strong {
-    margin-right: 0;
-    margin-bottom: 5px;
-  }
-
-  .about-me .content p {
-    font-size: 0.9rem;
-    line-height: 1.6;
+    margin-bottom: 20px;
   }
 
   .avatar {
     width: 150px;
     height: 230px;
+    margin: 0 auto;
   }
 
   .slogan {
-    font-size: 1rem !important;
-    padding: 10px;
+    font-size: 0.9rem !important;
+    padding: 8px;
+    text-align: center;
+    width: fit-content;
+  }
+
+  /* Content styling */
+  .about-me .content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about-me .content h3 {
+    font-size: 18px;
+    line-height: 1.3;
+    text-align: center;
+    margin-bottom: 15px;
+    order: 1;
+  }
+
+  .about-me .content .fst-italic {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    order: 2;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: var(--color-text) !important;
+  }
+
+  /* Personal info comes first on mobile */
+  .about-me .content .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    flex-direction: column;
+    order: 3;
+  }
+
+  .about-me .content .col-lg-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 15px;
+  }
+
+  /* Description paragraph comes after personal info on mobile */
+  .about-me .content > p:last-of-type {
+    order: 4;
+    margin-top: 15px;
+  }
+
+  .about-me .content ul {
+    padding: 0;
+  }
+
+  .about-me .content ul li {
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    flex-wrap: wrap;
+  }
+
+  .about-me .content ul li i {
+    margin-right: 8px;
+    font-size: 14px;
+    color: var(--color-primary);
+  }
+
+  .about-me .content ul li strong {
+    margin-right: 8px;
+    min-width: 80px;
+  }
+
+  .about-me .content p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    text-align: justify;
+    margin-bottom: 20px;
   }
 
   /* Fix button container */
   .btn-cv {
     width: 100%;
     justify-content: center;
-    margin-top: 10%;
+    margin-top: 20px;
   }
 }
 
-/* Very small screens */
+/* Very small screens - 360px and below */
 @media (max-width: 360px) {
+  .about-me .col-lg-3,
+  .about-me .col-lg-8 {
+    padding: 0 10px !important;
+  }
+
+  .avatar {
+    width: 120px;
+    height: 185px;
+  }
+
+  .slogan {
+    font-size: 0.8rem !important;
+    padding: 6px;
+    width: 120px;
+    left: 120px !important;
+  }
+
   .about-me .content h3 {
     font-size: 16px;
   }
 
-  .about-me .content ul li {
+  .about-me .content .fst-italic {
     font-size: 0.85rem;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .about-me .content ul li {
+    font-size: 0.8rem;
+    margin-bottom: 6px;
+  }
+
+  .about-me .content ul li strong {
+    min-width: 70px;
+    font-size: 0.8rem;
+  }
+
+  .about-me .content ul li i {
+    font-size: 12px;
+    margin-right: 6px;
   }
 
   .about-me .content p {
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .btn-cv .main-btn {
+    padding: 10px 20px;
     font-size: 0.85rem;
-  }
-
-  .avatar {
-    width: 130px;
-    height: 200px;
-  }
-
-  .slogan {
-    font-size: 0.9rem !important;
-    padding: 8px;
   }
 }
 
