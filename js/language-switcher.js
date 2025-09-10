@@ -231,6 +231,58 @@ class LanguageSwitcher {
                 secondP.innerHTML = about.travel;
             }
         }
+
+        // Update personal info labels and values
+        if (about.personalInfo) {
+            // Update all personal info labels
+            const personalLabels = document.querySelectorAll('#about ul li strong');
+            personalLabels.forEach(label => {
+                const text = label.textContent.toLowerCase();
+                if (text.includes('birthday') || text.includes('sinh nhật')) {
+                    label.textContent = about.personalInfo.birthday;
+                } else if (text.includes('website')) {
+                    label.textContent = about.personalInfo.website;
+                } else if (text.includes('phone') || text.includes('số điện thoại')) {
+                    label.textContent = about.personalInfo.phone;
+                } else if (text.includes('address') || text.includes('địa chỉ')) {
+                    label.textContent = about.personalInfo.address;
+                } else if (text.includes('age') || text.includes('tuổi')) {
+                    label.textContent = about.personalInfo.age;
+                } else if (text.includes('degree') || text.includes('bằng cấp')) {
+                    label.textContent = about.personalInfo.degree;
+                } else if (text.includes('email')) {
+                    label.textContent = about.personalInfo.email;
+                } else if (text.includes('freelance') || text.includes('status') || text.includes('hiện tại')) {
+                    label.textContent = about.personalInfo.freelance;
+                }
+            });
+
+            // Update specific values
+            const birthdayValue = document.getElementById('birthday-value');
+            if (birthdayValue && about.personalInfo.birthdayValue) {
+                birthdayValue.textContent = about.personalInfo.birthdayValue;
+            }
+
+            const addressValue = document.getElementById('address-value');
+            if (addressValue && about.personalInfo.addressValue) {
+                const flag = addressValue.querySelector('img');
+                addressValue.innerHTML = about.personalInfo.addressValue;
+                if (flag) {
+                    addressValue.appendChild(document.createTextNode('\n                    '));
+                    addressValue.appendChild(flag);
+                }
+            }
+
+            const freelanceValue = document.getElementById('freelance-value');
+            if (freelanceValue && about.personalInfo.freelanceValue) {
+                freelanceValue.textContent = about.personalInfo.freelanceValue;
+            }
+
+            const degreeValue = document.getElementById('degree-value');
+            if (degreeValue && about.personalInfo.degreeValue) {
+                degreeValue.textContent = about.personalInfo.degreeValue;
+            }
+        }
     }
 
     updateResumeSection(resume) {
@@ -448,36 +500,63 @@ class LanguageSwitcher {
     }
 }
 
-// Initialize when DOM is loaded
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initLanguageSwitcher);
-} else {
-    // DOM is already loaded
-    initLanguageSwitcher();
-}
-
-function initLanguageSwitcher() {
-    // Immediate attempt to bind events
-    const immediateToggle = document.querySelector('.lang-toggle');
-    if (immediateToggle) {
-        immediateToggle.addEventListener('click', function() {
-            // Simple language switch without class
-            const currentFlag = document.getElementById('currentFlag');
-            if (currentFlag) {
-                const isUS = currentFlag.src.includes('us.png');
-                currentFlag.src = isUS ? 'https://flagcdn.com/w20/vn.png' : 'https://flagcdn.com/w20/us.png';
-                currentFlag.alt = isUS ? 'VN' : 'US';
-                localStorage.setItem('language', isUS ? 'vn' : 'us');
-            }
-        });
+// Global fallback function for manual testing
+window.manualLanguageSwitch = function() {
+    const currentFlag = document.getElementById('currentFlag');
+    if (currentFlag) {
+        const isUS = currentFlag.src.includes('us.png');
+        const newLang = isUS ? 'vn' : 'us';
+        currentFlag.src = `https://flagcdn.com/w20/${newLang}.png`;
+        currentFlag.alt = newLang.toUpperCase();
+        localStorage.setItem('language', newLang);
+        console.log('Language switched to:', newLang);
     }
+};
 
-    // Wait a bit more to ensure all elements are rendered
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Wait a moment for all elements to be fully rendered
     setTimeout(() => {
         try {
             new LanguageSwitcher();
         } catch (error) {
             console.error('Error creating LanguageSwitcher:', error);
+            // Fallback initialization
+            initSimpleLanguageSwitcher();
         }
-    }, 1000); // Increased delay
+    }, 500);
+});
+
+// Simple fallback language switcher
+function initSimpleLanguageSwitcher() {
+    const langToggle = document.querySelector('.lang-toggle');
+    const currentFlag = document.getElementById('currentFlag');
+
+    if (!langToggle || !currentFlag) return;
+
+    // Get current language from localStorage or default to 'us'
+    let currentLang = localStorage.getItem('language') || 'us';
+
+    // Set initial flag
+    currentFlag.src = currentLang === 'us' ? 'https://flagcdn.com/w20/us.png' : 'https://flagcdn.com/w20/vn.png';
+    currentFlag.alt = currentLang.toUpperCase();
+
+    // Add click event
+    langToggle.addEventListener('click', function() {
+        currentLang = currentLang === 'us' ? 'vn' : 'us';
+        currentFlag.src = currentLang === 'us' ? 'https://flagcdn.com/w20/us.png' : 'https://flagcdn.com/w20/vn.png';
+        currentFlag.alt = currentLang.toUpperCase();
+        localStorage.setItem('language', currentLang);
+
+        // Try to apply translations if available
+        try {
+            const switcher = new LanguageSwitcher();
+            switcher.currentLanguage = currentLang;
+            switcher.loadTranslations().then(() => {
+                switcher.applyLanguage(currentLang);
+            });
+        } catch (error) {
+            console.warn('Advanced language switching not available:', error);
+        }
+    });
 }
