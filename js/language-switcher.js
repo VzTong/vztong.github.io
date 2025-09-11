@@ -70,30 +70,21 @@ class LanguageSwitcher {
     switchLanguage() {
         const newLanguage = this.currentLanguage === 'us' ? 'vn' : 'us';
 
-        // Add switching animation
-        const langToggle = document.querySelector('.lang-toggle');
-        langToggle.classList.add('switching');
-
         // Haptic feedback on mobile
         if ('vibrate' in navigator) {
             navigator.vibrate(50);
         }
 
-        setTimeout(() => {
-            this.currentLanguage = newLanguage;
-            localStorage.setItem('language', newLanguage);
+        this.currentLanguage = newLanguage;
+        localStorage.setItem('language', newLanguage);
 
-            // Update flag
-            const currentFlag = document.getElementById('currentFlag');
-            currentFlag.src = this.flags[newLanguage];
-            currentFlag.alt = newLanguage.toUpperCase();
+        // Update flag
+        const currentFlag = document.getElementById('currentFlag');
+        currentFlag.src = this.flags[newLanguage];
+        currentFlag.alt = newLanguage.toUpperCase();
 
-            // Apply translations
-            this.applyLanguage(newLanguage);
-
-            // Remove animation class
-            langToggle.classList.remove('switching');
-        }, 300);
+        // Apply translations
+        this.applyLanguage(newLanguage);
     }
 
     applyLanguage(lang) {
@@ -303,11 +294,22 @@ class LanguageSwitcher {
             } else if (text.includes('education') || text.includes('học vấn')) {
                 title.textContent = resume.education;
             } else if (text.includes('work') || text.includes('experience') || text.includes('kinh nghiệm')) {
-                title.textContent = resume.experience;
+                title.textContent = resume.workExperienceTitle;
             } else if (text.includes('open to work') || text.includes('sẵn sàng')) {
                 title.textContent = resume.openToWork;
             }
         });
+
+        // Update specific titled elements
+        const workExpTitle = document.getElementById('work-experience-title');
+        if (workExpTitle && resume.workExperienceTitle) {
+            workExpTitle.textContent = resume.workExperienceTitle;
+        }
+
+        const openToWorkTitle = document.getElementById('open-to-work-title');
+        if (openToWorkTitle && resume.openToWork) {
+            openToWorkTitle.textContent = resume.openToWork;
+        }
 
         // Update summary text
         const summaryText = document.querySelector('.resume-item p em');
@@ -323,6 +325,17 @@ class LanguageSwitcher {
                 p.textContent = resume.educationText;
             }
         });
+
+        // Update university name and address
+        const universityName = document.getElementById('university-name');
+        if (universityName && resume.universityName) {
+            universityName.textContent = resume.universityName;
+        }
+
+        const universityAddress = document.getElementById('university-address');
+        if (universityAddress && resume.universityAddress) {
+            universityAddress.textContent = resume.universityAddress;
+        }
 
         // Update company name
         const companyName = document.querySelector('.resume-item em');

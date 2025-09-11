@@ -38,8 +38,11 @@
       "summary": "Summary",
       "summaryText": "I love diving into books and discovering new, creative things. I don't have tons of friends, but hey — the ones I do have are absolute gems. I can handle most things on my own without needing much help. People say I'm easy to get along with, but at the same time, I'm pretty independent too.",
       "education": "Education",
+      "universityName": "Nam Can Tho University",
+      "universityAddress": "168, Nguyen Van Cu (extended), An Binh Ward, Ninh Kieu District, Can Tho City, Vietnam",
       "educationText": "Learning about information technology at university is a colorful and intriguing trip. In this world, knowledge is more than simply statistics and source code; it is also a voyage of discovering creativity and teamwork. Every discussion, activity, and challenge provides an opportunity to widen my horizons and enhance my connections. University is a journey that entails not only obtaining knowledge, but also growing oneself and connecting with a community of technology aficionados.",
       "experience": "Professional Experience",
+      "workExperienceTitle": "Work experience",
       "company": "365 Ecosystem Joint Stock Company (365 EJSC)",
       "jobDescription": "Internship focusing on backend development with .NET Core, EF Core, and gRPC. Contributed to building and maintaining internal systems that supported business operations.",
       "achievements": [
@@ -180,8 +183,11 @@
       "summary": "Tóm tắt",
       "summaryText": "Tôi thích đắm mình trong sách và khám phá những điều mới mẻ, sáng tạo. Tôi không có quá nhiều bạn bè, nhưng mà — bạn nào của tôi thì toàn hàng chất lượng 😆. Tôi có thể tự lo được hầu hết mọi thứ mà không cần nhờ vả nhiều. Người ta nói tôi dễ hòa đồng, nhưng đồng thời cũng khá độc lập.",
       "education": "Học vấn",
+      "universityName": "Đại học Nam Cần Thơ",
+      "universityAddress": "168, Nguyễn Văn Cừ (Nối Dài), An Bình, Ninh Kiều, Cần Thơ",
       "educationText": "Học về công nghệ thông tin ở trường đại học là một hành trình đầy màu sắc và thú vị. Trong thế giới này, tri thức không chỉ đơn thuần là những con số hay dòng mã nguồn, mà còn là chuyến đi để khám phá sự sáng tạo và tinh thần đồng đội. Mỗi cuộc thảo luận, hoạt động hay thử thách đều mang đến cơ hội để mở rộng tầm nhìn và gắn kết nhiều hơn. Đại học không chỉ là nơi tiếp thu kiến thức, mà còn là hành trình phát triển bản thân và kết nối với cộng đồng những người đam mê công nghệ.",
       "experience": "Kinh nghiệm nghề nghiệp",
+      "workExperienceTitle": "Kinh nghiệm làm việc",
       "company": "Công ty Cổ phần Hệ sinh thái 365 (365 EJSC)",
       "jobDescription": "Thực tập với trọng tâm là phát triển backend bằng .NET Core, EF Core và gRPC. Tham gia xây dựng và duy trì các hệ thống nội bộ hỗ trợ hoạt động kinh doanh.",
       "achievements": [

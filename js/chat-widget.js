@@ -1,13 +1,19 @@
 // Chat Widget - Static JS version, no backend required
 class ChatWidget {
     constructor() {
-        this.isOpen = false;
-        this.messages = [];
-        this.chatbotData = null;
-        this.lang = this.getCurrentLanguage();
-        this.init();
-        this.loadChatbotData();
-        this.bindLanguageEvents();
+        try {
+            this.isOpen = false;
+            this.messages = [];
+            this.chatbotData = null;
+            this.lang = this.getCurrentLanguage();
+            this.init();
+            this.loadChatbotData();
+            this.bindLanguageEvents();
+        } catch (error) {
+            console.error('Chat widget constructor error:', error);
+            // Use fallback data immediately if constructor fails
+            this.useFallbackData();
+        }
     }
 
     // Lấy ngôn ngữ hiện tại từ localStorage (được set bởi language-switcher)
@@ -44,11 +50,72 @@ class ChatWidget {
     }
 
     loadChatbotData() {
-        fetch('js/chatbot-data.json')
-            .then(res => res.json())
-            .then(data => {
-                this.chatbotData = data;
-            });
+        // Try multiple paths for hosting compatibility
+        const possiblePaths = [
+            'js/chatbot-data.json',
+            './js/chatbot-data.json',
+            '/js/chatbot-data.json',
+            '../js/chatbot-data.json'
+        ];
+
+        const tryLoadData = (pathIndex = 0) => {
+            if (pathIndex >= possiblePaths.length) {
+                console.error('Could not load chatbot data from any path');
+                this.useFallbackData();
+                return;
+            }
+
+            fetch(possiblePaths[pathIndex])
+                .then(res => {
+                    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                    return res.json();
+                })
+                .then(data => {
+                    this.chatbotData = data;
+                    console.log('Chatbot data loaded successfully from:', possiblePaths[pathIndex]);
+                })
+                .catch(err => {
+                    console.warn(`Failed to load from ${possiblePaths[pathIndex]}:`, err);
+                    tryLoadData(pathIndex + 1);
+                });
+        };
+
+        tryLoadData();
+    }
+
+    useFallbackData() {
+        // Fallback data embedded directly in the script
+        this.chatbotData = {
+            "greeting": {
+                "vn": "Xin chào! 👋 Mình là AI bạn thân của Vy đây!\n\nBạn muốn biết gì về Vy không? Hỏi về kỹ năng, dự án, kinh nghiệm, học vấn, liên hệ... gì cũng được nhé! 😄\n\nMuốn biết chi tiết hơn thì lượn một vòng trang web này nha! 🚀",
+                "us": "Hello there! 👋 I'm Vy's AI bestie!\n\nWhat do you wanna know about Vy? Ask about skills, projects, experience, education, contact... anything goes! 😄\n\nFor more juicy details, take a stroll around this website! 🚀"
+            },
+            "about": {
+                "vn": "👩‍💻 Vy là người vừa mê code vừa nghiện du lịch!\n\nBan ngày code, ban đêm debug, còn xen giữa thì mơ mộng những chuyến đi chơi! 😆 Sinh viên CNTT đam mê .NET, C#, backend, thích khám phá công nghệ mới và... cả thế giới nữa!\n\nSlogan sống: 'Hãy tận hưởng tự do và luôn tiến bước trong hành trình học tập.' ✨\n\nMuốn biết thêm về hành trình 'lập trình viên lang thang' của Vy? Lướt tiếp trang web này nhé! 🎒",
+                "us": "👩‍💻 Vy is someone who loves coding AND wandering!\n\nCode by day, debug by night, dreaming of getaways in between! 😆 IT student passionate about .NET, C#, backend, loves exploring new tech and... the world too!\n\nLife motto: 'Enjoy the freedom, keep learning forward.' ✨\n\nWanna know more about Vy's 'wandering programmer' journey? Keep scrolling this website! 🎒"
+            },
+            "projects": {
+                "vn": "🎬 Dự án 'chất lượng' của Vy: website xem phim (để cày phim lúc rảnh), game Flappy Bird cực 'cay cú' 😤, hệ thống đặt phòng khách sạn (để book chỗ đi chơi)...\n\nMỗi dự án đều mang đậm 'chất Vy' - vừa thực tế vừa vui! 🎯\n\nMuốn xem chi tiết từng dự án? Ghé mục Portfolio trên trang web này nhé! Có hình đẹp đấy! 😎📸",
+                "us": "🎬 Vy's 'quality' projects: movie website (for binge-watching during free time), super 'frustrating' Flappy Bird game 😤, hotel booking system (to book places for adventures)...\n\nEach project has that 'Vy touch' - practical yet fun! 🎯\n\nWanna see project details? Check out the Portfolio section on this website! There are pretty pictures! 😎📸"
+            },
+            "skills": {
+                "vn": "💡 Kỹ năng 'độc đáo' của Vy: C#, .NET, SQL, Git, Postman, Python, VueJs... và khả năng debug đến 3h sáng mà vẫn \"tỉnh\"! 😴\n\nLuôn ham học hỏi công nghệ mới mỗi ngày - từ backend đến frontend, từ code đến... coffee! ☕\n\nMuốn xem kỹ năng chi tiết? Lướt tiếp trang web này để khám phá thêm nhé! 🔍",
+                "us": "💡 Vy's 'unique' skills: C#, .NET, SQL, Git, Postman, Python, VueJs... and the ability to debug until 3 AM and still be \"awake\"! 😴\n\nAlways eager to learn new tech daily - from backend to frontend, from code to... coffee! ☕\n\nWant detailed skills? Keep browsing this website to discover more! 🔍"
+            },
+            "contact": {
+                "vn": "📧 Email: vzz95559@gmail.com (reply nhanh như chớp! ⚡)\n📱 Điện thoại: 0848 735 559 (có thể gọi để hỏi về code hoặc... địa điểm du lịch đẹp! 😊)\n🌏 Kiên Giang, Việt Nam (quê hương tôm cá! 🦐)\n\nMạng xã hội: Facebook, LinkedIn, GitHub - follow để cập nhật hành trình coding & traveling của Vy! 📱\n\nMuốn kết nối hoặc hợp tác? Đừng ngại liên hệ nhé! Info chi tiết ở cuối trang web này! 🤝",
+                "us": "📧 Email: vzz95559@gmail.com (lightning-fast replies! ⚡)\n📱 Phone: 0848 735 559 (you can call about coding or... beautiful travel spots! 😊)\n🌏 Kien Giang, Vietnam (shrimp and fish hometown! 🦐)\n\nSocials: Facebook, LinkedIn, GitHub - follow to keep up with Vy's coding & traveling adventures! 📱\n\nWanna connect or collaborate? Don't hesitate to reach out! Detailed info at the bottom of this website! 🤝"
+            },
+            "experience": {
+                "vn": "🧑‍💻 Kinh nghiệm 'thực chiến': Thực tập sinh .NET Backend tại 365 EJSC - nơi mình học được cách 'chiến đấu' với bugs và... deadline! 😅\n\nLàm dự án thực tế, phát triển API, teamwork cực vui (và đôi khi căng thẳng), áp dụng Clean Architecture, CQRS... nghe fancy nhưng thực ra là để code 'sạch sẽ' hơn thôi! 🧹\n\nCòn có mấy dự án cá nhân 'tự sướng' về web, game, quản lý dữ liệu nữa!\n\nMuốn xem chi tiết? Ghé mục Resume trên trang web này nhé! 📄",
+                "us": "🧑‍💻 'Real combat' experience: .NET Backend Intern at 365 EJSC - where I learned to 'fight' bugs and... deadlines! 😅\n\nWorked on real projects, developed APIs, super fun teamwork (and sometimes stressful), applied Clean Architecture, CQRS... sounds fancy but actually just to make code 'cleaner'! 🧹\n\nAlso got some 'self-indulgent' personal projects in web, games, data management!\n\nWanna see details? Check out the Resume section on this website! 📄"
+            },
+            "education": {
+                "vn": "🎓 Học vấn: Đại học Nam Cần Thơ, ngành CNTT - nơi mình 'lăn lộn' với code và... assignments không ngừng! 📚\n\nThích lập trình, công nghệ web, và cả những buổi thảo luận 'nảy lửa' với bạn bè về tech mới! 💬\n\nHọc đại học không chỉ là absorb kiến thức mà còn là kết nối với cộng đồng tech lovers! 🤝\n\nMuốn biết thêm về cuộc sống sinh viên IT? Xem thêm ở mục About trên trang web này! 🎒",
+                "us": "🎓 Education: Nam Can Tho University, IT major - where I 'wrestle' with code and... endless assignments! 📚\n\nLove programming, web tech, and those 'heated' discussions with friends about new tech! 💬\n\nUniversity isn't just about absorbing knowledge but also connecting with fellow tech lovers! 🤝\n\nWanna know more about IT student life? Check out the About section on this website! 🎒"
+            }
+        };
+        console.log('Using fallback chatbot data');
     }
 
     init() {
@@ -322,11 +389,18 @@ class ChatWidget {
         input.style.height = 'auto';
         this.addMessage(message, 'user');
         this.updateStatus(`<span class="status-indicator"></span>${this.lang === 'vn' ? 'Đang suy nghĩ...' : 'Thinking...'}`);
+
+        // If chatbotData is still null, use fallback
         if (!this.chatbotData) {
-            this.addMessage(this.lang === 'vn' ? 'Dữ liệu chưa sẵn sàng, vui lòng thử lại sau vài giây.' : 'Data not ready, please try again in a few seconds.', 'bot');
+            this.useFallbackData();
+        }
+
+        if (!this.chatbotData) {
+            this.addMessage(this.lang === 'vn' ? 'Xin lỗi, tôi đang gặp vấn đề kỹ thuật. Vui lòng thử lại sau.' : 'Sorry, I\'m having technical issues. Please try again later.', 'bot');
             this.updateStatus(`<span class="status-indicator"></span>${this.getOnlineText()}`);
             return;
         }
+
         this.handleStaticChat(message);
     }
 
@@ -442,6 +516,32 @@ class ChatWidget {
 }
 
 // Khởi tạo widget khi trang đã load
-window.addEventListener('DOMContentLoaded', () => {
-    new ChatWidget();
+document.addEventListener('DOMContentLoaded', () => {
+    try {
+        new ChatWidget();
+        console.log('Chat widget initialized successfully');
+    } catch (error) {
+        console.error('Failed to initialize chat widget:', error);
+        // Try again after a delay
+        setTimeout(() => {
+            try {
+                new ChatWidget();
+                console.log('Chat widget initialized on second attempt');
+            } catch (retryError) {
+                console.error('Chat widget initialization failed completely:', retryError);
+            }
+        }, 2000);
+    }
+});
+
+// Alternative initialization for older browsers
+window.addEventListener('load', () => {
+    if (!document.querySelector('.chat-widget')) {
+        try {
+            new ChatWidget();
+            console.log('Chat widget initialized via window load event');
+        } catch (error) {
+            console.error('Window load initialization failed:', error);
+        }
+    }
 });
