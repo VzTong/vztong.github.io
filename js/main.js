@@ -592,7 +592,7 @@ function previewSelectedCV() {
   const langCode = selectedLanguage === 'us' ? 'US' : 'VN';
 
   // Fixed position for all CVs
-  const position = 'NETBackendFresher';
+  const position = 'Fresher';
 
   url = `CV/${langFolder}/CV_TongNhaVy_${position}_${langCode}.pdf`;
 
@@ -636,7 +636,7 @@ function downloadSelectedCV() {
   const langCode = selectedLanguage === 'us' ? 'US' : 'VN';
 
   // Fixed position for all CVs
-  const position = 'NETBackendFresher';
+  const position = 'Fresher';
 
   url = `CV/${langFolder}/CV_TongNhaVy_${position}_${langCode}.pdf`;
 
