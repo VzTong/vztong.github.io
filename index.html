@@ -143,58 +143,96 @@
             </button>
           </div>
 
-          <!-- Modal for print options -->
+          <!-- Modal Hồ sơ & Tài liệu (layout 2 card) -->
           <div id="printOptionsModal" class="modal">
-            <div class="modal-content">
-              <span class="close" onclick="closePrintOptions()">&times;</span>
-              <h2>Select CV Options</h2>
+            <div class="modal-content docs-modal">
+              <button type="button" class="docs-modal-close" onclick="closePrintOptions()"
+                aria-label="Đóng">&times;</button>
 
-              <!-- Language Selection -->
-              <div class="cv-option-group">
-                <h3>Language</h3>
-                <div class="cv-options">
-                  <button class="cv-option-btn" data-lang="us" onclick="selectLanguage('us')">
-                    <i class="bi bi-translate"></i>
-                    <span>English</span>
-                  </button>
-                  <button class="cv-option-btn" data-lang="vn" onclick="selectLanguage('vn')">
-                    <i class="bi bi-translate"></i>
-                    <span>Vietnamese</span>
-                  </button>
-                </div>
+              <header class="docs-modal-header">
+                <h2>Hồ sơ &amp; Tài liệu</h2>
+                <p class="docs-modal-sub">Xem và tải trực tiếp Master CV và Phụ lục văn bằng tốt nghiệp</p>
+              </header>
+
+              <div class="docs-cards">
+                <!-- Card CV -->
+                <article class="docs-card docs-card--cv">
+                  <div class="docs-card-badge">CV TỔNG HỢP</div>
+                  <div class="docs-card-title">
+                    <i class="bi bi-file-earmark-text"></i>
+                    <span>MASTER CV</span>
+                  </div>
+                  <p class="docs-card-desc">
+                    Hồ sơ năng lực kỹ sư Backend .NET / C#, thực tập tại 365 EJSC,
+                    các dự án Booking hotel, Movie watching, FlappyBird.
+                  </p>
+                  <ul class="docs-card-highlights">
+                    <li>.NET / ASP.NET Core / EF Core</li>
+                    <li>Clean Architecture · DDD · CQRS</li>
+                    <li>SQL Server · gRPC · REST APIs</li>
+                  </ul>
+
+                  <!-- Chọn ngôn ngữ CV -->
+                  <div class="docs-lang-row">
+                    <button type="button" class="cv-option-btn" data-lang="us" onclick="selectLanguage('us')">
+                      <i class="bi bi-translate"></i> English
+                    </button>
+                    <button type="button" class="cv-option-btn" data-lang="vn" onclick="selectLanguage('vn')">
+                      <i class="bi bi-translate"></i> Tiếng Việt
+                    </button>
+                  </div>
+
+                  <div class="docs-card-meta">
+                    <span>CV_TongNhaVy_Fresher_*.pdf</span>
+                  </div>
+
+                  <div class="docs-card-actions">
+                    <button type="button" id="previewCVBtn" class="docs-btn docs-btn--ghost"
+                      onclick="previewSelectedCV()" disabled>
+                      <i class="bi bi-eye"></i> Xem trực tiếp
+                    </button>
+                    <button type="button" id="downloadCVBtn" class="docs-btn docs-btn--primary"
+                      onclick="downloadSelectedCV()" disabled>
+                      <i class="bi bi-download"></i> Tải về
+                    </button>
+                  </div>
+                </article>
+
+                <!-- Card Phụ lục — CHỈ XEM, KHÔNG TẢI -->
+                <article class="docs-card docs-card--transcript">
+                  <div class="docs-card-badge docs-card-badge--green">PHỤ LỤC VB</div>
+                  <div class="docs-card-title">
+                    <i class="bi bi-award"></i>
+                    <span>PHỤ LỤC VĂN BẰNG TỐT NGHIỆP</span>
+                  </div>
+                  <p class="docs-card-desc">
+                    Phụ lục văn bằng tốt nghiệp đại học chính quy — ngành Công nghệ thông tin.
+                  </p>
+                  <ul class="docs-card-highlights">
+                    <li>Chỉ xem trực tiếp trên trang</li>
+                    <li>Không hỗ trợ tải về</li>
+                  </ul>
+
+                  <div class="docs-card-meta">
+                    <span>phu-luc-vb-tot-nghiep.pdf</span>
+                  </div>
+
+                  <div class="docs-card-actions">
+                    <button type="button" class="docs-btn docs-btn--ghost" onclick="previewTranscript()">
+                      <i class="bi bi-eye"></i> Xem trực tiếp
+                    </button>
+                    <!-- Không có nút Tải về -->
+                  </div>
+
+                  <!-- Viewer ẩn, hiện khi bấm Xem -->
+                  <div id="transcriptViewerWrap" style="display:none; margin-top: 1rem;">
+                    <embed id="transcriptEmbed" type="application/pdf" width="100%" height="420"
+                      style="border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);" />
+                  </div>
+                </article>
               </div>
 
-              <!-- Transcript / Bảng điểm — tách riêng, không dùng selectedLanguage -->
-              <div class="cv-option-group transcript-section">
-                <h3>Transcript</h3>
-                <div class="cv-options">
-                  <button type="button" class="cv-option-btn" onclick="previewTranscript()">
-                    <i class="bi bi-eye"></i>
-                    <span>Xem bảng điểm</span>
-                  </button>
-                  <button type="button" class="cv-option-btn" onclick="downloadTranscript()">
-                    <i class="bi bi-download"></i>
-                    <span>Tải bảng điểm</span>
-                  </button>
-                </div>
-                <!-- Ẩn mặc định, hiện khi bấm Xem -->
-                <div id="transcriptViewerWrap" style="display:none; margin-top: 1rem;">
-                  <embed id="transcriptEmbed" type="application/pdf" width="100%" height="480"
-                    style="border-radius: 8px; border: 1px solid var(--color-background-4);" />
-                </div>
-              </div>
-
-              <!-- Action Buttons -->
-              <div class="cv-action-section">
-                <button id="previewCVBtn" class="modal-btn preview-btn" onclick="previewSelectedCV()" disabled>
-                  <span class="btn-text">Preview CV</span>
-                  <span class="btn-icon"><i class="bi bi-eye"></i></span>
-                </button>
-                <button id="downloadCVBtn" class="modal-btn download-btn" onclick="downloadSelectedCV()" disabled>
-                  <span class="btn-text">Download CV</span>
-                  <span class="btn-icon"><i class="bi bi-download"></i></span>
-                </button>
-              </div>
+              <p class="docs-modal-hint">Đóng cửa sổ [ESC]</p>
             </div>
           </div>
 
@@ -872,35 +910,25 @@
 
       <div class="row mt-2">
 
-        <div class="col-md-6 d-flex align-items-stretch">
-          <div class="info-box">
-            <i class="bx bx-map"></i>
-            <h3>My Address</h3>
-            <p>Kien Giang Province, Vietnam</p>
-          </div>
-        </div>
-
-        <div class="col-md-6 mt-4 mt-md-0 d-flex align-items-stretch">
+        <div class="col-md-4 mt-4 mt-md-0 d-flex align-items-stretch">
           <div class="info-box">
             <i class="bx bx-share-alt"></i>
             <h3>Social Profiles</h3>
             <div class="social-links">
-              <!-- <a href="#" class="twitter"><i class="bi bi-twitter"></i></a> -->
               <a href="https://www.facebook.com/TongNhaVy.VzTong" target="_blank" class="facebook">
                 <i class="bi bi-facebook"></i>
               </a>
-              <!-- <a href="#" class="instagram"><i class="bi bi-instagram"></i></a> -->
               <a href="https://github.com/VzTong" data-title="Github" target="_blank">
                 <i class="fab fa-github"></i>
               </a>
-              <!-- <a href="#" class="google-plus"><i class="bi bi-skype"></i></a> -->
               <a href="https://www.linkedin.com/in/nha-vy-tong-vztong/" target="_blank" class="linkedin">
-                <i class="bi bi-linkedin"></i></a>
+                <i class="bi bi-linkedin"></i>
+              </a>
             </div>
           </div>
         </div>
 
-        <div class="col-md-6 mt-4 d-flex align-items-stretch">
+        <div class="col-md-4 mt-4 d-flex align-items-stretch">
           <div class="info-box">
             <i class="bx bx-envelope"></i>
             <h3>Email Me</h3>
@@ -908,7 +936,7 @@
           </div>
         </div>
 
-        <div class="col-md-6 mt-4 d-flex align-items-stretch">
+        <div class="col-md-4 mt-4 d-flex align-items-stretch">
           <div class="info-box">
             <i class="bx bx-phone-call"></i>
             <h3>Call Me</h3>
@@ -918,10 +946,6 @@
           </div>
         </div>
 
-        <iframe class="col-md-6 mt-4 d-flex align-items-stretch"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2012402.1453149302!2d103.17888394076114!3d9.894510601310635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3109da1c921a75cd%3A0x87e74126335ff37a!2zS2nDqm4gR2lhbmcsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1701587414872!5m2!1svi!2s"
-          frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen allowfullscreen=""
-          loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
   </section><!-- End Contact Section -->
