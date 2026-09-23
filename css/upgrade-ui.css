@@ -1,12 +1,11 @@
 /* css/upgrade-ui.css
- * MỤC ĐÍCH: Nâng cấp cảm giác UI (micro-interaction, glass, skeleton)
- * theo hướng restraint + motion có chủ đích. Không đụng style.css gốc.
+ * MỤC ĐÍCH: Micro-interaction, glass, skeleton, chỉnh light-mode dịu hơn,
+ * làm đẹp nút back-to-top (về Home). Không đụng style.css gốc.
  * Rollback: xóa <link rel="stylesheet" href="css/upgrade-ui.css">.
  */
 
-/* ---------- Tokens (không đổi palette gốc, chỉ đặt tên để tái dùng) ---------- */
 :root {
-  --u-ease: cubic-bezier(0.22, 1, 0.36, 1);          /* mượt, hơi “spring” nhẹ */
+  --u-ease: cubic-bezier(0.22, 1, 0.36, 1);
   --u-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --u-duration: 0.28s;
   --u-duration-fast: 0.18s;
@@ -15,7 +14,6 @@
   --u-shadow-soft: 0 6px 18px rgba(0, 0, 0, 0.14);
 }
 
-/* Giảm chuyển động nếu người dùng yêu cầu */
 @media (prefers-reduced-motion: reduce) {
   :root {
     --u-duration: 0.01ms;
@@ -23,22 +21,20 @@
   }
 }
 
-/* ---------- Micro-interactions có chủ đích ---------- */
+/* ---------- Micro-interactions (không đụng nút CV gốc) ---------- */
 .portfolio-item,
-.main-btn,
-.cv-option-btn,
-.modal-btn,
 .avatar img,
 .theme-btn,
-.lang-toggle {
+.lang-toggle,
+.back-to-top {
   transition:
     transform var(--u-duration) var(--u-ease),
     box-shadow var(--u-duration) var(--u-ease),
     background-color var(--u-duration-fast) ease,
-    border-color var(--u-duration-fast) ease;
+    border-color var(--u-duration-fast) ease,
+    opacity var(--u-duration) var(--u-ease);
 }
 
-/* Portfolio card: nâng nhẹ + bóng, không scale mạnh (tránh cảm giác “AI generic”) */
 .portfolio-item {
   border-radius: var(--u-radius);
   will-change: transform;
@@ -54,21 +50,6 @@
   transition-duration: var(--u-duration-fast);
 }
 
-/* Nút chính & nút modal: nhấn rõ nhưng vẫn nhẹ */
-.main-btn:hover,
-.cv-option-btn:hover,
-.modal-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--u-shadow-soft);
-}
-
-.main-btn:active,
-.cv-option-btn:active,
-.modal-btn:active {
-  transform: translateY(0);
-}
-
-/* Avatar: chỉ scale rất nhẹ + soft shadow */
 .avatar img {
   border-radius: var(--u-radius);
 }
@@ -78,30 +59,52 @@
   box-shadow: var(--u-shadow-soft);
 }
 
-/* Theme / language control: feedback rõ khi hover */
 .theme-btn:hover,
 .lang-toggle:hover {
   transform: scale(1.08);
 }
 
-/* ---------- Glass header (chỉ khi đã header-top) ---------- */
+/* Nút CV / modal: KHÔNG ghi đè transform — giữ nguyên hiệu ứng gốc trong style.css */
+
+/* ---------- Glass header ---------- */
 @supports (backdrop-filter: blur(8px)) {
   #header.header-top {
     background: rgba(10, 10, 12, 0.62);
     backdrop-filter: blur(12px) saturate(1.2);
     -webkit-backdrop-filter: blur(12px) saturate(1.2);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    transition: background var(--u-duration) var(--u-ease),
-                backdrop-filter var(--u-duration) var(--u-ease);
   }
 
   body.light-mode #header.header-top {
-    background: rgba(255, 255, 255, 0.78);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    background: rgba(255, 252, 250, 0.82);
   }
 }
 
-/* ---------- Skeleton / lazy image ---------- */
+/* ---------- Light mode tinh chỉnh (dịu hơn, không chói) ---------- */
+body.light-mode {
+  /* Nền hơi ấm, bớt trắng tinh */
+  --color-background-body-before: rgba(255, 250, 247, 0.72);
+  --color-background-2: rgba(255, 252, 250, 0.92);
+  --color-background-3: rgba(255, 250, 247, 0.88);
+  --color-background-6: rgba(255, 252, 250, 0.85);
+  --color-background-modal-cv: rgba(255, 248, 245, 0.88);
+
+  /* Box / card dịu hơn */
+  --color-box-mini: rgba(0, 0, 0, 0.04);
+  --color-box-mini-1: rgba(0, 0, 0, 0.03);
+  --color-box-mini-2: rgba(0, 0, 0, 0.06);
+  --color-box-mini-3: rgba(0, 0, 0, 0.1);
+
+  /* Chữ đậm hơn một chút để dễ đọc trên nền sáng */
+  --color-white: #1a1f24;
+  --color-white-2: rgba(26, 31, 36, 0.75);
+  --color-white-3: rgba(26, 31, 36, 0.85);
+
+  /* Accent giữ hồng gốc nhưng hover dịu hơn */
+  --color-hover: #e03d6c;
+  --color-hover-2: rgba(245, 102, 146, 0.55);
+}
+
+/* Skeleton ảnh */
 .portfolio-item img {
   background: linear-gradient(110deg, #1c1c1e 8%, #2a2a2e 18%, #1c1c1e 33%);
   background-size: 200% 100%;
@@ -109,19 +112,12 @@
 }
 
 body.light-mode .portfolio-item img {
-  background: linear-gradient(110deg, #e9e9eb 8%, #f5f5f7 18%, #e9e9eb 33%);
+  background: linear-gradient(110deg, #f0ebe8 8%, #faf6f3 18%, #f0ebe8 33%);
   background-size: 200% 100%;
 }
 
 @keyframes skeleton-shimmer {
-  to {
-    background-position-x: -200%;
-  }
-}
-
-/* Tắt shimmer khi đã load xong (nếu browser hỗ trợ) */
-.portfolio-item img[loading="lazy"] {
-  /* giữ animation đến khi load; có thể tắt bằng JS nếu muốn */
+  to { background-position-x: -200%; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -130,6 +126,57 @@ body.light-mode .portfolio-item img {
     background: #1c1c1e;
   }
   body.light-mode .portfolio-item img {
-    background: #e9e9eb;
+    background: #f0ebe8;
   }
+}
+
+/* ---------- Back-to-top / về Home ---------- */
+.back-to-top {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--color-text);
+  color: #fff;
+  box-shadow: var(--u-shadow-soft);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 996;
+}
+
+.back-to-top.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.back-to-top:hover {
+  transform: translateY(-3px) scale(1.06);
+  box-shadow: var(--u-shadow);
+  background: var(--color-hover);
+  color: #fff;
+}
+
+.back-to-top i {
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+body.light-mode .back-to-top {
+  color: #fff;
+}
+/* Transcript section trong modal CV */
+.transcript-section {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-background-4);
+}
+
+.transcript-section h3 {
+  margin-bottom: 0.75rem;
+}
+
+#transcriptViewerWrap {
+  max-height: 520px;
+  overflow: auto;
 }

@@ -41,7 +41,8 @@
       </nav><!-- .navbar -->
 
       <div class="controls-container">
-        <div class="lang-toggle" title="Switch Language" onclick="window.manualLanguageSwitch && window.manualLanguageSwitch()">
+        <div class="lang-toggle" title="Switch Language"
+          onclick="window.manualLanguageSwitch && window.manualLanguageSwitch()">
           <img id="currentFlag" src="https://flagcdn.com/w20/us.png" loading="lazy" alt="EN" width="20" height="15">
           <span class="hover-hint">Click to switch</span>
         </div>
@@ -118,16 +119,21 @@
             <div class="col-lg-6">
               <ul>
                 <li id="app"><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>{{age}}</span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span id="degree-value">IT Engineer</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span id="degree-value">IT
+                    Engineer</span></li>
                 <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>vz95559@gmail.com</span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>Status:</strong> <span id="freelance-value">Open to work</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Status:</strong> <span id="freelance-value">Open to
+                    work</span></li>
               </ul>
             </div>
           </div>
           <p>
-            I'm a passionate programmer who loves technology, particularly .NET, C#, and backend development. I enjoy exploring new technologies, learning different programming languages, and improving my coding skills every day.
+            I'm a passionate programmer who loves technology, particularly .NET, C#, and backend development. I enjoy
+            exploring new technologies, learning different programming languages, and improving my coding skills every
+            day.
             <br />
-            When I’m not in front of my screen writing code, I enjoy taking trips and going on adventures. For me, both coding and traveling bring a sense of freedom and excitement.
+            When I’m not in front of my screen writing code, I enjoy taking trips and going on adventures. For me, both
+            coding and traveling bring a sense of freedom and excitement.
           </p>
 
           <div class="btn-cv">
@@ -155,6 +161,26 @@
                     <i class="bi bi-translate"></i>
                     <span>Vietnamese</span>
                   </button>
+                </div>
+              </div>
+
+              <!-- Transcript / Bảng điểm — tách riêng, không dùng selectedLanguage -->
+              <div class="cv-option-group transcript-section">
+                <h3>Transcript</h3>
+                <div class="cv-options">
+                  <button type="button" class="cv-option-btn" onclick="previewTranscript()">
+                    <i class="bi bi-eye"></i>
+                    <span>Xem bảng điểm</span>
+                  </button>
+                  <button type="button" class="cv-option-btn" onclick="downloadTranscript()">
+                    <i class="bi bi-download"></i>
+                    <span>Tải bảng điểm</span>
+                  </button>
+                </div>
+                <!-- Ẩn mặc định, hiện khi bấm Xem -->
+                <div id="transcriptViewerWrap" style="display:none; margin-top: 1rem;">
+                  <embed id="transcriptEmbed" type="application/pdf" width="100%" height="480"
+                    style="border-radius: 8px; border: 1px solid var(--color-background-4);" />
                 </div>
               </div>
 
@@ -210,13 +236,9 @@
         <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
           <div class="count-box">
             <i class="bi bi-clock-history"></i>
-            <span id="working-hours-infty"
-              data-start="0"
-              data-end="infty"
-              data-duration="2000"
-              aria-live="polite"
+            <span id="working-hours-infty" data-start="0" data-end="infty" data-duration="2000" aria-live="polite"
               style="font-weight:700; font-size:2rem;">
-            0</span>
+              0</span>
             <p>Working Hours</p>
           </div>
         </div>
@@ -224,13 +246,9 @@
         <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
           <div class="count-box">
             <i class="bi bi-cup-hot-fill"></i>
-            <span id="coffee-cups-infty"
-              data-start="0"
-              data-end="infty"
-              data-duration="2000"
-              aria-live="polite"
+            <span id="coffee-cups-infty" data-start="0" data-end="infty" data-duration="2000" aria-live="polite"
               style="font-weight:700; font-size:2rem;">
-            0</span>
+              0</span>
             <p>Coffee Cups</p>
           </div>
         </div>
@@ -470,7 +488,9 @@
             <h4>Tong Nha Vy</h4>
             <p>
               <em>
-                I love diving into books and discovering new, creative things. I don’t have tons of friends, but hey — the ones I do have are absolute gems. I can handle most things on my own without needing much help. People say I’m easy to get along with, but at the same time, I’m pretty independent too.
+                I love diving into books and discovering new, creative things. I don’t have tons of friends, but hey —
+                the ones I do have are absolute gems. I can handle most things on my own without needing much help.
+                People say I’m easy to get along with, but at the same time, I’m pretty independent too.
               </em>
             </p>
             <p>
@@ -516,10 +536,12 @@
             <h5>25/05/2024 - 15/12/2024</h5>
             <p><em>365 Ecosystem Joint Stock Company (365 EJSC)</em></p>
             <p>
-              Internship focusing on backend development with .NET Core, EF Core, and gRPC. Contributed to building and maintaining internal systems that supported business operations.
+              Internship focusing on backend development with .NET Core, EF Core, and gRPC. Contributed to building and
+              maintaining internal systems that supported business operations.
             </p>
             <ul>
-              <li>Developed internal APIs for user & transaction modules using ASP.NET Core + EF Core, improving response handling.</li>
+              <li>Developed internal APIs for user & transaction modules using ASP.NET Core + EF Core, improving
+                response handling.</li>
               <li>Applied Clean Architecture, DDD, CQRS to separate layers and enhance scalability.</li>
               <li>Built a validation pipeline with FluentValidation for DTOs, reducing input errors.</li>
               <li>Wrote Unit Tests for core services to ensure stability.</li>
@@ -801,7 +823,7 @@
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-web">
           <div class="portfolio-wrap">
-            <img src="pics/portfolio/MoviePic/MovieWatchingWebsitePic1.png" loading="lazy"class="img-fluid" alt="">
+            <img src="pics/portfolio/MoviePic/MovieWatchingWebsitePic1.png" loading="lazy" class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4>Movie watching website</h4>
               <p>Web</p>
@@ -818,7 +840,7 @@
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-game">
           <div class="portfolio-wrap">
-            <img src="pics/portfolio/FlappyBirdPic/FlappyBird-details.png" loading="lazy"class="img-fluid" alt="">
+            <img src="pics/portfolio/FlappyBirdPic/FlappyBird-details.png" loading="lazy" class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4>FlappyBird</h4>
               <p>Game</p>
@@ -920,6 +942,7 @@
 
   <!-- Main JS File -->
   <script src="js/main.js"></script>
+  <script src="js/transcript-viewer.js"></script>
   <script src="js/theme-persist.js"></script>
   <script src="js/scroll-to-click-bridge.js"></script>
   <!-- <script src="js/chat-widget-server.js"></script> -->
