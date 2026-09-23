@@ -17,6 +17,7 @@
   <link href="/asset/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="/asset/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/upgrade-ui.css" />
   <link rel="stylesheet" href="css/chat-widget.css" />
 </head>
 
@@ -41,7 +42,7 @@
 
       <div class="controls-container">
         <div class="lang-toggle" title="Switch Language" onclick="window.manualLanguageSwitch && window.manualLanguageSwitch()">
-          <img id="currentFlag" src="https://flagcdn.com/w20/us.png" alt="EN" width="20" height="15">
+          <img id="currentFlag" src="https://flagcdn.com/w20/us.png" loading="lazy" alt="EN" width="20" height="15">
           <span class="hover-hint">Click to switch</span>
         </div>
 
@@ -84,7 +85,7 @@
       <div class="row">
         <div class="col-lg-3" data-aos="fade-right">
           <div class="avatar">
-            <img src="pics/user/=]]]].jpg" class="img-fluid" />
+            <img src="pics/user/=]]]].jpg" loading="lazy" class="img-fluid" />
             <div class="slogan img-fluid slogan-font" style="width: 15.3rem;height: 22rem;left: 9.9rem;top: 8.6%">
               <i>"Enjoy the freedom, keep learning forward"</i>
             </div>
@@ -109,7 +110,7 @@
                 </li>
                 <li><i class="bi bi-chevron-right"></i> <strong>Address:</strong>
                   <span id="address-value">Vietnam
-                    <img src="/pics/user/VMflag.png" width="30rem" alt="">
+                    <img src="/pics/user/VMflag.png" loading="lazy" width="30rem" alt="">
                   </span>
                 </li>
               </ul>
@@ -800,7 +801,7 @@
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-web">
           <div class="portfolio-wrap">
-            <img src="pics/portfolio/MoviePic/MovieWatchingWebsitePic1.png" class="img-fluid" alt="">
+            <img src="pics/portfolio/MoviePic/MovieWatchingWebsitePic1.png" loading="lazy"class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4>Movie watching website</h4>
               <p>Web</p>
@@ -817,7 +818,7 @@
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-game">
           <div class="portfolio-wrap">
-            <img src="pics/portfolio/FlappyBirdPic/FlappyBird-details.png" class="img-fluid" alt="">
+            <img src="pics/portfolio/FlappyBirdPic/FlappyBird-details.png" loading="lazy"class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4>FlappyBird</h4>
               <p>Game</p>
@@ -890,7 +891,7 @@
             <i class="bx bx-phone-call"></i>
             <h3>Call Me</h3>
             <p>
-              <img src="/pics/user/VMflag.png" width="30rem" alt=""> +848 4873 5559
+              <img src="/pics/user/VMflag.png" loading="lazy" width="30rem" alt=""> +848 4873 5559
             </p>
           </div>
         </div>
@@ -919,6 +920,8 @@
 
   <!-- Main JS File -->
   <script src="js/main.js"></script>
+  <script src="js/theme-persist.js"></script>
+  <script src="js/scroll-to-click-bridge.js"></script>
   <!-- <script src="js/chat-widget-server.js"></script> -->
   <script src="js/chat-widget.js"></script>
 
