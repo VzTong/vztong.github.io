@@ -5,7 +5,8 @@
       "about": "About",
       "resume": "Resume",
       "portfolio": "Portfolio",
-      "contact": "Contact"
+      "contact": "Contact",
+      "docs": "Docs"
     },
     "hero": {
       "title": "Tong Nha Vy"
@@ -77,16 +78,32 @@
       "call": "Call Me"
     },
     "buttons": {
+      "openDocs": "Documents & Credentials",
       "downloadCV": "Download CV",
       "backToTop": "Back to top"
     },
     "cvModal": {
-      "title": "Select CV Options",
-      "language": "Language",
+      "title": "Documents & Credentials",
+      "subtitle": "View and download Master CV and Graduation Appendix",
+      "cvBadge": "MASTER CV",
+      "cvTitle": "MASTER CV",
+      "cvDesc": "Full-stack backend profile focused on .NET / C#, internship at 365 EJSC, projects: Booking hotel, Movie watching, FlappyBird.",
+      "cvHighlight1": ".NET / ASP.NET Core / EF Core",
+      "cvHighlight2": "Clean Architecture · DDD · CQRS",
+      "cvHighlight3": "SQL Server · gRPC · REST APIs",
       "englishOption": "English",
       "vietnameseOption": "Vietnamese",
-      "previewCV": "Preview CV",
-      "downloadCV": "Download CV"
+      "cvFileMeta": "CV_TongNhaVy_Fresher_*.pdf",
+      "previewCV": "View",
+      "downloadCV": "Download",
+      "transcriptBadge": "APPENDIX",
+      "transcriptTitle": "GRADUATION APPENDIX",
+      "transcriptDesc": "Official graduation appendix — Information Technology, formal university program.",
+      "transcriptNote1": "View only on site",
+      "transcriptNote2": "Download is not available",
+      "transcriptFileMeta": "phu-luc-vb-tot-nghiep.pdf",
+      "previewTranscript": "View",
+      "closeHint": "Press [ESC] to close"
     },
     "portfolioDetails": {
       "booking": {
@@ -150,7 +167,8 @@
       "about": "Giới thiệu",
       "resume": "Hồ sơ",
       "portfolio": "Dự án",
-      "contact": "Liên hệ"
+      "contact": "Liên hệ",
+      "docs": "Tài liệu"
     },
     "hero": {
       "title": "Tống Nhã Vy"
@@ -222,16 +240,32 @@
       "call": "Gọi điện"
     },
     "buttons": {
+      "openDocs": "Hồ sơ & Tài liệu",
       "downloadCV": "Tải CV",
       "backToTop": "Về đầu trang"
     },
     "cvModal": {
-      "title": "Chọn tùy chọn CV",
-      "language": "Ngôn ngữ",
-      "englishOption": "Tiếng Anh",
+      "title": "Hồ sơ & Tài liệu",
+      "subtitle": "Xem và tải trực tiếp Master CV và Phụ lục văn bằng tốt nghiệp",
+      "cvBadge": "CV TỔNG HỢP",
+      "cvTitle": "MASTER CV",
+      "cvDesc": "Hồ sơ năng lực kỹ sư Backend .NET / C#, thực tập tại 365 EJSC, các dự án Booking hotel, Movie watching, FlappyBird.",
+      "cvHighlight1": ".NET / ASP.NET Core / EF Core",
+      "cvHighlight2": "Clean Architecture · DDD · CQRS",
+      "cvHighlight3": "SQL Server · gRPC · REST APIs",
+      "englishOption": "English",
       "vietnameseOption": "Tiếng Việt",
-      "previewCV": "Xem trước CV",
-      "downloadCV": "Tải CV"
+      "cvFileMeta": "CV_TongNhaVy_Fresher_*.pdf",
+      "previewCV": "Xem trực tiếp",
+      "downloadCV": "Tải về",
+      "transcriptBadge": "PHỤ LỤC VB",
+      "transcriptTitle": "PHỤ LỤC VĂN BẰNG TỐT NGHIỆP",
+      "transcriptDesc": "Phụ lục văn bằng tốt nghiệp đại học chính quy — ngành Công nghệ thông tin.",
+      "transcriptNote1": "Chỉ xem trực tiếp trên trang",
+      "transcriptNote2": "Không hỗ trợ tải về",
+      "transcriptFileMeta": "phu-luc-vb-tot-nghiep.pdf",
+      "previewTranscript": "Xem trực tiếp",
+      "closeHint": "Đóng cửa sổ [ESC]"
     },
     "portfolioDetails": {
       "booking": {
