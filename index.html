@@ -29,7 +29,7 @@
       <h1><a href="index2.html">Tong Nha Vy</a></h1>
       <h2>I'm <span class="typed" data-typed-items="Developer, Freelancer"></span></h2>
       <nav id="navbar" class="navbar">
-        <ul>
+        <!-- <ul>
           <li><a class="nav-link scrollto active" href="#header">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
           <li><a class="nav-link scrollto" href="#resume">Resume</a></li>
@@ -38,6 +38,18 @@
           <li>
             <a class="nav-link" href="#docs" id="navDocsLink" onclick="event.preventDefault(); printCV();">
               <span data-i18n="nav.docs">Tài liệu</span>
+            </a>
+          </li>
+        </ul> -->
+        <ul>
+          <li><a class="nav-link scrollto active" href="#header">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#resume">Resume</a></li>
+          <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li>
+            <a class="nav-link" href="#docs" id="navDocsLink" onclick="event.preventDefault(); printCV();">
+              <span data-i18n="nav.docs">Docs</span>
             </a>
           </li>
         </ul>
@@ -115,7 +127,7 @@
                 </li>
                 <li><i class="bi bi-chevron-right"></i> <strong>Address:</strong>
                   <span id="address-value">Vietnam
-                    <img src="/pics/user/VMflag.png" loading="lazy" width="30rem" alt="">
+                    <img src="/pics/user/VNflag.png" loading="lazy" width="30rem" alt="">
                   </span>
                 </li>
               </ul>
@@ -140,17 +152,11 @@
             coding and traveling bring a sense of freedom and excitement.
           </p>
 
+          <!-- Modal Hồ sơ & Tài liệu -->
           <div class="btn-cv">
             <button type="button" onclick="printCV()" class="main-btn" id="openDocsBtn">
-              <span class="btn-text" data-i18n="buttons.openDocs">Hồ sơ &amp; Tài liệu</span>
+              <span class="btn-text" data-i18n="buttons.openDocs">CV &amp; Docs</span>
               <span class="btn-icon"><i class="bi bi-folder2-open"></i></span>
-            </button>
-          </div>
-
-          <!-- Modal Hồ sơ & Tài liệu -->
-            <button onclick="printCV()" class="main-btn">
-              <span class="btn-text">Download CV</span>
-              <span class="btn-icon"><i class="bi bi-download"></i></span>
             </button>
           </div>
 
@@ -162,21 +168,21 @@
 
               <header class="docs-modal-header">
                 <h2 data-i18n="cvModal.title">Hồ sơ &amp; Tài liệu</h2>
-              <!-- Language Selection -->
-              <div class="cv-option-group">
-                <h3>Language</h3>
-                <div class="cv-options">
-                  <button class="cv-option-btn" data-lang="us" onclick="selectLanguage('us')">
-                    <i class="bi bi-translate"></i>
-                    <span>English</span>
-                  </button>
-                  <button class="cv-option-btn" data-lang="vn" onclick="selectLanguage('vn')">
-                    <i class="bi bi-translate"></i>
-                    <span>Vietnamese</span>
-                  </button>
-                </div>
-                <p class="docs-modal-sub" data-i18n="cvModal.subtitle">Xem và tải trực tiếp Master CV và Phụ lục văn
-                  bằng tốt nghiệp</p>
+                <!-- Language Selection -->
+                <div class="cv-option-group">
+                  <h3>Language</h3>
+                  <div class="cv-options">
+                    <button class="cv-option-btn" data-lang="us" onclick="selectLanguage('us')">
+                      <i class="bi bi-translate"></i>
+                      <span>English</span>
+                    </button>
+                    <button class="cv-option-btn" data-lang="vn" onclick="selectLanguage('vn')">
+                      <i class="bi bi-translate"></i>
+                      <span>Vietnamese</span>
+                    </button>
+                  </div>
+                  <p class="docs-modal-sub" data-i18n="cvModal.subtitle">Xem và tải trực tiếp Master CV và Phụ lục văn
+                    bằng tốt nghiệp</p>
               </header>
 
               <div class="docs-cards">
@@ -958,14 +964,15 @@
             <i class="bx bx-phone-call"></i>
             <h3>Call Me</h3>
             <p>
-              <img src="/pics/user/VMflag.png" loading="lazy" width="30rem" alt=""> +848 4873 5559
+              <img src="/pics/user/VNflag.png" loading="lazy" width="30rem" alt=""> +848 4873 5559
             </p>
           </div>
         </div>
 
       </div>
     </div>
-  </section><!-- End Contact Section -->
+  </section>
+  <!-- End Contact Section -->
 
   <a href="#" class="back-to-top mb-4 d-flex align-items-center justify-content-center"><i
       class="bi bi-arrow-up-short"></i></a>

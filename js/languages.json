@@ -78,12 +78,12 @@
       "call": "Call Me"
     },
     "buttons": {
-      "openDocs": "Documents & Credentials",
+      "openDocs": "CV & Docs",
       "downloadCV": "Download CV",
       "backToTop": "Back to top"
     },
     "cvModal": {
-      "title": "Documents & Credentials",
+      "title": "CV & Documents",
       "subtitle": "View and download Master CV and Graduation Appendix",
       "cvBadge": "MASTER CV",
       "cvTitle": "MASTER CV",
@@ -240,12 +240,12 @@
       "call": "Gọi điện"
     },
     "buttons": {
-      "openDocs": "Hồ sơ & Tài liệu",
+      "openDocs": "CV & Hồ sơ",
       "downloadCV": "Tải CV",
       "backToTop": "Về đầu trang"
     },
     "cvModal": {
-      "title": "Hồ sơ & Tài liệu",
+      "title": "CV & Hồ sơ",
       "subtitle": "Xem và tải trực tiếp Master CV và Phụ lục văn bằng tốt nghiệp",
       "cvBadge": "CV TỔNG HỢP",
       "cvTitle": "MASTER CV",

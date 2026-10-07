@@ -132,31 +132,28 @@ class LanguageSwitcher {
   }
 
   updateNavigation(nav) {
-    const navLinks = document.querySelectorAll("#navbar .nav-link");
-    const navTexts = ["home", "about", "resume", "portfolio", "contact"];
-    // Docs link trên navbar (không phải section)
-    const navDocs = document.querySelector(
-      "#navDocsLink [data-i18n], #navDocsLink",
-    );
-    if (navDocs && t.nav && t.nav.docs) {
-      const span = document.querySelector(
-        "#navDocsLink [data-i18n='nav.docs']",
-      );
-      if (span) span.textContent = t.nav.docs;
-      else document.querySelector("#navDocsLink").textContent = t.nav.docs;
-    }
+    if (!nav) return;
 
-    // Nút mở modal
-    const openDocsBtn = document.querySelector(
-      "#openDocsBtn [data-i18n='buttons.openDocs']",
-    );
-    if (openDocsBtn && t.buttons && t.buttons.openDocs) {
-      openDocsBtn.textContent = t.buttons.openDocs;
-    }
+    var hrefMap = {
+      "#header": nav.home,
+      "#about": nav.about,
+      "#resume": nav.resume,
+      "#portfolio": nav.portfolio,
+      "#contact": nav.contact,
+    };
 
-    navLinks.forEach((link, index) => {
-      if (nav[navTexts[index]]) {
-        link.textContent = nav[navTexts[index]];
+    document.querySelectorAll("#navbar .nav-link").forEach(function (link) {
+      var href = (link.getAttribute("href") || "").trim();
+
+      if (link.id === "navDocsLink" || href === "#docs") {
+        var span = link.querySelector("[data-i18n='nav.docs']");
+        if (span && nav.docs) span.textContent = nav.docs;
+        else if (nav.docs) link.textContent = nav.docs;
+        return;
+      }
+
+      if (hrefMap[href]) {
+        link.textContent = hrefMap[href];
       }
     });
   }
@@ -503,64 +500,45 @@ class LanguageSwitcher {
   }
 
   updateContactSection(contact) {
-    const contactSpan = document.querySelector("#contact .section-title span");
-    const contactTitle = document.querySelector("#contact .section-title h2");
-    const contactSubtitle = document.querySelector("#contact .section-title p");
+    if (!contact) return;
 
-    if (contactSpan) contactSpan.textContent = contact.title;
-    if (contactTitle) contactTitle.textContent = contact.title;
-    if (contactSubtitle) contactSubtitle.textContent = contact.subtitle;
-
-    // Update info box titles
-    const infoBoxes = document.querySelectorAll(".info-box h3");
-    infoBoxes.forEach((box) => {
-      const text = box.textContent.toLowerCase();
-      if (text.includes("address") || text.includes("địa chỉ")) {
-        box.textContent = contact.address;
-      } else if (text.includes("social") || text.includes("mạng xã hội")) {
-        box.textContent = contact.social;
-      } else if (text.includes("email")) {
-        box.textContent = contact.email;
-      } else if (text.includes("call") || text.includes("gọi")) {
-        box.textContent = contact.call;
-      }
+    document.querySelectorAll("[data-i18n^='contact.']").forEach(function (el) {
+      var key = el.getAttribute("data-i18n").replace("contact.", "");
+      if (contact[key] != null) el.textContent = contact[key];
     });
+
+    // Fallback markup cũ (info-box)
+    var span = document.querySelector("#contact .section-title span");
+    var title = document.querySelector("#contact .section-title h2");
+    var sub = document.querySelector("#contact .section-title p");
+    if (span && contact.title) span.textContent = contact.title;
+    if (title && contact.title) title.textContent = contact.title;
+    if (sub && contact.subtitle) sub.textContent = contact.subtitle;
   }
 
   updateButtons(buttons) {
-    // Update download CV button
-    const downloadBtn = document.querySelector(".btn-cv .btn-text");
-    if (downloadBtn && buttons.downloadCV) {
-      downloadBtn.textContent = buttons.downloadCV;
+    if (!buttons) return;
+
+    var openDocs = document.querySelector(
+      "#openDocsBtn .btn-text, [data-i18n='buttons.openDocs']"
+    );
+    if (openDocs && buttons.openDocs) {
+      openDocs.textContent = buttons.openDocs;
     }
 
-    // Update back to top button (nếu có text)
-    const backToTopBtn = document.querySelector(".back-to-top");
-    if (backToTopBtn && buttons.backToTop) {
-      backToTopBtn.setAttribute("title", buttons.backToTop);
+    var backToTop = document.querySelector(".back-to-top");
+    if (backToTop && buttons.backToTop) {
+      backToTop.setAttribute("title", buttons.backToTop);
     }
   }
 
   updateCVModal(cvModal) {
     if (!cvModal) return;
 
-    // Mọi phần tử có data-i18n="cvModal.xxx"
-    document.querySelectorAll("[data-i18n^='cvModal.']").forEach((el) => {
-      const key = el.getAttribute("data-i18n").replace("cvModal.", "");
-      if (cvModal[key] != null) {
-        el.textContent = cvModal[key];
-      }
+    document.querySelectorAll("[data-i18n^='cvModal.']").forEach(function (el) {
+      var key = el.getAttribute("data-i18n").replace("cvModal.", "");
+      if (cvModal[key] != null) el.textContent = cvModal[key];
     });
-
-    // Nút Preview / Download CV (main.js cũng ghi đè text khi chọn lang)
-    const previewBtn = document.querySelector("#previewCVBtn .btn-text");
-    if (previewBtn && cvModal.previewCV) {
-      previewBtn.textContent = cvModal.previewCV;
-    }
-    const downloadBtn = document.querySelector("#downloadCVBtn .btn-text");
-    if (downloadBtn && cvModal.downloadCV) {
-      downloadBtn.textContent = cvModal.downloadCV;
-    }
   }
 }
 
