@@ -540,11 +540,11 @@ function updateDownloadButton() {
     previewBtn.disabled = false;
 
     // Get current language from LanguageSwitcher
-    const currentLang = localStorage.getItem('language') || 'us';
-    const isVietnamese = currentLang === 'vn';
+    const currentLang = localStorage.getItem('language') || 'en';
+    const isVietnamese = currentLang === 'vi';
 
     // Dynamic text based on current website language
-    const langText = selectedLanguage === 'us' ?
+    const langText = selectedLanguage === 'en' ?
       (isVietnamese ? 'Tiếng Anh' : 'English') :
       (isVietnamese ? 'Tiếng Việt' : 'Vietnamese');
 
@@ -559,8 +559,8 @@ function updateDownloadButton() {
     previewBtn.disabled = true;
 
     // Reset button text based on current language
-    const currentLang = localStorage.getItem('language') || 'us';
-    const isVietnamese = currentLang === 'vn';
+    const currentLang = localStorage.getItem('language') || 'en';
+    const isVietnamese = currentLang === 'vi';
 
     downloadBtn.querySelector('.btn-text').textContent = isVietnamese ? 'Tải CV' : 'Download CV';
     previewBtn.querySelector('.btn-text').textContent = isVietnamese ? 'Xem trước CV' : 'Preview CV';
@@ -570,8 +570,8 @@ function updateDownloadButton() {
 function previewSelectedCV() {
   if (!selectedLanguage) {
     // Dynamic alert message based on current language
-    const currentLang = localStorage.getItem('language') || 'us';
-    const alertMessage = currentLang === 'vn' ? 'Vui lòng chọn ngôn ngữ' : 'Please select a language';
+    const currentLang = localStorage.getItem('language') || 'en';
+    const alertMessage = currentLang === 'vi' ? 'Vui lòng chọn ngôn ngữ' : 'Please select a language';
     alert(alertMessage);
     return;
   }
@@ -581,20 +581,20 @@ function previewSelectedCV() {
   const originalText = previewBtn.querySelector('.btn-text').textContent;
 
   // Dynamic loading text
-  const currentLang = localStorage.getItem('language') || 'us';
-  const loadingText = currentLang === 'vn' ? 'Đang mở...' : 'Opening...';
+  const currentLang = localStorage.getItem('language') || 'en';
+  const loadingText = currentLang === 'vi' ? 'Đang mở...' : 'Opening...';
 
   previewBtn.querySelector('.btn-text').textContent = loadingText;
   previewBtn.disabled = true;
 
   let url = '';
-  const langFolder = selectedLanguage === 'us' ? 'us' : 'vn';
-  const langCode = selectedLanguage === 'us' ? 'US' : 'VN';
+  const langFolder = selectedLanguage === 'en' ? 'en' : 'vi';
+  const langCode = selectedLanguage === 'en' ? 'EN' : 'VI';
 
   // Fixed position for all CVs
   const position = 'Fresher';
 
-  url = `CV/${langFolder}/CV_TongNhaVy_${position}_${langCode}.pdf`;
+  url = `CV/${langFolder}/CV_TongNhaVy_${langCode}.pdf`;
 
   // Open PDF in new tab for preview
   window.open(url, '_blank');
@@ -609,8 +609,8 @@ function previewSelectedCV() {
 function downloadSelectedCV() {
   if (!selectedLanguage) {
     // Dynamic alert message based on current language
-    const currentLang = localStorage.getItem('language') || 'us';
-    const alertMessage = currentLang === 'vn' ? 'Vui lòng chọn ngôn ngữ' : 'Please select a language';
+    const currentLang = localStorage.getItem('language') || 'en';
+    const alertMessage = currentLang === 'vi' ? 'Vui lòng chọn ngôn ngữ' : 'Please select a language';
     alert(alertMessage);
     return;
   }
@@ -620,8 +620,8 @@ function downloadSelectedCV() {
   const originalText = downloadBtn.querySelector('.btn-text').textContent;
 
   // Dynamic loading text
-  const currentLang = localStorage.getItem('language') || 'us';
-  const loadingText = currentLang === 'vn' ? 'Đang tải...' : 'Downloading...';
+  const currentLang = localStorage.getItem('language') || 'en';
+  const loadingText = currentLang === 'vi' ? 'Đang tải...' : 'Downloading...';
 
   downloadBtn.querySelector('.btn-text').textContent = loadingText;
   downloadBtn.disabled = true;
@@ -632,18 +632,18 @@ function downloadSelectedCV() {
   }
 
   let url = '';
-  const langFolder = selectedLanguage === 'us' ? 'us' : 'vn';
-  const langCode = selectedLanguage === 'us' ? 'US' : 'VN';
+  const langFolder = selectedLanguage === 'en' ? 'en' : 'vi';
+  const langCode = selectedLanguage === 'en' ? 'EN' : 'VI';
 
   // Fixed position for all CVs
   const position = 'Fresher';
 
-  url = `CV/${langFolder}/CV_TongNhaVy_${position}_${langCode}.pdf`;
+  url = `CV/${langFolder}/CV_TongNhaVy_${langCode}.pdf`;
 
   // Create a temporary anchor element and trigger download
   const a = document.createElement('a');
   a.href = url;
-  a.download = `CV_TongNhaVy_${position}_${langCode}.pdf`;
+  a.download = `CV_TongNhaVy_${langCode}.pdf`;
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
