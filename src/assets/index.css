@@ -1,0 +1,179 @@
+/* Tailwind CSS base, components and utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --- Base layer overrides --- */
+@layer base {
+  /* Smooth scrolling & Adaptive Section Snapping */
+  html {
+    scroll-behavior: smooth;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #334155 transparent;
+  }
+
+  /* Default (Mobile & Small/Landscape screens): Natural smooth scrolling, auto height */
+  body {
+    overscroll-behavior-y: auto;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  section {
+    min-height: 100vh;
+    min-height: 100dvh;
+    height: auto;
+    scroll-snap-align: none;
+    scroll-snap-stop: normal;
+  }
+
+  /* Desktop Viewports (>=768px width and >=680px height): Fullscreen Magnetic Snapping */
+  @media (min-width: 768px) and (min-height: 680px) {
+    html {
+      scroll-snap-type: y mandatory;
+      overflow-y: scroll;
+    }
+
+    body {
+      overscroll-behavior-y: none;
+    }
+
+    section {
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      height: 100vh;
+      height: 100dvh;
+    }
+  }
+
+  /* ─── Global Ultra-Sleek Custom Scrollbar ────────────────────────────────── */
+  /* WebKit Browsers (Chrome, Edge, Safari, Opera) */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(2, 6, 23, 0.5);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 9999px;
+    border: 1px solid rgba(15, 23, 42, 0.6);
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3b82f6;
+    box-shadow: 0 0 12px rgba(59, 130, 246, 0.6);
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+
+  /* Box-sizing reset */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  /* Remove default margin from common elements */
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  p {
+    margin: 0;
+  }
+
+  /* Focus visible ring using brand accent color */
+  :focus-visible {
+    outline: 2px solid theme('colors.brand-accent');
+    outline-offset: 2px;
+  }
+
+  /* Dark mode focus ring */
+  .dark :focus-visible {
+    outline-color: theme('colors.brand-accent-dark');
+  }
+}
+
+/* --- Components layer: reusable class blocks --- */
+@layer components {
+  /* Brand button — primary call-to-action */
+  .btn-primary {
+    @apply px-5 py-2.5 rounded-lg bg-brand-accent dark:bg-brand-accent-dark
+           text-white font-medium text-sm
+           hover:opacity-90 active:scale-95
+           transition-all duration-200 focus-visible:ring-2;
+  }
+
+  /* Brand button — ghost/outline variant */
+  .btn-ghost {
+    @apply px-5 py-2.5 rounded-lg border border-brand-border dark:border-brand-border-dark
+           text-brand-text dark:text-brand-text-dark font-medium text-sm
+           hover:bg-brand-border dark:hover:bg-brand-border-dark
+           transition-all duration-200 focus-visible:ring-2;
+  }
+
+  /* Technology badge pill */
+  .tech-badge {
+    @apply font-mono text-xs px-2.5 py-1 rounded-full
+           bg-slate-100 dark:bg-slate-800
+           text-brand-muted dark:text-brand-muted-dark
+           border border-brand-border dark:border-brand-border-dark;
+  }
+
+  /* Section card */
+  .section-card {
+    @apply rounded-2xl border border-brand-border dark:border-brand-border-dark
+           bg-brand-card dark:bg-brand-card-dark
+           shadow-sm hover:shadow-brand-glow transition-shadow duration-300;
+  }
+}
+
+/* --- Utilities layer: one-off helpers --- */
+@layer utilities {
+  /* Text gradient using brand accent */
+  .text-gradient-brand {
+    @apply bg-clip-text text-transparent
+           bg-gradient-to-r from-blue-600 to-blue-400;
+  }
+
+  /* Glassmorphism card */
+  .glass {
+    @apply bg-white/10 dark:bg-black/20
+           backdrop-blur-md
+           border border-white/20 dark:border-white/10;
+  }
+
+  /* Custom subtle scrollbar for inner scroll containers */
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #3b82f6 rgba(15, 23, 42, 0.6);
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.6);
+    border-radius: 9999px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #3b82f6;
+    border-radius: 9999px;
+    box-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #60a5fa;
+    box-shadow: 0 0 12px rgba(96, 165, 250, 0.8);
+  }
+}

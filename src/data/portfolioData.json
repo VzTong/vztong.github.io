@@ -1,0 +1,624 @@
+{
+  "about": {
+    "name": "Tống Nhã Vy",
+    "github": "vztong",
+    "avatar": "/assets/images/avatar.jpg",
+    "title": {
+      "vi": "Giới thiệu",
+      "en": "About Me"
+    },
+    "role": {
+      "vi": "Kỹ sư Phần mềm",
+      "en": "Software Engineer"
+    },
+    "bio": {
+      "vi": "Lập trình viên thiên về Backend, có kinh nghiệm thực tế xây dựng các ứng dụng doanh nghiệp với C# và .NET. Thành thạo Clean Architecture, CQRS và làm việc trong môi trường Agile. Trước đây đã triển khai các hệ thống full-stack với ASP.NET Core, EF Core, Vue 3 và FastAPI. Học hỏi nhanh, thường xuyên ứng dụng AI để nâng cao hiệu suất làm việc hàng ngày và thích hướng dẫn junior",
+      "en": "Backend-focused developer with hands-on experience building enterprise applications using C# and .NET. Comfortable with Clean Architecture, CQRS and collaborative Agile environments. Previously delivered full-stack systems with ASP.NET Core, EF Core, Vue 3 and FastAPI. Fast learner who applies AI tools to improve daily engineering productivity and enjoys mentoring juniors."
+    },
+    "skills": {
+      "programming-language": {
+        "title": {
+          "vi": "Ngôn ngữ lập trình",
+          "en": "Programming Language"
+        },
+        "items": [
+          "C#",
+          "VB.NET",
+          "JavaScript",
+          "Java",
+          "Python"
+        ]
+      },
+      "framework-and-libraries": {
+        "title": {
+          "vi": "Framework & Thư viện",
+          "en": "Framework & Libraries"
+        },
+        "items": [
+          ".NET",
+          "ASP.NET Core",
+          "Windows Form",
+          "WPF",
+          "Entity Framework",
+          "ABP Framework",
+          "Vue.js",
+          "Flask",
+          "FastAPI"
+        ]
+      },
+      "databases": {
+        "title": {
+          "vi": "Cơ sở dữ liệu",
+          "en": "Databases"
+        },
+        "items": [
+          "SQL Server",
+          "MySQL",
+          "PostgreSQL",
+          "OracleDB"
+        ]
+      },
+      "architecture-methodologies": {
+        "title": {
+          "vi": "Kiến trúc & Phương pháp",
+          "en": "Architecture & Methodologies"
+        },
+        "items": [
+          "DDD",
+          "Clean Architecture",
+          "Event-Driven Architecture"
+        ]
+      },
+      "tools": {
+        "title": {
+          "vi": "Công cụ & Nền tảng",
+          "en": "Tools & Platforms"
+        },
+        "items": [
+          "Git",
+          "SVN",
+          "Docker"
+        ]
+      },
+      "Others": {
+        "title": {
+          "vi": "Khác",
+          "en": "Others"
+        },
+        "items": [
+          "Spring Boot (basic)",
+          "gRPC"
+        ]
+      }
+    }
+  },
+  "contact": {
+    "title": {
+      "vi": "Liên hệ",
+      "en": "Contact"
+    },
+    "email": "vz95559@gmail.com",
+    "github": "https://github.com/vztong",
+    "linkedin": ""
+  },
+  "documents": {
+    "title": {
+      "vi": "Hồ sơ & Tài liệu",
+      "en": "Documents & Credentials"
+    },
+    "subtitle": {
+      "vi": "Xem và tải trực tiếp Master CV và Bảng điểm đại học",
+      "en": "Preview and download Master CV and verified academic transcript"
+    },
+    "driveFolderUrl": "https://drive.google.com/drive/folders/1n3qmfhgwmzAoxXKkkqPoON6MVk1FHkqS?usp=sharing",
+    "items": [
+      {
+        "id": "master-cv",
+        "type": "cv",
+        "title": {
+          "vi": "Master CV",
+          "en": "Master CV"
+        },
+        "badge": {
+          "vi": "CV TỔNG HỢP",
+          "en": "MASTER CV"
+        },
+        "description": {
+          "vi": "Hồ sơ năng lực kỹ sư toàn diện: nòng cốt Backend .NET Microservices & Clean Architecture, kết hợp Frontend React, Next.js và các dự án thực tế.",
+          "en": "Comprehensive developer resume detailing .NET, Microservices & Clean Architecture, paired with modern React and Next.js frontend delivery."
+        },
+        "filename": "Tong_Nha_Vy_Master_CV.pdf",
+        "url": "https://drive.google.com/file/d/190nlaEjhGogtuD_Il9YwiTWNDqFcRJFR/view?usp=sharing",
+        "fileType": "PDF",
+        "pages": "2 Pages",
+        "updatedAt": "10/2026",
+        "highlights": {
+          "vi": [
+            ".NET / VueJS / Python",
+            "Clean Architecture & Microservices",
+            "SQL Server, PostgreSQL, Redis, Kafka"
+          ],
+          "en": [
+            ".NET / VueJS / Python",
+            "Clean Architecture & Microservices",
+            "SQL Server, PostgreSQL, Redis, Kafka"
+          ]
+        }
+      },
+      {
+        "id": "transcript",
+        "type": "transcript",
+        "title": {
+          "vi": "Bảng điểm Đại học Chính quy",
+          "en": "Official Academic Transcript"
+        },
+        "badge": {
+          "vi": "BẢNG ĐIỂM CHÍNH THỨC",
+          "en": "OFFICIAL TRANSCRIPT"
+        },
+        "description": {
+          "vi": "Bảng điểm chính quy kết quả học tập chuyên ngành Kỹ thuật Phần mềm.",
+          "en": "Official university academic records and course grades in Software Engineering."
+        },
+        "filename": "Tong_Nha_Vy_Transcript.pdf",
+        "url": "https://docs.google.com/spreadsheets/d/1cg5tmADkPFze0n8yk9P3nII5nSt_DxwP/edit?usp=sharing&ouid=106607915636364214108&rtpof=true&sd=true",
+        "fileType": "PDF",
+        "pages": "Official Record",
+        "updatedAt": "2025",
+        "highlights": {
+          "vi": [
+            "Đạt 8.55/10 chuyên ngành Kỹ thuật Phần mềm (Software Engineer)",
+            "Đạt điểm tuyệt đối 10/10 ở các học phần Thực hành Lập trình .NET, Thực hành OOP và Lập trình căn bản",
+            "Đạt 9.7/10 môn Kiến trúc phần mềm cùng chuỗi điểm A+ (9.0 – 9.5/10) cho toàn bộ các môn Cơ sở dữ liệu và Hệ quản trị CSDL"
+          ],
+          "en": [
+            "Achieved 8.55/10 in Software Engineering major",
+            "Achieved perfect score 10/10 in Practical .NET Programming, OOP, and Basic Programming courses",
+            "Achieved 9.7/10 in Software Architecture and maintained A+ range (9.0–9.5/10) across all Database & DBMS courses"
+          ]
+        }
+      }
+    ]
+  },
+  "ui": {
+    "navItems": {
+      "about": {
+        "vi": "Giới thiệu",
+        "en": "About"
+      },
+      "skills": {
+        "vi": "Kỹ năng",
+        "en": "Skills"
+      },
+      "experience": {
+        "vi": "Kinh nghiệm",
+        "en": "Experience"
+      },
+      "projects": {
+        "vi": "Dự án",
+        "en": "Projects"
+      },
+      "contact": {
+        "vi": "Liên hệ",
+        "en": "Contact"
+      },
+      "documents": {
+        "vi": "Hồ sơ & CV",
+        "en": "Resume & Docs"
+      }
+    },
+    "themeToggle": {
+      "light": {
+        "vi": "Sáng",
+        "en": "Light"
+      },
+      "dark": {
+        "vi": "Tối",
+        "en": "Dark"
+      }
+    },
+    "languageToggle": {
+      "vi": "VI",
+      "en": "EN"
+    },
+    "buttons": {
+      "viewProject": {
+        "vi": "Xem dự án",
+        "en": "View Project"
+      },
+      "viewSource": {
+        "vi": "Mã nguồn",
+        "en": "Source Code"
+      },
+      "prevPage": {
+        "vi": "Trước",
+        "en": "Previous"
+      },
+      "nextPage": {
+        "vi": "Tiếp theo",
+        "en": "Next"
+      }
+    }
+  },
+  "experiences": [
+    {
+      "id": "exp-backend-developer",
+      "order": 1,
+      "type": "fulltime",
+      "role": {
+        "vi": "Lập trình viên",
+        "en": "Developer"
+      },
+      "company": {
+        "vi": "FPT Software",
+        "en": "FPT Software"
+      },
+      "period": {
+        "vi": "10/2025 - 09/2026",
+        "en": "10/2025 - 09/2026"
+      },
+      "location": {
+        "vi": "Cần Thơ, Việt Nam",
+        "en": "Can Tho, Vietnam"
+      },
+      "coverImage": "/assets/images/experiences/exp-fpt.png",
+      "summary": {
+        "vi": "Trong thời gian làm việc tại FPT Software, tôi đã tích lũy kinh nghiệm thực tế trong lĩnh vực phát triển phần mềm doanh nghiệp, tham gia các dự án cho khách hàng quốc tế, đặc biệt là khách hàng Nhật Bản. Quá trình này giúp tôi nâng cao năng lực kỹ thuật, tư duy giải quyết vấn đề và khả năng phối hợp hiệu quả trong môi trường phát triển phần mềm chuyên nghiệp.",
+        "en": "During my time at FPT Software, I gained practical experience in enterprise software development, participating in projects for international clients, especially Japanese customers. This process helped me improve my technical skills, problem-solving thinking, and effective collaboration skills in a professional software development environment."
+      },
+      "technologies": [
+        "C#",
+        "VB.NET",
+        "Windows Form",
+        "Oracle"
+      ],
+      "responsibilities": {
+        "vi": [
+          "Phát triển và bảo trì các chức năng cho ứng dụng doanh nghiệp sử dụng .NET",
+          "Làm việc với cơ sở dữ liệu Oracle để xử lý dữ liệu và báo cáo (Oracle Views, Tối ưu hóa SQL)",
+          "Triển khai logic nghiệp vụ, xác thực và giao diện người dùng",
+          "Làm việc trong môi trường Agile với nhóm lớn (100+ thành viên)",
+          "Áp dụng giải pháp AI để tăng năng suất và tối ưu hóa quy trình làm việc",
+          "Chủ động nghiên cứu, áp dụng công nghệ mới để nâng cao hiệu quả công việc",
+          "Hỗ trợ và hướng dẫn thực tập sinh tìm hiểu quy trình làm việc và công nghệ"
+        ],
+        "en": [
+          "Developed and maintained features for enterprise application using .NET",
+          "Worked with Oracle database for data processing and reporting (Oracle Views, SQL optimization)",
+          "Implemented business logic, validation and UI component",
+          "Collaborated in a large-scale Agile team (100+ members)",
+          "Applied AI solutions to enhance productivity and optimize workflows",
+          "Proactively researched and applied new technologies to improve work efficiency",
+          "Supported and guided interns in understanding project workflows and technologies"
+        ]
+      },
+      "achievements": {
+        "vi": [
+          "Tham gia phát triển hệ thống sản xuất quy mô lớn với hơn 30 modules nghiệp vụ cho khách hàng Nhật Bản",
+          "Hoàn thành các chương trình đào tạo nội bộ, nâng cao năng lực sử dụng AI, ngoại ngữ và kỹ năng chuyên môn"
+        ],
+        "en": [
+          "Participated in the development of a large-scale manufacturing system with over 30 business modules for Japanese clients",
+          "Completed internal training programs, enhancing AI usage capabilities, language proficiency, and professional skills"
+        ]
+      },
+      "links": {
+        "company": "",
+        "reference": ""
+      }
+    },
+    {
+      "id": "exp-365-ejsc-intern",
+      "order": 2,
+      "type": "fulltime-internship",
+      "role": {
+        "vi": "Thực tập sinh toàn thời gian",
+        "en": "Full-time Internship"
+      },
+      "company": {
+        "vi": "365 EJSC",
+        "en": "365 EJSC"
+      },
+      "period": {
+        "vi": "09/2024 - 12/2024",
+        "en": "09/2024 - 12/2024"
+      },
+      "location": {
+        "vi": "Cần Thơ, Việt Nam (Remote)",
+        "en": "Can Tho, Vietnam (Remote)"
+      },
+      "coverImage": "/assets/images/experiences/exp-365-ejsc.png",
+      "summary": {
+        "vi": "Trong thời gian thực tập tại 365EJSC, tôi tham gia phát triển hệ thống ERP doanh nghiệp, làm việc với các công nghệ .NET và SQL Server trong môi trường phát triển phần mềm thực tế. Tôi có cơ hội rèn luyện kỹ năng phát triển API, tối ưu CSDL, viết kiểm thử tự động và áp dụng các nguyên tắc Clean Architecture vào dự án.",
+        "en": "During my internship at 365EJSC, I participated in the development of an enterprise ERP system, working with .NET and SQL Server technologies in a real software development environment. I had the opportunity to train my skills in API development, database optimization, writing automated tests, and applying Clean Architecture principles to projects."
+      },
+      "technologies": [
+        "C#",
+        "Entity Framework",
+        "RESTful API",
+        "SQL Server",
+        "JWT",
+        "XUnit",
+        "Clean Architecture",
+        "CQRS"
+      ],
+      "responsibilities": {
+        "vi": [
+          "Thiết kế và phát triển các API RESTful có khả năng mở rộng cho các module nghiệp vụ chính theo Clean Architecture, CQRS và Repository Pattern",
+          "Áp dụng xác thực JWT và phân quyền dựa trên vai trò",
+          "Xây dựng bộ kiểm thử toàn diện với XUnit để đảm bảo chất lượng và tính ổn định của mã nguồn",
+          "Soạn thảo tài liệu mô tả API và tài liệu kỹ thuật để hỗ trợ tích hợp hệ thống"
+        ],
+        "en": [
+          "Architected and developed scalable RESTful APIs for core business modules following Clean Architecture, CQRS, and Repository Pattern",
+          "Implemented secure JWT-based authentication and role-based authorization across system endpoints",
+          "Developed comprehensive unit test suites using xUnit to ensure code quality and stability",
+          "Authored API definition documents and technical specifications to streamline integration"
+        ]
+      },
+      "achievements": {
+        "vi": [
+          "Tối ưu hóa API và truy vấn CSDL, giảm response time 20% và cải thiện khả năng mở rộng",
+          "Đạt và duy trì độ bao phủ test cao cho các module nghiệp vụ quan trọng, giảm thiểu lỗi hồi quy"
+        ],
+        "en": [
+          "Optimized API endpoints and database query performance, reducing response time by 20% and improving scalability",
+          "Achieved and maintained high unit test coverage across critical business logic modules, minimizing regression bugs"
+        ]
+      },
+      "links": {
+        "company": "",
+        "reference": ""
+      }
+    }
+  ],
+  "projects": [
+    {
+      "id": "shorter-link",
+      "type": "info",
+      "order": 1,
+      "coverImage": "/assets/images/projects/shorter-link/shorter-link-cover.png",
+      "title": {
+        "vi": "Hệ thống Quản lý Rút gọn Liên kết",
+        "en": "Short Link Management System"
+      },
+      "summary": {
+        "vi": "Dịch vụ rút gọn URL với NestJS, MongoDB, Redis cache cho short link, JWT + refresh token rotation, quản lý nhóm, cấp độ người dùng, audit log và thông báo real-time qua Socket.IO.",
+        "en": "URL shortening service built with NestJS, MongoDB and Redis caching for short links, JWT with refresh token rotation, group management, user levels, audit logging and real-time notifications via Socket.IO."
+      },
+      "technologies": [
+        "NestJS",
+        "TypeScript",
+        "MongoDB",
+        "Mongoose",
+        "Redis",
+        "JWT",
+        "React 19",
+        "Redux Toolkit",
+        "Tailwind CSS",
+        "Socket.IO"
+      ],
+      "description": {
+        "vi": "Hệ thống gồm Backend NestJS (module hóa) với MongoDB (Mongoose) lưu trữ vĩnh viễn và Redis dùng cho cache short URL, session/refresh token, daily count và rate limiting. Frontend React 19 (Create React App) + Redux Toolkit + Tailwind CSS + Socket.IO Client cung cấp giao diện quản lý link, tạo mã QR, quản lý nhóm, bảng điều khiển admin (accounts, levels, config, audit log, health) và nhận thông báo real-time. Có thêm dịch vụ WebSocket riêng (NestJS + Socket.IO).",
+        "en": "The system consists of a modular NestJS backend with MongoDB (Mongoose) for persistent storage and Redis for short-URL cache, session/refresh tokens, daily counts and rate limiting. The React 19 (Create React App) + Redux Toolkit + Tailwind CSS + Socket.IO Client frontend provides link management, instant QR code generation, group management, admin dashboards (accounts, levels, config, audit log, health) and real-time notifications. A separate WebSocket service (NestJS + Socket.IO) is also part of the stack."
+      },
+      "features": {
+        "vi": [
+          "Short code alphanumeric ngẫu nhiên (độ dài cấu hình) + Redis cache redirect",
+          "Click count, mật khẩu, hết hạn / vô thời hạn theo Level",
+          "RBAC 3 cấp + Level quota (link/ngày, group, member)",
+          "Quản lý nhóm, audit log tự động, dynamic config từ DB",
+          "QR code, analytics, WebSocket real-time (user / room / broadcast)",
+          "Refresh token rotation, multi-tab auth sync, proactive refresh"
+        ],
+        "en": [
+          "Random alphanumeric short codes (configurable length) with Redis redirect cache",
+          "Click counting, password protection, expiration / no-expiration by Level",
+          "3-level RBAC + Level quotas (daily links, groups, members)",
+          "Group management, automatic audit log, dynamic DB-driven config",
+          "QR codes, analytics, real-time WebSocket (user / room / broadcast)",
+          "Refresh token rotation, multi-tab auth sync, proactive token refresh"
+        ]
+      },
+      "gallery": [
+        {
+          "id": "stl-img-001",
+          "src": "/assets/images/projects/shorter-link/shorter-link-list.png",
+          "caption": {
+            "vi": "Danh sách link rút gọn đã thêm của người dùng.",
+            "en": "List of user's shortened links."
+          }
+        },
+        {
+          "id": "stl-img-002",
+          "src": "/assets/images/projects/shorter-link/shorter-link-level-mng.png",
+          "caption": {
+            "vi": "Quản lý hạn mức (Quota) theo từng cấp độ tài khoản.",
+            "en": "Quota management for each account level."
+          }
+        },
+        {
+          "id": "stl-img-003",
+          "src": "/assets/images/projects/shorter-link/shorter-link-health-1.png",
+          "caption": {
+            "vi": "Theo dõi thông tin sức khỏe của các service trong hệ thống.",
+            "en": "Monitor health information of services in the system."
+          }
+        },
+        {
+          "id": "stl-img-004",
+          "src": "/assets/images/projects/shorter-link/shorter-link-health-2.png",
+          "caption": {
+            "vi": "Theo dõi chi tiết thông tin sức khỏe của từng service.",
+            "en": "Detailed health information of each service."
+          }
+        }
+      ],
+      "links": {
+        "demo": "https://shink.onrender.com/",
+        "source": "https://github.com/ayana0409/shorter-link-api",
+        "backend": "https://github.com/ayana0409/shorter-link-api",
+        "frontend": "https://github.com/ayana0409/shorter-link-fe",
+        "websocket": "https://github.com/ayana0409/shorter-link-websocket"
+      },
+      "technicalSpec": {
+        "architecture": "Modular Monolith với NestJS, tách biệt Controller - Service - Repository, hỗ trợ mở rộng module độc lập.",
+        "cachingStrategy": "Redis Cache-Aside pattern với TTL cho short URLs, giúp giảm 90% truy vấn đọc vào MongoDB; dùng Redis Hash cho session người dùng.",
+        "databaseAndIndexing": "MongoDB (Mongoose) với compound index { shortCode: 1 } để tối ưu tra cứu O(1); index { userId: 1, createdAt: -1 } cho danh sách quản lý.",
+        "securityAndAuth": "JWT Access Token ngắn hạn kết hợp Refresh Token Rotation và Family Revocation; RBAC 3 cấp phân quyền; Sliding window rate-limiting qua Redis chống brute-force.",
+        "tradeoffsAndChallenges": [
+          "Lựa chọn NanoID ngẫu nhiên thay vì mã hóa tuần tự để tránh bị đoán trước URL, chấp nhận kiểm tra trùng lặp mã (retry tối đa 3 lần).",
+          "Đánh đổi lưu trữ tạm thời daily count trên Redis RAM để tối ưu tốc độ ghi thời gian thực, đồng bộ bất đồng bộ về DB định kỳ."
+        ]
+      }
+    },
+    {
+      "id": "quickbite",
+      "type": "info",
+      "order": 2,
+      "coverImage": "/assets/images/projects/quick-bite/qb-cover.png",
+      "title": {
+        "vi": "QuickBite — Nền tảng Đặt & Giao Đồ Ăn Polyglot Microservices",
+        "en": "QuickBite — Polyglot Microservices Food Delivery Platform"
+      },
+      "summary": {
+        "vi": "Nền tảng đặt & giao đồ ăn kiến trúc Polyglot Microservices kết hợp .NET 10 (ABP Framework), Spring Boot 3.3 (Java 21) và NestJS 11, điều phối giao dịch phân tán qua Apache Kafka (MassTransit Saga State Machine, Outbox/Inbox Pattern) cùng 2 giao diện Next.js 16 (Customer Web) và React 19 + Vite 8 (Admin/Merchant Portal).",
+        "en": "Enterprise-grade food delivery platform engineered with a Polyglot Microservices architecture (.NET 10 / ABP Framework, Spring Boot 3.3 / Java 21, NestJS 11), distributed transaction orchestration via Apache Kafka (MassTransit Saga State Machine, Outbox/Inbox patterns), and dual frontends (Next.js 16 Customer Web & React 19 / Vite 8 Admin/Merchant Portal)."
+      },
+      "technologies": [
+        ".NET 10",
+        "ABP Framework 10",
+        "C#",
+        "Java 21",
+        "Spring Boot 3.3",
+        "NestJS 11",
+        "TypeScript",
+        "Apache Kafka",
+        "PostgreSQL",
+        "MySQL",
+        "Redis",
+        "MongoDB",
+        "OpenIddict (OAuth2/OIDC)",
+        "Next.js 16",
+        "React 19",
+        "Vite 8",
+        "Tailwind CSS",
+        "TanStack Query 5",
+        "Leaflet",
+        "Docker"
+      ],
+      "description": {
+        "vi": "Hệ thống gồm 6 microservices backend phân bổ theo thế mạnh từng domain:\n- Identity Service (.NET 10/ABP): Quản lý IAM/RBAC & OpenIddict OIDC.\n- Order Service (.NET 10/ABP/MySQL): Điều phối Saga Orchestration qua MassTransit.\n- Payment Service & Inventory Service (Spring Boot 3.3): Xử lý uỷ quyền thanh toán Hexagonal và giữ chỗ tồn kho (Optimistic Locking JPA).\n- Catalog Service & API Gateway BFF (NestJS 11): Quản lý thực đơn, dynamic config 3 cấp (Redis -> Mongo -> Env), rate limit và JWKS validation.\n\nTầng Client bao gồm 2 phân hệ chính:\n- Customer Web App: Next.js 16 SSR kết hợp Leaflet GPS tracking.\n- Admin & Merchant Portal: React 19 + Vite 8 + TanStack Query 5 + Recharts.\n\nToàn bộ giao tiếp bất đồng bộ được thực hiện qua Apache Kafka, kết hợp với Transactional Outbox & Inbox Pattern nhằm đảm bảo tính toàn vẹn dữ liệu.",
+        "en": "The platform comprises 6 backend microservices aligned with domain strengths:\n- Identity Service (.NET 10/ABP): for IAM/RBAC & OpenIddict OIDC.\n- Order Service (.NET 10/ABP/MySQL): orchestrating distributed Sagas via MassTransit.\n- Payment & Inventory Services (Spring Boot 3.3): for Hexagonal payment workflows and high-concurrency stock reservation (JPA Optimistic Locking).\n- Catalog Service & API Gateway BFF (NestJS 11): managing menus, 3-tier dynamic config (Redis -> Mongo -> Env), rate limiting and JWKS edge validation.\n\nThe frontend layer features 2 main applications:\n- Customer Web App: Next.js 16 SSR + Leaflet live GPS tracking.\n- Admin & Merchant Portal: React 19 + Vite 8 + TanStack Query 5 + Recharts.\n\nAsynchronous event streams run on Apache Kafka using Transactional Outbox and Inbox patterns for guaranteed reliability."
+      },
+      "features": {
+        "vi": [
+          "Kiến trúc Polyglot Microservices chuyên biệt: .NET 10 (IAM, Order Saga), Spring Boot 3.3 (Payment, Inventory), NestJS 11 (Catalog, Gateway BFF)",
+          "Điều phối giao dịch phân tán (Orchestration Saga) bằng MassTransit State Machine với cơ chế bù trừ (Compensation) tự động khi thất bại",
+          "Đảm bảo tin cậy và chống trùng lặp với Transactional Outbox Worker, Idempotent Consumer (Inbox Pattern) và Optimistic Locking JPA",
+          "Xác thực tập trung OIDC / OAuth2 qua OpenIddict 7.2 (RS256 JWT, JWKS discovery), RBAC đa tầng và xác thực ở Edge Gateway",
+          "API Gateway BFF tích hợp Dynamic Config 3 cấp (Redis -> MongoDB -> .env fallback), Rate Limiting, Correlation ID tracing và Wake-up health probe",
+          "Customer Web App (Next.js 16 SSR) hỗ trợ tìm kiếm món ăn, giỏ hàng, đặt hàng và theo dõi lộ trình tài xế thời gian thực với Leaflet GPS",
+          "Admin & Merchant Portal (React 19 + Vite 8) quản lý thực đơn, duyệt yêu cầu mở quán (JSONB), xử lý đơn hàng và thống kê doanh thu với Recharts"
+        ],
+        "en": [
+          "Domain-driven Polyglot Microservices: .NET 10 (IAM, Order Saga), Spring Boot 3.3 (Payment, Inventory), NestJS 11 (Catalog, Gateway BFF)",
+          "Distributed Orchestration Saga via MassTransit State Machine with automated rollback and compensation on payment/inventory failure",
+          "Guaranteed data consistency via Transactional Outbox workers, Idempotent Consumer (Inbox Pattern) and JPA Optimistic Locking",
+          "Centralized OIDC / OAuth2 IAM powered by OpenIddict 7.2 (RS256 JWT, JWKS discovery), multi-tenant RBAC, and edge token verification",
+          "Resilient API Gateway (BFF) with 3-tier dynamic configuration (Redis -> MongoDB -> .env), rate limiting, correlation tracing and cold-start wake-up probe",
+          "Customer Storefront (Next.js 16 SSR) featuring fast menu search, dynamic checkout, and interactive live GPS delivery tracking with Leaflet",
+          "Admin & Merchant Portal (React 19 + Vite 8) with menu designer, generic JSONB onboarding request approvals, order triage, and Recharts analytics"
+        ]
+      },
+      "gallery": [
+        {
+          "id": "qb-img-001",
+          "src": "/assets/images/projects/quick-bite/qb-food-item.png",
+          "caption": {
+            "vi": "Giao diện thêm món ăn vào giỏ hàng.",
+            "en": "Food item detail view with customization options."
+          }
+        },
+        {
+          "id": "qb-img-002",
+          "src": "/assets/images/projects/quick-bite/qb-rest-details.png",
+          "caption": {
+            "vi": "Giao diện thông tin chi tiết nhà hàng với menu.",
+            "en": "Restaurant details page featuring the menu."
+          }
+        },
+        {
+          "id": "qb-img-003",
+          "src": "/assets/images/projects/quick-bite/qb-mc-db.png",
+          "caption": {
+            "vi": "Giao diện dashboard của merchant",
+            "en": "Merchant dashboard interface"
+          }
+        },
+        {
+          "id": "qb-img-004",
+          "src": "/assets/images/projects/quick-bite/qb-fi-edt.png",
+          "caption": {
+            "vi": "Giao diện chỉnh sửa món ăn",
+            "en": "Food item edit interface"
+          }
+        },
+        {
+          "id": "qb-img-005",
+          "src": "/assets/images/projects/quick-bite/qb-in.png",
+          "caption": {
+            "vi": "Giao diện quản lý tồn kho",
+            "en": "Inventory management interface"
+          }
+        },
+        {
+          "id": "qb-img-006",
+          "src": "/assets/images/projects/quick-bite/qb-acc.png",
+          "caption": {
+            "vi": "Giao diện quản lý tài khoản",
+            "en": "Account management interface"
+          }
+        }
+      ],
+      "links": [
+        {
+          "label": {
+            "vi": "CUSTOMER WEB DEMO ↗",
+            "en": "CUSTOMER WEB DEMO ↗"
+          },
+          "url": "https://quickbite-wnkc.onrender.com/",
+          "type": "demo"
+        },
+        {
+          "label": {
+            "vi": "ADMIN & MERCHANT PORTAL ↗",
+            "en": "ADMIN & MERCHANT PORTAL ↗"
+          },
+          "url": "https://quickbitemanager.onrender.com/",
+          "type": "demo-alt"
+        },
+        {
+          "label": {
+            "vi": "SOURCE CODE",
+            "en": "SOURCE CODE"
+          },
+          "url": "https://github.com/ayana0409/QuickBite",
+          "type": "repo-blue"
+        }
+      ],
+      "technicalSpec": {
+        "architecture": "Polyglot Microservices theo Domain-Driven Design (DDD) và Event-Driven Architecture (EDA) qua Apache Kafka. Phân bổ theo thế mạnh domain: .NET 10 (ABP Framework) cho Identity và Order Service (MassTransit Saga State Machine); Spring Boot 3.3 (Hexagonal Ports & Adapters) cho Payment và Inventory Service; NestJS 11 cho Catalog Service và API Gateway BFF; Frontend phân tách thành Next.js 16 (App Router, SSR/RSC tối ưu SEO cho Storefront khách hàng) và React 19 / Vite 8 (SPA hiệu năng cao cho POS Merchant & Admin Portal).",
+        "cachingStrategy": "Đường ống 2 tầng (2-Layer Pipeline) tại Edge API Gateway: Tầng 1 Global HTTP Redis Cache với TTL động (0–120s đồng bộ từ MongoDB) cho phản hồi < 2ms; Tầng 2 Request Coalescing (RxJS shareReplay) gom các request trùng lặp đồng thời để triệt tiêu Thundering Herd; Redis cache cho JWKS public keys và phiên làm việc của người dùng.",
+        "databaseAndIndexing": "Mô hình Database-per-Service hoàn toàn độc lập: MySQL cho Order Service (tối ưu hóa giao dịch ACID và lịch sử trạng thái đơn hàng); PostgreSQL cho Identity, Payment, Inventory và Catalog (hỗ trợ PostGIS định vị GPS, GIN Index cho full-text search, JSONB cho biến thể món/toppings và catalog requests); MongoDB lưu trữ Dynamic Config 3 lớp tại Gateway; Compound unique index (orderId, foodItemId) chống spam đánh giá và unique index cho SKU món ăn.",
+        "securityAndAuth": "Single Sign-On (SSO) tập trung qua OpenIddict 7.2 (.NET ABP) phát hành JWT RS256; xác thực phi tập trung tại Edge Gateway thông qua JWKS (/.well-known/jwks.json) mà không cần truy vấn database Identity Service; Axios Interceptor với cơ chế Silent Refresh Mutex Queue tại client để tự động làm mới token 401 mà không làm ngắt phiên người dùng; RBAC phân quyền đa cấp (Admin, Sub-Admin, Manager, Merchant, Customer); Rate Limiting qua @nestjs/throttler.",
+        "tradeoffsAndChallenges": [
+          "Xây dựng Mock Payment Gateway (Sandbox UI Simulation) thay vì tích hợp cổng thanh toán trực tuyến thực tế (VNPAY, MoMo, Stripe) nhằm phục vụ mục đích demo đồ án, loại bỏ hoàn toàn các rào cản pháp lý, chi phí duy trì giao dịch và thủ tục đăng ký pháp nhân doanh nghiệp, trong khi vẫn mô phỏng đầy đủ kịch bản thành công/thất bại cho luồng Saga compensation.",
+          "Chấp nhận độ trễ khởi động nguội (Cold-Start latency) khi triển khai hệ thống phân tán trên hạ tầng Cloud gói miễn phí (Render/Koyeb); giải quyết trải nghiệm người dùng bằng component <BootScreen /> trực quan hóa topology mạng qua Anime.js kết hợp cơ chế fan-out health ping (GET /api/system/health/wake-up) để đồng loạt đánh thức toàn bộ microservices trước khi chuyển vào ứng dụng.",
+          "Áp dụng MassTransit State Machine Saga kết hợp Transactional Outbox và Idempotent Inbox để đảm bảo tính nhất quán dữ liệu phân tán không cần 2PC giữa Order, Inventory và Payment, chấp nhận độ phức tạp của mô hình Eventual Consistency để đổi lấy tính sẵn sàng và tính độc lập của từng domain.",
+          "Sử dụng Optimistic Locking (@Version trên JPA Hibernate) tại Inventory Service để xử lý tranh chấp giữ chỗ kho (stock reservation) khi đơn hàng tăng đột biến, chấp nhận cơ chế retry giao dịch thay vì Pessimistic Lock làm nghẽn luồng cơ sở dữ liệu."
+        ]
+      }
+    }
+  ]
+}

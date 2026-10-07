@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Halo, I'm Vy (VzTong)</title>
+    <link rel="shortcut icon" href="pics/sys/3.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="lib/fontawesome-free-5.14.0-web/css/all.css" />
+
+  </head>
+
+  <body>
+    <!-- <div class="small-screen">
+      <h1>Vui lòng truy cập trang web này bằng thiết bị có màn hình lớn hơn</h1>
+    </div> -->
+    <div class="container">
+      <div class="box">
+        <div class="box-half-left">
+          <div class="avatar">
+            <img src="pics/user/=]]]].jpg" />
+            <div class="slogan">
+              <i>"Enjoy the freedom, keep learning forward"</i>
+            </div>
+          </div>
+          <div class="bottom">
+            <a
+              href="https://www.facebook.com/TongNhaVy.VzTong"
+              data-title="Facebook"
+              target="_blank"
+            >
+              <i class="fab fa-2x fa-facebook-square"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/nh%C3%A3-vy-t%E1%BB%91ng-1a626030a/" data-title="Linkedin" target="_blank">
+                <i class="fab fa-2x fa-linkedin"></i>
+            </a>
+            <a
+              href="https://github.com/VzTong"
+              data-title="Github"
+              target="_blank"
+              >
+              <i class="fab fa-2x fa-github"></i>
+            </a>
+          </div>
+        </div>
+        <div class="box-half-right">
+          <div class="about-me">
+            <h1><a href="index.html">Tống Nhã Vy</a></h1>
+            <p>'Wander-coder' Lập trình và phiêu lưu</p>
+          </div>
+          <div class="info">
+            <ul>
+              <li data-title="Thích lập trình và những chuyến phiêu lưu">
+                <i class="fa fa-briefcase"></i> Thích lập trình và những chuyến phiêu lưu
+              </li>
+              <li><i class="fa fa-birthday-cake"></i> 14/11/2003</li>
+              <li><i class="fa fa-mobile"></i> 0 8 4 8 7 3 5 5 5 9</li>
+              <li><i class="fa fa-laptop-code"></i> C#, PHP</li>
+            </ul>
+            <ul>
+              <li data-title="❤">
+                <!-- <i class="fa fa-heart color-orangered"></i> Khi nào có ngiu dùng cái này =]]-->
+                <i class="far fa-heart"></i> Cẩu độc thân
+              </li>
+              <li data-title="vzz95559@gmail.com">
+                <i class="fa fa-at"></i> vzz95559@gmail.com
+              </li>
+              <li><i class="fa fa-map-marked"></i> Kiên Giang (An Giang)</li>
+              <li data-title="Viết Code, đi phượt, 'Billard =]'">
+                <i class="fa fa-bookmark"></i> Viết Code,  đi phượt, 'Billard =]'
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tooltip"></div>
+
+    <script>
+      var eles = document.querySelectorAll("a[data-title], li[data-title]");
+      var tooltip = document.querySelector(".tooltip");
+      eles.forEach((item, index) => {
+          item.addEventListener('mousemove', function (e) {
+              if (e.target.getAttribute("data-title")) {
+                  tooltip.innerText = e.target.getAttribute("data-title");
+              }
+              else {
+                  tooltip.innerText = e.target.parentElement.getAttribute("data-title");
+              }
+              tooltip.style.display = 'inline-block';
+              tooltip.style.top = e.pageY - tooltip.clientHeight - 20 + 'px';
+              tooltip.style.left = e.pageX - tooltip.clientWidth / 2 + 'px';
+          });
+          item.addEventListener('mouseleave', function(e){
+              tooltip.style.display='';
+          })
+      })
+  </script>
+
+    <script src="lib/js/bootstrap.min.js"></script>
+    <script src="lib/js/jquery-3.3.1.min.js"></script>
+    <script src="lib/js/jquery.nice-select.min.js"></script>
+    <script src="lib/js/jquery.slicknav.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
