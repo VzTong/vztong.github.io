@@ -250,6 +250,7 @@
       "cvBadge": "CV TỔNG HỢP",
       "cvTitle": "MASTER CV",
       "cvDesc": "Hồ sơ năng lực kỹ sư Backend .NET / C#, thực tập tại 365 EJSC, các dự án Booking hotel, Movie watching, FlappyBird.",
+      "language": "Ngôn ngữ",
       "cvHighlight1": ".NET / ASP.NET Core / EF Core",
       "cvHighlight2": "Clean Architecture · DDD · CQRS",
       "cvHighlight3": "SQL Server · gRPC · REST APIs",

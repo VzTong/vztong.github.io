@@ -33,7 +33,6 @@
           <li><a class="nav-link scrollto active" href="#header">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
           <li><a class="nav-link scrollto" href="#resume">Resume</a></li>
-          <!-- <li><a class="nav-link scrollto" href="#services">Services</a></li> -->
           <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
           <li>
@@ -149,6 +148,13 @@
           </div>
 
           <!-- Modal Hồ sơ & Tài liệu -->
+            <button onclick="printCV()" class="main-btn">
+              <span class="btn-text">Download CV</span>
+              <span class="btn-icon"><i class="bi bi-download"></i></span>
+            </button>
+          </div>
+
+          <!-- Modal for print options -->
           <div id="printOptionsModal" class="modal">
             <div class="modal-content docs-modal">
               <button type="button" class="docs-modal-close" onclick="closePrintOptions()"
@@ -156,6 +162,19 @@
 
               <header class="docs-modal-header">
                 <h2 data-i18n="cvModal.title">Hồ sơ &amp; Tài liệu</h2>
+              <!-- Language Selection -->
+              <div class="cv-option-group">
+                <h3>Language</h3>
+                <div class="cv-options">
+                  <button class="cv-option-btn" data-lang="us" onclick="selectLanguage('us')">
+                    <i class="bi bi-translate"></i>
+                    <span>English</span>
+                  </button>
+                  <button class="cv-option-btn" data-lang="vn" onclick="selectLanguage('vn')">
+                    <i class="bi bi-translate"></i>
+                    <span>Vietnamese</span>
+                  </button>
+                </div>
                 <p class="docs-modal-sub" data-i18n="cvModal.subtitle">Xem và tải trực tiếp Master CV và Phụ lục văn
                   bằng tốt nghiệp</p>
               </header>

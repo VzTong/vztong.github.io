@@ -91,7 +91,7 @@ class LanguageSwitcher {
     this.applyLanguage(newLanguage);
   }
 
-  applyLanguage(lang) {
+  async applyLanguage(lang) {
     const t = this.translations[lang];
 
     if (!t) {
@@ -108,6 +108,10 @@ class LanguageSwitcher {
     // Update about section
     this.updateAboutSection(t.about);
 
+    this.translations = await response.json();
+  }
+  catch(error) {
+    console.error("Error loading translations:", error);
     // Update resume section
     this.updateResumeSection(t.resume);
 
