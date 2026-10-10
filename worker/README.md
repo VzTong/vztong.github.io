@@ -62,5 +62,5 @@ npm run worker:deploy
 ```bash
 curl -X POST http://localhost:8787/api/chat \
   -H "Content-Type: application/json" \
-  -d "{\"message\": \"Chào bạn, hãy giới thiệu về Thuận\"}"
+  -d "{\"message\": \"Chào bạn, hãy giới thiệu về Vy\"}"
 ```

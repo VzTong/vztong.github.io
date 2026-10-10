@@ -1,27 +1,29 @@
-import React, { useState, useEffect, useRef } from 'react'
-import { gsap } from 'gsap'
-import { useTranslation } from 'react-i18next'
-import { scrollToElement } from '../../utils/helpers'
-import DocumentsModal from '../../components/common/DocumentsModal'
+import React, { useState, useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { useTranslation } from "react-i18next";
+import { scrollToElement } from "../../utils/helpers";
+import DocumentsModal from "../../components/common/DocumentsModal";
 
 /**
  * HeroSection Component (SpaceX Aesthetic)
- * 
+ *
  * Fullscreen cinematic hero section inspired by the SpaceX homepage.
  * Built with layered gradients, starfield particles, and fail-safe GSAP entrance.
  */
 export default function HeroSection({ onExploreClick }) {
-  const { i18n } = useTranslation('portfolio')
-  const currentLang = i18n.language === 'en' ? 'en' : 'vi'
-  const [isDocsModalOpen, setIsDocsModalOpen] = useState(false)
+  const { i18n } = useTranslation("portfolio");
+  const currentLang = i18n.language === "en" ? "en" : "vi";
+  const [isDocsModalOpen, setIsDocsModalOpen] = useState(false);
 
-  const heroRef = useRef(null)
-  const contentRef = useRef(null)
-  const scrollIndicatorRef = useRef(null)
+  const heroRef = useRef(null);
+  const contentRef = useRef(null);
+  const scrollIndicatorRef = useRef(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const elements = contentRef.current?.children ? Array.from(contentRef.current.children) : []
+      const elements = contentRef.current?.children
+        ? Array.from(contentRef.current.children)
+        : [];
 
       if (elements.length > 0) {
         gsap.fromTo(
@@ -35,55 +37,50 @@ export default function HeroSection({ onExploreClick }) {
             y: 0,
             duration: 1.0,
             stagger: 0.15,
-            ease: 'power3.out',
+            ease: "power3.out",
             delay: 0.1,
-          }
-        )
+          },
+        );
       }
 
       if (scrollIndicatorRef.current) {
         gsap.fromTo(
           scrollIndicatorRef.current,
           { opacity: 0, y: -10 },
-          { opacity: 1, y: 0, duration: 0.8, delay: 0.6, ease: 'power2.out' }
-        )
+          { opacity: 1, y: 0, duration: 0.8, delay: 0.6, ease: "power2.out" },
+        );
 
         gsap.to(scrollIndicatorRef.current, {
           y: 8,
           repeat: -1,
           yoyo: true,
           duration: 1.0,
-          ease: 'power1.inOut',
+          ease: "power1.inOut",
           delay: 1.4,
-        })
+        });
       }
-    }, heroRef)
+    }, heroRef);
 
-    return () => ctx.revert()
-  }, [])
+    return () => ctx.revert();
+  }, []);
 
   const handleScrollDown = () => {
     if (onExploreClick) {
-      onExploreClick()
-      return
+      onExploreClick();
+      return;
     }
-    scrollToElement('about', 80)
-  }
+    scrollToElement("about", 80);
+  };
 
   const roleText =
-    currentLang === 'vi'
-      ? 'LẬP TRÌNH VIÊN'
-      : 'SOFTWARE ENGINEER'
+    currentLang === "vi" ? "LẬP TRÌNH VIÊN" : "SOFTWARE ENGINEER";
 
-  const heroHeading =
-    currentLang === 'vi'
-      ? 'DƯƠNG ĐOÀN THUẬN'
-      : 'DUONG DOAN THUAN'
+  const heroHeading = currentLang === "vi" ? "TỐNG NHÃ VY" : "TONG NHA VY";
 
   const missionText =
-    currentLang === 'vi'
-      ? 'PHÁT TRIỂN HỆ THỐNG TOÀN DIỆN: BACKEND HIỆU NĂNG CAO, KIẾN TRÚC PHÂN TÁN VÀ GIAO DIỆN HIỆN ĐẠI, MƯỢT MÀ'
-      : 'END-TO-END SYSTEM ENGINEERING: HIGH-PERFORMANCE BACKEND, DISTRIBUTED ARCHITECTURE & SEAMLESS MODERN FRONTENDS.'
+    currentLang === "vi"
+      ? "BACKEND .NET: CLEAN ARCHITECTURE, CQRS & gRPC — FULL-STACK & AI INTEGRATION"
+      : ".NET BACKEND: CLEAN ARCHITECTURE, CQRS & gRPC — FULL-STACK & AI INTEGRATION";
 
   return (
     <section
@@ -140,7 +137,9 @@ export default function HeroSection({ onExploreClick }) {
             onClick={handleScrollDown}
             className="px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-mono text-xs sm:text-sm font-semibold tracking-wider uppercase shadow-lg shadow-blue-600/30 hover:shadow-blue-500/50 active:scale-95 transition-all cursor-pointer flex items-center gap-2"
           >
-            <span>{currentLang === 'vi' ? 'KHÁM PHÁ DỰ ÁN' : 'EXPLORE PROJECTS'}</span>
+            <span>
+              {currentLang === "vi" ? "KHÁM PHÁ DỰ ÁN" : "EXPLORE PROJECTS"}
+            </span>
             <span>↓</span>
           </button>
 
@@ -149,10 +148,24 @@ export default function HeroSection({ onExploreClick }) {
             onClick={() => setIsDocsModalOpen(true)}
             className="px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-slate-900/80 hover:bg-slate-800 text-blue-300 hover:text-white font-mono text-xs sm:text-sm font-semibold tracking-wider uppercase border border-blue-500/40 hover:border-blue-400 shadow-[0_0_20px_rgba(59,130,246,0.15)] active:scale-95 transition-all cursor-pointer flex items-center gap-2 backdrop-blur-md"
           >
-            <svg className="w-4 h-4 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            <svg
+              className="w-4 h-4 text-blue-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+              />
             </svg>
-            <span>{currentLang === 'vi' ? 'TẢI CV & BẢNG ĐIỂM' : 'RESUME & TRANSCRIPT'}</span>
+            <span>
+              {currentLang === "vi"
+                ? "TẢI CV & BẢNG ĐIỂM"
+                : "RESUME & TRANSCRIPT"}
+            </span>
           </button>
         </div>
       </div>
@@ -192,5 +205,5 @@ export default function HeroSection({ onExploreClick }) {
         onClose={() => setIsDocsModalOpen(false)}
       />
     </section>
-  )
+  );
 }

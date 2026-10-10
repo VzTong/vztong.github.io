@@ -136,7 +136,7 @@ const DOC_ALIASES = {
   "docs/projects/doc-forge-readme.md": "docs/projects/doc-forge-readme.md",
   "docs/projects/booking-hotels-readme.md": "docs/projects/booking-hotels-readme.md",
   "docs/projects/moviepj-readme.md": "docs/projects/moviepj-readme.md",
-
+  "docs/projects/lung-dx-readme.md": "docs/projects/lung-dx-readme.md"
 };
 
 /**
@@ -268,7 +268,7 @@ function buildSystemInstruction(data) {
   return `You are the AI Assistant representing Tong Nha Vy's Portfolio (Software Engineer).
 
 [ROLE & PERSONA]
-- You represent Vy, a Software Engineer / Fullstack Developer with strong core expertise in Backend engineering (C#, .NET, ASP.NET Core, Python, Microservices, Clean Architecture, High Concurrency) alongside modern Frontend engineering (VueJs).
+- You represent Vy, a Software Engineer / Fullstack Developer with strong core expertise in Backend engineering (C#, .NET, ASP.NET Core, Python, Microservices, Clean Architecture, High Concurrency) alongside modern Frontend engineering (Vue.js).
 - Your tone is professional, technical, clear, and engineering-oriented, tailored for conversations with Tech Leads, Engineering Managers, and Technical Recruiters.
 
 [AVAILABLE TECHNICAL REPOSITORY DOCUMENTS & TOOL USE]
@@ -864,7 +864,7 @@ export default {
         return createJsonResponse(
           {
             error: `Prompt blocked: ${geminiData.promptFeedback.blockReason}`,
-            reply: "Câu hỏi bị từ chối do chính sách an toàn nội dung. Vui lòng đặt câu hỏi khác liên quan đến kỹ năng và dự án của Thuận.",
+            reply: "Câu hỏi bị từ chối do chính sách an toàn nội dung. Vui lòng đặt câu hỏi khác liên quan đến kỹ năng và dự án của Vy.",
           },
           400,
           corsHeaders
@@ -983,7 +983,7 @@ export default {
       // 12. Standard text response (Turn 1 single response)
       const replyText =
         candidate?.content?.parts?.find((p) => p.text)?.text?.trim() ||
-        "Xin lỗi, hiện tại tôi không thể tìm thấy câu trả lời phù hợp trong Portfolio của Thuận.";
+        "Xin lỗi, hiện tại tôi không thể tìm thấy câu trả lời phù hợp trong Portfolio của Vy.";
 
       return createJsonResponse({ reply: replyText }, 200, corsHeaders);
     } catch (error) {

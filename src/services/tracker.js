@@ -1,13 +1,13 @@
 /**
  * Lightweight visitor tracking service for Portfolio.
- * 
+ *
  * Runs asynchronously via navigator.sendBeacon (or keepalive fetch).
  * Zero impact on UI performance or page load speed.
  * Completely safe for GitHub Pages deployment (zero secret keys on frontend).
  */
 
 const DEFAULT_TRACK_ENDPOINT =
-  'https://portfolio-gemini-worker.ayana0409-porfolio.workers.dev/api/track'
+  'https://portfolio-gemini-worker.vztong-vztong.github.io.workers.dev/api/track'
 
 /**
  * Resolves the tracking API endpoint from environment variables or live fallback.
@@ -79,7 +79,7 @@ export function isAutomatedBot() {
 /**
  * Records a visitor access event to Cloudflare D1 (portfolio_access_history).
  * Relaxed logging: records all visits and page refreshes (with 3s debounce to avoid React double-mount).
- * 
+ *
  * @param {object} [customData] - Optional extra metadata
  */
 export function trackVisit(customData = {}) {

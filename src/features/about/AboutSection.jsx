@@ -7,7 +7,7 @@ import DocumentsModal from '../../components/common/DocumentsModal'
 
 /**
  * AboutSection Component
- * 
+ *
  * Fits 100% strictly inside fullscreen viewport (`h-screen` / `100dvh`) with `pt-20 pb-6`
  * to guarantee that the fixed navbar NEVER overlaps or crops any content.
  * Features verified credentials for Master CV and Academic Transcript downloads.
@@ -58,7 +58,7 @@ export default function AboutSection() {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3 lg:gap-4 pt-5 mt-5 sm:pt-6 sm:mt-6 border-t border-slate-800/80 text-center">
               <div className="p-2 sm:p-2.5 lg:p-3 rounded-xl bg-slate-950/60 border border-slate-800/60 flex flex-col justify-center items-center overflow-hidden">
                 <span className="block text-base sm:text-lg md:text-sm lg:text-base xl:text-xl font-black text-blue-400 font-mono tracking-tight whitespace-nowrap">
-                  .NET / NestJS
+                  C# / .NET
                 </span>
                 <span className="text-[10px] sm:text-[11px] font-mono text-slate-400 uppercase tracking-wider block mt-1 whitespace-nowrap">
                   Backend Core
@@ -66,7 +66,7 @@ export default function AboutSection() {
               </div>
               <div className="p-2 sm:p-2.5 lg:p-3 rounded-xl bg-slate-950/60 border border-slate-800/60 flex flex-col justify-center items-center overflow-hidden">
                 <span className="block text-base sm:text-lg md:text-sm lg:text-base xl:text-xl font-black text-blue-400 font-mono tracking-tight whitespace-nowrap">
-                  Micro & EDA
+                  Clean Arch & CQRS
                 </span>
                 <span className="text-[10px] sm:text-[11px] font-mono text-slate-400 uppercase tracking-wider block mt-1 whitespace-nowrap">
                   Architecture
@@ -74,10 +74,10 @@ export default function AboutSection() {
               </div>
               <div className="p-2 sm:p-2.5 lg:p-3 rounded-xl bg-slate-950/60 border border-slate-800/60 flex flex-col justify-center items-center overflow-hidden">
                 <span className="block text-base sm:text-lg md:text-sm lg:text-base xl:text-xl font-black text-blue-400 font-mono tracking-tight whitespace-nowrap">
-                  React & Next
+                  Vue.js
                 </span>
                 <span className="text-[10px] sm:text-[11px] font-mono text-slate-400 uppercase tracking-wider block mt-1 whitespace-nowrap">
-                  Modern Frontend
+                  Frontend
                 </span>
               </div>
             </div>
@@ -110,7 +110,7 @@ export default function AboutSection() {
                   type="button"
                   onClick={() => setIsDocsModalOpen(true)}
                   className="flex-1 sm:flex-initial px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-xl bg-emerald-600/20 hover:bg-emerald-600/35 text-emerald-300 hover:text-white border border-emerald-500/40 hover:border-emerald-400 text-[11px] sm:text-xs font-mono font-semibold tracking-wider uppercase transition-all flex items-center justify-center gap-1.5 shadow-sm cursor-pointer"
-                  title={currentLang === 'vi' ? 'Xem & Tải Bảng điểm đại học' : 'View & Download Transcript'}
+                  title={currentLang === 'vi' ? 'Xem Bảng điểm đại học' : 'View Transcript'}
                 >
                   <svg className="w-3.5 h-3.5 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />

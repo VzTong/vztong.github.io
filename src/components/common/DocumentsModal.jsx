@@ -6,11 +6,11 @@ import { resolveDocumentUrl, resolveDocumentDownloadUrl } from '../../utils/help
 
 /**
  * DocumentsModal Component (Streamlined Google Drive Version)
- * 
+ *
  * Clean, frictionless modal dialog for previewing and downloading:
  * 1. Master CV (Google Drive link)
  * 2. Academic Transcript (Google Drive link)
- * 
+ *
  * Features:
  * - Direct one-click access without any passcodes or captchas
  * - Opens Google Drive viewer or initiates direct download
@@ -25,8 +25,8 @@ export default function DocumentsModal({ isOpen, onClose }) {
   const docData = portfolioData.documents || {
     title: { vi: 'Hồ sơ & Tài liệu', en: 'Documents & Credentials' },
     subtitle: {
-      vi: 'Xem và tải trực tiếp Master CV và Bảng điểm đại học trên Google Drive',
-      en: 'Preview and download Master CV and verified academic transcript on Google Drive',
+      vi: 'Xem và tải trực tiếp Master CV và Bảng điểm đại học',
+      en: 'Preview and download Master CV and verified academic transcript',
     },
     driveFolderUrl: '',
     items: [],
@@ -85,7 +85,7 @@ export default function DocumentsModal({ isOpen, onClose }) {
           <div className="space-y-1">
             <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full text-[10px] sm:text-xs font-mono font-semibold uppercase bg-blue-950/80 text-blue-300 border border-blue-800/80">
               <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
-              <span>GOOGLE DRIVE CREDENTIALS</span>
+              <span>CV & CREDENTIALS</span>
             </div>
             <h2
               id="documents-modal-title"
@@ -258,35 +258,8 @@ export default function DocumentsModal({ isOpen, onClose }) {
           })}
         </div>
 
-        {/* Optional Google Drive Shared Folder Link */}
-        {docData.driveFolderUrl && (
-          <div className="px-5 py-3.5 border-t border-slate-800/80 bg-slate-900/40 flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
-            <div className="flex items-center gap-2 text-xs font-mono text-slate-300">
-              <span className="text-amber-400">📁</span>
-              <span>
-                {currentLang === 'vi'
-                  ? 'Thư mục Google Drive lưu trữ đầy đủ tài liệu & chứng chỉ:'
-                  : 'Google Drive Folder containing all documents:'}
-              </span>
-            </div>
-            <a
-              href={docData.driveFolderUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-3.5 py-1.5 rounded-lg bg-blue-600/20 hover:bg-blue-600/35 text-blue-300 hover:text-white border border-blue-500/40 text-xs font-mono font-semibold transition-all flex items-center gap-1.5"
-            >
-              <span>{currentLang === 'vi' ? 'MỞ THƯ MỤC DRIVE' : 'OPEN DRIVE FOLDER'}</span>
-              <span>↗</span>
-            </a>
-          </div>
-        )}
-
         {/* Modal Footer */}
         <div className="p-4 sm:p-5 border-t border-slate-800/80 bg-slate-900/40 flex items-center justify-between text-xs font-mono text-slate-500">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-blue-400" />
-            <span>Google Drive Direct Link</span>
-          </div>
           <button
             type="button"
             onClick={onClose}

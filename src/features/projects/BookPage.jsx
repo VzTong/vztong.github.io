@@ -2,7 +2,7 @@ import React from 'react'
 
 /**
  * BookPage Component
- * 
+ *
  * Reusable page wrapper for individual pages inside HTMLFlipBook.
  * Wrapped with React.forwardRef as required by StPageFlip.
  */
@@ -89,7 +89,7 @@ const BookPage = React.forwardRef(
           ) : (
             <>
               <span className="opacity-70 tracking-wider uppercase text-[10px]">
-                Dương Đoàn Thuận
+                Tống Nhã Vy
               </span>
               <span className="font-semibold text-brand-accent dark:text-brand-accent-dark">
                 {pageNumber}

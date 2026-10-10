@@ -4,7 +4,7 @@ import { getCurrentYear } from '../../utils/helpers'
 
 /**
  * Footer Component
- * 
+ *
  * Reusable footer displaying copyright, tech stack attribution, and quick links.
  */
 export default function Footer() {
@@ -16,12 +16,6 @@ export default function Footer() {
           <span>
             © {getCurrentYear()} {portfolioData.about.name}. All rights reserved.
           </span>
-        </div>
-
-        <div className="flex items-center gap-4 text-[11px]">
-          <span>React 19 + Tailwind CSS</span>
-          <span>•</span>
-          <span>GSAP + react-pageflip</span>
         </div>
       </div>
     </footer>

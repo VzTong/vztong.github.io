@@ -12,8 +12,8 @@
       "en": "Software Engineer"
     },
     "bio": {
-      "vi": "Lập trình viên thiên về Backend, có kinh nghiệm thực tế xây dựng các ứng dụng doanh nghiệp với C# và .NET. Thành thạo Clean Architecture, CQRS và làm việc trong môi trường Agile. Trước đây đã triển khai các hệ thống full-stack với ASP.NET Core, EF Core, Vue 3 và FastAPI. Học hỏi nhanh, thường xuyên ứng dụng AI để nâng cao hiệu suất làm việc hàng ngày và thích hướng dẫn junior",
-      "en": "Backend-focused developer with hands-on experience building enterprise applications using C# and .NET. Comfortable with Clean Architecture, CQRS and collaborative Agile environments. Previously delivered full-stack systems with ASP.NET Core, EF Core, Vue 3 and FastAPI. Fast learner who applies AI tools to improve daily engineering productivity and enjoys mentoring juniors."
+      "vi": "Lập trình viên backend với kinh nghiệm thực tiễn trong việc xây dựng các ứng dụng doanh nghiệp sử dụng C# và .NET. Thành thạo Clean Architecture, CQRS và làm việc hiệu quả trong môi trường Agile cộng tác. Có kinh nghiệm phát triển hệ thống full-stack với ASP.NET Core, EF Core, Vue 3 và FastAPI. Học hỏi nhanh, chủ động ứng dụng các công cụ AI để nâng cao hiệu suất công việc hàng ngày và thích chia sẻ kiến thức với đồng nghiệp trẻ.",
+      "en": "Backend-focused developer with hands-on experience building enterprise applications using C# and .NET. Comfortable with Clean Architecture, CQRS, and ollaborative Agile environments. Experienced in delivering full-stack systems with ASP.NET Core, EF Core, Vue 3, and FastAPI. Fast learner who uses AI tools to improve daily engineering productivity and enjoys sharing knowledge with junior colleagues."
     },
     "skills": {
       "programming-language": {
@@ -21,13 +21,7 @@
           "vi": "Ngôn ngữ lập trình",
           "en": "Programming Language"
         },
-        "items": [
-          "C#",
-          "VB.NET",
-          "JavaScript",
-          "Java",
-          "Python"
-        ]
+        "items": ["C#", "VB.NET", "JavaScript", "Python", "Java"]
       },
       "framework-and-libraries": {
         "title": {
@@ -51,12 +45,7 @@
           "vi": "Cơ sở dữ liệu",
           "en": "Databases"
         },
-        "items": [
-          "SQL Server",
-          "MySQL",
-          "PostgreSQL",
-          "OracleDB"
-        ]
+        "items": ["SQL Server", "MySQL", "PostgreSQL", "OracleDB"]
       },
       "architecture-methodologies": {
         "title": {
@@ -66,6 +55,9 @@
         "items": [
           "DDD",
           "Clean Architecture",
+          "CQRS",
+          "Repository Pattern",
+          "3-Layer",
           "Event-Driven Architecture"
         ]
       },
@@ -74,21 +66,14 @@
           "vi": "Công cụ & Nền tảng",
           "en": "Tools & Platforms"
         },
-        "items": [
-          "Git",
-          "SVN",
-          "Docker"
-        ]
+        "items": ["Git", "SVN", "Docker", "Postman"]
       },
       "Others": {
         "title": {
           "vi": "Khác",
           "en": "Others"
         },
-        "items": [
-          "Spring Boot (basic)",
-          "gRPC"
-        ]
+        "items": ["Spring Boot (basic)", "gRPC"]
       }
     }
   },
@@ -97,7 +82,7 @@
       "vi": "Liên hệ",
       "en": "Contact"
     },
-    "email": "vz95559@gmail.com",
+    "email": "vzz95559@gmail.com",
     "github": "https://github.com/vztong",
     "linkedin": ""
   },
@@ -110,7 +95,7 @@
       "vi": "Xem và tải trực tiếp Master CV và Bảng điểm đại học",
       "en": "Preview and download Master CV and verified academic transcript"
     },
-    "driveFolderUrl": "https://drive.google.com/drive/folders/1n3qmfhgwmzAoxXKkkqPoON6MVk1FHkqS?usp=sharing",
+    "driveFolderUrl": "https://vztong.github.io/CV/en/CV_TongNhaVy_EN.pdf",
     "items": [
       {
         "id": "master-cv",
@@ -128,7 +113,7 @@
           "en": "Comprehensive developer resume detailing .NET, Microservices & Clean Architecture, paired with modern React and Next.js frontend delivery."
         },
         "filename": "Tong_Nha_Vy_Master_CV.pdf",
-        "url": "https://drive.google.com/file/d/190nlaEjhGogtuD_Il9YwiTWNDqFcRJFR/view?usp=sharing",
+        "url": "https://vztong.github.io/CV/en/CV_TongNhaVy_EN.pdf",
         "fileType": "PDF",
         "pages": "2 Pages",
         "updatedAt": "10/2026",
@@ -161,7 +146,7 @@
           "en": "Official university academic records and course grades in Software Engineering."
         },
         "filename": "Tong_Nha_Vy_Transcript.pdf",
-        "url": "https://docs.google.com/spreadsheets/d/1cg5tmADkPFze0n8yk9P3nII5nSt_DxwP/edit?usp=sharing&ouid=106607915636364214108&rtpof=true&sd=true",
+        "url": "https://vztong.github.io/CV/Tong_Nha_Vy_Transcript.pdf",
         "fileType": "PDF",
         "pages": "Official Record",
         "updatedAt": "2025",
@@ -266,12 +251,7 @@
         "vi": "Trong thời gian làm việc tại FPT Software, tôi đã tích lũy kinh nghiệm thực tế trong lĩnh vực phát triển phần mềm doanh nghiệp, tham gia các dự án cho khách hàng quốc tế, đặc biệt là khách hàng Nhật Bản. Quá trình này giúp tôi nâng cao năng lực kỹ thuật, tư duy giải quyết vấn đề và khả năng phối hợp hiệu quả trong môi trường phát triển phần mềm chuyên nghiệp.",
         "en": "During my time at FPT Software, I gained practical experience in enterprise software development, participating in projects for international clients, especially Japanese customers. This process helped me improve my technical skills, problem-solving thinking, and effective collaboration skills in a professional software development environment."
       },
-      "technologies": [
-        "C#",
-        "VB.NET",
-        "Windows Form",
-        "Oracle"
-      ],
+      "technologies": ["C#", "VB.NET", "Windows Form", "Oracle"],
       "responsibilities": {
         "vi": [
           "Phát triển và bảo trì các chức năng cho ứng dụng doanh nghiệp sử dụng .NET",
@@ -374,249 +354,452 @@
   ],
   "projects": [
     {
-      "id": "shorter-link",
+      "id": "docforge",
       "type": "info",
       "order": 1,
-      "coverImage": "/assets/images/projects/shorter-link/shorter-link-cover.png",
+      "coverImage": "/assets/images/projects/docforge/docforge-cover.gif",
       "title": {
-        "vi": "Hệ thống Quản lý Rút gọn Liên kết",
-        "en": "Short Link Management System"
+        "vi": "DocForge — Bộ công cụ chuyển đổi tài liệu & xử lý media",
+        "en": "DocForge — Document Conversion & Media Processing Toolkit"
       },
       "summary": {
-        "vi": "Dịch vụ rút gọn URL với NestJS, MongoDB, Redis cache cho short link, JWT + refresh token rotation, quản lý nhóm, cấp độ người dùng, audit log và thông báo real-time qua Socket.IO.",
-        "en": "URL shortening service built with NestJS, MongoDB and Redis caching for short links, JWT with refresh token rotation, group management, user levels, audit logging and real-time notifications via Socket.IO."
+        "vi": "Bộ công cụ web (Vue 3 + FastAPI) chuyển Markdown → PDF, PDF → DOCX và Audio → Text với transcript editor (preview – sửa – xuất SRT/VTT/TXT). Kiến trúc sẵn sàng mở rộng Video → Text và dịch transcript bằng AI.",
+        "en": "Web toolkit (Vue 3 + FastAPI) for Markdown → PDF, PDF → DOCX, and Audio → Text with a transcript editor (preview – edit – export SRT/VTT/TXT). Architecture ready for Video → Text and AI transcript translation."
       },
       "technologies": [
-        "NestJS",
-        "TypeScript",
-        "MongoDB",
-        "Mongoose",
-        "Redis",
-        "JWT",
-        "React 19",
-        "Redux Toolkit",
-        "Tailwind CSS",
-        "Socket.IO"
+        "Vue 3",
+        "Vite",
+        "FastAPI",
+        "Python",
+        "WeasyPrint",
+        "faster-whisper",
+        "Groq"
       ],
       "description": {
-        "vi": "Hệ thống gồm Backend NestJS (module hóa) với MongoDB (Mongoose) lưu trữ vĩnh viễn và Redis dùng cho cache short URL, session/refresh token, daily count và rate limiting. Frontend React 19 (Create React App) + Redux Toolkit + Tailwind CSS + Socket.IO Client cung cấp giao diện quản lý link, tạo mã QR, quản lý nhóm, bảng điều khiển admin (accounts, levels, config, audit log, health) và nhận thông báo real-time. Có thêm dịch vụ WebSocket riêng (NestJS + Socket.IO).",
-        "en": "The system consists of a modular NestJS backend with MongoDB (Mongoose) for persistent storage and Redis for short-URL cache, session/refresh tokens, daily counts and rate limiting. The React 19 (Create React App) + Redux Toolkit + Tailwind CSS + Socket.IO Client frontend provides link management, instant QR code generation, group management, admin dashboards (accounts, levels, config, audit log, health) and real-time notifications. A separate WebSocket service (NestJS + Socket.IO) is also part of the stack."
+        "vi": "Monorepo: Frontend Vue 3 (Composition API, Vue Router, Pinia, Bootstrap 5) + Backend FastAPI. Markdown → PDF dùng WeasyPrint + theme Jinja2 (document/github/cv). PDF → DOCX dùng pdf2docx. Audio → Text hỗ trợ local (faster-whisper) hoặc cloud (Groq), có luồng human-in-the-loop: upload → preview segments → chỉnh sửa → xuất file. Không auth, không DB — job tạm trên filesystem với TTL.",
+        "en": "Monorepo: Vue 3 frontend (Composition API, Vue Router, Pinia, Bootstrap 5) + FastAPI backend. Markdown → PDF via WeasyPrint + Jinja2 themes. PDF → DOCX via pdf2docx. Audio → Text supports local (faster-whisper) or cloud (Groq) with human-in-the-loop flow: upload → preview segments → edit → export. No auth, no DB — temporary jobs on filesystem with TTL."
       },
       "features": {
         "vi": [
-          "Short code alphanumeric ngẫu nhiên (độ dài cấu hình) + Redis cache redirect",
-          "Click count, mật khẩu, hết hạn / vô thời hạn theo Level",
-          "RBAC 3 cấp + Level quota (link/ngày, group, member)",
-          "Quản lý nhóm, audit log tự động, dynamic config từ DB",
-          "QR code, analytics, WebSocket real-time (user / room / broadcast)",
-          "Refresh token rotation, multi-tab auth sync, proactive refresh"
+          "Markdown → PDF: upload/dán nội dung, chọn theme, hỗ trợ metadata",
+          "Preview PDF trước khi tải",
+          "PDF → DOCX với tùy chọn khoảng trang",
+          "Audio → Text: transcript editor (sửa segment, find & replace, giữ timestamp)",
+          "Xuất SRT / VTT / TXT",
+          "Transcription local hoặc cloud (Groq) + prompt/hint",
+          "Giới hạn file size cấu hình qua env",
+          "Docker + pytest backend",
+          "Roadmap: Video → Text & AI transcript translation"
         ],
         "en": [
-          "Random alphanumeric short codes (configurable length) with Redis redirect cache",
-          "Click counting, password protection, expiration / no-expiration by Level",
-          "3-level RBAC + Level quotas (daily links, groups, members)",
-          "Group management, automatic audit log, dynamic DB-driven config",
-          "QR codes, analytics, real-time WebSocket (user / room / broadcast)",
-          "Refresh token rotation, multi-tab auth sync, proactive token refresh"
+          "Markdown → PDF: upload/paste, theme selection, metadata support",
+          "Inline PDF preview before download",
+          "PDF → DOCX with optional page range",
+          "Audio → Text: transcript editor (edit segments, find & replace, keep timestamps)",
+          "Export to SRT / VTT / TXT",
+          "Local or cloud (Groq) transcription + prompt/hint",
+          "Configurable file size limits via env",
+          "Docker + pytest for backend",
+          "Roadmap: Video → Text & AI transcript translation"
         ]
       },
       "gallery": [
         {
-          "id": "stl-img-001",
-          "src": "/assets/images/projects/shorter-link/shorter-link-list.png",
+          "id": "df-img-001",
+          "src": "/assets/images/projects/docforge/docforge-cover.gif",
           "caption": {
-            "vi": "Danh sách link rút gọn đã thêm của người dùng.",
-            "en": "List of user's shortened links."
+            "vi": "Trang chủ DocForge — giới thiệu bộ công cụ chuyển đổi tài liệu.",
+            "en": "DocForge homepage — document conversion toolkit overview."
           }
         },
         {
-          "id": "stl-img-002",
-          "src": "/assets/images/projects/shorter-link/shorter-link-level-mng.png",
+          "id": "df-img-002",
+          "src": "/assets/images/projects/docforge/docforge-md-to-pdf.gif",
           "caption": {
-            "vi": "Quản lý hạn mức (Quota) theo từng cấp độ tài khoản.",
-            "en": "Quota management for each account level."
+            "vi": "Markdown → PDF: soạn thảo và xem trước.",
+            "en": "Markdown → PDF: editor and live preview."
           }
         },
         {
-          "id": "stl-img-003",
-          "src": "/assets/images/projects/shorter-link/shorter-link-health-1.png",
+          "id": "df-img-003",
+          "src": "/assets/images/projects/docforge/docforge-pdf-to-doc.gif",
           "caption": {
-            "vi": "Theo dõi thông tin sức khỏe của các service trong hệ thống.",
-            "en": "Monitor health information of services in the system."
+            "vi": "PDF → DOCX: kéo thả file và chuyển đổi.",
+            "en": "PDF → DOCX: drag-and-drop conversion."
           }
         },
         {
-          "id": "stl-img-004",
-          "src": "/assets/images/projects/shorter-link/shorter-link-health-2.png",
+          "id": "df-img-004",
+          "src": "/assets/images/projects/docforge/docforge-audio-to-transcript.gif",
           "caption": {
-            "vi": "Theo dõi chi tiết thông tin sức khỏe của từng service.",
-            "en": "Detailed health information of each service."
+            "vi": "Transcript Editor: upload audio → sửa segment → xuất SRT/VTT/TXT.",
+            "en": "Transcript Editor: upload audio → edit segments → export SRT/VTT/TXT."
           }
         }
       ],
       "links": {
-        "demo": "https://shink.onrender.com/",
-        "source": "https://github.com/ayana0409/shorter-link-api",
-        "backend": "https://github.com/ayana0409/shorter-link-api",
-        "frontend": "https://github.com/ayana0409/shorter-link-fe",
-        "websocket": "https://github.com/ayana0409/shorter-link-websocket"
+        "demo": "https://forgedoc.onrender.com"
       },
       "technicalSpec": {
-        "architecture": "Modular Monolith với NestJS, tách biệt Controller - Service - Repository, hỗ trợ mở rộng module độc lập.",
-        "cachingStrategy": "Redis Cache-Aside pattern với TTL cho short URLs, giúp giảm 90% truy vấn đọc vào MongoDB; dùng Redis Hash cho session người dùng.",
-        "databaseAndIndexing": "MongoDB (Mongoose) với compound index { shortCode: 1 } để tối ưu tra cứu O(1); index { userId: 1, createdAt: -1 } cho danh sách quản lý.",
-        "securityAndAuth": "JWT Access Token ngắn hạn kết hợp Refresh Token Rotation và Family Revocation; RBAC 3 cấp phân quyền; Sliding window rate-limiting qua Redis chống brute-force.",
+        "architecture": "Monorepo Vue 3 FE + FastAPI BE. Mỗi công cụ = 1 page + 1 composable (FE) / 1 converter (BE). Converter registry dễ mở rộng.",
+        "cachingStrategy": "Không Redis. Transcription job lưu disk theo job_id, TTL ~2 giờ.",
+        "databaseAndIndexing": "Không database. Xử lý file trực tiếp, cấu hình qua env + Pydantic.",
+        "securityAndAuth": "Không auth. CORS mở (*). Giới hạn file size. Cần siết origin + auth nếu deploy production.",
         "tradeoffsAndChallenges": [
-          "Lựa chọn NanoID ngẫu nhiên thay vì mã hóa tuần tự để tránh bị đoán trước URL, chấp nhận kiểm tra trùng lặp mã (retry tối đa 3 lần).",
-          "Đánh đổi lưu trữ tạm thời daily count trên Redis RAM để tối ưu tốc độ ghi thời gian thực, đồng bộ bất đồng bộ về DB định kỳ."
+          "Xử lý đồng bộ đơn giản nhưng tốn CPU/RAM khi nhiều job nặng chạy song song.",
+          "Local Whisper cần phần cứng; Groq nhanh nhưng phụ thuộc API key.",
+          "WeasyPrint yêu cầu system libraries (Pango/Cairo).",
+          "PDF → DOCX chất lượng phụ thuộc cấu trúc PDF đầu vào.",
+          "Human-in-the-loop giúp kiểm soát chất lượng transcript nhưng vẫn cần chỉnh sửa thủ công."
         ]
       }
     },
     {
-      "id": "quickbite",
+      "id": "booking-hotels",
       "type": "info",
       "order": 2,
-      "coverImage": "/assets/images/projects/quick-bite/qb-cover.png",
+      "coverImage": "/assets/images/projects/booking/booking-cover.gif",
       "title": {
-        "vi": "QuickBite — Nền tảng Đặt & Giao Đồ Ăn Polyglot Microservices",
-        "en": "QuickBite — Polyglot Microservices Food Delivery Platform"
+        "vi": "BookingHotels — Hệ thống đặt phòng khách sạn",
+        "en": "BookingHotels — Hotel Booking System"
       },
       "summary": {
-        "vi": "Nền tảng đặt & giao đồ ăn kiến trúc Polyglot Microservices kết hợp .NET 10 (ABP Framework), Spring Boot 3.3 (Java 21) và NestJS 11, điều phối giao dịch phân tán qua Apache Kafka (MassTransit Saga State Machine, Outbox/Inbox Pattern) cùng 2 giao diện Next.js 16 (Customer Web) và React 19 + Vite 8 (Admin/Merchant Portal).",
-        "en": "Enterprise-grade food delivery platform engineered with a Polyglot Microservices architecture (.NET 10 / ABP Framework, Spring Boot 3.3 / Java 21, NestJS 11), distributed transaction orchestration via Apache Kafka (MassTransit Saga State Machine, Outbox/Inbox patterns), and dual frontends (Next.js 16 Customer Web & React 19 / Vite 8 Admin/Merchant Portal)."
+        "vi": "Hệ thống đặt phòng khách sạn ASP.NET Core MVC (.NET 8). Tìm kiếm/đặt/hủy phòng, đánh giá, tin tức; admin quản lý khách sạn, phòng, user, đơn hàng và báo cáo doanh thu.",
+        "en": "Hotel booking system with ASP.NET Core MVC (.NET 8). Room search/booking/cancellation, reviews, news; admin manages hotels, rooms, users, orders, and revenue reports."
       },
       "technologies": [
-        ".NET 10",
-        "ABP Framework 10",
-        "C#",
-        "Java 21",
-        "Spring Boot 3.3",
-        "NestJS 11",
-        "TypeScript",
-        "Apache Kafka",
-        "PostgreSQL",
-        "MySQL",
-        "Redis",
-        "MongoDB",
-        "OpenIddict (OAuth2/OIDC)",
-        "Next.js 16",
-        "React 19",
-        "Vite 8",
-        "Tailwind CSS",
-        "TanStack Query 5",
-        "Leaflet",
-        "Docker"
+        ".NET 8",
+        "ASP.NET Core MVC",
+        "Entity Framework Core",
+        "SQL Server",
+        "Bootstrap 5",
+        "AdminLTE 3"
       ],
       "description": {
-        "vi": "Hệ thống gồm 6 microservices backend phân bổ theo thế mạnh từng domain:\n- Identity Service (.NET 10/ABP): Quản lý IAM/RBAC & OpenIddict OIDC.\n- Order Service (.NET 10/ABP/MySQL): Điều phối Saga Orchestration qua MassTransit.\n- Payment Service & Inventory Service (Spring Boot 3.3): Xử lý uỷ quyền thanh toán Hexagonal và giữ chỗ tồn kho (Optimistic Locking JPA).\n- Catalog Service & API Gateway BFF (NestJS 11): Quản lý thực đơn, dynamic config 3 cấp (Redis -> Mongo -> Env), rate limit và JWKS validation.\n\nTầng Client bao gồm 2 phân hệ chính:\n- Customer Web App: Next.js 16 SSR kết hợp Leaflet GPS tracking.\n- Admin & Merchant Portal: React 19 + Vite 8 + TanStack Query 5 + Recharts.\n\nToàn bộ giao tiếp bất đồng bộ được thực hiện qua Apache Kafka, kết hợp với Transactional Outbox & Inbox Pattern nhằm đảm bảo tính toàn vẹn dữ liệu.",
-        "en": "The platform comprises 6 backend microservices aligned with domain strengths:\n- Identity Service (.NET 10/ABP): for IAM/RBAC & OpenIddict OIDC.\n- Order Service (.NET 10/ABP/MySQL): orchestrating distributed Sagas via MassTransit.\n- Payment & Inventory Services (Spring Boot 3.3): for Hexagonal payment workflows and high-concurrency stock reservation (JPA Optimistic Locking).\n- Catalog Service & API Gateway BFF (NestJS 11): managing menus, 3-tier dynamic config (Redis -> Mongo -> Env), rate limiting and JWKS edge validation.\n\nThe frontend layer features 2 main applications:\n- Customer Web App: Next.js 16 SSR + Leaflet live GPS tracking.\n- Admin & Merchant Portal: React 19 + Vite 8 + TanStack Query 5 + Recharts.\n\nAsynchronous event streams run on Apache Kafka using Transactional Outbox and Inbox patterns for guaranteed reliability."
+        "vi": "Kiến trúc 3-layer: App.Data (Entity, Repository, EF Core), App.Share, App.Web (MVC + Admin Panel). Client: đăng ký/đăng nhập, tìm phòng theo ngày/số người/loại/giá, đặt & hủy, lịch sử, đánh giá, profile. Admin: CRUD khách sạn/chi nhánh/phòng/loại phòng/thiết bị, quản lý user & role, xử lý đơn, kiểm duyệt comment, báo cáo doanh thu. Cookie Auth, Role-based Authorization, Soft Delete + Audit Trail, Data Seeding.",
+        "en": "3-layer architecture: App.Data (Entity, Repository, EF Core), App.Share, App.Web (MVC + Admin Panel). Client: register/login, search by date/guests/type/price, book & cancel, history, reviews, profile. Admin: CRUD hotels/branches/rooms/types/equipment, user & role management, order processing, comment moderation, revenue reports. Cookie Auth, Role-based Authorization, Soft Delete + Audit Trail, Data Seeding."
       },
       "features": {
         "vi": [
-          "Kiến trúc Polyglot Microservices chuyên biệt: .NET 10 (IAM, Order Saga), Spring Boot 3.3 (Payment, Inventory), NestJS 11 (Catalog, Gateway BFF)",
-          "Điều phối giao dịch phân tán (Orchestration Saga) bằng MassTransit State Machine với cơ chế bù trừ (Compensation) tự động khi thất bại",
-          "Đảm bảo tin cậy và chống trùng lặp với Transactional Outbox Worker, Idempotent Consumer (Inbox Pattern) và Optimistic Locking JPA",
-          "Xác thực tập trung OIDC / OAuth2 qua OpenIddict 7.2 (RS256 JWT, JWKS discovery), RBAC đa tầng và xác thực ở Edge Gateway",
-          "API Gateway BFF tích hợp Dynamic Config 3 cấp (Redis -> MongoDB -> .env fallback), Rate Limiting, Correlation ID tracing và Wake-up health probe",
-          "Customer Web App (Next.js 16 SSR) hỗ trợ tìm kiếm món ăn, giỏ hàng, đặt hàng và theo dõi lộ trình tài xế thời gian thực với Leaflet GPS",
-          "Admin & Merchant Portal (React 19 + Vite 8) quản lý thực đơn, duyệt yêu cầu mở quán (JSONB), xử lý đơn hàng và thống kê doanh thu với Recharts"
+          "Đăng ký / đăng nhập + phân quyền Admin/User",
+          "Tìm phòng theo ngày, số người, loại phòng, giá",
+          "Xem chi tiết phòng, hình ảnh, tiện nghi",
+          "Đặt phòng, lịch sử, hủy đơn",
+          "Đánh giá & bình luận",
+          "Quản lý profile & đổi mật khẩu",
+          "Admin: CRUD khách sạn, chi nhánh, phòng, loại phòng, thiết bị",
+          "Quản lý user, role, tin tức, comment",
+          "Báo cáo doanh thu & thống kê booking",
+          "Soft Delete, Audit Trail, Data Seeding"
         ],
         "en": [
-          "Domain-driven Polyglot Microservices: .NET 10 (IAM, Order Saga), Spring Boot 3.3 (Payment, Inventory), NestJS 11 (Catalog, Gateway BFF)",
-          "Distributed Orchestration Saga via MassTransit State Machine with automated rollback and compensation on payment/inventory failure",
-          "Guaranteed data consistency via Transactional Outbox workers, Idempotent Consumer (Inbox Pattern) and JPA Optimistic Locking",
-          "Centralized OIDC / OAuth2 IAM powered by OpenIddict 7.2 (RS256 JWT, JWKS discovery), multi-tenant RBAC, and edge token verification",
-          "Resilient API Gateway (BFF) with 3-tier dynamic configuration (Redis -> MongoDB -> .env), rate limiting, correlation tracing and cold-start wake-up probe",
-          "Customer Storefront (Next.js 16 SSR) featuring fast menu search, dynamic checkout, and interactive live GPS delivery tracking with Leaflet",
-          "Admin & Merchant Portal (React 19 + Vite 8) with menu designer, generic JSONB onboarding request approvals, order triage, and Recharts analytics"
+          "Register / login + Admin/User roles",
+          "Room search by date, guests, type, price",
+          "Room details with images and amenities",
+          "Booking, history, cancellation",
+          "Reviews & comments",
+          "Profile management & password change",
+          "Admin: CRUD hotels, branches, rooms, types, equipment",
+          "User, role, news, comment management",
+          "Revenue reports & booking statistics",
+          "Soft Delete, Audit Trail, Data Seeding"
         ]
       },
       "gallery": [
         {
-          "id": "qb-img-001",
-          "src": "/assets/images/projects/quick-bite/qb-food-item.png",
+          "id": "bh-img-001",
+          "src": "/assets/images/projects/booking/booking-cover.gif",
           "caption": {
-            "vi": "Giao diện thêm món ăn vào giỏ hàng.",
-            "en": "Food item detail view with customization options."
+            "vi": "Trang chủ với banner khách sạn và form tìm kiếm phòng.",
+            "en": "Homepage with hotel banner and room search form."
           }
         },
         {
-          "id": "qb-img-002",
-          "src": "/assets/images/projects/quick-bite/qb-rest-details.png",
+          "id": "bh-img-002",
+          "src": "/assets/images/projects/booking/booking-room.gif",
           "caption": {
-            "vi": "Giao diện thông tin chi tiết nhà hàng với menu.",
-            "en": "Restaurant details page featuring the menu."
+            "vi": "Danh sách phòng kèm bộ lọc tiện nghi và đặt phòng.",
+            "en": "Room listing with amenity filters and booking actions."
           }
         },
         {
-          "id": "qb-img-003",
-          "src": "/assets/images/projects/quick-bite/qb-mc-db.png",
+          "id": "bh-img-003",
+          "src": "/assets/images/projects/booking/booking-booking.gif",
           "caption": {
-            "vi": "Giao diện dashboard của merchant",
-            "en": "Merchant dashboard interface"
+            "vi": "Giao diện đặt phòng và tổng thanh toán.",
+            "en": "Booking cart and payment summary."
           }
         },
         {
-          "id": "qb-img-004",
-          "src": "/assets/images/projects/quick-bite/qb-fi-edt.png",
+          "id": "bh-img-004",
+          "src": "/assets/images/projects/booking/booking-ad-manager.gif",
           "caption": {
-            "vi": "Giao diện chỉnh sửa món ăn",
-            "en": "Food item edit interface"
+            "vi": "Admin dashboard — thống kê hoạt động, phòng, doanh thu.",
+            "en": "Admin dashboard — activity, rooms, and revenue overview."
           }
         },
         {
-          "id": "qb-img-005",
-          "src": "/assets/images/projects/quick-bite/qb-in.png",
+          "id": "bh-img-005",
+          "src": "/assets/images/projects/booking/booking-news.gif",
           "caption": {
-            "vi": "Giao diện quản lý tồn kho",
-            "en": "Inventory management interface"
+            "vi": "Trang tin tức du lịch và khuyến mãi.",
+            "en": "Travel news and promotions page."
           }
         },
         {
-          "id": "qb-img-006",
-          "src": "/assets/images/projects/quick-bite/qb-acc.png",
+          "id": "bh-img-006",
+          "src": "/assets/images/projects/booking/booking-user-profile.gif",
           "caption": {
-            "vi": "Giao diện quản lý tài khoản",
-            "en": "Account management interface"
+            "vi": "Trang thông tin cá nhân người dùng.",
+            "en": "User profile management page."
           }
         }
       ],
-      "links": [
-        {
-          "label": {
-            "vi": "CUSTOMER WEB DEMO ↗",
-            "en": "CUSTOMER WEB DEMO ↗"
-          },
-          "url": "https://quickbite-wnkc.onrender.com/",
-          "type": "demo"
-        },
-        {
-          "label": {
-            "vi": "ADMIN & MERCHANT PORTAL ↗",
-            "en": "ADMIN & MERCHANT PORTAL ↗"
-          },
-          "url": "https://quickbitemanager.onrender.com/",
-          "type": "demo-alt"
-        },
-        {
-          "label": {
-            "vi": "SOURCE CODE",
-            "en": "SOURCE CODE"
-          },
-          "url": "https://github.com/ayana0409/QuickBite",
-          "type": "repo-blue"
-        }
-      ],
+      "links": {
+        "repository": "https://github.com/VzTong/BookingHotels"
+      },
       "technicalSpec": {
-        "architecture": "Polyglot Microservices theo Domain-Driven Design (DDD) và Event-Driven Architecture (EDA) qua Apache Kafka. Phân bổ theo thế mạnh domain: .NET 10 (ABP Framework) cho Identity và Order Service (MassTransit Saga State Machine); Spring Boot 3.3 (Hexagonal Ports & Adapters) cho Payment và Inventory Service; NestJS 11 cho Catalog Service và API Gateway BFF; Frontend phân tách thành Next.js 16 (App Router, SSR/RSC tối ưu SEO cho Storefront khách hàng) và React 19 / Vite 8 (SPA hiệu năng cao cho POS Merchant & Admin Portal).",
-        "cachingStrategy": "Đường ống 2 tầng (2-Layer Pipeline) tại Edge API Gateway: Tầng 1 Global HTTP Redis Cache với TTL động (0–120s đồng bộ từ MongoDB) cho phản hồi < 2ms; Tầng 2 Request Coalescing (RxJS shareReplay) gom các request trùng lặp đồng thời để triệt tiêu Thundering Herd; Redis cache cho JWKS public keys và phiên làm việc của người dùng.",
-        "databaseAndIndexing": "Mô hình Database-per-Service hoàn toàn độc lập: MySQL cho Order Service (tối ưu hóa giao dịch ACID và lịch sử trạng thái đơn hàng); PostgreSQL cho Identity, Payment, Inventory và Catalog (hỗ trợ PostGIS định vị GPS, GIN Index cho full-text search, JSONB cho biến thể món/toppings và catalog requests); MongoDB lưu trữ Dynamic Config 3 lớp tại Gateway; Compound unique index (orderId, foodItemId) chống spam đánh giá và unique index cho SKU món ăn.",
-        "securityAndAuth": "Single Sign-On (SSO) tập trung qua OpenIddict 7.2 (.NET ABP) phát hành JWT RS256; xác thực phi tập trung tại Edge Gateway thông qua JWKS (/.well-known/jwks.json) mà không cần truy vấn database Identity Service; Axios Interceptor với cơ chế Silent Refresh Mutex Queue tại client để tự động làm mới token 401 mà không làm ngắt phiên người dùng; RBAC phân quyền đa cấp (Admin, Sub-Admin, Manager, Merchant, Customer); Rate Limiting qua @nestjs/throttler.",
+        "architecture": "3-Layer: Data Access (App.Data) – Shared (App.Share) – Presentation (App.Web).",
+        "dataAccess": "EF Core Code-First + Repository Pattern + Migrations. SQL Server / LocalDB.",
+        "authenticationAndAuthorization": "Cookie Authentication + Role-based Authorization (Admin / User).",
+        "frontend": "Razor Views + Bootstrap 5 + AdminLTE 3 + jQuery.",
+        "dataManagement": "Soft Delete, Created/Updated/Deleted tracking, Data Seeding, Custom Validation.",
         "tradeoffsAndChallenges": [
-          "Xây dựng Mock Payment Gateway (Sandbox UI Simulation) thay vì tích hợp cổng thanh toán trực tuyến thực tế (VNPAY, MoMo, Stripe) nhằm phục vụ mục đích demo đồ án, loại bỏ hoàn toàn các rào cản pháp lý, chi phí duy trì giao dịch và thủ tục đăng ký pháp nhân doanh nghiệp, trong khi vẫn mô phỏng đầy đủ kịch bản thành công/thất bại cho luồng Saga compensation.",
-          "Chấp nhận độ trễ khởi động nguội (Cold-Start latency) khi triển khai hệ thống phân tán trên hạ tầng Cloud gói miễn phí (Render/Koyeb); giải quyết trải nghiệm người dùng bằng component <BootScreen /> trực quan hóa topology mạng qua Anime.js kết hợp cơ chế fan-out health ping (GET /api/system/health/wake-up) để đồng loạt đánh thức toàn bộ microservices trước khi chuyển vào ứng dụng.",
-          "Áp dụng MassTransit State Machine Saga kết hợp Transactional Outbox và Idempotent Inbox để đảm bảo tính nhất quán dữ liệu phân tán không cần 2PC giữa Order, Inventory và Payment, chấp nhận độ phức tạp của mô hình Eventual Consistency để đổi lấy tính sẵn sàng và tính độc lập của từng domain.",
-          "Sử dụng Optimistic Locking (@Version trên JPA Hibernate) tại Inventory Service để xử lý tranh chấp giữ chỗ kho (stock reservation) khi đơn hàng tăng đột biến, chấp nhận cơ chế retry giao dịch thay vì Pessimistic Lock làm nghẽn luồng cơ sở dữ liệu."
+          "MVC + Razor full-stack nhanh nhưng frontend ít tách biệt hơn SPA.",
+          "Repository Pattern tăng khả năng test nhưng cần tránh abstraction thừa trên EF Core.",
+          "Cookie Auth phù hợp server-rendered; nếu tách SPA/mobile sẽ cần token-based.",
+          "AdminLTE rút ngắn thời gian UI admin nhưng hạn chế tùy biến."
+        ]
+      }
+    },
+    {
+      "id": "movie-pj",
+      "type": "info",
+      "order": 3,
+      "coverImage": "/assets/images/projects/movie/movie-cover.gif",
+      "title": {
+        "vi": "MoviePJ — Hệ thống quản lý phim & nội dung giải trí",
+        "en": "MoviePJ — Movie & Entertainment Content Management System"
+      },
+      "summary": {
+        "vi": "Hệ thống quản lý phim/anime ASP.NET Core MVC (.NET 8). Quản lý phim, diễn viên, studio, thể loại, tập phim, user và bình luận; admin panel đầy đủ CRUD và dashboard.",
+        "en": "Movie/anime management system with ASP.NET Core MVC (.NET 8). Manages movies, actors, studios, genres, episodes, users and comments; full admin CRUD and dashboard."
+      },
+      "technologies": [
+        ".NET 8",
+        "ASP.NET Core MVC",
+        "Entity Framework Core",
+        "SQL Server",
+        "Bootstrap 5",
+        "BCrypt"
+      ],
+      "description": {
+        "vi": "MVC + ASP.NET Core 8 + EF Core. Quản lý Movie, Actor, Studio, Genre, Episode và quan hệ nhiều-nhiều. User: đăng ký/đăng nhập, tìm kiếm/lọc, xem chi tiết & tập phim, bình luận. Admin: CRUD nội dung, quản lý user & role, kiểm duyệt, dashboard. Cookie Auth, Role-based Authorization, BCrypt hashing, Soft Delete + Audit Trail, Data Seeding, phân trang (X.PagedList).",
+        "en": "MVC + ASP.NET Core 8 + EF Core. Manages Movie, Actor, Studio, Genre, Episode entities and many-to-many relationships. User: register/login, search/filter, details & episodes, comments. Admin: full CRUD, user & role management, moderation, dashboard. Cookie Auth, Role-based Authorization, BCrypt hashing, Soft Delete + Audit Trail, Data Seeding, pagination (X.PagedList)."
+      },
+      "features": {
+        "vi": [
+          "Đăng ký / đăng nhập + phân quyền Admin/User",
+          "Quản lý phim & anime (thể loại, diễn viên, studio, tập phim)",
+          "Tìm kiếm, lọc, phân trang",
+          "Xem chi tiết phim & danh sách tập",
+          "Quản lý diễn viên, studio, nhà sản xuất, thể loại",
+          "Quản lý user, role, khóa/mở khóa tài khoản",
+          "Bình luận & tương tác",
+          "Admin CRUD + upload hình ảnh",
+          "Soft Delete + Audit Trail",
+          "Data Seeding + Dashboard thống kê"
+        ],
+        "en": [
+          "Register / login + Admin/User roles",
+          "Movie & anime management (genres, actors, studios, episodes)",
+          "Search, filter, pagination",
+          "Movie details & episode tracking",
+          "Actor, studio, maker, genre management",
+          "User management, role assignment, block/unblock",
+          "Comments & community interaction",
+          "Admin CRUD + image upload",
+          "Soft Delete + Audit Trail",
+          "Data Seeding + statistics dashboard"
+        ]
+      },
+      "gallery": [
+        {
+          "id": "mp-img-001",
+          "src": "/assets/images/projects/movie/movie-cover.gif",
+          "caption": {
+            "vi": "Trang chủ — banner phim nổi bật và điều hướng.",
+            "en": "Homepage — featured film banner and navigation."
+          }
+        },
+        {
+          "id": "mp-img-002",
+          "src": "/assets/images/projects/movie/movie-search-list.gif",
+          "caption": {
+            "vi": "Danh sách anime dạng grid với tìm kiếm.",
+            "en": "Anime listing grid with search."
+          }
+        },
+        {
+          "id": "mp-img-003",
+          "src": "/assets/images/projects/movie/movie-watch.gif",
+          "caption": {
+            "vi": "Trang chi tiết phim — overview, studio, diễn viên.",
+            "en": "Movie detail page — overview, studio, cast."
+          }
+        },
+        {
+          "id": "mp-img-004",
+          "src": "/assets/images/projects/movie/movie-admin.gif",
+          "caption": {
+            "vi": "Admin panel — quản lý profile và nội dung.",
+            "en": "Admin panel — profile and content management."
+          }
+        },
+        {
+          "id": "mp-img-005",
+          "src": "/assets/images/projects/movie/movie-profile.gif",
+          "caption": {
+            "vi": "Trang profile người dùng.",
+            "en": "User profile page."
+          }
+        },
+        {
+          "id": "mp-img-006",
+          "src": "/assets/images/projects/movie/movie-login.gif",
+          "caption": {
+            "vi": "Form đăng ký / đăng nhập.",
+            "en": "Register / login form."
+          }
+        }
+      ],
+      "links": {
+        "repository": "https://github.com/VzTong/DACS1"
+      },
+      "technicalSpec": {
+        "architecture": "ASP.NET Core MVC: Controllers – Views – Entities – Configurations – DataSeeders – Areas/Admin.",
+        "dataAccess": "EF Core 8 Code-First + Entity Configurations + Migrations. SQL Server / LocalDB.",
+        "databaseDesign": "Quan hệ nhiều-nhiều (FilmActor, FilmGenres…). Soft Delete (DeletedDate) + Created/Updated tracking.",
+        "authenticationAndAuthorization": "Cookie Authentication + Role-based Authorization. BCrypt.Net-Next cho password hashing.",
+        "frontend": "Razor Views + Bootstrap 5 + jQuery + Toast Notifications.",
+        "dataManagement": "Data Seeding, X.PagedList phân trang.",
+        "tradeoffsAndChallenges": [
+          "MVC + Razor full-stack nhanh nhưng frontend ít tách biệt hơn SPA.",
+          "Quan hệ nhiều-nhiều linh hoạt nhưng tăng độ phức tạp query & CRUD.",
+          "Cookie Auth phù hợp server-rendered; token-based cần thiết nếu mở rộng SPA/mobile.",
+          "Soft Delete bảo toàn dữ liệu nhưng mọi query phải xử lý DeletedDate."
+        ]
+      }
+    },
+    {
+      "id": "lungdx",
+      "type": "info",
+      "order": 4,
+      "coverImage": "/assets/images/projects/lungdx/Cover4.png",
+      "title": {
+        "vi": "LungDx — Chẩn đoán bệnh phổi từ ảnh X-quang bằng Deep Learning",
+        "en": "LungDx — Chest X-ray Lung Disease Diagnosis with Deep Learning"
+      },
+      "summary": {
+        "vi": "Ứng dụng web hỗ trợ chẩn đoán bệnh phổi từ ảnh X-quang ngực (Flask + TensorFlow). Nhiều mô hình (CNN, ResNet50, MobileNetV2, EfficientNetB0), ensemble, progress real-time qua Socket.IO và lịch sử chẩn đoán.",
+        "en": "Web app for lung disease diagnosis from chest X-ray images (Flask + TensorFlow). Multiple models (CNN, ResNet50, MobileNetV2, EfficientNetB0), ensemble prediction, real-time progress via Socket.IO, and diagnosis history."
+      },
+      "technologies": [
+        "Python",
+        "Flask",
+        "TensorFlow",
+        "Keras",
+        "OpenCV",
+        "Socket.IO",
+        "Bootstrap 5"
+      ],
+      "description": {
+        "vi": "Flask + Flask-SocketIO backend, TensorFlow/Keras inference. 4 mô hình: custom CNN, ResNet50, MobileNetV2, EfficientNetB0. Ensemble trung bình có trọng số. Pre-check ảnh (aspect ratio + intensity), heuristic phát hiện vùng mờ viêm phổi, progress real-time, lưu tối đa 100 bản ghi lịch sử. UI Dark/Light mode. Chỉ là công cụ hỗ trợ quyết định, không thay thế chẩn đoán lâm sàng.",
+        "en": "Flask + Flask-SocketIO backend, TensorFlow/Keras inference. Four models: custom CNN, ResNet50, MobileNetV2, EfficientNetB0. Weighted-average ensemble. Image pre-check, heuristic opacity detection, real-time progress, history up to 100 records. Dark/Light mode UI. Decision-support tool only — does not replace clinical diagnosis."
+      },
+      "features": {
+        "vi": [
+          "Upload ảnh X-quang hoặc nhập URL",
+          "4 mô hình: CNN, ResNet50, MobileNetV2, EfficientNetB0",
+          "Ensemble prediction (trung bình có trọng số)",
+          "Pre-check ảnh có giống X-quang ngực không",
+          "Heuristic phát hiện đặc trưng viêm phổi",
+          "Progress real-time qua Socket.IO",
+          "Lưu & quản lý lịch sử chẩn đoán (tối đa 100)",
+          "Dark / Light mode, responsive"
+        ],
+        "en": [
+          "Upload X-ray image or provide URL",
+          "4 models: CNN, ResNet50, MobileNetV2, EfficientNetB0",
+          "Weighted-average ensemble prediction",
+          "Pre-check whether input looks like a chest X-ray",
+          "Heuristic pneumonia feature detection",
+          "Real-time progress via Socket.IO",
+          "Diagnosis history management (up to 100 records)",
+          "Dark / Light mode, responsive UI"
+        ]
+      },
+      "gallery": [
+        {
+          "id": "ld-img-001",
+          "src": "/assets/images/projects/lungdx/Cover.png",
+          "caption": {
+            "vi": "Giao diện chính — chọn ảnh X-quang hoặc nhập URL.",
+            "en": "Main interface — select X-ray image or enter URL."
+          }
+        },
+        {
+          "id": "ld-img-002",
+          "src": "/assets/images/projects/lungdx/Cover2.png",
+          "caption": {
+            "vi": "Đã tải ảnh X-quang và sẵn sàng chẩn đoán.",
+            "en": "X-ray image loaded and ready for diagnosis."
+          }
+        },
+        {
+          "id": "ld-img-003",
+          "src": "/assets/images/projects/lungdx/Cover3.png",
+          "caption": {
+            "vi": "Progress real-time trong quá trình inference.",
+            "en": "Real-time progress during model inference."
+          }
+        },
+        {
+          "id": "ld-img-004",
+          "src": "/assets/images/projects/lungdx/Cover4.png",
+          "caption": {
+            "vi": "Kết quả chẩn đoán kèm cảnh báo độ tin cậy thấp.",
+            "en": "Diagnosis result with low-confidence warning."
+          }
+        },
+        {
+          "id": "ld-img-005",
+          "src": "/assets/images/projects/lungdx/History.png",
+          "caption": {
+            "vi": "Lịch sử chẩn đoán — xem và xóa bản ghi.",
+            "en": "Diagnosis history — view and delete records."
+          }
+        },
+        {
+          "id": "ld-img-006",
+          "src": "/assets/images/projects/lungdx/History2.png",
+          "caption": {
+            "vi": "Lọc lịch sử theo ngày và mô hình.",
+            "en": "Filter history by date and model."
+          }
+        }
+      ],
+      "links": {
+        "repository": "https://github.com/VzTong/LungDx"
+      },
+      "technicalSpec": {
+        "architecture": "Flask monolith + Socket.IO. Models load khi khởi động, inference theo request.",
+        "dataAccess": "Không database quan hệ; lịch sử lưu file JSON.",
+        "securityAndAuth": "SECRET_KEY hard-code (cần chuyển sang env khi deploy). Không auth người dùng.",
+        "tradeoffsAndChallenges": [
+          "Load nhiều model cùng lúc tốn RAM (≥ 8 GB khuyến nghị).",
+          "Ensemble tăng độ tin cậy nhưng chậm hơn single-model.",
+          "Chỉ là decision-support tool — kết quả không thay thế bác sĩ."
         ]
       }
     }

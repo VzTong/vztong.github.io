@@ -6,7 +6,7 @@ import { getCurrentYear } from '../../utils/helpers'
 
 /**
  * ContactSection Component
- * 
+ *
  * Strictly 100% fullscreen height (`h-screen` / `100dvh`) with snap-start alignment
  * and seamless integrated bottom footer bar.
  */
@@ -15,8 +15,8 @@ export default function ContactSection() {
   const currentLang = i18n.language === 'en' ? 'en' : 'vi'
   const sectionRef = useGSAPFadeUp({ delay: 0.2, stagger: 0.15 })
 
-  const email = portfolioData.contact?.email || 'duongdoanthuan@example.com'
-  const githubUrl = portfolioData.contact?.github || 'https://github.com/ayana0409'
+  const email = portfolioData.contact?.email || 'vztong@example.com'
+  const githubUrl = portfolioData.contact?.github || 'https://github.com/vztong'
 
   return (
     <section
@@ -86,7 +86,7 @@ export default function ContactSection() {
                 GitHub Profile
               </span>
               <span className="text-xs sm:text-sm font-semibold text-white font-mono block mt-0.5">
-                @ayana0409
+                @vztong
               </span>
             </div>
           </a>
@@ -98,13 +98,6 @@ export default function ContactSection() {
         <div className="flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-blue-500" />
           <span>© {getCurrentYear()} {portfolioData.about.name}. All rights reserved.</span>
-        </div>
-        <div className="flex items-center gap-2 sm:gap-3 text-[10px] sm:text-[11px] text-slate-400">
-          <span>React 19</span>
-          <span>•</span>
-          <span>Tailwind CSS</span>
-          <span>•</span>
-          <span>GSAP 3D</span>
         </div>
       </div>
     </section>

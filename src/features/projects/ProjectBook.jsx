@@ -8,7 +8,7 @@ import { resolveProjectImage } from '../../utils/helpers'
 
 /**
  * ProjectBook Component
- * 
+ *
  * Fits 100% strictly inside fullscreen viewport (`h-screen` / `100dvh`) with `pt-20 pb-4`
  * to guarantee that the fixed navbar NEVER overlaps or crops any content.
  */
@@ -576,7 +576,7 @@ export default function ProjectBook() {
 
                 {/* Page Bottom Footer */}
                 <div className="pt-2 border-t border-slate-800/60 flex items-center justify-between text-[10px] sm:text-[11px] font-mono text-slate-500">
-                  <span className="truncate max-w-[180px] sm:max-w-none">{t('about.name', 'Dương Đoàn Thuận')} / Backend Portfolio</span>
+                  <span className="truncate max-w-[180px] sm:max-w-none">{t('about.name', 'Tống Nhã Vy')} / Backend Portfolio</span>
                   <span>Page {pageNumber} of {totalProjects}</span>
                 </div>
               </div>
