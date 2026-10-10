@@ -14,7 +14,7 @@ MAX_TOKENS_PER_REQUEST = "200000"
 [[d1_databases]]
 binding = "DB"
 database_name = "portfolio-db"
-database_id = "d5b4953e-5d98-4697-a4c7-967528d74fb5"
+database_id = "873769a2-81d6-4caa-9c4e-772bde421b8f"
 
 [observability]
 enabled = true
