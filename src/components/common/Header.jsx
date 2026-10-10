@@ -109,7 +109,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-8 md:px-12 h-16 flex items-center justify-between">
         {/* Brand / Logo */}
         <a
-          href="index2.html"
+          href="./index2.html"
           // onClick={(e) => {
           //   e.preventDefault()
           //   window.scrollTo({ top: 0, behavior: 'smooth' })
