@@ -1,0 +1,807 @@
+{
+  "about": {
+    "name": "Tống Nhã Vy",
+    "github": "vztong",
+    "avatar": "/assets/images/avatar.jpg",
+    "title": {
+      "vi": "Giới thiệu",
+      "en": "About Me"
+    },
+    "role": {
+      "vi": "Kỹ sư Phần mềm",
+      "en": "Software Engineer"
+    },
+    "bio": {
+      "vi": "Lập trình viên backend với kinh nghiệm thực tiễn trong việc xây dựng các ứng dụng doanh nghiệp sử dụng C# và .NET. Thành thạo Clean Architecture, CQRS và làm việc hiệu quả trong môi trường Agile cộng tác. Có kinh nghiệm phát triển hệ thống full-stack với ASP.NET Core, EF Core, Vue 3 và FastAPI. Học hỏi nhanh, chủ động ứng dụng các công cụ AI để nâng cao hiệu suất công việc hàng ngày và thích chia sẻ kiến thức với đồng nghiệp trẻ.",
+      "en": "Backend-focused developer with hands-on experience building enterprise applications using C# and .NET. Comfortable with Clean Architecture, CQRS, and ollaborative Agile environments. Experienced in delivering full-stack systems with ASP.NET Core, EF Core, Vue 3, and FastAPI. Fast learner who uses AI tools to improve daily engineering productivity and enjoys sharing knowledge with junior colleagues."
+    },
+    "skills": {
+      "programming-language": {
+        "title": {
+          "vi": "Ngôn ngữ lập trình",
+          "en": "Programming Language"
+        },
+        "items": ["C#", "VB.NET", "JavaScript", "Python", "Java"]
+      },
+      "framework-and-libraries": {
+        "title": {
+          "vi": "Framework & Thư viện",
+          "en": "Framework & Libraries"
+        },
+        "items": [
+          ".NET",
+          "ASP.NET Core",
+          "Windows Form",
+          "WPF",
+          "Entity Framework",
+          "ABP Framework",
+          "Vue.js",
+          "Flask",
+          "FastAPI"
+        ]
+      },
+      "databases": {
+        "title": {
+          "vi": "Cơ sở dữ liệu",
+          "en": "Databases"
+        },
+        "items": ["SQL Server", "MySQL", "PostgreSQL", "OracleDB"]
+      },
+      "architecture-methodologies": {
+        "title": {
+          "vi": "Kiến trúc & Phương pháp",
+          "en": "Architecture & Methodologies"
+        },
+        "items": [
+          "DDD",
+          "Clean Architecture",
+          "CQRS",
+          "Repository Pattern",
+          "3-Layer",
+          "Event-Driven Architecture"
+        ]
+      },
+      "tools": {
+        "title": {
+          "vi": "Công cụ & Nền tảng",
+          "en": "Tools & Platforms"
+        },
+        "items": ["Git", "SVN", "Docker", "Postman"]
+      },
+      "Others": {
+        "title": {
+          "vi": "Khác",
+          "en": "Others"
+        },
+        "items": ["Spring Boot (basic)", "gRPC"]
+      }
+    }
+  },
+  "contact": {
+    "title": {
+      "vi": "Liên hệ",
+      "en": "Contact"
+    },
+    "email": "vzz95559@gmail.com",
+    "github": "https://github.com/vztong",
+    "linkedin": ""
+  },
+  "documents": {
+    "title": {
+      "vi": "Hồ sơ & Tài liệu",
+      "en": "Documents & Credentials"
+    },
+    "subtitle": {
+      "vi": "Xem và tải trực tiếp Master CV và Bảng điểm đại học",
+      "en": "Preview and download Master CV and verified academic transcript"
+    },
+    "driveFolderUrl": "https://vztong.github.io/CV/en/CV_TongNhaVy_EN.pdf",
+    "items": [
+      {
+        "id": "master-cv",
+        "type": "cv",
+        "title": {
+          "vi": "Master CV",
+          "en": "Master CV"
+        },
+        "badge": {
+          "vi": "CV TỔNG HỢP",
+          "en": "MASTER CV"
+        },
+        "description": {
+          "vi": "Hồ sơ năng lực kỹ sư toàn diện: nòng cốt Backend .NET Microservices & Clean Architecture, kết hợp Frontend React, Next.js và các dự án thực tế.",
+          "en": "Comprehensive developer resume detailing .NET, Microservices & Clean Architecture, paired with modern React and Next.js frontend delivery."
+        },
+        "filename": "Tong_Nha_Vy_Master_CV.pdf",
+        "url": "https://vztong.github.io/CV/en/CV_TongNhaVy_EN.pdf",
+        "fileType": "PDF",
+        "pages": "2 Pages",
+        "updatedAt": "10/2026",
+        "highlights": {
+          "vi": [
+            ".NET / VueJS / Python",
+            "Clean Architecture & Microservices",
+            "SQL Server, PostgreSQL, Redis, Kafka"
+          ],
+          "en": [
+            ".NET / VueJS / Python",
+            "Clean Architecture & Microservices",
+            "SQL Server, PostgreSQL, Redis, Kafka"
+          ]
+        }
+      },
+      {
+        "id": "transcript",
+        "type": "transcript",
+        "title": {
+          "vi": "Bảng điểm Đại học Chính quy",
+          "en": "Official Academic Transcript"
+        },
+        "badge": {
+          "vi": "BẢNG ĐIỂM CHÍNH THỨC",
+          "en": "OFFICIAL TRANSCRIPT"
+        },
+        "description": {
+          "vi": "Bảng điểm chính quy kết quả học tập chuyên ngành Kỹ thuật Phần mềm.",
+          "en": "Official university academic records and course grades in Software Engineering."
+        },
+        "filename": "Tong_Nha_Vy_Transcript.pdf",
+        "url": "https://vztong.github.io/CV/Tong_Nha_Vy_Transcript.pdf",
+        "fileType": "PDF",
+        "pages": "Official Record",
+        "updatedAt": "2025",
+        "highlights": {
+          "vi": [
+            "Đạt 8.55/10 chuyên ngành Kỹ thuật Phần mềm (Software Engineer)",
+            "Đạt điểm tuyệt đối 10/10 ở các học phần Thực hành Lập trình .NET, Thực hành OOP và Lập trình căn bản",
+            "Đạt 9.7/10 môn Kiến trúc phần mềm cùng chuỗi điểm A+ (9.0 – 9.5/10) cho toàn bộ các môn Cơ sở dữ liệu và Hệ quản trị CSDL"
+          ],
+          "en": [
+            "Achieved 8.55/10 in Software Engineering major",
+            "Achieved perfect score 10/10 in Practical .NET Programming, OOP, and Basic Programming courses",
+            "Achieved 9.7/10 in Software Architecture and maintained A+ range (9.0–9.5/10) across all Database & DBMS courses"
+          ]
+        }
+      }
+    ]
+  },
+  "ui": {
+    "navItems": {
+      "about": {
+        "vi": "Giới thiệu",
+        "en": "About"
+      },
+      "skills": {
+        "vi": "Kỹ năng",
+        "en": "Skills"
+      },
+      "experience": {
+        "vi": "Kinh nghiệm",
+        "en": "Experience"
+      },
+      "projects": {
+        "vi": "Dự án",
+        "en": "Projects"
+      },
+      "contact": {
+        "vi": "Liên hệ",
+        "en": "Contact"
+      },
+      "documents": {
+        "vi": "Hồ sơ & CV",
+        "en": "Resume & Docs"
+      }
+    },
+    "themeToggle": {
+      "light": {
+        "vi": "Sáng",
+        "en": "Light"
+      },
+      "dark": {
+        "vi": "Tối",
+        "en": "Dark"
+      }
+    },
+    "languageToggle": {
+      "vi": "VI",
+      "en": "EN"
+    },
+    "buttons": {
+      "viewProject": {
+        "vi": "Xem dự án",
+        "en": "View Project"
+      },
+      "viewSource": {
+        "vi": "Mã nguồn",
+        "en": "Source Code"
+      },
+      "prevPage": {
+        "vi": "Trước",
+        "en": "Previous"
+      },
+      "nextPage": {
+        "vi": "Tiếp theo",
+        "en": "Next"
+      }
+    }
+  },
+  "experiences": [
+    {
+      "id": "exp-backend-developer",
+      "order": 1,
+      "type": "fulltime",
+      "role": {
+        "vi": "Lập trình viên",
+        "en": "Developer"
+      },
+      "company": {
+        "vi": "FPT Software",
+        "en": "FPT Software"
+      },
+      "period": {
+        "vi": "10/2025 - 09/2026",
+        "en": "10/2025 - 09/2026"
+      },
+      "location": {
+        "vi": "Cần Thơ, Việt Nam",
+        "en": "Can Tho, Vietnam"
+      },
+      "coverImage": "/assets/images/experiences/exp-fpt.png",
+      "summary": {
+        "vi": "Trong thời gian làm việc tại FPT Software, tôi đã tích lũy kinh nghiệm thực tế trong lĩnh vực phát triển phần mềm doanh nghiệp, tham gia các dự án cho khách hàng quốc tế, đặc biệt là khách hàng Nhật Bản. Quá trình này giúp tôi nâng cao năng lực kỹ thuật, tư duy giải quyết vấn đề và khả năng phối hợp hiệu quả trong môi trường phát triển phần mềm chuyên nghiệp.",
+        "en": "During my time at FPT Software, I gained practical experience in enterprise software development, participating in projects for international clients, especially Japanese customers. This process helped me improve my technical skills, problem-solving thinking, and effective collaboration skills in a professional software development environment."
+      },
+      "technologies": ["C#", "VB.NET", "Windows Form", "Oracle"],
+      "responsibilities": {
+        "vi": [
+          "Phát triển và bảo trì các chức năng cho ứng dụng doanh nghiệp sử dụng .NET",
+          "Làm việc với cơ sở dữ liệu Oracle để xử lý dữ liệu và báo cáo (Oracle Views, Tối ưu hóa SQL)",
+          "Triển khai logic nghiệp vụ, xác thực và giao diện người dùng",
+          "Làm việc trong môi trường Agile với nhóm lớn (100+ thành viên)",
+          "Áp dụng giải pháp AI để tăng năng suất và tối ưu hóa quy trình làm việc",
+          "Chủ động nghiên cứu, áp dụng công nghệ mới để nâng cao hiệu quả công việc",
+          "Hỗ trợ và hướng dẫn thực tập sinh tìm hiểu quy trình làm việc và công nghệ"
+        ],
+        "en": [
+          "Developed and maintained features for enterprise application using .NET",
+          "Worked with Oracle database for data processing and reporting (Oracle Views, SQL optimization)",
+          "Implemented business logic, validation and UI component",
+          "Collaborated in a large-scale Agile team (100+ members)",
+          "Applied AI solutions to enhance productivity and optimize workflows",
+          "Proactively researched and applied new technologies to improve work efficiency",
+          "Supported and guided interns in understanding project workflows and technologies"
+        ]
+      },
+      "achievements": {
+        "vi": [
+          "Tham gia phát triển hệ thống sản xuất quy mô lớn với hơn 30 modules nghiệp vụ cho khách hàng Nhật Bản",
+          "Hoàn thành các chương trình đào tạo nội bộ, nâng cao năng lực sử dụng AI, ngoại ngữ và kỹ năng chuyên môn"
+        ],
+        "en": [
+          "Participated in the development of a large-scale manufacturing system with over 30 business modules for Japanese clients",
+          "Completed internal training programs, enhancing AI usage capabilities, language proficiency, and professional skills"
+        ]
+      },
+      "links": {
+        "company": "",
+        "reference": ""
+      }
+    },
+    {
+      "id": "exp-365-ejsc-intern",
+      "order": 2,
+      "type": "fulltime-internship",
+      "role": {
+        "vi": "Thực tập sinh toàn thời gian",
+        "en": "Full-time Internship"
+      },
+      "company": {
+        "vi": "365 EJSC",
+        "en": "365 EJSC"
+      },
+      "period": {
+        "vi": "09/2024 - 12/2024",
+        "en": "09/2024 - 12/2024"
+      },
+      "location": {
+        "vi": "Cần Thơ, Việt Nam (Remote)",
+        "en": "Can Tho, Vietnam (Remote)"
+      },
+      "coverImage": "/assets/images/experiences/exp-365-ejsc.png",
+      "summary": {
+        "vi": "Trong thời gian thực tập tại 365EJSC, tôi tham gia phát triển hệ thống ERP doanh nghiệp, làm việc với các công nghệ .NET và SQL Server trong môi trường phát triển phần mềm thực tế. Tôi có cơ hội rèn luyện kỹ năng phát triển API, tối ưu CSDL, viết kiểm thử tự động và áp dụng các nguyên tắc Clean Architecture vào dự án.",
+        "en": "During my internship at 365EJSC, I participated in the development of an enterprise ERP system, working with .NET and SQL Server technologies in a real software development environment. I had the opportunity to train my skills in API development, database optimization, writing automated tests, and applying Clean Architecture principles to projects."
+      },
+      "technologies": [
+        "C#",
+        "Entity Framework",
+        "RESTful API",
+        "SQL Server",
+        "JWT",
+        "XUnit",
+        "Clean Architecture",
+        "CQRS"
+      ],
+      "responsibilities": {
+        "vi": [
+          "Thiết kế và phát triển các API RESTful có khả năng mở rộng cho các module nghiệp vụ chính theo Clean Architecture, CQRS và Repository Pattern",
+          "Áp dụng xác thực JWT và phân quyền dựa trên vai trò",
+          "Xây dựng bộ kiểm thử toàn diện với XUnit để đảm bảo chất lượng và tính ổn định của mã nguồn",
+          "Soạn thảo tài liệu mô tả API và tài liệu kỹ thuật để hỗ trợ tích hợp hệ thống"
+        ],
+        "en": [
+          "Architected and developed scalable RESTful APIs for core business modules following Clean Architecture, CQRS, and Repository Pattern",
+          "Implemented secure JWT-based authentication and role-based authorization across system endpoints",
+          "Developed comprehensive unit test suites using xUnit to ensure code quality and stability",
+          "Authored API definition documents and technical specifications to streamline integration"
+        ]
+      },
+      "achievements": {
+        "vi": [
+          "Tối ưu hóa API và truy vấn CSDL, giảm response time 20% và cải thiện khả năng mở rộng",
+          "Đạt và duy trì độ bao phủ test cao cho các module nghiệp vụ quan trọng, giảm thiểu lỗi hồi quy"
+        ],
+        "en": [
+          "Optimized API endpoints and database query performance, reducing response time by 20% and improving scalability",
+          "Achieved and maintained high unit test coverage across critical business logic modules, minimizing regression bugs"
+        ]
+      },
+      "links": {
+        "company": "",
+        "reference": ""
+      }
+    }
+  ],
+  "projects": [
+    {
+      "id": "docforge",
+      "type": "info",
+      "order": 1,
+      "coverImage": "/assets/images/projects/docforge/docforge-cover.gif",
+      "title": {
+        "vi": "DocForge — Bộ công cụ chuyển đổi tài liệu & xử lý media",
+        "en": "DocForge — Document Conversion & Media Processing Toolkit"
+      },
+      "summary": {
+        "vi": "Bộ công cụ web (Vue 3 + FastAPI) chuyển Markdown → PDF, PDF → DOCX và Audio → Text với transcript editor (preview – sửa – xuất SRT/VTT/TXT). Kiến trúc sẵn sàng mở rộng Video → Text và dịch transcript bằng AI.",
+        "en": "Web toolkit (Vue 3 + FastAPI) for Markdown → PDF, PDF → DOCX, and Audio → Text with a transcript editor (preview – edit – export SRT/VTT/TXT). Architecture ready for Video → Text and AI transcript translation."
+      },
+      "technologies": [
+        "Vue 3",
+        "Vite",
+        "FastAPI",
+        "Python",
+        "WeasyPrint",
+        "faster-whisper",
+        "Groq"
+      ],
+      "description": {
+        "vi": "Monorepo: Frontend Vue 3 (Composition API, Vue Router, Pinia, Bootstrap 5) + Backend FastAPI. Markdown → PDF dùng WeasyPrint + theme Jinja2 (document/github/cv). PDF → DOCX dùng pdf2docx. Audio → Text hỗ trợ local (faster-whisper) hoặc cloud (Groq), có luồng human-in-the-loop: upload → preview segments → chỉnh sửa → xuất file. Không auth, không DB — job tạm trên filesystem với TTL.",
+        "en": "Monorepo: Vue 3 frontend (Composition API, Vue Router, Pinia, Bootstrap 5) + FastAPI backend. Markdown → PDF via WeasyPrint + Jinja2 themes. PDF → DOCX via pdf2docx. Audio → Text supports local (faster-whisper) or cloud (Groq) with human-in-the-loop flow: upload → preview segments → edit → export. No auth, no DB — temporary jobs on filesystem with TTL."
+      },
+      "features": {
+        "vi": [
+          "Markdown → PDF: upload/dán nội dung, chọn theme, hỗ trợ metadata",
+          "Preview PDF trước khi tải",
+          "PDF → DOCX với tùy chọn khoảng trang",
+          "Audio → Text: transcript editor (sửa segment, find & replace, giữ timestamp)",
+          "Xuất SRT / VTT / TXT",
+          "Transcription local hoặc cloud (Groq) + prompt/hint",
+          "Giới hạn file size cấu hình qua env",
+          "Docker + pytest backend",
+          "Roadmap: Video → Text & AI transcript translation"
+        ],
+        "en": [
+          "Markdown → PDF: upload/paste, theme selection, metadata support",
+          "Inline PDF preview before download",
+          "PDF → DOCX with optional page range",
+          "Audio → Text: transcript editor (edit segments, find & replace, keep timestamps)",
+          "Export to SRT / VTT / TXT",
+          "Local or cloud (Groq) transcription + prompt/hint",
+          "Configurable file size limits via env",
+          "Docker + pytest for backend",
+          "Roadmap: Video → Text & AI transcript translation"
+        ]
+      },
+      "gallery": [
+        {
+          "id": "df-img-001",
+          "src": "/assets/images/projects/docforge/docforge-cover.gif",
+          "caption": {
+            "vi": "Trang chủ DocForge — giới thiệu bộ công cụ chuyển đổi tài liệu.",
+            "en": "DocForge homepage — document conversion toolkit overview."
+          }
+        },
+        {
+          "id": "df-img-002",
+          "src": "/assets/images/projects/docforge/docforge-md-to-pdf.gif",
+          "caption": {
+            "vi": "Markdown → PDF: soạn thảo và xem trước.",
+            "en": "Markdown → PDF: editor and live preview."
+          }
+        },
+        {
+          "id": "df-img-003",
+          "src": "/assets/images/projects/docforge/docforge-pdf-to-doc.gif",
+          "caption": {
+            "vi": "PDF → DOCX: kéo thả file và chuyển đổi.",
+            "en": "PDF → DOCX: drag-and-drop conversion."
+          }
+        },
+        {
+          "id": "df-img-004",
+          "src": "/assets/images/projects/docforge/docforge-audio-to-transcript.gif",
+          "caption": {
+            "vi": "Transcript Editor: upload audio → sửa segment → xuất SRT/VTT/TXT.",
+            "en": "Transcript Editor: upload audio → edit segments → export SRT/VTT/TXT."
+          }
+        }
+      ],
+      "links": {
+        "demo": "https://forgedoc.onrender.com"
+      },
+      "technicalSpec": {
+        "architecture": "Monorepo Vue 3 FE + FastAPI BE. Mỗi công cụ = 1 page + 1 composable (FE) / 1 converter (BE). Converter registry dễ mở rộng.",
+        "cachingStrategy": "Không Redis. Transcription job lưu disk theo job_id, TTL ~2 giờ.",
+        "databaseAndIndexing": "Không database. Xử lý file trực tiếp, cấu hình qua env + Pydantic.",
+        "securityAndAuth": "Không auth. CORS mở (*). Giới hạn file size. Cần siết origin + auth nếu deploy production.",
+        "tradeoffsAndChallenges": [
+          "Xử lý đồng bộ đơn giản nhưng tốn CPU/RAM khi nhiều job nặng chạy song song.",
+          "Local Whisper cần phần cứng; Groq nhanh nhưng phụ thuộc API key.",
+          "WeasyPrint yêu cầu system libraries (Pango/Cairo).",
+          "PDF → DOCX chất lượng phụ thuộc cấu trúc PDF đầu vào.",
+          "Human-in-the-loop giúp kiểm soát chất lượng transcript nhưng vẫn cần chỉnh sửa thủ công."
+        ]
+      }
+    },
+    {
+      "id": "booking-hotels",
+      "type": "info",
+      "order": 2,
+      "coverImage": "/assets/images/projects/booking/booking-cover.gif",
+      "title": {
+        "vi": "BookingHotels — Hệ thống đặt phòng khách sạn",
+        "en": "BookingHotels — Hotel Booking System"
+      },
+      "summary": {
+        "vi": "Hệ thống đặt phòng khách sạn ASP.NET Core MVC (.NET 8). Tìm kiếm/đặt/hủy phòng, đánh giá, tin tức; admin quản lý khách sạn, phòng, user, đơn hàng và báo cáo doanh thu.",
+        "en": "Hotel booking system with ASP.NET Core MVC (.NET 8). Room search/booking/cancellation, reviews, news; admin manages hotels, rooms, users, orders, and revenue reports."
+      },
+      "technologies": [
+        ".NET 8",
+        "ASP.NET Core MVC",
+        "Entity Framework Core",
+        "SQL Server",
+        "Bootstrap 5",
+        "AdminLTE 3"
+      ],
+      "description": {
+        "vi": "Kiến trúc 3-layer: App.Data (Entity, Repository, EF Core), App.Share, App.Web (MVC + Admin Panel). Client: đăng ký/đăng nhập, tìm phòng theo ngày/số người/loại/giá, đặt & hủy, lịch sử, đánh giá, profile. Admin: CRUD khách sạn/chi nhánh/phòng/loại phòng/thiết bị, quản lý user & role, xử lý đơn, kiểm duyệt comment, báo cáo doanh thu. Cookie Auth, Role-based Authorization, Soft Delete + Audit Trail, Data Seeding.",
+        "en": "3-layer architecture: App.Data (Entity, Repository, EF Core), App.Share, App.Web (MVC + Admin Panel). Client: register/login, search by date/guests/type/price, book & cancel, history, reviews, profile. Admin: CRUD hotels/branches/rooms/types/equipment, user & role management, order processing, comment moderation, revenue reports. Cookie Auth, Role-based Authorization, Soft Delete + Audit Trail, Data Seeding."
+      },
+      "features": {
+        "vi": [
+          "Đăng ký / đăng nhập + phân quyền Admin/User",
+          "Tìm phòng theo ngày, số người, loại phòng, giá",
+          "Xem chi tiết phòng, hình ảnh, tiện nghi",
+          "Đặt phòng, lịch sử, hủy đơn",
+          "Đánh giá & bình luận",
+          "Quản lý profile & đổi mật khẩu",
+          "Admin: CRUD khách sạn, chi nhánh, phòng, loại phòng, thiết bị",
+          "Quản lý user, role, tin tức, comment",
+          "Báo cáo doanh thu & thống kê booking",
+          "Soft Delete, Audit Trail, Data Seeding"
+        ],
+        "en": [
+          "Register / login + Admin/User roles",
+          "Room search by date, guests, type, price",
+          "Room details with images and amenities",
+          "Booking, history, cancellation",
+          "Reviews & comments",
+          "Profile management & password change",
+          "Admin: CRUD hotels, branches, rooms, types, equipment",
+          "User, role, news, comment management",
+          "Revenue reports & booking statistics",
+          "Soft Delete, Audit Trail, Data Seeding"
+        ]
+      },
+      "gallery": [
+        {
+          "id": "bh-img-001",
+          "src": "/assets/images/projects/booking/booking-cover.gif",
+          "caption": {
+            "vi": "Trang chủ với banner khách sạn và form tìm kiếm phòng.",
+            "en": "Homepage with hotel banner and room search form."
+          }
+        },
+        {
+          "id": "bh-img-002",
+          "src": "/assets/images/projects/booking/booking-room.gif",
+          "caption": {
+            "vi": "Danh sách phòng kèm bộ lọc tiện nghi và đặt phòng.",
+            "en": "Room listing with amenity filters and booking actions."
+          }
+        },
+        {
+          "id": "bh-img-003",
+          "src": "/assets/images/projects/booking/booking-booking.gif",
+          "caption": {
+            "vi": "Giao diện đặt phòng và tổng thanh toán.",
+            "en": "Booking cart and payment summary."
+          }
+        },
+        {
+          "id": "bh-img-004",
+          "src": "/assets/images/projects/booking/booking-ad-manager.gif",
+          "caption": {
+            "vi": "Admin dashboard — thống kê hoạt động, phòng, doanh thu.",
+            "en": "Admin dashboard — activity, rooms, and revenue overview."
+          }
+        },
+        {
+          "id": "bh-img-005",
+          "src": "/assets/images/projects/booking/booking-news.gif",
+          "caption": {
+            "vi": "Trang tin tức du lịch và khuyến mãi.",
+            "en": "Travel news and promotions page."
+          }
+        },
+        {
+          "id": "bh-img-006",
+          "src": "/assets/images/projects/booking/booking-user-profile.gif",
+          "caption": {
+            "vi": "Trang thông tin cá nhân người dùng.",
+            "en": "User profile management page."
+          }
+        }
+      ],
+      "links": {
+        "repository": "https://github.com/VzTong/BookingHotels"
+      },
+      "technicalSpec": {
+        "architecture": "3-Layer: Data Access (App.Data) – Shared (App.Share) – Presentation (App.Web).",
+        "dataAccess": "EF Core Code-First + Repository Pattern + Migrations. SQL Server / LocalDB.",
+        "authenticationAndAuthorization": "Cookie Authentication + Role-based Authorization (Admin / User).",
+        "frontend": "Razor Views + Bootstrap 5 + AdminLTE 3 + jQuery.",
+        "dataManagement": "Soft Delete, Created/Updated/Deleted tracking, Data Seeding, Custom Validation.",
+        "tradeoffsAndChallenges": [
+          "MVC + Razor full-stack nhanh nhưng frontend ít tách biệt hơn SPA.",
+          "Repository Pattern tăng khả năng test nhưng cần tránh abstraction thừa trên EF Core.",
+          "Cookie Auth phù hợp server-rendered; nếu tách SPA/mobile sẽ cần token-based.",
+          "AdminLTE rút ngắn thời gian UI admin nhưng hạn chế tùy biến."
+        ]
+      }
+    },
+    {
+      "id": "movie-pj",
+      "type": "info",
+      "order": 3,
+      "coverImage": "/assets/images/projects/movie/movie-cover.gif",
+      "title": {
+        "vi": "MoviePJ — Hệ thống quản lý phim & nội dung giải trí",
+        "en": "MoviePJ — Movie & Entertainment Content Management System"
+      },
+      "summary": {
+        "vi": "Hệ thống quản lý phim/anime ASP.NET Core MVC (.NET 8). Quản lý phim, diễn viên, studio, thể loại, tập phim, user và bình luận; admin panel đầy đủ CRUD và dashboard.",
+        "en": "Movie/anime management system with ASP.NET Core MVC (.NET 8). Manages movies, actors, studios, genres, episodes, users and comments; full admin CRUD and dashboard."
+      },
+      "technologies": [
+        ".NET 8",
+        "ASP.NET Core MVC",
+        "Entity Framework Core",
+        "SQL Server",
+        "Bootstrap 5",
+        "BCrypt"
+      ],
+      "description": {
+        "vi": "MVC + ASP.NET Core 8 + EF Core. Quản lý Movie, Actor, Studio, Genre, Episode và quan hệ nhiều-nhiều. User: đăng ký/đăng nhập, tìm kiếm/lọc, xem chi tiết & tập phim, bình luận. Admin: CRUD nội dung, quản lý user & role, kiểm duyệt, dashboard. Cookie Auth, Role-based Authorization, BCrypt hashing, Soft Delete + Audit Trail, Data Seeding, phân trang (X.PagedList).",
+        "en": "MVC + ASP.NET Core 8 + EF Core. Manages Movie, Actor, Studio, Genre, Episode entities and many-to-many relationships. User: register/login, search/filter, details & episodes, comments. Admin: full CRUD, user & role management, moderation, dashboard. Cookie Auth, Role-based Authorization, BCrypt hashing, Soft Delete + Audit Trail, Data Seeding, pagination (X.PagedList)."
+      },
+      "features": {
+        "vi": [
+          "Đăng ký / đăng nhập + phân quyền Admin/User",
+          "Quản lý phim & anime (thể loại, diễn viên, studio, tập phim)",
+          "Tìm kiếm, lọc, phân trang",
+          "Xem chi tiết phim & danh sách tập",
+          "Quản lý diễn viên, studio, nhà sản xuất, thể loại",
+          "Quản lý user, role, khóa/mở khóa tài khoản",
+          "Bình luận & tương tác",
+          "Admin CRUD + upload hình ảnh",
+          "Soft Delete + Audit Trail",
+          "Data Seeding + Dashboard thống kê"
+        ],
+        "en": [
+          "Register / login + Admin/User roles",
+          "Movie & anime management (genres, actors, studios, episodes)",
+          "Search, filter, pagination",
+          "Movie details & episode tracking",
+          "Actor, studio, maker, genre management",
+          "User management, role assignment, block/unblock",
+          "Comments & community interaction",
+          "Admin CRUD + image upload",
+          "Soft Delete + Audit Trail",
+          "Data Seeding + statistics dashboard"
+        ]
+      },
+      "gallery": [
+        {
+          "id": "mp-img-001",
+          "src": "/assets/images/projects/movie/movie-cover.gif",
+          "caption": {
+            "vi": "Trang chủ — banner phim nổi bật và điều hướng.",
+            "en": "Homepage — featured film banner and navigation."
+          }
+        },
+        {
+          "id": "mp-img-002",
+          "src": "/assets/images/projects/movie/movie-search-list.gif",
+          "caption": {
+            "vi": "Danh sách anime dạng grid với tìm kiếm.",
+            "en": "Anime listing grid with search."
+          }
+        },
+        {
+          "id": "mp-img-003",
+          "src": "/assets/images/projects/movie/movie-watch.gif",
+          "caption": {
+            "vi": "Trang chi tiết phim — overview, studio, diễn viên.",
+            "en": "Movie detail page — overview, studio, cast."
+          }
+        },
+        {
+          "id": "mp-img-004",
+          "src": "/assets/images/projects/movie/movie-admin.gif",
+          "caption": {
+            "vi": "Admin panel — quản lý profile và nội dung.",
+            "en": "Admin panel — profile and content management."
+          }
+        },
+        {
+          "id": "mp-img-005",
+          "src": "/assets/images/projects/movie/movie-profile.gif",
+          "caption": {
+            "vi": "Trang profile người dùng.",
+            "en": "User profile page."
+          }
+        },
+        {
+          "id": "mp-img-006",
+          "src": "/assets/images/projects/movie/movie-login.gif",
+          "caption": {
+            "vi": "Form đăng ký / đăng nhập.",
+            "en": "Register / login form."
+          }
+        }
+      ],
+      "links": {
+        "repository": "https://github.com/VzTong/DACS1"
+      },
+      "technicalSpec": {
+        "architecture": "ASP.NET Core MVC: Controllers – Views – Entities – Configurations – DataSeeders – Areas/Admin.",
+        "dataAccess": "EF Core 8 Code-First + Entity Configurations + Migrations. SQL Server / LocalDB.",
+        "databaseDesign": "Quan hệ nhiều-nhiều (FilmActor, FilmGenres…). Soft Delete (DeletedDate) + Created/Updated tracking.",
+        "authenticationAndAuthorization": "Cookie Authentication + Role-based Authorization. BCrypt.Net-Next cho password hashing.",
+        "frontend": "Razor Views + Bootstrap 5 + jQuery + Toast Notifications.",
+        "dataManagement": "Data Seeding, X.PagedList phân trang.",
+        "tradeoffsAndChallenges": [
+          "MVC + Razor full-stack nhanh nhưng frontend ít tách biệt hơn SPA.",
+          "Quan hệ nhiều-nhiều linh hoạt nhưng tăng độ phức tạp query & CRUD.",
+          "Cookie Auth phù hợp server-rendered; token-based cần thiết nếu mở rộng SPA/mobile.",
+          "Soft Delete bảo toàn dữ liệu nhưng mọi query phải xử lý DeletedDate."
+        ]
+      }
+    },
+    {
+      "id": "lungdx",
+      "type": "info",
+      "order": 4,
+      "coverImage": "/assets/images/projects/lungdx/Cover4.png",
+      "title": {
+        "vi": "LungDx — Chẩn đoán bệnh phổi từ ảnh X-quang bằng Deep Learning",
+        "en": "LungDx — Chest X-ray Lung Disease Diagnosis with Deep Learning"
+      },
+      "summary": {
+        "vi": "Ứng dụng web hỗ trợ chẩn đoán bệnh phổi từ ảnh X-quang ngực (Flask + TensorFlow). Nhiều mô hình (CNN, ResNet50, MobileNetV2, EfficientNetB0), ensemble, progress real-time qua Socket.IO và lịch sử chẩn đoán.",
+        "en": "Web app for lung disease diagnosis from chest X-ray images (Flask + TensorFlow). Multiple models (CNN, ResNet50, MobileNetV2, EfficientNetB0), ensemble prediction, real-time progress via Socket.IO, and diagnosis history."
+      },
+      "technologies": [
+        "Python",
+        "Flask",
+        "TensorFlow",
+        "Keras",
+        "OpenCV",
+        "Socket.IO",
+        "Bootstrap 5"
+      ],
+      "description": {
+        "vi": "Flask + Flask-SocketIO backend, TensorFlow/Keras inference. 4 mô hình: custom CNN, ResNet50, MobileNetV2, EfficientNetB0. Ensemble trung bình có trọng số. Pre-check ảnh (aspect ratio + intensity), heuristic phát hiện vùng mờ viêm phổi, progress real-time, lưu tối đa 100 bản ghi lịch sử. UI Dark/Light mode. Chỉ là công cụ hỗ trợ quyết định, không thay thế chẩn đoán lâm sàng.",
+        "en": "Flask + Flask-SocketIO backend, TensorFlow/Keras inference. Four models: custom CNN, ResNet50, MobileNetV2, EfficientNetB0. Weighted-average ensemble. Image pre-check, heuristic opacity detection, real-time progress, history up to 100 records. Dark/Light mode UI. Decision-support tool only — does not replace clinical diagnosis."
+      },
+      "features": {
+        "vi": [
+          "Upload ảnh X-quang hoặc nhập URL",
+          "4 mô hình: CNN, ResNet50, MobileNetV2, EfficientNetB0",
+          "Ensemble prediction (trung bình có trọng số)",
+          "Pre-check ảnh có giống X-quang ngực không",
+          "Heuristic phát hiện đặc trưng viêm phổi",
+          "Progress real-time qua Socket.IO",
+          "Lưu & quản lý lịch sử chẩn đoán (tối đa 100)",
+          "Dark / Light mode, responsive"
+        ],
+        "en": [
+          "Upload X-ray image or provide URL",
+          "4 models: CNN, ResNet50, MobileNetV2, EfficientNetB0",
+          "Weighted-average ensemble prediction",
+          "Pre-check whether input looks like a chest X-ray",
+          "Heuristic pneumonia feature detection",
+          "Real-time progress via Socket.IO",
+          "Diagnosis history management (up to 100 records)",
+          "Dark / Light mode, responsive UI"
+        ]
+      },
+      "gallery": [
+        {
+          "id": "ld-img-001",
+          "src": "/assets/images/projects/lungdx/Cover.png",
+          "caption": {
+            "vi": "Giao diện chính — chọn ảnh X-quang hoặc nhập URL.",
+            "en": "Main interface — select X-ray image or enter URL."
+          }
+        },
+        {
+          "id": "ld-img-002",
+          "src": "/assets/images/projects/lungdx/Cover2.png",
+          "caption": {
+            "vi": "Đã tải ảnh X-quang và sẵn sàng chẩn đoán.",
+            "en": "X-ray image loaded and ready for diagnosis."
+          }
+        },
+        {
+          "id": "ld-img-003",
+          "src": "/assets/images/projects/lungdx/Cover3.png",
+          "caption": {
+            "vi": "Progress real-time trong quá trình inference.",
+            "en": "Real-time progress during model inference."
+          }
+        },
+        {
+          "id": "ld-img-004",
+          "src": "/assets/images/projects/lungdx/Cover4.png",
+          "caption": {
+            "vi": "Kết quả chẩn đoán kèm cảnh báo độ tin cậy thấp.",
+            "en": "Diagnosis result with low-confidence warning."
+          }
+        },
+        {
+          "id": "ld-img-005",
+          "src": "/assets/images/projects/lungdx/History.png",
+          "caption": {
+            "vi": "Lịch sử chẩn đoán — xem và xóa bản ghi.",
+            "en": "Diagnosis history — view and delete records."
+          }
+        },
+        {
+          "id": "ld-img-006",
+          "src": "/assets/images/projects/lungdx/History2.png",
+          "caption": {
+            "vi": "Lọc lịch sử theo ngày và mô hình.",
+            "en": "Filter history by date and model."
+          }
+        }
+      ],
+      "links": {
+        "repository": "https://github.com/VzTong/LungDx"
+      },
+      "technicalSpec": {
+        "architecture": "Flask monolith + Socket.IO. Models load khi khởi động, inference theo request.",
+        "dataAccess": "Không database quan hệ; lịch sử lưu file JSON.",
+        "securityAndAuth": "SECRET_KEY hard-code (cần chuyển sang env khi deploy). Không auth người dùng.",
+        "tradeoffsAndChallenges": [
+          "Load nhiều model cùng lúc tốn RAM (≥ 8 GB khuyến nghị).",
+          "Ensemble tăng độ tin cậy nhưng chậm hơn single-model.",
+          "Chỉ là decision-support tool — kết quả không thay thế bác sĩ."
+        ]
+      }
+    }
+  ]
+}

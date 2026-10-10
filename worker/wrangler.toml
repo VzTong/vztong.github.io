@@ -1,0 +1,21 @@
+name = "portfolio-gemini-worker"
+main = "src/index.js"
+compatibility_date = "2024-09-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+ENVIRONMENT = "production"
+GEMINI_MODEL = "gemini-3.5-flash-lite"
+PORTFOLIO_DATA_URL = "https://raw.githubusercontent.com/vztong/vztong.github.io/main/src/data/portfolioData.json"
+GITHUB_DOCS_BASE_URL = "https://raw.githubusercontent.com/vztong/vztong.github.io/main"
+MAX_REQUESTS_PER_MINUTE = "10"
+MAX_TOKENS_PER_REQUEST = "200000"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "portfolio-db"
+database_id = "d5b4953e-5d98-4697-a4c7-967528d74fb5"
+
+[observability]
+enabled = true
+

@@ -1,0 +1,6 @@
+# Environment variables for local development (wrangler dev)
+# Duplicate this file to `.dev.vars` and set your actual values.
+
+GEMINI_API_KEY="your_gemini_api_key_here"
+GEMINI_MODEL="gemini-1.5-flash"
+LOGS_ADMIN_SECRET="your_secret_admin_key_for_logs"
