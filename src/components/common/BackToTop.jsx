@@ -37,7 +37,7 @@ export default function BackToTop() {
       aria-label="Back to top"
       title="Back to top"
       className={`
-        fixed z-[996]
+        fixed z-[2]
         bottom-5
         /* Nằm bên trái chat: chat ~ right-5 (20px), nút chat rộng ~140px
            → đặt right khoảng 11rem (176px) */
