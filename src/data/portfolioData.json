@@ -12,8 +12,8 @@
       "en": "Software Engineer"
     },
     "bio": {
-      "vi": "Lập trình viên backend với kinh nghiệm thực tiễn trong việc xây dựng các ứng dụng doanh nghiệp sử dụng C# và .NET. Thành thạo Clean Architecture, CQRS và làm việc hiệu quả trong môi trường Agile cộng tác. Có kinh nghiệm phát triển hệ thống full-stack với ASP.NET Core, EF Core, Vue 3 và FastAPI. Học hỏi nhanh, chủ động ứng dụng các công cụ AI để nâng cao hiệu suất công việc hàng ngày và thích chia sẻ kiến thức với đồng nghiệp trẻ.",
-      "en": "Backend-focused developer with hands-on experience building enterprise applications using C# and .NET. Comfortable with Clean Architecture, CQRS, and ollaborative Agile environments. Experienced in delivering full-stack systems with ASP.NET Core, EF Core, Vue 3, and FastAPI. Fast learner who uses AI tools to improve daily engineering productivity and enjoys sharing knowledge with junior colleagues."
+      "vi": "Lập trình viên backend với kinh nghiệm thực tiễn trong việc xây dựng các ứng dụng doanh nghiệp sử dụng C# và .NET. Thành thạo Clean Architecture, CQRS và làm việc hiệu quả trong môi trường Agile cộng tác. Có kinh nghiệm phát triển hệ thống full-stack với ASP.NET Core, EF Core, Vue.js và FastAPI. Học hỏi nhanh, chủ động ứng dụng các công cụ AI để nâng cao hiệu suất công việc hàng ngày và thích chia sẻ kiến thức với đồng nghiệp trẻ.",
+      "en": "Backend-focused developer with hands-on experience building enterprise applications using C# and .NET. Comfortable with Clean Architecture, CQRS, and ollaborative Agile environments. Experienced in delivering full-stack systems with ASP.NET Core, EF Core, Vue.js, and FastAPI. Fast learner who uses AI tools to improve daily engineering productivity and enjoys sharing knowledge with junior colleagues."
     },
     "skills": {
       "programming-language": {
