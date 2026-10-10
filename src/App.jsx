@@ -1,18 +1,20 @@
-import React, { useEffect } from 'react'
-import MainLayout from './components/layouts/MainLayout'
-import HeroSection from './features/hero/HeroSection'
-import AboutSection from './features/about/AboutSection'
-import SkillsSection from './features/skills/SkillsSection'
-import ExperienceSection from './features/experience/ExperienceSection'
-import ProjectBook from './features/projects/ProjectBook'
-import ContactSection from './features/contact/ContactSection'
-import ChatBot from './features/chat/ChatBot'
-import { scrollToElement } from './utils/helpers'
-import { trackVisit } from './services/tracker'
+import React, { useEffect } from "react";
+import MainLayout from "./components/layouts/MainLayout";
+import HeroSection from "./features/hero/HeroSection";
+import AboutSection from "./features/about/AboutSection";
+import SkillsSection from "./features/skills/SkillsSection";
+import ExperienceSection from "./features/experience/ExperienceSection";
+import ProjectBook from "./features/projects/ProjectBook";
+import ContactSection from "./features/contact/ContactSection";
+// import Preloader from "./components/common/Preloader";
+import BackToTop from "./components/common/BackToTop";
+import ChatBot from "./features/chat/ChatBot";
+import { scrollToElement } from "./utils/helpers";
+import { trackVisit } from "./services/tracker";
 
 /**
  * Root Application Component
- * 
+ *
  * Assembles the full portfolio application using MainLayout and modular feature sections:
  * - HeroSection (SpaceX cinematic entrance)
  * - AboutSection (Backend developer narrative & stats)
@@ -26,35 +28,41 @@ import { trackVisit } from './services/tracker'
 export default function App() {
   // Fire-and-forget background access tracking on initial page load
   useEffect(() => {
-    trackVisit()
-  }, [])
+    trackVisit();
+  }, []);
 
   const handleExploreClick = () => {
-    scrollToElement('projects', 80)
-  }
+    scrollToElement("projects", 80);
+  };
 
   return (
-    <MainLayout>
-      {/* ── 00. Hero Banner (Fullscreen SpaceX Style) ── */}
-      <HeroSection onExploreClick={handleExploreClick} />
+    <>
+      {/* Global overlays */}
+      {/* <Preloader /> */}
+      <BackToTop />
 
-      {/* ── 01. About Me Section ── */}
-      <AboutSection />
+      <MainLayout>
+        {/* ── 00. Hero Banner (Fullscreen SpaceX Style) ── */}
+        <HeroSection onExploreClick={handleExploreClick} />
 
-      {/* ── 02. Skills & Capabilities ── */}
-      <SkillsSection />
+        {/* ── 01. About Me Section ── */}
+        <AboutSection />
 
-      {/* ── 03. Career & Work Experience ── */}
-      <ExperienceSection />
+        {/* ── 02. Skills & Capabilities ── */}
+        <SkillsSection />
 
-      {/* ── 04. 3D Interactive Project Flipbook ── */}
-      <ProjectBook />
+        {/* ── 03. Career & Work Experience ── */}
+        <ExperienceSection />
 
-      {/* ── 05. Contact & Inquiries ── */}
-      <ContactSection />
+        {/* ── 04. 3D Interactive Project Flipbook ── */}
+        <ProjectBook />
 
-      {/* ── 06. Floating AI Assistant ChatBot ── */}
-      <ChatBot />
-    </MainLayout>
-  )
+        {/* ── 05. Contact & Inquiries ── */}
+        <ContactSection />
+
+        {/* ── 06. Floating AI Assistant ChatBot ── */}
+        <ChatBot />
+      </MainLayout>
+    </>
+  );
 }

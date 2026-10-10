@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 /**
  * ThemeToggle Component
- * 
+ *
  * Toggles dark/light mode by adding/removing the 'dark' class on <html>.
  * Reusable across any header, drawer, or modal.
  */

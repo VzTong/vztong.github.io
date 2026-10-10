@@ -6,7 +6,7 @@ import portfolioData from '../../data/portfolioData.json'
 
 /**
  * Header Component (Active Scroll-Synced Navbar - Pure Dark Mode)
- * 
+ *
  * Features:
  * - Dedicated Dark-Only Aesthetic
  * - Real-time scroll spy: Automatically highlights active section in sync with scroll & snap
@@ -109,13 +109,13 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-8 md:px-12 h-16 flex items-center justify-between">
         {/* Brand / Logo */}
         <a
-          href="#"
-          onClick={(e) => {
-            e.preventDefault()
-            window.scrollTo({ top: 0, behavior: 'smooth' })
-            setActiveSection('hero')
-            setIsMobileMenuOpen(false)
-          }}
+          href="index2.html"
+          // onClick={(e) => {
+          //   e.preventDefault()
+          //   window.scrollTo({ top: 0, behavior: 'smooth' })
+          //   setActiveSection('hero')
+          //   setIsMobileMenuOpen(false)
+          // }}
           className="flex items-center gap-2.5 sm:gap-3 text-white group focus:outline-none cursor-pointer"
         >
           <div className="w-8 h-8 rounded-lg bg-blue-600/20 border border-blue-500/40 flex items-center justify-center font-mono font-bold text-blue-400 text-sm shadow-brand-glow group-hover:scale-105 transition-transform">
