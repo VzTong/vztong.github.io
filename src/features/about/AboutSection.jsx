@@ -66,7 +66,7 @@ export default function AboutSection() {
               </div>
               <div className="p-2 sm:p-2.5 lg:p-3 rounded-xl bg-slate-950/60 border border-slate-800/60 flex flex-col justify-center items-center overflow-hidden">
                 <span className="block text-base sm:text-lg md:text-sm lg:text-base xl:text-xl font-black text-blue-400 font-mono tracking-tight whitespace-nowrap">
-                  Clean Arch & CQRS
+                  Clean & CQRS
                 </span>
                 <span className="text-[10px] sm:text-[11px] font-mono text-slate-400 uppercase tracking-wider block mt-1 whitespace-nowrap">
                   Architecture

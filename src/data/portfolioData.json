@@ -142,8 +142,8 @@
           "en": "OFFICIAL TRANSCRIPT"
         },
         "description": {
-          "vi": "Bảng điểm chính quy kết quả học tập chuyên ngành Kỹ thuật Phần mềm.",
-          "en": "Official university academic records and course grades in Software Engineering."
+          "vi": "Bảng điểm chính quy kết quả học tập chuyên ngành Công nghệ thông tin.",
+          "en": "Official university academic records and course grades in Information Technology."
         },
         "filename": "Tong_Nha_Vy_Transcript.pdf",
         "url": "https://vztong.github.io/CV/Tong_Nha_Vy_Transcript.pdf",
@@ -152,14 +152,14 @@
         "updatedAt": "2025",
         "highlights": {
           "vi": [
-            "Đạt 8.55/10 chuyên ngành Kỹ thuật Phần mềm (Software Engineer)",
-            "Đạt điểm tuyệt đối 10/10 ở các học phần Thực hành Lập trình .NET, Thực hành OOP và Lập trình căn bản",
-            "Đạt 9.7/10 môn Kiến trúc phần mềm cùng chuỗi điểm A+ (9.0 – 9.5/10) cho toàn bộ các môn Cơ sở dữ liệu và Hệ quản trị CSDL"
+            "Chuyên ngành Công nghệ thông tin (Information Technology) – Điểm trung bình toàn khóa 8.61/10, xếp loại Giỏi",
+            "Đạt điểm cao ở các học phần Thực hành Lập trình .NET, Thực hành OOP và Lập trình căn bản",
+            "Các môn Cơ sở dữ liệu và Hệ quản trị CSDL đạt kết quả tốt"
           ],
           "en": [
-            "Achieved 8.55/10 in Software Engineering major",
-            "Achieved perfect score 10/10 in Practical .NET Programming, OOP, and Basic Programming courses",
-            "Achieved 9.7/10 in Software Architecture and maintained A+ range (9.0–9.5/10) across all Database & DBMS courses"
+            "Information Technology major – Overall GPA 8.61/10, Excellent classification",
+            "Achieved high scores in Practical .NET Programming, OOP, and Basic Programming courses",
+            "Database and DBMS courses achieved strong results"
           ]
         }
       }

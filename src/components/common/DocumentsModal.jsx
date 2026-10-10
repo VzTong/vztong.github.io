@@ -139,7 +139,7 @@ export default function DocumentsModal({ isOpen, onClose }) {
                     {badge || (isCv ? 'MASTER CV' : 'TRANSCRIPT')}
                   </span>
                   <span className="text-[11px] font-mono text-slate-500 uppercase flex items-center gap-1">
-                    <span>Google Drive</span>
+                    <span>PDF</span>
                   </span>
                 </div>
 
