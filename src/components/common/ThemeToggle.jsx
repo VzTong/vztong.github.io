@@ -41,6 +41,7 @@ export default function ThemeToggleButton() {
         dark:text-slate-200
         dark:border-slate-600/60
         dark:hover:bg-slate-800/90
+        dark:hover:hover:border-main-500/50
         dark:hover:text-white
 
         focus:outline-none
