@@ -48,7 +48,7 @@ export default function HeroSection({ onExploreClick }) {
 
   // Thay placeholder bằng tên thật của ní.
   const heroHeading =
-    currentLang === "vi" ? "TÊN CỦA TUI NÈ NÍ" : "MY NAME HERE NÍ";
+    currentLang === "vi" ? "TỐNG NHÃ VY" : "TONG NHA VY";
 
   const tagline =
     currentLang === "vi"
