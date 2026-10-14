@@ -21,7 +21,8 @@
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-i18next": "^15.5.3",
-    "react-pageflip": "^2.0.3"
+    "react-pageflip": "^2.0.3",
+    "typed.js": "^3.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.30.1",

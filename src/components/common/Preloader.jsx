@@ -1,86 +1,107 @@
 /**
  * ============================================================================
- * Preloader — Màn hình chờ khi portfolio khởi tạo
+ * Preloader — Cinematic Portfolio Entrance
  * ============================================================================
  *
- * TÓM TẮT
- * -------
- * Overlay full-screen, nền slate-950 (#040404 sau override), thanh accent
- * blue-500 (#18d26e) chạy dọc — lấy cảm hứng preloader index2.html.
- *
- * TIMING
+ * DESIGN
  * ------
- * SHOW_MS (900)  → giữ overlay
- * FADE_MS (400)  → opacity 0
- * Tổng ~1300ms   → unmount (hide = true)
+ * Dark canvas, emerald light beam, split-panel reveal.
  *
- * TÍCH HỢP
- * --------
- * Gắn ở App.jsx, ngoài MainLayout, để phủ toàn trang:
- *   <>
- *     <Preloader />
- *     <MainLayout>...</MainLayout>
- *   </>
- *
- * CLASS MÀU
+ * LIFECYCLE
  * ---------
- * Dùng slate-950 / blue-500 / white/10 — không brand-*.
- * Sau khi override tailwind.config, các class này = tone index2.
+ * 1. Chờ window load.
+ * 2. Giữ màn hình chờ trong thời gian tối thiểu.
+ * 3. Kích hoạt class "loaded" để chạy animation kết thúc.
+ * 4. Unmount sau khi hiệu ứng reveal hoàn tất.
  *
- * TUỲ CHỈNH
- * ---------
- * - Muốn chờ asset: thay setTimeout bằng window 'load' hoặc Promise font/image.
- * - Đổi thời gian: sửa SHOW_MS / FADE_MS.
+ * ACCESSIBILITY
+ * --------------
+ * Tôn trọng prefers-reduced-motion trong CSS.
+ *
  * ============================================================================
  */
 
 import { useEffect, useState } from 'react'
 
-/** Thời gian hiện preloader trước khi fade (ms) */
-const SHOW_MS = 900
-/** Thời gian fade-out trước khi unmount (ms) */
-const FADE_MS = 400
+import '../../assets/preloader.css'
+
+/** Thời gian chờ trước khi bắt đầu reveal (ms) */
+const SHOW_MS = 1000
+
+/** Thời gian dành cho hiệu ứng reveal (ms) */
+const EXIT_MS = 850
 
 export default function Preloader() {
-  // Bắt đầu fade (opacity → 0)
-  const [done, setDone] = useState(false)
-  // Unmount khỏi DOM
+  // --------------------------------------------------------------------------
+  // STATE
+  // --------------------------------------------------------------------------
+
+  /** Kích hoạt hiệu ứng kết thúc */
+  const [loaded, setLoaded] = useState(false)
+
+  /** Gỡ Preloader khỏi DOM */
   const [hide, setHide] = useState(false)
 
+  // --------------------------------------------------------------------------
+  // LIFECYCLE
+  // --------------------------------------------------------------------------
+
   useEffect(() => {
-    const tShow = setTimeout(() => setDone(true), SHOW_MS)
-    const tHide = setTimeout(() => setHide(true), SHOW_MS + FADE_MS)
+    let showTimer
+    let hideTimer
+    let cancelled = false
+
+    /**
+     * Bắt đầu chu trình kết thúc sau khi tài nguyên trang đã tải xong.
+     */
+    const finishLoading = () => {
+      showTimer = window.setTimeout(() => {
+        if (!cancelled) {
+          setLoaded(true)
+        }
+      }, SHOW_MS)
+
+      hideTimer = window.setTimeout(() => {
+        if (!cancelled) {
+          setHide(true)
+        }
+      }, SHOW_MS + EXIT_MS)
+    }
+
+    // Không bỏ lỡ sự kiện load nếu trang đã tải xong trước khi mount.
+    if (document.readyState === 'complete') {
+      finishLoading()
+    } else {
+      window.addEventListener('load', finishLoading, { once: true })
+    }
+
+    // Dọn listener và timer khi component unmount.
     return () => {
-      clearTimeout(tShow)
-      clearTimeout(tHide)
+      cancelled = true
+
+      window.removeEventListener('load', finishLoading)
+
+      window.clearTimeout(showTimer)
+      window.clearTimeout(hideTimer)
     }
   }, [])
+
+  // --------------------------------------------------------------------------
+  // RENDER
+  // --------------------------------------------------------------------------
 
   if (hide) return null
 
   return (
     <div
+      id="preloader"
+      className={loaded ? 'loaded' : ''}
       role="status"
-      aria-label="Loading"
+      aria-label="Loading portfolio"
       aria-live="polite"
-      className={`
-        fixed inset-0 z-[100]
-        flex items-center justify-center
-        bg-slate-950
-        transition-opacity duration-300 ease-in-out
-        ${done ? 'opacity-0 pointer-events-none' : 'opacity-100'}
-      `}
     >
-      {/* Thanh dọc + line accent chạy (keyframe preloader-line trong tailwind config) */}
-      <div className="relative h-24 w-px overflow-hidden bg-white/10">
-        <span
-          className="
-            absolute inset-x-0 top-0 h-full w-full
-            bg-main-500
-            animate-[preloader-line_0.85s_ease-in-out_infinite]
-          "
-        />
-      </div>
+      {/* Đường nền mảnh và vệt sáng chuyển động ở trung tâm */}
+      <div className="line" aria-hidden="true" />
     </div>
   )
 }
