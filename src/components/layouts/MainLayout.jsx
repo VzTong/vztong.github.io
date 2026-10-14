@@ -4,7 +4,7 @@ import { useScrollSnap } from '../../hooks/useScrollSnap'
 
 /**
  * MainLayout Component
- * 
+ *
  * Provides global layout structure:
  * - Fixed Sticky Header at top
  * - Full-page Scroll Snap container: each child section occupies strictly 100vh
@@ -15,7 +15,7 @@ export default function MainLayout({ children }) {
   useScrollSnap()
 
   return (
-    <div className="w-full bg-slate-950 text-slate-100 selection:bg-blue-600 selection:text-white">
+    <div className="w-full bg-slate-950 text-slate-100 selection:bg-main-600 selection:text-white">
       {/* ─── 1. Fixed Sticky Navbar ────────────────────────────────────────── */}
       <Header />
 

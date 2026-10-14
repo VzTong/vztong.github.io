@@ -89,8 +89,8 @@ export default function HeroSection({ onExploreClick }) {
     >
       {/* ─── Layered Cosmic & Tech Backgrounds ─────────────────────────────── */}
       {/* 1. Deep Space Nebula */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-900/30 via-slate-950 to-black" />
-      <div className="absolute top-1/4 left-1/4 w-[300px] sm:w-[600px] h-[300px] sm:h-[600px] bg-blue-600/10 blur-[150px] rounded-full pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-main-900/30 via-slate-950 to-black" />
+      <div className="absolute top-1/4 left-1/4 w-[300px] sm:w-[600px] h-[300px] sm:h-[600px] bg-main-600/10 blur-[150px] rounded-full pointer-events-none" />
 
       {/* 2. Portrait full-bleed */}
       <div
@@ -130,7 +130,7 @@ export default function HeroSection({ onExploreClick }) {
         className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-8 md:px-16 lg:px-20 pb-20 sm:pb-28 md:pb-32 flex flex-col items-start text-left space-y-3 sm:space-y-4 my-auto md:my-0"
       >
         {/* Mission Subtitle */}
-        <p className="text-[11px] sm:text-xs md:text-sm font-mono tracking-[0.2em] sm:tracking-[0.3em] uppercase text-blue-400 font-semibold">
+        <p className="text-[11px] sm:text-xs md:text-sm font-mono tracking-[0.2em] sm:tracking-[0.3em] uppercase text-main-400 font-semibold">
           {roleText}
         </p>
 
@@ -149,7 +149,7 @@ export default function HeroSection({ onExploreClick }) {
           <button
             type="button"
             onClick={handleScrollDown}
-            className="px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-mono text-xs sm:text-sm font-semibold tracking-wider uppercase shadow-lg shadow-blue-600/30 hover:shadow-blue-500/50 active:scale-95 transition-all cursor-pointer flex items-center gap-2"
+            className="px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-main-600 hover:bg-main-500 text-white font-mono text-xs sm:text-sm font-semibold tracking-wider uppercase shadow-lg shadow-main-600/30 hover:shadow-main-500/50 active:scale-95 transition-all cursor-pointer flex items-center gap-2"
           >
             <span>
               {currentLang === "vi" ? "KHÁM PHÁ DỰ ÁN" : "EXPLORE PROJECTS"}
@@ -160,10 +160,10 @@ export default function HeroSection({ onExploreClick }) {
           <button
             type="button"
             onClick={() => setIsDocsModalOpen(true)}
-            className="px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-slate-900/80 hover:bg-slate-800 text-blue-300 hover:text-white font-mono text-xs sm:text-sm font-semibold tracking-wider uppercase border border-blue-500/40 hover:border-blue-400 shadow-[0_0_20px_rgba(59,130,246,0.15)] active:scale-95 transition-all cursor-pointer flex items-center gap-2 backdrop-blur-md"
+            className="px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-slate-900/80 hover:bg-slate-800 text-main-300 hover:text-white font-mono text-xs sm:text-sm font-semibold tracking-wider uppercase border border-main-500/40 hover:border-main-400 shadow-[0_0_20px_rgba(59,130,246,0.15)] active:scale-95 transition-all cursor-pointer flex items-center gap-2 backdrop-blur-md"
           >
             <svg
-              className="w-4 h-4 text-blue-400"
+              className="w-4 h-4 text-main-400"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"

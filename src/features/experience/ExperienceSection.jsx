@@ -105,12 +105,12 @@ export default function ExperienceSection() {
       className="relative min-h-screen min-h-[100dvh] md:h-[100dvh] w-full overflow-hidden flex flex-col justify-between items-center pt-20 pb-6 px-4 sm:px-8 lg:px-12 max-w-6xl mx-auto select-none"
     >
       {/* Background Ambient Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] sm:w-[600px] h-[250px] sm:h-[350px] bg-blue-600/10 blur-[150px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] sm:w-[600px] h-[250px] sm:h-[350px] bg-main-600/10 blur-[150px] rounded-full pointer-events-none" />
 
       {/* ─── Section Header ─────────────────────────────────────────────────── */}
       <div className="text-center space-y-1 mb-2 relative z-10 w-full">
-        <div className="inline-flex items-center gap-2 px-3 py-0.5 rounded-full text-xs font-mono tracking-widest uppercase bg-slate-900/80 text-blue-400 border border-slate-800">
-          <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
+        <div className="inline-flex items-center gap-2 px-3 py-0.5 rounded-full text-xs font-mono tracking-widest uppercase bg-slate-900/80 text-main-400 border border-slate-800">
+          <span className="w-1.5 h-1.5 rounded-full bg-main-500 animate-pulse" />
           <span>03 / CAREER & WORK EXPERIENCE</span>
         </div>
 
@@ -131,7 +131,7 @@ export default function ExperienceSection() {
           {/* Header Metadata */}
           <div className="flex items-center justify-between border-b border-slate-800 pb-3 mb-3.5 sm:mb-4 flex-wrap gap-2">
             <div className="flex items-center gap-2 sm:gap-2.5">
-              <span className="px-2.5 py-0.5 rounded-full text-[11px] sm:text-xs font-mono font-semibold uppercase bg-blue-950/80 text-blue-300 border border-blue-800/80">
+              <span className="px-2.5 py-0.5 rounded-full text-[11px] sm:text-xs font-mono font-semibold uppercase bg-main-950/80 text-main-300 border border-main-800/80">
                 {currentExp.type?.toUpperCase()}
               </span>
               <span className="text-[11px] sm:text-xs font-mono text-slate-400">
@@ -154,7 +154,7 @@ export default function ExperienceSection() {
             {/* Left Column (2/3): Role, Company, Summary, Tech Stack & CTA */}
             <div className="md:col-span-8 space-y-3 sm:space-y-3.5 text-left">
               <div>
-                <span className="text-[11px] sm:text-xs font-mono text-blue-400 font-semibold tracking-wider uppercase block">
+                <span className="text-[11px] sm:text-xs font-mono text-main-400 font-semibold tracking-wider uppercase block">
                   {company}
                 </span>
                 <h3 className="text-lg sm:text-2xl font-black uppercase text-white tracking-tight leading-snug">
@@ -182,7 +182,7 @@ export default function ExperienceSection() {
                     </span>
                   ))}
                   {currentExp.technologies?.length > 6 && (
-                    <span className="text-[10px] sm:text-[11px] font-mono px-2 py-0.5 sm:py-1 rounded-md bg-slate-950 text-blue-400 border border-blue-900/50">
+                    <span className="text-[10px] sm:text-[11px] font-mono px-2 py-0.5 sm:py-1 rounded-md bg-slate-950 text-main-400 border border-main-900/50">
                       +{currentExp.technologies.length - 6} more
                     </span>
                   )}
@@ -194,7 +194,7 @@ export default function ExperienceSection() {
                 <button
                   type="button"
                   onClick={() => handleOpenDetail(currentExp)}
-                  className="w-full sm:w-auto justify-center px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-mono font-semibold tracking-wider uppercase shadow-lg shadow-blue-600/30 hover:shadow-blue-500/50 active:scale-95 transition-all cursor-pointer flex items-center gap-2"
+                  className="w-full sm:w-auto justify-center px-5 py-2.5 rounded-xl bg-main-600 hover:bg-main-500 text-white text-xs font-mono font-semibold tracking-wider uppercase shadow-lg shadow-main-600/30 hover:shadow-main-500/50 active:scale-95 transition-all cursor-pointer flex items-center gap-2"
                 >
                   <span>
                     {currentLang === "vi" ? "XEM CHI TIẾT" : "VIEW FULL"}
@@ -209,7 +209,7 @@ export default function ExperienceSection() {
               onClick={() => handleOpenDetail(currentExp)}
               className="md:col-span-4 relative group cursor-pointer w-full mt-2 md:mt-0"
             >
-              <div className="relative aspect-[16/9] sm:aspect-[4/3] max-h-[180px] sm:max-h-[240px] w-full rounded-2xl bg-gradient-to-tr from-slate-950 via-slate-900 to-blue-950 border border-slate-800 group-hover:border-blue-500/60 overflow-hidden shadow-xl group-hover:shadow-[0_0_30px_rgba(59,130,246,0.35)] transition-all duration-300 transform group-hover:scale-[1.02] flex flex-col justify-between p-3.5 sm:p-4">
+              <div className="relative aspect-[16/9] sm:aspect-[4/3] max-h-[180px] sm:max-h-[240px] w-full rounded-2xl bg-gradient-to-tr from-slate-950 via-slate-900 to-main-950 border border-slate-800 group-hover:border-main-500/60 overflow-hidden shadow-xl group-hover:shadow-[0_0_30px_rgba(59,130,246,0.35)] transition-all duration-300 transform group-hover:scale-[1.02] flex flex-col justify-between p-3.5 sm:p-4">
                 {coverUrl && (
                   <div className="absolute inset-0 z-0">
                     <img
@@ -223,10 +223,10 @@ export default function ExperienceSection() {
 
                 {/* Top Badge */}
                 <div className="relative z-10 flex items-center justify-between text-[10px] font-mono text-slate-300">
-                  <span className="px-2 py-0.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-blue-400 font-semibold shadow">
+                  <span className="px-2 py-0.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-main-400 font-semibold shadow">
                     CAREER
                   </span>
-                  <span className="text-blue-400 font-semibold flex items-center gap-1">
+                  <span className="text-main-400 font-semibold flex items-center gap-1">
                     <span>EXPAND</span>
                     <span className="group-hover:translate-x-0.5 transition-transform">
                       ↗
@@ -239,7 +239,7 @@ export default function ExperienceSection() {
                   <span className="uppercase text-slate-400 truncate max-w-[120px]">
                     {period}
                   </span>
-                  <span className="text-blue-400 font-bold flex-shrink-0">
+                  <span className="text-main-400 font-bold flex-shrink-0">
                     CHI TIẾT →
                   </span>
                 </div>
@@ -290,7 +290,7 @@ export default function ExperienceSection() {
             {/* Drawer Header */}
             <div className="flex items-center justify-between pb-4 sm:pb-6 border-b border-slate-800 sticky top-0 bg-slate-950/95 backdrop-blur-md z-20">
               <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-blue-500" />
+                <span className="w-2 h-2 rounded-full bg-main-500" />
                 <span className="text-[11px] sm:text-xs font-mono uppercase tracking-widest text-slate-400">
                   Career Deep Dive
                 </span>
@@ -311,8 +311,8 @@ export default function ExperienceSection() {
               {/* Type, Period & Role */}
               <div className="space-y-2 border-b border-slate-800 pb-4">
                 <div className="flex items-center justify-between gap-2 flex-wrap">
-                  <span className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-0.5 rounded-full text-[11px] sm:text-xs font-mono font-semibold bg-blue-950/80 text-blue-300 border border-blue-800/80">
-                    <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
+                  <span className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-0.5 rounded-full text-[11px] sm:text-xs font-mono font-semibold bg-main-950/80 text-main-300 border border-main-800/80">
+                    <span className="w-1.5 h-1.5 rounded-full bg-main-400 animate-pulse" />
                     TYPE: {selectedExperience.type?.toUpperCase()}
                   </span>
                   <span className="text-[11px] sm:text-xs font-mono text-slate-400">
@@ -328,14 +328,14 @@ export default function ExperienceSection() {
                   {selectedExperience.role?.[currentLang] ||
                     selectedExperience.role?.vi}
                 </h2>
-                <p className="text-xs sm:text-sm font-mono text-blue-400 font-semibold">
+                <p className="text-xs sm:text-sm font-mono text-main-400 font-semibold">
                   {selectedExperience.company?.[currentLang] ||
                     selectedExperience.company?.vi}
                 </p>
               </div>
 
               {/* Summary Callout */}
-              <div className="p-3.5 sm:p-4 rounded-xl bg-blue-950/40 border border-blue-900/60 shadow-inner">
+              <div className="p-3.5 sm:p-4 rounded-xl bg-main-950/40 border border-main-900/60 shadow-inner">
                 <p className="text-xs sm:text-sm md:text-base text-slate-200 leading-relaxed italic">
                   "
                   {selectedExperience.summary?.[currentLang] ||
@@ -356,7 +356,7 @@ export default function ExperienceSection() {
                     {selectedExperience.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="text-xs font-mono px-2.5 sm:px-3 py-1 rounded-md bg-slate-900 text-slate-200 border border-slate-700 hover:border-blue-500/50 transition-colors"
+                        className="text-xs font-mono px-2.5 sm:px-3 py-1 rounded-md bg-slate-900 text-slate-200 border border-slate-700 hover:border-main-500/50 transition-colors"
                       >
                         {tech}
                       </span>
@@ -368,7 +368,7 @@ export default function ExperienceSection() {
               {/* Responsibilities */}
               {responsibilities.length > 0 && (
                 <div className="space-y-2 sm:space-y-2.5 pt-2">
-                  <h3 className="text-xs font-mono font-bold tracking-wider text-blue-400 uppercase flex items-center gap-2">
+                  <h3 className="text-xs font-mono font-bold tracking-wider text-main-400 uppercase flex items-center gap-2">
                     <svg
                       className="w-4 h-4"
                       fill="none"
@@ -392,9 +392,14 @@ export default function ExperienceSection() {
                     {responsibilities.map((resp, idx) => (
                       <li
                         key={idx}
-                        className="flex items-start gap-2.5 bg-blue-950/20 p-3 rounded-xl border border-blue-900/40 hover:border-blue-700/50 transition-colors"
+                        className="flex items-start gap-2.5
+                        bg-main-950/10
+                        p-3 rounded-xl
+                        border border-main-900/30
+                        hover:border-main-700/40
+                        transition-colors"
                       >
-                        <span className="mt-1 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0" />
+                        <span className="mt-1 w-1.5 h-1.5 rounded-full bg-main-400/80 flex-shrink-0" />
                         <span className="leading-relaxed font-sans">
                           {resp}
                         </span>
@@ -407,7 +412,7 @@ export default function ExperienceSection() {
               {/* Key Achievements */}
               {achievements.length > 0 && (
                 <div className="space-y-2 sm:space-y-2.5 pt-2">
-                  <h3 className="text-xs font-mono font-bold tracking-wider text-emerald-400 uppercase flex items-center gap-2">
+                  <h3 className="text-xs font-mono font-bold tracking-wider text-sub-400 uppercase flex items-center gap-2">
                     <svg
                       className="w-4 h-4"
                       fill="none"
@@ -431,9 +436,9 @@ export default function ExperienceSection() {
                     {achievements.map((ach, idx) => (
                       <li
                         key={idx}
-                        className="flex items-start gap-2.5 bg-emerald-950/20 p-3 rounded-xl border border-emerald-800/40 hover:border-emerald-600/50 transition-colors"
+                        className="flex items-start gap-2.5 bg-sub-950/20 p-3 rounded-xl border border-sub-800/40 hover:border-sub-600/50 transition-colors"
                       >
-                        <span className="mt-1 w-1.5 h-1.5 rounded-full bg-emerald-400 flex-shrink-0" />
+                        <span className="mt-1 w-1.5 h-1.5 rounded-full bg-sub-400 flex-shrink-0" />
                         <span className="leading-relaxed font-sans">{ach}</span>
                       </li>
                     ))}
@@ -448,7 +453,7 @@ export default function ExperienceSection() {
               <button
                 type="button"
                 onClick={handleCloseDetail}
-                className="text-blue-400 hover:underline cursor-pointer"
+                className="text-main-400 hover:underline cursor-pointer"
               >
                 ← Return to timeline
               </button>

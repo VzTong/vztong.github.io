@@ -76,7 +76,7 @@ export default function Preloader() {
         <span
           className="
             absolute inset-x-0 top-0 h-full w-full
-            bg-blue-500
+            bg-main-500
             animate-[preloader-line_0.85s_ease-in-out_infinite]
           "
         />

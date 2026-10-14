@@ -15,7 +15,7 @@
  *
  * MÀU
  * ---
- * bg-blue-500 = accent neon sau override config. text-white giữ contrast.
+ * bg-main-500 = accent neon sau override config. text-white giữ contrast.
  *
  * TÍCH HỢP
  * --------
@@ -25,33 +25,33 @@
  * ============================================================================
  */
 
-import { useEffect, useState, useCallback } from 'react'
+import { useEffect, useState, useCallback } from "react";
 
 /** Ngưỡng scroll (px) để hiện nút */
-const THRESHOLD_PX = 400
+const THRESHOLD_PX = 400;
 
 export default function BackToTop() {
-  const [visible, setVisible] = useState(false)
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
-      setVisible(window.scrollY > THRESHOLD_PX)
-    }
-    onScroll() // đúng state nếu refresh giữa trang
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+      setVisible(window.scrollY > THRESHOLD_PX);
+    };
+    onScroll(); // đúng state nếu refresh giữa trang
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const handleClick = useCallback(() => {
-    const hero = document.getElementById('hero')
+    const hero = document.getElementById("hero");
     if (hero) {
-      hero.scrollIntoView({ behavior: 'smooth', block: 'start' })
-      return
+      hero.scrollIntoView({ behavior: "smooth", block: "start" });
+      return;
     }
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }, [])
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
-  if (!visible) return null
+  if (!visible) return null;
 
   return (
     <button
@@ -60,26 +60,49 @@ export default function BackToTop() {
       aria-label="Back to top"
       title="Back to top"
       className={`
-        fixed z-[9998]
-        bottom-20
-        /* Nằm bên trái chat: chat ~ right-5 (20px), nút chat rộng ~140px
-           → đặt right khoảng 11rem (176px) => right-[11rem] */
-        // right-5
+        group fixed z-[9998]
+        bottom-[5.5rem] right-5
         w-12 h-12 rounded-full
         flex items-center justify-center
-        bg-brand-accent dark:bg-brand-accent-dark
+
+        bg-main-950/40
+        dark:bg-main-950/50
+        backdrop-blur-xl
         text-white
-        shadow-lg dark:shadow-brand-glow-dark shadow-brand-glow
-        border border-transparent
-        transition-all duration-300
-        hover:scale-110 hover:-translate-y-1
-        active:scale-95
-        ${visible ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-4 pointer-events-none'}
+
+        border border-white/15
+        shadow-lg shadow-brand-glow/20
+        dark:shadow-brand-glow-dark/25
+
+        transition-[opacity,transform,background-color,border-color,box-shadow]
+        duration-500
+        ease-[cubic-bezier(0.22,1,0.36,1)]
+        motion-reduce:transition-none
+
+        hover:bg-main-800/60
+        hover:border-white/30
+        hover:shadow-brand-glow/35
+        hover:-translate-y-1
+
+        active:translate-y-0
+        active:duration-150
+
+        ${
+          visible
+            ? "opacity-100 visible translate-y-0"
+            : "opacity-0 invisible translate-y-4 pointer-events-none"
+        }
       `}
     >
       {/* Icon mũi tên lên */}
       <svg
-        className="w-6 h-6"
+        className="
+          relative z-10
+          transition-transform duration-300
+          ease-out
+          group-hover:-translate-y-0.5
+          motion-reduce:transition-none
+        "
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
@@ -88,5 +111,5 @@ export default function BackToTop() {
         <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
       </svg>
     </button>
-  )
+  );
 }

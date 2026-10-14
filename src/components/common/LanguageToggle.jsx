@@ -25,8 +25,8 @@ export default function LanguageToggle({ className = '' }) {
         bg-slate-900/80
         text-slate-200
         border border-slate-600/50
-        hover:border-blue-500/50 hover:bg-slate-800/90 hover:text-white
-        focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/40 focus-visible:border-blue-500/60
+        hover:border-main-500/50 hover:bg-slate-800/90 hover:text-white
+        focus:outline-none focus-visible:ring-2 focus-visible:ring-main-500/40 focus-visible:border-main-500/60
         transition-all duration-200 active:scale-95 shadow-sm
         ${className}
       `}

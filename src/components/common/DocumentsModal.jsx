@@ -86,13 +86,13 @@ export default function DocumentsModal({ isOpen, onClose }) {
         className="relative w-full max-w-4xl bg-slate-950 border border-slate-800 rounded-2xl sm:rounded-3xl shadow-[0_0_50px_rgba(59,130,246,0.15)] overflow-hidden flex flex-col my-auto animate-fade-in-up"
       >
         {/* Top Header Glow Accent */}
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 via-cyan-400 to-blue-600" />
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-main-600 via-cyan-400 to-main-600" />
 
         {/* Modal Header */}
         <div className="flex items-start justify-between p-5 sm:p-7 border-b border-slate-800/80 bg-slate-900/40">
           <div className="space-y-1">
-            <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full text-[10px] sm:text-xs font-mono font-semibold uppercase bg-blue-950/80 text-blue-300 border border-blue-800/80">
-              <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full text-[10px] sm:text-xs font-mono font-semibold uppercase bg-main-950/80 text-main-300 border border-main-800/80">
+              <span className="w-1.5 h-1.5 rounded-full bg-main-400 animate-pulse" />
               <span>CV & CREDENTIALS</span>
             </div>
             <h2
@@ -142,15 +142,15 @@ export default function DocumentsModal({ isOpen, onClose }) {
             return (
               <div
                 key={item.id}
-                className="relative rounded-2xl bg-slate-900/70 border border-slate-800/90 hover:border-blue-500/50 p-5 sm:p-6 flex flex-col justify-between transition-all duration-300 group hover:shadow-[0_0_25px_rgba(59,130,246,0.15)]"
+                className="relative rounded-2xl bg-slate-900/70 border border-slate-800/90 hover:border-main-500/50 p-5 sm:p-6 flex flex-col justify-between transition-all duration-300 group hover:shadow-[0_0_25px_rgba(59,130,246,0.15)]"
               >
                 {/* Top Badge & Type */}
                 <div className="flex items-center justify-between gap-2 mb-3">
                   <span
                     className={`text-[10px] sm:text-xs font-mono font-bold px-2.5 py-0.5 rounded-md uppercase border ${
                       isCv
-                        ? "bg-blue-950/80 text-blue-300 border-blue-800/80"
-                        : "bg-emerald-950/80 text-emerald-300 border-emerald-800/80"
+                        ? "bg-main-950/80 text-main-300 border-main-800/80"
+                        : "bg-sub-950/80 text-sub-300 border-sub-800/80"
                     }`}
                   >
                     {badge || (isCv ? "MASTER CV" : "TRANSCRIPT")}
@@ -166,8 +166,8 @@ export default function DocumentsModal({ isOpen, onClose }) {
                     <div
                       className={`w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 ${
                         isCv
-                          ? "bg-blue-600/20 text-blue-400 border border-blue-500/30"
-                          : "bg-emerald-600/20 text-emerald-400 border border-emerald-500/30"
+                          ? "bg-main-600/20 text-main-400 border border-main-500/30"
+                          : "bg-sub-600/20 text-sub-400 border border-sub-500/30"
                       }`}
                     >
                       {isCv ? (
@@ -200,7 +200,7 @@ export default function DocumentsModal({ isOpen, onClose }) {
                         </svg>
                       )}
                     </div>
-                    <h3 className="text-base sm:text-lg font-bold text-white uppercase tracking-tight group-hover:text-blue-400 transition-colors">
+                    <h3 className="text-base sm:text-lg font-bold text-white uppercase tracking-tight group-hover:text-main-400 transition-colors">
                       {title}
                     </h3>
                   </div>
@@ -258,7 +258,7 @@ export default function DocumentsModal({ isOpen, onClose }) {
                       className="px-3 py-2 sm:py-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-200 hover:text-white text-xs font-mono font-semibold tracking-wider uppercase text-center transition-all flex items-center justify-center gap-1.5 border border-slate-700 cursor-pointer"
                     >
                       <svg
-                        className="w-3.5 h-3.5 text-blue-400"
+                        className="w-3.5 h-3.5 text-main-400"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -300,8 +300,8 @@ export default function DocumentsModal({ isOpen, onClose }) {
                       className={`px-3 py-2 sm:py-2.5 rounded-xl text-white text-xs font-mono font-semibold tracking-wider uppercase text-center shadow-md transition-all flex items-center justify-center gap-1.5 cursor-pointer
                       ${
                         isCv
-                          ? "bg-blue-600 hover:bg-blue-500 shadow-blue-600/25"
-                          : "bg-emerald-600 hover:bg-emerald-500 shadow-emerald-600/25"
+                          ? "bg-main-600 hover:bg-main-500 shadow-main-600/25"
+                          : "bg-sub-600 hover:bg-sub-500 shadow-sub-600/25"
                       }`}
                     >
                       <svg
@@ -333,7 +333,7 @@ export default function DocumentsModal({ isOpen, onClose }) {
           <button
             type="button"
             onClick={onClose}
-            className="text-blue-400 hover:underline cursor-pointer"
+            className="text-main-400 hover:underline cursor-pointer"
           >
             {currentLang === "vi" ? "Đóng cửa sổ" : "Close window"} [ESC]
           </button>

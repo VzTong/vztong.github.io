@@ -25,13 +25,13 @@ export default function ContactSection() {
       className="relative min-h-screen min-h-[100dvh] md:h-[100dvh] w-full overflow-hidden flex flex-col justify-between items-center pt-20 pb-6 px-4 sm:px-8 md:px-12 max-w-5xl mx-auto select-none"
     >
       {/* Background Ambient Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] sm:w-[500px] h-[200px] sm:h-[300px] bg-blue-600/5 blur-[140px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] sm:w-[500px] h-[200px] sm:h-[300px] bg-main-600/5 blur-[140px] rounded-full pointer-events-none" />
 
       {/* Main Content Area */}
       <div className="text-center space-y-4 sm:space-y-6 md:space-y-8 my-auto relative z-10 w-full py-2">
         {/* Section Pill */}
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-blue-950/80 text-blue-300 border border-blue-800/80" data-animate>
-          <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-main-950/80 text-main-300 border border-main-800/80" data-animate>
+          <span className="w-2 h-2 rounded-full bg-main-400 animate-pulse" />
           <span>05 / GET IN TOUCH</span>
         </div>
 
@@ -52,9 +52,9 @@ export default function ContactSection() {
           {/* Email Card */}
           <a
             href={`mailto:${email}`}
-            className="p-4 sm:p-6 rounded-2xl bg-slate-900/60 backdrop-blur-sm border border-slate-800 hover:border-blue-500/60 shadow-lg hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-300 flex flex-col items-center gap-2.5 sm:gap-3 group"
+            className="p-4 sm:p-6 rounded-2xl bg-slate-900/60 backdrop-blur-sm border border-slate-800 hover:border-main-500/60 shadow-lg hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-300 flex flex-col items-center gap-2.5 sm:gap-3 group"
           >
-            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-blue-600/20 text-blue-400 flex items-center justify-center group-hover:scale-110 transition-transform">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-main-600/20 text-main-400 flex items-center justify-center group-hover:scale-110 transition-transform">
               <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
@@ -74,7 +74,7 @@ export default function ContactSection() {
             href={githubUrl}
             target="_blank"
             rel="noreferrer"
-            className="p-4 sm:p-6 rounded-2xl bg-slate-900/60 backdrop-blur-sm border border-slate-800 hover:border-blue-500/60 shadow-lg hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-300 flex flex-col items-center gap-2.5 sm:gap-3 group"
+            className="p-4 sm:p-6 rounded-2xl bg-slate-900/60 backdrop-blur-sm border border-slate-800 hover:border-main-500/60 shadow-lg hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-300 flex flex-col items-center gap-2.5 sm:gap-3 group"
           >
             <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-slate-800 text-white flex items-center justify-center group-hover:scale-110 transition-transform">
               <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -96,7 +96,7 @@ export default function ContactSection() {
       {/* Integrated Bottom Footer Bar */}
       <div className="w-full border-t border-slate-800/80 pt-3 sm:pt-4 pb-1 sm:pb-0 flex flex-col sm:flex-row items-center justify-between text-[11px] sm:text-xs font-mono text-slate-500 z-10 gap-2 text-center sm:text-left">
         <div className="flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-blue-500" />
+          <span className="w-2 h-2 rounded-full bg-main-500" />
           <span>© {getCurrentYear()} {portfolioData.about.name}. All rights reserved.</span>
         </div>
       </div>

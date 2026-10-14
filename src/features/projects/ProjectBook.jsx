@@ -360,14 +360,14 @@ export default function ProjectBook() {
       className="relative min-h-screen min-h-[100dvh] md:h-[100dvh] w-full pt-20 pb-6 px-3 sm:px-8 lg:px-12 flex flex-col justify-between overflow-hidden bg-slate-950 text-white select-none"
     >
       {/* ─── Ambient Glow in Background ──────────────────────────────────────── */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[350px] sm:w-[700px] h-[250px] sm:h-[350px] bg-blue-600/10 blur-[160px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[350px] sm:w-[700px] h-[250px] sm:h-[350px] bg-main-600/10 blur-[160px] rounded-full pointer-events-none" />
       <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#60a5fa_1px,transparent_1px)] [background-size:32px_32px] pointer-events-none" />
 
       {/* ─── Section Header (SpaceX Minimalist Style - Compact Layout) ───────── */}
       <div className="relative z-10 max-w-6xl mx-auto w-full flex items-center justify-between gap-3 sm:gap-4 pb-2 border-b border-slate-800/80">
         <div className="flex items-center gap-2 sm:gap-3">
-          <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-mono tracking-widest uppercase bg-slate-900/80 text-blue-400 border border-slate-800">
-            <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
+          <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-mono tracking-widest uppercase bg-slate-900/80 text-main-400 border border-slate-800">
+            <span className="w-1.5 h-1.5 rounded-full bg-main-500 animate-pulse" />
             <span>04 / 3D BOOK</span>
           </div>
           <h2 className="text-lg sm:text-2xl font-black uppercase tracking-[0.08em] sm:tracking-[0.12em] text-white">
@@ -387,7 +387,7 @@ export default function ProjectBook() {
                 type="button"
                 onClick={() => handleJumpToPage(idx)}
                 className={`h-1.5 transition-all duration-300 rounded-full cursor-pointer ${
-                  idx === currentIndex ? 'w-5 sm:w-6 bg-blue-500' : 'w-1.5 sm:w-2 bg-slate-800 hover:bg-slate-700'
+                  idx === currentIndex ? 'w-5 sm:w-6 bg-main-500' : 'w-1.5 sm:w-2 bg-slate-800 hover:bg-slate-700'
                 }`}
                 aria-label={`Jump to page ${idx + 1}`}
               />
@@ -406,11 +406,11 @@ export default function ProjectBook() {
         <div className="relative w-full h-[calc(100vh-210px)] max-h-[540px] min-h-[370px] sm:min-h-[410px] rounded-2xl bg-slate-950 border border-slate-800 shadow-2xl p-1.5 sm:p-2 [transform-style:preserve-3d]">
           {/* Left Spine Binding (Realistic Book Hinge) */}
           <div className="absolute inset-y-0 left-0 w-5 sm:w-8 md:w-10 bg-gradient-to-r from-slate-950 via-slate-900 to-transparent border-r border-slate-800/80 rounded-l-2xl z-40 pointer-events-none flex flex-col justify-between items-center py-4 sm:py-6">
-            <div className="w-1 h-4 sm:h-6 bg-blue-500/40 rounded-full" />
+            <div className="w-1 h-4 sm:h-6 bg-main-500/40 rounded-full" />
             <span className="[writing-mode:vertical-rl] rotate-180 text-[7px] sm:text-[8px] font-mono tracking-widest text-slate-500 uppercase">
               PORTFOLIO BINDING
             </span>
-            <div className="w-1 h-4 sm:h-6 bg-blue-500/40 rounded-full" />
+            <div className="w-1 h-4 sm:h-6 bg-main-500/40 rounded-full" />
           </div>
 
           {/* ─── Solid Opaque Pages (Zero Overlapping / No Bleed) ─────────────── */}
@@ -447,7 +447,7 @@ export default function ProjectBook() {
                       className={`inline-flex items-center gap-1 px-2 sm:px-2.5 py-0.5 rounded-full text-[9px] sm:text-[10px] font-mono font-semibold uppercase tracking-wider ${
                         project.type === 'gallery'
                           ? 'bg-purple-950/80 text-purple-300 border border-purple-800/80'
-                          : 'bg-blue-950/80 text-blue-300 border border-blue-800/80'
+                          : 'bg-main-950/80 text-main-300 border border-main-800/80'
                       }`}
                     >
                       <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse" />
@@ -458,7 +458,7 @@ export default function ProjectBook() {
                     </span>
                   </div>
 
-                  <span className="text-[10px] sm:text-[11px] font-mono text-blue-400 uppercase tracking-widest hidden xs:inline-block">
+                  <span className="text-[10px] sm:text-[11px] font-mono text-main-400 uppercase tracking-widest hidden xs:inline-block">
                     Page 0{pageNumber} of 0{totalProjects}
                   </span>
                 </div>
@@ -484,7 +484,7 @@ export default function ProjectBook() {
                         {project.technologies?.slice(0, 6).map((tech) => (
                           <span
                             key={tech}
-                            className="px-2 sm:px-2.5 py-0.5 text-[10px] sm:text-xs font-mono rounded-md bg-slate-950 border border-slate-800 text-slate-300 hover:border-blue-500/50 hover:text-white transition-colors"
+                            className="px-2 sm:px-2.5 py-0.5 text-[10px] sm:text-xs font-mono rounded-md bg-slate-950 border border-slate-800 text-slate-300 hover:border-main-500/50 hover:text-white transition-colors"
                           >
                             {tech}
                           </span>
@@ -498,8 +498,8 @@ export default function ProjectBook() {
                         type="button"
                         onClick={() => handleOpenDetail(project)}
                         className="group relative inline-flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl
-                          bg-blue-600 hover:bg-blue-500 text-white font-semibold text-[11px] sm:text-xs
-                          uppercase tracking-wider sm:tracking-[0.18em] shadow-md shadow-blue-600/30 hover:shadow-blue-500/50
+                          bg-main-600 hover:bg-main-500 text-white font-semibold text-[11px] sm:text-xs
+                          uppercase tracking-wider sm:tracking-[0.18em] shadow-md shadow-main-600/30 hover:shadow-main-500/50
                           transition-all duration-300 active:scale-95 cursor-pointer"
                       >
                         <span>{currentLang === 'vi' ? 'KHÁM PHÁ DỰ ÁN' : 'EXPLORE PROJECT'}</span>
@@ -535,7 +535,7 @@ export default function ProjectBook() {
                     onClick={() => handleOpenDetail(project)}
                     className="md:col-span-4 relative group cursor-pointer w-full mt-1 sm:mt-0"
                   >
-                    <div className="relative aspect-[16/9] sm:aspect-[4/3] md:aspect-[1/1] max-h-[140px] sm:max-h-[200px] md:max-h-[260px] w-full rounded-2xl bg-gradient-to-tr from-slate-950 via-slate-900 to-blue-950 border border-slate-800 group-hover:border-blue-500/60 overflow-hidden shadow-xl group-hover:shadow-[0_0_30px_rgba(59,130,246,0.35)] transition-all duration-300 transform group-hover:scale-[1.02] flex flex-col justify-between p-2.5 sm:p-3.5">
+                    <div className="relative aspect-[16/9] sm:aspect-[4/3] md:aspect-[1/1] max-h-[140px] sm:max-h-[200px] md:max-h-[260px] w-full rounded-2xl bg-gradient-to-tr from-slate-950 via-slate-900 to-main-950 border border-slate-800 group-hover:border-main-500/60 overflow-hidden shadow-xl group-hover:shadow-[0_0_30px_rgba(59,130,246,0.35)] transition-all duration-300 transform group-hover:scale-[1.02] flex flex-col justify-between p-2.5 sm:p-3.5">
                       {/* Background Image with crisp rendering */}
                       {project.coverImage ? (
                         <div className="absolute inset-0 z-0">
@@ -553,10 +553,10 @@ export default function ProjectBook() {
 
                       {/* Header Badge */}
                       <div className="relative z-10 flex items-center justify-between text-[10px] font-mono text-slate-300">
-                        <span className="px-2 py-0.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-blue-400 font-semibold shadow">
+                        <span className="px-2 py-0.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-main-400 font-semibold shadow">
                           PREVIEW
                         </span>
-                        <span className="px-2 py-0.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-blue-400 font-semibold shadow flex items-center gap-1">
+                        <span className="px-2 py-0.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-main-400 font-semibold shadow flex items-center gap-1">
                           <span>EXPAND</span>
                           <span className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
                         </span>
@@ -566,7 +566,7 @@ export default function ProjectBook() {
                         <span className="uppercase text-slate-400 font-semibold">
                           {project.type}
                         </span>
-                        <span className="text-blue-400 font-bold flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
+                        <span className="text-main-400 font-bold flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
                           {currentLang === 'vi' ? 'CHI TIẾT →' : 'DETAILS →'}
                         </span>
                       </div>
@@ -644,7 +644,7 @@ export default function ProjectBook() {
             {/* Drawer Top Navigation */}
             <div className="flex items-center justify-between pb-4 sm:pb-6 border-b border-slate-800 sticky top-0 bg-slate-950/95 backdrop-blur-md z-20">
               <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-blue-500" />
+                <span className="w-2 h-2 rounded-full bg-main-500" />
                 <span className="text-[11px] sm:text-xs font-mono uppercase tracking-widest text-slate-400">
                   Project Deep Dive
                 </span>
@@ -671,7 +671,7 @@ export default function ProjectBook() {
               <button
                 type="button"
                 onClick={handleCloseDetail}
-                className="text-blue-400 hover:underline cursor-pointer"
+                className="text-main-400 hover:underline cursor-pointer"
               >
                 ← Return to showcase
               </button>

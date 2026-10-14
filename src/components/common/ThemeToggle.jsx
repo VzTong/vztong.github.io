@@ -27,14 +27,28 @@ export default function ThemeToggleButton() {
       title={isDark ? "Light mode" : "Dark mode"}
       className="
         px-3 py-1.5 rounded-lg text-xs font-mono font-semibold
-        bg-slate-900/80
-        text-slate-200
-        border border-slate-600/60
-        bg-slate-900/80
-        text-slate-200
-        hover:border-blue-500/50 hover:bg-slate-800/90 hover:text-white
-        focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/40
-        transition-all duration-200 active:scale-95
+
+        bg-white
+        text-slate-700
+        border border-slate-200
+        shadow-sm
+
+        hover:bg-slate-50
+        hover:border-main-500/50
+        hover:text-main-600
+
+        dark:bg-slate-900/80
+        dark:text-slate-200
+        dark:border-slate-600/60
+        dark:hover:bg-slate-800/90
+        dark:hover:text-white
+
+        focus:outline-none
+        focus-visible:ring-2
+        focus-visible:ring-main-500/40
+
+        transition-all duration-200
+        active:scale-95
       "
     >
       <span className="text-sm leading-none" aria-hidden="true">

@@ -145,10 +145,10 @@ export default function Header() {
           // }}
           className="flex items-center gap-2.5 sm:gap-3 text-white group focus:outline-none cursor-pointer"
         >
-          <div className="w-8 h-8 rounded-lg bg-blue-600/20 border border-blue-500/40 flex items-center justify-center font-mono font-bold text-blue-400 text-sm shadow-brand-glow group-hover:scale-105 transition-transform">
+          <div className="w-8 h-8 rounded-lg bg-main-600/20 border border-main-500/40 flex items-center justify-center font-mono font-bold text-main-400 text-sm shadow-brand-glow group-hover:scale-105 transition-transform">
             &lt;/&gt;
           </div>
-          <span className="font-mono font-black text-xs sm:text-sm tracking-[0.15em] sm:tracking-[0.2em] uppercase text-white group-hover:text-blue-400 transition-colors truncate max-w-[170px] sm:max-w-none">
+          <span className="font-mono font-black text-xs sm:text-sm tracking-[0.15em] sm:tracking-[0.2em] uppercase text-white group-hover:text-main-400 transition-colors truncate max-w-[170px] sm:max-w-none">
             {portfolioData.about.name}
           </span>
         </a>
@@ -166,12 +166,12 @@ export default function Header() {
                   onClick={(e) => handleNavClick(e, link.id)}
                   className={`px-3.5 py-1.5 rounded-full text-xs font-mono tracking-widest uppercase transition-all duration-300 flex items-center gap-1.5 cursor-pointer ${
                     isActive
-                      ? "bg-blue-600/20 text-blue-400 font-semibold border border-blue-500/50 shadow-[0_0_12px_rgba(59,130,246,0.25)]"
+                      ? "bg-main-600/20 text-main-400 font-semibold border border-main-500/50 shadow-[0_0_12px_rgba(59,130,246,0.25)]"
                       : "text-slate-400 hover:text-white hover:bg-slate-800/50 border border-transparent"
                   }`}
                 >
                   {isActive && (
-                    <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-main-400 animate-pulse" />
                   )}
                   <span>{link.label}</span>
                 </a>
@@ -183,7 +183,7 @@ export default function Header() {
           <button
             type="button"
             onClick={() => setIsDocsModalOpen(true)}
-            className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-mono tracking-wider uppercase font-semibold text-blue-300 bg-blue-950/70 hover:bg-blue-900/80 border border-blue-600/50 hover:border-blue-400 shadow-[0_0_15px_rgba(59,130,246,0.2)] transition-all duration-300 cursor-pointer focus:outline-none"
+            className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-mono tracking-wider uppercase font-semibold text-main-300 bg-main-950/70 hover:bg-main-900/80 border border-main-600/50 hover:border-main-400 shadow-[0_0_15px_rgba(59,130,246,0.2)] transition-all duration-300 cursor-pointer focus:outline-none"
             title={
               currentLang === "vi"
                 ? "Tải Master CV & Bảng điểm"
@@ -191,7 +191,7 @@ export default function Header() {
             }
           >
             <svg
-              className="w-3.5 h-3.5 text-blue-400"
+              className="w-3.5 h-3.5 text-main-400"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -257,7 +257,7 @@ export default function Header() {
                 onClick={(e) => handleNavClick(e, link.id)}
                 className={`px-4 py-3 rounded-xl text-xs font-mono tracking-widest uppercase transition-all flex items-center justify-between cursor-pointer ${
                   isActive
-                    ? "bg-blue-600/20 text-blue-400 font-bold border border-blue-500/40 shadow-sm"
+                    ? "bg-main-600/20 text-main-400 font-bold border border-main-500/40 shadow-sm"
                     : "text-slate-300 hover:text-white hover:bg-slate-900/80 border border-transparent"
                 }`}
               >
@@ -268,7 +268,7 @@ export default function Header() {
                   <span>{link.label}</span>
                 </div>
                 {isActive && (
-                  <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
+                  <span className="w-2 h-2 rounded-full bg-main-400 animate-pulse" />
                 )}
               </a>
             );
@@ -281,11 +281,11 @@ export default function Header() {
               setIsMobileMenuOpen(false);
               setIsDocsModalOpen(true);
             }}
-            className="w-full mt-2 px-4 py-3 rounded-xl text-xs font-mono tracking-widest uppercase bg-blue-600/20 hover:bg-blue-600/30 text-blue-300 border border-blue-500/50 flex items-center justify-between cursor-pointer transition-colors shadow-sm"
+            className="w-full mt-2 px-4 py-3 rounded-xl text-xs font-mono tracking-widest uppercase bg-main-600/20 hover:bg-main-600/30 text-main-300 border border-main-500/50 flex items-center justify-between cursor-pointer transition-colors shadow-sm"
           >
             <div className="flex items-center gap-2">
               <svg
-                className="w-4 h-4 text-blue-400"
+                className="w-4 h-4 text-main-400"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
