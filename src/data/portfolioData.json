@@ -95,7 +95,7 @@
       "vi": "Xem và tải trực tiếp Master CV và Bảng điểm đại học",
       "en": "Preview and download Master CV and verified academic transcript"
     },
-    "driveFolderUrl": "https://vztong.github.io/CV/en/CV_TongNhaVy_EN.pdf",
+    "driveFolderUrl": "https://drive.google.com/drive/folders/1gcmltmmHSiUYG1OhrzY7-0H4tAfx33Tb?usp=sharing",
     "items": [
       {
         "id": "master-cv",
@@ -113,7 +113,7 @@
           "en": "Comprehensive developer resume detailing .NET, Microservices & Clean Architecture, paired with modern React and Next.js frontend delivery."
         },
         "filename": "Tong_Nha_Vy_Master_CV.pdf",
-        "url": "https://vztong.github.io/CV/en/CV_TongNhaVy_EN.pdf",
+        "url": "https://drive.google.com/file/d/18tTzuwl3qyWigXQrFlw-IqMyTnLag2F3/view?usp=sharing",
         "fileType": "PDF",
         "pages": "2 Pages",
         "updatedAt": "10/2026",
@@ -146,7 +146,7 @@
           "en": "Official university academic records and course grades in Information Technology."
         },
         "filename": "Tong_Nha_Vy_Transcript.pdf",
-        "url": "https://vztong.github.io/CV/Tong_Nha_Vy_Transcript.pdf",
+        "url": "https://drive.google.com/file/d/1yiEGdhSlP5zuJfxYTsuvinaDh_dZ3URO/view?usp=sharing",
         "fileType": "PDF",
         "pages": "Official Record",
         "updatedAt": "2025",

@@ -588,13 +588,12 @@ function previewSelectedCV() {
   previewBtn.disabled = true;
 
   let url = '';
-  const langFolder = selectedLanguage === 'en' ? 'en' : 'vi';
-  const langCode = selectedLanguage === 'en' ? 'EN' : 'VI';
-
-  // Fixed position for all CVs
-  const position = 'Fresher';
-
-  url = `CV/${langFolder}/CV_TongNhaVy_${langCode}.pdf`;
+  if (selectedLanguage === 'en') {
+    url = `https://drive.google.com/file/d/18tTzuwl3qyWigXQrFlw-IqMyTnLag2F3/view?usp=sharing`;
+  }
+  else if (selectedLanguage === 'vi') {
+    url = `https://drive.google.com/file/d/1qJQ-ilniMEy4t2NS0sq4iKF0CLGqWNb9/view?usp=sharing`;
+  }
 
   // Open PDF in new tab for preview
   window.open(url, '_blank');
