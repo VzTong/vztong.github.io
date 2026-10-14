@@ -205,7 +205,7 @@ export default function ChatBot() {
         return (
           <code
             key={index}
-            className="px-1 py-0.5 rounded bg-slate-950/60 border border-slate-700 text-main-300 font-mono text-[11px]"
+            className="px-1 py-0.5 rounded bg-brand-bg dark:bg-slate-950/60 border border-slate-300 dark:border-slate-700 text-main-300 font-mono text-[11px]"
           >
             {part.slice(1, -1)}
           </code>
@@ -282,11 +282,11 @@ export default function ChatBot() {
 
   return (
     <div className="fixed bottom-5 right-5 z-[9999] flex flex-col items-end">
-      {/* ─── 1. Chat Window ──────────────────────────────────────────────── */}
+      {/* ─── 1. Chat Window ─── */}
       {isOpen && (
-        <div className="w-[92vw] sm:w-[410px] h-[540px] max-h-[82vh] bg-slate-900/95 backdrop-blur-xl border border-slate-700/80 rounded-2xl shadow-2xl flex flex-col overflow-hidden mb-4 transition-all duration-300 animate-in fade-in zoom-in-95">
+        <div className="w-[92vw] sm:w-[410px] h-[540px] max-h-[82vh] bg-brand-card dark:bg-slate-900/95 backdrop-blur-xl border border-slate-300 dark:border-slate-700/80 rounded-2xl shadow-2xl flex flex-col overflow-hidden mb-4 transition-all duration-300 animate-in fade-in zoom-in-95">
           {/* Header */}
-          <div className="px-4 py-3.5 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border-b border-slate-700/60 flex items-center justify-between">
+          <div className="px-4 py-3.5 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border-b border-slate-300 dark:border-slate-700/60 flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="relative">
                 <div className="w-9 h-9 rounded-full bg-main-600/20 border border-main-500/40 flex items-center justify-center text-main-400">
@@ -307,13 +307,13 @@ export default function ChatBot() {
                 <span className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-sub-500 border-2 border-slate-900 animate-pulse"></span>
               </div>
               <div>
-                <h3 className="text-sm font-semibold text-slate-100 flex items-center gap-1.5">
+                <h3 className="text-sm font-semibold text-brand-text dark:text-slate-100 flex items-center gap-1.5">
                   <span>AI Portfolio Assistant</span>
                   <span className="text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.5 rounded bg-main-500/20 text-main-300 border border-main-500/30">
                     Edge
                   </span>
                 </h3>
-                <p className="text-xs text-slate-400">
+                <p className="text-xs text-brand-muted dark:text-slate-400">
                   {isEn
                     ? "Instant Q&A grounded in Portfolio"
                     : "Hỏi đáp tức thì về Vy"}
@@ -327,7 +327,7 @@ export default function ChatBot() {
                 type="button"
                 onClick={handleClearChat}
                 title={isEn ? "Clear conversation" : "Làm mới hội thoại"}
-                className="p-1.5 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800/80 transition-colors"
+                className="p-1.5 rounded-lg text-brand-muted dark:text-slate-400 hover:text-brand-text dark:text-slate-200 hover:bg-slate-200/70 dark:bg-slate-800/80 transition-colors"
               >
                 <svg
                   className="w-4 h-4"
@@ -347,7 +347,7 @@ export default function ChatBot() {
                 type="button"
                 onClick={() => setIsOpen(false)}
                 title={isEn ? "Close chat" : "Đóng"}
-                className="p-1.5 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800/80 transition-colors"
+                className="p-1.5 rounded-lg text-brand-muted dark:text-slate-400 hover:text-brand-text dark:text-slate-200 hover:bg-slate-200/70 dark:bg-slate-800/80 transition-colors"
               >
                 <svg
                   className="w-5 h-5"
@@ -384,10 +384,10 @@ export default function ChatBot() {
                   <div
                     className={`max-w-[84%] px-3.5 py-2.5 rounded-2xl text-xs sm:text-sm leading-relaxed shadow-sm ${
                       isUser
-                        ? "bg-main-600 text-white rounded-tr-none font-normal"
+                        ? "bg-main-600 text-brand-text dark:text-white rounded-tr-none font-normal"
                         : msg.isError
                           ? "bg-red-950/40 text-red-200 border border-red-800/50 rounded-tl-none"
-                          : "bg-slate-800/90 text-slate-100 border border-slate-700/60 rounded-tl-none"
+                          : "bg-slate-200/80 dark:bg-slate-800/90 text-brand-text dark:text-slate-100 border border-slate-300 dark:border-slate-700/60 rounded-tl-none"
                     }`}
                   >
                     {renderFormattedText(msg.text)}
@@ -402,11 +402,11 @@ export default function ChatBot() {
                 <div className="w-7 h-7 rounded-full bg-main-600/30 border border-main-500/30 flex items-center justify-center text-main-400 shrink-0 text-xs">
                   AI
                 </div>
-                <div className="bg-slate-800/90 border border-slate-700/60 text-slate-400 px-4 py-3 rounded-2xl rounded-tl-none flex items-center gap-1.5">
+                <div className="bg-slate-200/80 dark:bg-slate-800/90 border border-slate-300 dark:border-slate-700/60 text-brand-muted dark:text-slate-400 px-4 py-3 rounded-2xl rounded-tl-none flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-main-400 animate-bounce [animation-delay:-0.3s]"></span>
                   <span className="w-2 h-2 rounded-full bg-main-400 animate-bounce [animation-delay:-0.15s]"></span>
                   <span className="w-2 h-2 rounded-full bg-main-400 animate-bounce"></span>
-                  <span className="text-xs ml-1.5 text-slate-400">
+                  <span className="text-xs ml-1.5 text-brand-muted dark:text-slate-400">
                     {isEn ? "Thinking..." : "Đang suy nghĩ..."}
                   </span>
                 </div>
@@ -418,13 +418,13 @@ export default function ChatBot() {
 
           {/* Quick Suggestions (Shown if only 1 welcome message) */}
           {messages.length <= 1 && (
-            <div className="px-3 py-2 bg-slate-950/40 border-t border-slate-800/60 flex flex-wrap gap-1.5">
+            <div className="px-3 py-2 bg-brand-bg dark:bg-slate-950/40 border-t border-brand-border dark:border-slate-800/60 flex flex-wrap gap-1.5">
               {suggestions.map((prompt, idx) => (
                 <button
                   key={idx}
                   type="button"
                   onClick={() => handleSendMessage(prompt)}
-                  className="text-[11px] text-slate-300 bg-slate-800/70 hover:bg-main-600/30 hover:text-main-200 border border-slate-700/60 hover:border-main-500/50 rounded-full px-2.5 py-1 transition-all text-left"
+                  className="text-[11px] text-brand-muted dark:text-slate-300 bg-slate-200 dark:bg-slate-800/70 hover:bg-main-600/30 hover:text-main-200 border border-slate-300 dark:border-slate-700/60 hover:border-main-500/50 rounded-full px-2.5 py-1 transition-all text-left"
                 >
                   💡 {prompt}
                 </button>
@@ -433,7 +433,7 @@ export default function ChatBot() {
           )}
 
           {/* Input Area */}
-          <div className="p-3 bg-slate-900/90 border-t border-slate-700/60">
+          <div className="p-3 bg-brand-card/90 dark:bg-slate-900/90 border-t border-slate-300 dark:border-slate-700/60">
             <form
               onSubmit={(e) => {
                 e.preventDefault();
@@ -453,13 +453,13 @@ export default function ChatBot() {
                     : "Hỏi về kinh nghiệm, kỹ năng của Vy..."
                 }
                 disabled={isLoading}
-                className="flex-1 bg-slate-800/90 text-slate-100 placeholder-slate-400 text-xs sm:text-sm px-3.5 py-2.5 rounded-xl border border-slate-700 focus:outline-none focus:border-main-500 focus:ring-1 focus:ring-main-500 transition-all disabled:opacity-50"
+                className="flex-1 bg-slate-200/80 dark:bg-slate-800/90 text-brand-text dark:text-slate-100 placeholder-slate-400 text-xs sm:text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 focus:outline-none focus:border-main-500 focus:ring-1 focus:ring-main-500 transition-all disabled:opacity-50"
               />
 
               <button
                 type="submit"
                 disabled={!inputMessage.trim() || isLoading}
-                className="bg-main-600 hover:bg-main-500 disabled:opacity-40 disabled:hover:bg-main-600 text-white p-2.5 rounded-xl transition-all shadow-md flex items-center justify-center shrink-0"
+                className="bg-main-600 hover:bg-main-500 disabled:opacity-40 disabled:hover:bg-main-600 text-brand-text dark:text-white p-2.5 rounded-xl transition-all shadow-md flex items-center justify-center shrink-0"
                 title={isEn ? "Send message" : "Gửi tin nhắn"}
               >
                 <svg
@@ -481,11 +481,11 @@ export default function ChatBot() {
         </div>
       )}
 
-      {/* ─── 2. Floating Action Button (FAB) ─────────────────────────────── */}
+      {/* ─── 2. Floating Action Button (FAB) ─── */}
       <button
         type="button"
         onClick={() => setIsOpen((prev) => !prev)}
-        className="group relative flex items-center gap-2.5 px-4 py-3 bg-gradient-to-r from-main-600 via-main-500 to-indigo-600 hover:from-main-500 hover:to-indigo-500 text-white rounded-full shadow-lg hover:shadow-main-500/25 transition-all duration-300 hover:scale-105 active:scale-95 border border-main-400/30"
+        className="group relative flex items-center gap-2.5 px-4 py-3 bg-gradient-to-r from-main-600 via-main-500 to-indigo-600 hover:from-main-500 hover:to-indigo-500 text-brand-text dark:text-white rounded-full shadow-lg hover:shadow-main-500/25 transition-all duration-300 hover:scale-105 active:scale-95 border border-main-400/30"
         aria-label={isEn ? "Chat with AI" : "Trò chuyện với AI"}
       >
         {/* Glow pulsing ring behind button */}

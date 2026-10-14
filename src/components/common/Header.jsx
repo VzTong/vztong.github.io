@@ -132,7 +132,7 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 w-full bg-slate-950/90 backdrop-blur-md border-b border-slate-800/80 transition-all duration-300">
+    <header className="fixed top-0 left-0 right-0 z-50 w-full bg-white/80 dark:bg-slate-950/90 backdrop-blur-md border-b border-slate-200/80 dark:border-slate-800/80 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-8 md:px-12 h-16 flex items-center justify-between">
         {/* Brand / Logo */}
         <a
@@ -148,7 +148,7 @@ export default function Header() {
           <div className="w-8 h-8 rounded-lg bg-main-600/20 border border-main-500/40 flex items-center justify-center font-mono font-bold text-main-400 text-sm shadow-brand-glow group-hover:scale-105 transition-transform">
             &lt;/&gt;
           </div>
-          <span className="font-mono font-black text-xs sm:text-sm tracking-[0.15em] sm:tracking-[0.2em] uppercase text-white group-hover:text-main-400 transition-colors truncate max-w-[170px] sm:max-w-none">
+          <span className="font-mono font-black text-xs sm:text-sm tracking-[0.15em] sm:tracking-[0.2em] uppercase text-slate-900 dark:text-white group-hover:text-main-600 dark:group-hover:text-main-400 transition-colors truncate max-w-[170px] sm:max-w-none">
             {portfolioData.about.name}
           </span>
         </a>
@@ -156,7 +156,7 @@ export default function Header() {
         {/* Right Side: Desktop Nav + Toggles + Mobile Hamburger */}
         <div className="flex items-center gap-2.5 sm:gap-4 md:gap-6">
           {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center gap-1 p-1 rounded-full bg-slate-900/60 border border-slate-800/60">
+          <nav className="hidden md:flex items-center gap-1 p-1 rounded-full bg-slate-100/80 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800/60">
             {navLinks.map((link) => {
               const isActive = activeSection === link.id;
               return (
@@ -183,7 +183,7 @@ export default function Header() {
           <button
             type="button"
             onClick={() => setIsDocsModalOpen(true)}
-            className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-mono tracking-wider uppercase font-semibold text-main-300 bg-main-950/70 hover:bg-main-900/80 border border-main-600/50 hover:border-main-400 shadow-[0_0_15px_rgba(59,130,246,0.2)] transition-all duration-300 cursor-pointer focus:outline-none"
+            className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-mono tracking-wider uppercase font-semibold text-main-700 dark:text-main-300 bg-main-50 dark:bg-main-950/70 hover:bg-main-100 dark:hover:bg-main-900/80 border border-main-300 dark:border-main-600/50 hover:border-main-500 dark:hover:border-main-400 shadow-sm dark:shadow-[0_0_15px_rgba(24,210,110,0.2)] transition-all duration-300 cursor-pointer focus:outline-none"
             title={
               currentLang === "vi"
                 ? "Tải Master CV & Bảng điểm"
@@ -209,7 +209,7 @@ export default function Header() {
           {/* Language Toggle (Always accessible) */}
           <div className="flex items-center gap-2">
             <LanguageToggle />
-            {/* <ThemeToggleButton /> */}
+            <ThemeToggleButton />
           </div>
 
           {/* Mobile Hamburger Toggle Button (md:hidden) */}
@@ -241,7 +241,7 @@ export default function Header() {
 
       {/* ─── Mobile Slide-Down Drawer Navigation ───────────────────────────────── */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out border-b border-slate-800/80 bg-slate-950/95 backdrop-blur-xl ${
+        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out border-b border-slate-200/80 dark:border-slate-800/80 bg-white/95 dark:bg-slate-950/95 backdrop-blur-xl ${
           isMobileMenuOpen
             ? "max-h-96 opacity-100 py-4 px-4"
             : "max-h-0 opacity-0 py-0 px-4"

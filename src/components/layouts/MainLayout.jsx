@@ -1,6 +1,6 @@
-import React from 'react'
-import Header from '../common/Header'
-import { useScrollSnap } from '../../hooks/useScrollSnap'
+import React from "react";
+import Header from "../common/Header";
+import { useScrollSnap } from "../../hooks/useScrollSnap";
 
 /**
  * MainLayout Component
@@ -11,18 +11,12 @@ import { useScrollSnap } from '../../hooks/useScrollSnap'
  * - Integrates useScrollSnap hook for smart snapping & locking to each section
  */
 export default function MainLayout({ children }) {
-  // Activate smart section snapping
-  useScrollSnap()
+  useScrollSnap();
 
   return (
-    <div className="w-full bg-slate-950 text-slate-100 selection:bg-main-600 selection:text-white">
-      {/* ─── 1. Fixed Sticky Navbar ────────────────────────────────────────── */}
+    <div className="w-full min-h-screen bg-brand-bg text-brand-text dark:bg-brand-bg-dark dark:text-brand-text-dark selection:bg-main-500 selection:text-white transition-colors duration-300">
       <Header />
-
-      {/* ─── 2. Main Content Flow ──────────────────────────────────────────── */}
-      <main className="w-full">
-        {children}
-      </main>
+      <main className="w-full">{children}</main>
     </div>
-  )
+  );
 }

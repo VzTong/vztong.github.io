@@ -5,18 +5,25 @@
 
 /* --- Base layer overrides --- */
 @layer base {
+
   /* Smooth scrolling & Adaptive Section Snapping */
   html {
     scroll-behavior: smooth;
     overflow-y: auto;
     scrollbar-width: thin;
+    scrollbar-color: #94a3b8 transparent;
+  }
+
+  html.dark {
     scrollbar-color: #33554c transparent;
   }
 
   /* Default (Mobile & Small/Landscape screens): Natural smooth scrolling, auto height */
   body {
+    @apply bg-brand-bg text-brand-text dark:bg-brand-bg-dark dark:text-brand-text-dark;
     overscroll-behavior-y: auto;
     padding-bottom: env(safe-area-inset-bottom, 0px);
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   section {
@@ -54,17 +61,30 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: rgba(2, 23, 14, 0.5);
+    background: #e8eee9;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #33554c;
+    background: #94a3b8;
     border-radius: 9999px;
-    border: 1px solid rgba(15, 42, 34, 0.6);
     transition: background-color 0.2s ease, box-shadow 0.2s ease;
   }
 
   ::-webkit-scrollbar-thumb:hover {
+    background: #68736b;
+  }
+
+  .dark ::-webkit-scrollbar-track {
+    background: rgba(2, 23, 14, 0.5);
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    background: #33554c;
+    border-radius: 9999px;
+    border: 1px solid rgba(15, 42, 34, 0.6);
+  }
+
+  .dark ::-webkit-scrollbar-thumb:hover {
     background: #3bf6a8;
     box-shadow: 0 0 12px rgba(59, 246, 153, 0.6);
   }
@@ -104,51 +124,39 @@
 
 /* --- Components layer: reusable class blocks --- */
 @layer components {
+
   /* Brand button — primary call-to-action */
   .btn-primary {
-    @apply px-5 py-2.5 rounded-lg bg-brand-accent dark:bg-brand-accent-dark
-           text-white font-medium text-sm
-           hover:opacity-90 active:scale-95
-           transition-all duration-200 focus-visible:ring-2;
+    @apply px-5 py-2.5 rounded-lg bg-brand-accent dark:bg-brand-accent-dark text-white font-medium text-sm hover:opacity-90 active:scale-95 transition-all duration-200 focus-visible:ring-2;
   }
 
   /* Brand button — ghost/outline variant */
   .btn-ghost {
-    @apply px-5 py-2.5 rounded-lg border border-brand-border dark:border-brand-border-dark
-           text-brand-text dark:text-brand-text-dark font-medium text-sm
-           hover:bg-brand-border dark:hover:bg-brand-border-dark
-           transition-all duration-200 focus-visible:ring-2;
+    @apply px-5 py-2.5 rounded-lg border border-brand-border dark:border-brand-border-dark text-brand-text dark:text-brand-text-dark font-medium text-sm hover:bg-brand-border dark:hover:bg-brand-border-dark transition-all duration-200 focus-visible:ring-2;
   }
 
   /* Technology badge pill */
   .tech-badge {
-    @apply font-mono text-xs px-2.5 py-1 rounded-full
-           bg-slate-100 dark:bg-slate-800
-           text-brand-muted dark:text-brand-muted-dark
-           border border-brand-border dark:border-brand-border-dark;
+    @apply font-mono text-xs px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-brand-muted dark:text-brand-muted-dark border border-brand-border dark:border-brand-border-dark;
   }
 
   /* Section card */
   .section-card {
-    @apply rounded-2xl border border-brand-border dark:border-brand-border-dark
-           bg-brand-card dark:bg-brand-card-dark
-           shadow-sm hover:shadow-brand-glow transition-shadow duration-300;
+    @apply rounded-2xl border border-brand-border dark:border-brand-border-dark bg-brand-card dark:bg-brand-card-dark shadow-sm hover:shadow-brand-glow transition-shadow duration-300;
   }
 }
 
 /* --- Utilities layer: one-off helpers --- */
 @layer utilities {
+
   /* Text gradient using brand accent */
   .text-gradient-brand {
-    @apply bg-clip-text text-transparent
-           bg-gradient-to-r from-main-600 to-main-400;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-main-600 to-main-400;
   }
 
   /* Glassmorphism card */
   .glass {
-    @apply bg-white/10 dark:bg-black/20
-           backdrop-blur-md
-           border border-white/20 dark:border-white/10;
+    @apply bg-white/10 dark:bg-black/20 backdrop-blur-md border border-white/20 dark:border-white/10;
   }
 
   /* Custom subtle scrollbar for inner scroll containers */

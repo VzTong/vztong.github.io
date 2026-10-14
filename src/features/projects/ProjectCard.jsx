@@ -1,5 +1,5 @@
-import React from 'react'
-import { useTranslation } from 'react-i18next'
+import React from "react";
+import { useTranslation } from "react-i18next";
 
 /**
  * ProjectCard Component
@@ -10,11 +10,11 @@ import { useTranslation } from 'react-i18next'
  * @param {Function} props.onSelect - Callback when clicked
  */
 export default function ProjectCard({ project, onSelect }) {
-  const { i18n } = useTranslation('portfolio')
-  const currentLang = i18n.language === 'en' ? 'en' : 'vi'
+  const { i18n } = useTranslation("portfolio");
+  const currentLang = i18n.language === "en" ? "en" : "vi";
 
-  const title = project.title?.[currentLang] || project.title?.vi || ''
-  const summary = project.summary?.[currentLang] || project.summary?.vi || ''
+  const title = project.title?.[currentLang] || project.title?.vi || "";
+  const summary = project.summary?.[currentLang] || project.summary?.vi || "";
 
   return (
     <div
@@ -28,9 +28,9 @@ export default function ProjectCard({ project, onSelect }) {
         <div className="flex items-center justify-between gap-2">
           <span
             className={`text-[10px] font-mono px-2.5 py-0.5 rounded-full uppercase font-semibold ${
-              project.type === 'gallery'
-                ? 'bg-purple-100 dark:bg-purple-950/80 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800'
-                : 'bg-main-100 dark:bg-main-950/80 text-main-700 dark:text-main-300 border border-main-200 dark:border-main-800'
+              project.type === "gallery"
+                ? "bg-purple-100 dark:bg-purple-950/80 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800"
+                : "bg-main-100 dark:bg-main-950/80 text-main-700 dark:text-main-300 border border-main-200 dark:border-main-800"
             }`}
           >
             type: {project.type}
@@ -40,7 +40,7 @@ export default function ProjectCard({ project, onSelect }) {
           </span>
         </div>
 
-        <h3 className="text-lg font-bold text-brand-text dark:text-white group-hover:text-brand-accent dark:group-hover:text-brand-accent-dark transition-colors">
+        <h3 className="text-lg font-bold text-brand-text dark:text-brand-text dark:text-white group-hover:text-brand-accent dark:group-hover:text-brand-accent-dark transition-colors">
           {title}
         </h3>
 
@@ -53,7 +53,7 @@ export default function ProjectCard({ project, onSelect }) {
         {project.technologies?.slice(0, 4).map((tech) => (
           <span
             key={tech}
-            className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300"
+            className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-brand-muted dark:text-slate-300"
           >
             {tech}
           </span>
@@ -65,5 +65,5 @@ export default function ProjectCard({ project, onSelect }) {
         )}
       </div>
     </div>
-  )
+  );
 }

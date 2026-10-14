@@ -107,40 +107,40 @@ export default function ExperienceSection() {
       {/* Background Ambient Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] sm:w-[600px] h-[250px] sm:h-[350px] bg-main-600/10 blur-[150px] rounded-full pointer-events-none" />
 
-      {/* ─── Section Header ─────────────────────────────────────────────────── */}
+      {/* ─── Section Header ─── */}
       <div className="text-center space-y-1 mb-2 relative z-10 w-full">
-        <div className="inline-flex items-center gap-2 px-3 py-0.5 rounded-full text-xs font-mono tracking-widest uppercase bg-slate-900/80 text-main-400 border border-slate-800">
+        <div className="inline-flex items-center gap-2 px-3 py-0.5 rounded-full text-xs font-mono tracking-widest uppercase bg-brand-card/80 dark:bg-slate-900/80 text-main-400 border border-brand-border dark:border-slate-800">
           <span className="w-1.5 h-1.5 rounded-full bg-main-500 animate-pulse" />
           <span>03 / CAREER & WORK EXPERIENCE</span>
         </div>
 
-        <h2 className="text-2xl sm:text-3xl font-black uppercase tracking-[0.08em] sm:tracking-[0.12em] text-white">
+        <h2 className="text-2xl sm:text-3xl font-black uppercase tracking-[0.08em] sm:tracking-[0.12em] text-brand-text dark:text-white">
           {currentLang === "vi" ? "KINH NGHIỆM LÀM VIỆC" : "WORK EXPERIENCE"}
         </h2>
 
-        <p className="text-[10px] sm:text-xs font-mono tracking-wider uppercase text-slate-400 max-w-lg mx-auto leading-relaxed px-2">
+        <p className="text-[10px] sm:text-xs font-mono tracking-wider uppercase text-brand-muted dark:text-slate-400 max-w-lg mx-auto leading-relaxed px-2">
           {currentLang === "vi"
             ? "HÀNH TRÌNH PHÁT TRIỂN NĂNG LỰC KỸ THUẬT VÀ ĐÓNG GÓP THỰC TẾ TRONG DOANH NGHIỆP"
             : "PROFESSIONAL ENGINEERING JOURNEY & MEASURABLE BUSINESS IMPACT"}
         </p>
       </div>
 
-      {/* ─── Interactive Career Showcase Book Card ───────────────────────────── */}
+      {/* ─── Interactive Career Showcase Book Card ─── */}
       <div className="w-full relative z-10 my-auto py-1">
-        <div className="relative w-full rounded-2xl bg-slate-900/85 backdrop-blur-md border border-slate-800 shadow-[0_20px_50px_rgba(0,0,0,0.6)] p-4 sm:p-7 md:p-8 flex flex-col justify-between">
+        <div className="relative w-full rounded-2xl bg-brand-card dark:bg-slate-900/85 backdrop-blur-md border border-brand-border dark:border-slate-800 shadow-[0_20px_50px_rgba(0,0,0,0.6)] p-4 sm:p-7 md:p-8 flex flex-col justify-between">
           {/* Header Metadata */}
-          <div className="flex items-center justify-between border-b border-slate-800 pb-3 mb-3.5 sm:mb-4 flex-wrap gap-2">
+          <div className="flex items-center justify-between border-b border-brand-border dark:border-slate-800 pb-3 mb-3.5 sm:mb-4 flex-wrap gap-2">
             <div className="flex items-center gap-2 sm:gap-2.5">
               <span className="px-2.5 py-0.5 rounded-full text-[11px] sm:text-xs font-mono font-semibold uppercase bg-main-950/80 text-main-300 border border-main-800/80">
                 {currentExp.type?.toUpperCase()}
               </span>
-              <span className="text-[11px] sm:text-xs font-mono text-slate-400">
+              <span className="text-[11px] sm:text-xs font-mono text-brand-muted dark:text-slate-400">
                 {period}
               </span>
             </div>
 
             <div className="flex items-center gap-2">
-              <span className="text-[11px] sm:text-xs font-mono text-slate-400">
+              <span className="text-[11px] sm:text-xs font-mono text-brand-muted dark:text-slate-400">
                 {location}
               </span>
               <span className="text-[11px] sm:text-xs font-mono text-slate-500">
@@ -157,13 +157,13 @@ export default function ExperienceSection() {
                 <span className="text-[11px] sm:text-xs font-mono text-main-400 font-semibold tracking-wider uppercase block">
                   {company}
                 </span>
-                <h3 className="text-lg sm:text-2xl font-black uppercase text-white tracking-tight leading-snug">
+                <h3 className="text-lg sm:text-2xl font-black uppercase text-brand-text dark:text-white tracking-tight leading-snug">
                   {role}
                 </h3>
               </div>
 
               {/* Summary */}
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans line-clamp-2 sm:line-clamp-3">
+              <p className="text-xs sm:text-sm text-brand-muted dark:text-slate-300 leading-relaxed font-sans line-clamp-2 sm:line-clamp-3">
                 {summary}
               </p>
 
@@ -176,13 +176,13 @@ export default function ExperienceSection() {
                   {currentExp.technologies?.slice(0, 6).map((tech) => (
                     <span
                       key={tech}
-                      className="text-[10px] sm:text-[11px] font-mono px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-md bg-slate-950 text-slate-300 border border-slate-800"
+                      className="text-[10px] sm:text-[11px] font-mono px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-md bg-brand-bg dark:bg-slate-950 text-brand-muted dark:text-slate-300 border border-brand-border dark:border-slate-800"
                     >
                       {tech}
                     </span>
                   ))}
                   {currentExp.technologies?.length > 6 && (
-                    <span className="text-[10px] sm:text-[11px] font-mono px-2 py-0.5 sm:py-1 rounded-md bg-slate-950 text-main-400 border border-main-900/50">
+                    <span className="text-[10px] sm:text-[11px] font-mono px-2 py-0.5 sm:py-1 rounded-md bg-brand-bg dark:bg-slate-950 text-main-400 border border-main-900/50">
                       +{currentExp.technologies.length - 6} more
                     </span>
                   )}
@@ -209,7 +209,7 @@ export default function ExperienceSection() {
               onClick={() => handleOpenDetail(currentExp)}
               className="md:col-span-4 relative group cursor-pointer w-full mt-2 md:mt-0"
             >
-              <div className="relative aspect-[16/9] sm:aspect-[4/3] max-h-[180px] sm:max-h-[240px] w-full rounded-2xl bg-gradient-to-tr from-slate-950 via-slate-900 to-main-950 border border-slate-800 group-hover:border-main-500/60 overflow-hidden shadow-xl group-hover:shadow-[0_0_30px_rgba(59,130,246,0.35)] transition-all duration-300 transform group-hover:scale-[1.02] flex flex-col justify-between p-3.5 sm:p-4">
+              <div className="relative aspect-[16/9] sm:aspect-[4/3] max-h-[180px] sm:max-h-[240px] w-full rounded-2xl bg-gradient-to-tr from-slate-950 via-slate-900 to-main-950 border border-brand-border dark:border-slate-800 group-hover:border-main-500/60 overflow-hidden shadow-xl group-hover:shadow-[0_0_30px_rgba(59,130,246,0.35)] transition-all duration-300 transform group-hover:scale-[1.02] flex flex-col justify-between p-3.5 sm:p-4">
                 {coverUrl && (
                   <div className="absolute inset-0 z-0">
                     <img
@@ -222,8 +222,8 @@ export default function ExperienceSection() {
                 )}
 
                 {/* Top Badge */}
-                <div className="relative z-10 flex items-center justify-between text-[10px] font-mono text-slate-300">
-                  <span className="px-2 py-0.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-main-400 font-semibold shadow">
+                <div className="relative z-10 flex items-center justify-between text-[10px] font-mono text-brand-muted dark:text-slate-300">
+                  <span className="px-2 py-0.5 rounded-full bg-brand-card/90 dark:bg-slate-900/90 border border-slate-300 dark:border-slate-700/80 text-main-400 font-semibold shadow">
                     CAREER
                   </span>
                   <span className="text-main-400 font-semibold flex items-center gap-1">
@@ -235,8 +235,8 @@ export default function ExperienceSection() {
                 </div>
 
                 {/* Bottom Tag */}
-                <div className="relative z-10 flex items-center justify-between text-[10px] font-mono text-slate-400 border-t border-slate-800/80 pt-2 bg-slate-950/75 backdrop-blur-md -mx-3.5 -mb-3.5 sm:-mx-4 sm:-mb-4 px-3.5 sm:px-4 pb-2.5">
-                  <span className="uppercase text-slate-400 truncate max-w-[120px]">
+                <div className="relative z-10 flex items-center justify-between text-[10px] font-mono text-brand-muted dark:text-slate-400 border-t border-brand-border dark:border-slate-800/80 pt-2 bg-brand-bg dark:bg-slate-950/75 backdrop-blur-md -mx-3.5 -mb-3.5 sm:-mx-4 sm:-mb-4 px-3.5 sm:px-4 pb-2.5">
+                  <span className="uppercase text-brand-muted dark:text-slate-400 truncate max-w-[120px]">
                     {period}
                   </span>
                   <span className="text-main-400 font-bold flex-shrink-0">
@@ -254,17 +254,17 @@ export default function ExperienceSection() {
             <button
               type="button"
               onClick={handlePrev}
-              className="px-4 py-2 rounded-full border border-slate-800 bg-slate-900/80 hover:bg-white hover:text-black text-white text-xs font-mono tracking-wider uppercase transition-all cursor-pointer min-h-[38px] flex items-center"
+              className="px-4 py-2 rounded-full border border-brand-border dark:border-slate-800 bg-brand-card/80 dark:bg-slate-900/80 hover:bg-white hover:text-black text-brand-text dark:text-white text-xs font-mono tracking-wider uppercase transition-all cursor-pointer min-h-[38px] flex items-center"
             >
               ← {t("ui.buttons.prevPage", "PREV")}
             </button>
-            <span className="text-xs font-mono text-slate-400">
+            <span className="text-xs font-mono text-brand-muted dark:text-slate-400">
               {currentIndex + 1} / {totalExperiences}
             </span>
             <button
               type="button"
               onClick={handleNext}
-              className="px-4 py-2 rounded-full border border-slate-800 bg-slate-900/80 hover:bg-white hover:text-black text-white text-xs font-mono tracking-wider uppercase transition-all cursor-pointer min-h-[38px] flex items-center"
+              className="px-4 py-2 rounded-full border border-brand-border dark:border-slate-800 bg-brand-card/80 dark:bg-slate-900/80 hover:bg-white hover:text-black text-brand-text dark:text-white text-xs font-mono tracking-wider uppercase transition-all cursor-pointer min-h-[38px] flex items-center"
             >
               {t("ui.buttons.nextPage", "NEXT")} →
             </button>
@@ -285,13 +285,13 @@ export default function ExperienceSection() {
             onClick={(e) => e.stopPropagation()}
             onWheel={(e) => e.stopPropagation()}
             onTouchMove={(e) => e.stopPropagation()}
-            className="relative w-full md:w-2/3 lg:w-2/3 h-full bg-slate-950 border-l border-slate-800 shadow-2xl overflow-y-auto overscroll-contain flex flex-col justify-between p-4 sm:p-8 md:p-10 custom-scrollbar animate-fade-in-up"
+            className="relative w-full md:w-2/3 lg:w-2/3 h-full bg-brand-bg dark:bg-slate-950 border-l border-brand-border dark:border-slate-800 shadow-2xl overflow-y-auto overscroll-contain flex flex-col justify-between p-4 sm:p-8 md:p-10 custom-scrollbar animate-fade-in-up"
           >
             {/* Drawer Header */}
-            <div className="flex items-center justify-between pb-4 sm:pb-6 border-b border-slate-800 sticky top-0 bg-slate-950/95 backdrop-blur-md z-20">
+            <div className="flex items-center justify-between pb-4 sm:pb-6 border-b border-brand-border dark:border-slate-800 sticky top-0 bg-brand-card/95 dark:bg-brand-bg dark:bg-slate-950/95 backdrop-blur-md z-20">
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-main-500" />
-                <span className="text-[11px] sm:text-xs font-mono uppercase tracking-widest text-slate-400">
+                <span className="text-[11px] sm:text-xs font-mono uppercase tracking-widest text-brand-muted dark:text-slate-400">
                   Career Deep Dive
                 </span>
               </div>
@@ -299,7 +299,7 @@ export default function ExperienceSection() {
               <button
                 type="button"
                 onClick={handleCloseDetail}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-800 bg-slate-900 text-slate-300 hover:text-white hover:border-slate-600 text-xs font-mono transition-all cursor-pointer"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-brand-border dark:border-slate-800 bg-brand-card dark:bg-slate-900 text-brand-muted dark:text-slate-300 hover:text-brand-text dark:text-white hover:border-slate-300 dark:border-slate-600 text-xs font-mono transition-all cursor-pointer"
               >
                 <span>✕</span>
                 <span>{currentLang === "vi" ? "ĐÓNG" : "CLOSE"}</span>
@@ -307,15 +307,15 @@ export default function ExperienceSection() {
             </div>
 
             {/* Drawer Body Content */}
-            <div className="py-4 sm:py-6 space-y-5 sm:space-y-6 flex-1 text-slate-100">
+            <div className="py-4 sm:py-6 space-y-5 sm:space-y-6 flex-1 text-brand-text dark:text-slate-100">
               {/* Type, Period & Role */}
-              <div className="space-y-2 border-b border-slate-800 pb-4">
+              <div className="space-y-2 border-b border-brand-border dark:border-slate-800 pb-4">
                 <div className="flex items-center justify-between gap-2 flex-wrap">
                   <span className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-0.5 rounded-full text-[11px] sm:text-xs font-mono font-semibold bg-main-950/80 text-main-300 border border-main-800/80">
                     <span className="w-1.5 h-1.5 rounded-full bg-main-400 animate-pulse" />
                     TYPE: {selectedExperience.type?.toUpperCase()}
                   </span>
-                  <span className="text-[11px] sm:text-xs font-mono text-slate-400">
+                  <span className="text-[11px] sm:text-xs font-mono text-brand-muted dark:text-slate-400">
                     {selectedExperience.period?.[currentLang] ||
                       selectedExperience.period?.vi}{" "}
                     |{" "}
@@ -324,7 +324,7 @@ export default function ExperienceSection() {
                   </span>
                 </div>
 
-                <h2 className="text-xl sm:text-2xl md:text-3xl font-black uppercase tracking-tight text-white leading-snug pt-1">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-black uppercase tracking-tight text-brand-text dark:text-white leading-snug pt-1">
                   {selectedExperience.role?.[currentLang] ||
                     selectedExperience.role?.vi}
                 </h2>
@@ -336,7 +336,7 @@ export default function ExperienceSection() {
 
               {/* Summary Callout */}
               <div className="p-3.5 sm:p-4 rounded-xl bg-main-950/40 border border-main-900/60 shadow-inner">
-                <p className="text-xs sm:text-sm md:text-base text-slate-200 leading-relaxed italic">
+                <p className="text-xs sm:text-sm md:text-base text-brand-text dark:text-slate-200 leading-relaxed italic">
                   "
                   {selectedExperience.summary?.[currentLang] ||
                     selectedExperience.summary?.vi}
@@ -347,7 +347,7 @@ export default function ExperienceSection() {
               {/* Technologies */}
               {selectedExperience.technologies && (
                 <div className="space-y-2 pt-1">
-                  <h3 className="text-xs font-mono font-bold tracking-wider text-slate-400 uppercase">
+                  <h3 className="text-xs font-mono font-bold tracking-wider text-brand-muted dark:text-slate-400 uppercase">
                     {currentLang === "vi"
                       ? "Công nghệ áp dụng"
                       : "Technologies Used"}
@@ -356,7 +356,7 @@ export default function ExperienceSection() {
                     {selectedExperience.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="text-xs font-mono px-2.5 sm:px-3 py-1 rounded-md bg-slate-900 text-slate-200 border border-slate-700 hover:border-main-500/50 transition-colors"
+                        className="text-xs font-mono px-2.5 sm:px-3 py-1 rounded-md bg-brand-card dark:bg-slate-900 text-brand-text dark:text-slate-200 border border-slate-300 dark:border-slate-700 hover:border-main-500/50 transition-colors"
                       >
                         {tech}
                       </span>
@@ -388,7 +388,7 @@ export default function ExperienceSection() {
                         : "Key Responsibilities"}
                     </span>
                   </h3>
-                  <ul className="space-y-2 text-xs text-slate-300">
+                  <ul className="space-y-2 text-xs text-brand-muted dark:text-slate-300">
                     {responsibilities.map((resp, idx) => (
                       <li
                         key={idx}
@@ -432,7 +432,7 @@ export default function ExperienceSection() {
                         : "Key Achievements & Impact"}
                     </span>
                   </h3>
-                  <ul className="space-y-2 text-xs text-slate-300">
+                  <ul className="space-y-2 text-xs text-brand-muted dark:text-slate-300">
                     {achievements.map((ach, idx) => (
                       <li
                         key={idx}
@@ -448,7 +448,7 @@ export default function ExperienceSection() {
             </div>
 
             {/* Drawer Footer */}
-            <div className="pt-4 sm:pt-6 border-t border-slate-800 flex items-center justify-between text-xs font-mono text-slate-500">
+            <div className="pt-4 sm:pt-6 border-t border-brand-border dark:border-slate-800 flex items-center justify-between text-xs font-mono text-slate-500">
               <span className="hidden sm:inline">Press ESC to exit</span>
               <button
                 type="button"
@@ -462,8 +462,8 @@ export default function ExperienceSection() {
         </div>
       )}
 
-      {/* ─── Bottom Footer Bar ──────────────────────────────────────────────── */}
-      <div className="relative z-10 w-full pt-2 pb-1 border-t border-slate-800/60 flex flex-col xs:flex-row items-center justify-between text-[10px] sm:text-[11px] font-mono text-slate-500 gap-1 text-center">
+      {/* ─── Bottom Footer Bar ─── */}
+      <div className="relative z-10 w-full pt-2 pb-1 border-t border-brand-border dark:border-slate-800/60 flex flex-col xs:flex-row items-center justify-between text-[10px] sm:text-[11px] font-mono text-slate-500 gap-1 text-center">
         <span>CAREER TRACK: BACKEND DEVELOPER</span>
         <span>EXPERIENCE SHOWCASE</span>
       </div>
