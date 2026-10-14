@@ -56,17 +56,13 @@ export default function HeroSection({ onExploreClick }) {
 
   const typedStrings =
     currentLang === "vi"
-      ? ["Xây dựng với .NET", "Khám phá AI － Full-stack", "Lại debug nữa..."]
-      : [
-          "Building with .NET",
-          "Exploring AI － full-stack",
-          "Debugging... again",
-        ];
+      ? ["Xây dựng với .NET", "Khám phá AI — full-stack", "Lại debug nữa…"]
+      : ["Building with .NET", "Exploring AI — full-stack", "Still debugging…"];
 
   const lifestyleLine =
     currentLang === "vi"
-      ? "Và vẫn mơ về chuyến đi tiếp theo."
-      : "And still dreaming of the next getaway.";
+      ? "Chuyến phiêu lưu tiếp theo đang tải…"
+      : "Next adventure loading…";
 
   const technicalSignature =
     ".NET BACKEND · CLEAN ARCHITECTURE · CQRS · gRPC · AI INTEGRATION";
