@@ -3,9 +3,9 @@ import { useTranslation } from 'react-i18next'
 
 /**
  * ProjectCard Component
- * 
+ *
  * Reusable summary card for quick project listing or alternative grid view.
- * 
+ *
  * @param {Object} props.project - The project object
  * @param {Function} props.onSelect - Callback when clicked
  */
@@ -30,7 +30,7 @@ export default function ProjectCard({ project, onSelect }) {
             className={`text-[10px] font-mono px-2.5 py-0.5 rounded-full uppercase font-semibold ${
               project.type === 'gallery'
                 ? 'bg-purple-100 dark:bg-purple-950/80 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800'
-                : 'bg-blue-100 dark:bg-blue-950/80 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800'
+                : 'bg-main-100 dark:bg-main-950/80 text-main-700 dark:text-main-300 border border-main-200 dark:border-main-800'
             }`}
           >
             type: {project.type}

@@ -183,7 +183,7 @@ export default function ChatBot() {
             href={url}
             target={isExternal ? "_blank" : undefined}
             rel={isExternal ? "noopener noreferrer" : undefined}
-            className="text-blue-400 hover:text-blue-300 underline underline-offset-2 break-all font-medium inline-flex items-center gap-0.5"
+            className="text-main-400 hover:text-main-300 underline underline-offset-2 break-all font-medium inline-flex items-center gap-0.5"
           >
             <span>{label}</span>
             {isExternal && <span className="text-[10px] select-none">↗</span>}
@@ -194,7 +194,7 @@ export default function ChatBot() {
       // 2. Bold **text**
       if (part.startsWith("**") && part.endsWith("**") && part.length >= 4) {
         return (
-          <strong key={index} className="font-semibold text-blue-300">
+          <strong key={index} className="font-semibold text-main-300">
             {part.slice(2, -2)}
           </strong>
         );
@@ -205,7 +205,7 @@ export default function ChatBot() {
         return (
           <code
             key={index}
-            className="px-1 py-0.5 rounded bg-slate-950/60 border border-slate-700 text-blue-300 font-mono text-[11px]"
+            className="px-1 py-0.5 rounded bg-slate-950/60 border border-slate-700 text-main-300 font-mono text-[11px]"
           >
             {part.slice(1, -1)}
           </code>
@@ -220,7 +220,7 @@ export default function ChatBot() {
             href={part}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-400 hover:text-blue-300 underline underline-offset-2 break-all inline-flex items-center gap-0.5"
+            className="text-main-400 hover:text-main-300 underline underline-offset-2 break-all inline-flex items-center gap-0.5"
           >
             <span>{part}</span>
             <span className="text-[10px] select-none">↗</span>
@@ -251,7 +251,7 @@ export default function ChatBot() {
         const cleanContent = trimmed.replace(/^(\*|-|•)\s+/, "");
         return (
           <div key={lineIndex} className="flex items-start gap-2 my-0.5 ml-1">
-            <span className="text-blue-400 mt-0.5 text-xs select-none">•</span>
+            <span className="text-main-400 mt-0.5 text-xs select-none">•</span>
             <div className="flex-1">{formatInlineText(cleanContent)}</div>
           </div>
         );
@@ -263,7 +263,7 @@ export default function ChatBot() {
         const [, num, numContent] = numMatch;
         return (
           <div key={lineIndex} className="flex items-start gap-1.5 my-1 ml-0.5">
-            <span className="font-semibold text-blue-300 text-xs select-none shrink-0">
+            <span className="font-semibold text-main-300 text-xs select-none shrink-0">
               {num}.
             </span>
             <div className="flex-1">{formatInlineText(numContent)}</div>
@@ -281,7 +281,7 @@ export default function ChatBot() {
   };
 
   return (
-    <div className="fixed bottom-5 right-5 z-[2] flex flex-col items-end">
+    <div className="fixed bottom-5 right-5 z-[9999] flex flex-col items-end">
       {/* ─── 1. Chat Window ──────────────────────────────────────────────── */}
       {isOpen && (
         <div className="w-[92vw] sm:w-[410px] h-[540px] max-h-[82vh] bg-slate-900/95 backdrop-blur-xl border border-slate-700/80 rounded-2xl shadow-2xl flex flex-col overflow-hidden mb-4 transition-all duration-300 animate-in fade-in zoom-in-95">
@@ -289,7 +289,7 @@ export default function ChatBot() {
           <div className="px-4 py-3.5 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border-b border-slate-700/60 flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="relative">
-                <div className="w-9 h-9 rounded-full bg-blue-600/20 border border-blue-500/40 flex items-center justify-center text-blue-400">
+                <div className="w-9 h-9 rounded-full bg-main-600/20 border border-main-500/40 flex items-center justify-center text-main-400">
                   <svg
                     className="w-5 h-5"
                     fill="none"
@@ -304,12 +304,12 @@ export default function ChatBot() {
                     />
                   </svg>
                 </div>
-                <span className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-500 border-2 border-slate-900 animate-pulse"></span>
+                <span className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-sub-500 border-2 border-slate-900 animate-pulse"></span>
               </div>
               <div>
                 <h3 className="text-sm font-semibold text-slate-100 flex items-center gap-1.5">
                   <span>AI Portfolio Assistant</span>
-                  <span className="text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.5 rounded bg-blue-500/20 text-blue-300 border border-blue-500/30">
+                  <span className="text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.5 rounded bg-main-500/20 text-main-300 border border-main-500/30">
                     Edge
                   </span>
                 </h3>
@@ -376,7 +376,7 @@ export default function ChatBot() {
                   className={`flex items-start gap-2.5 ${isUser ? "justify-end" : "justify-start"}`}
                 >
                   {!isUser && (
-                    <div className="w-7 h-7 rounded-full bg-blue-600/30 border border-blue-500/30 flex items-center justify-center text-blue-400 shrink-0 text-xs mt-0.5">
+                    <div className="w-7 h-7 rounded-full bg-main-600/30 border border-main-500/30 flex items-center justify-center text-main-400 shrink-0 text-xs mt-0.5">
                       AI
                     </div>
                   )}
@@ -384,7 +384,7 @@ export default function ChatBot() {
                   <div
                     className={`max-w-[84%] px-3.5 py-2.5 rounded-2xl text-xs sm:text-sm leading-relaxed shadow-sm ${
                       isUser
-                        ? "bg-blue-600 text-white rounded-tr-none font-normal"
+                        ? "bg-main-600 text-white rounded-tr-none font-normal"
                         : msg.isError
                           ? "bg-red-950/40 text-red-200 border border-red-800/50 rounded-tl-none"
                           : "bg-slate-800/90 text-slate-100 border border-slate-700/60 rounded-tl-none"
@@ -399,13 +399,13 @@ export default function ChatBot() {
             {/* Loading Indicator */}
             {isLoading && (
               <div className="flex items-start gap-2.5 justify-start">
-                <div className="w-7 h-7 rounded-full bg-blue-600/30 border border-blue-500/30 flex items-center justify-center text-blue-400 shrink-0 text-xs">
+                <div className="w-7 h-7 rounded-full bg-main-600/30 border border-main-500/30 flex items-center justify-center text-main-400 shrink-0 text-xs">
                   AI
                 </div>
                 <div className="bg-slate-800/90 border border-slate-700/60 text-slate-400 px-4 py-3 rounded-2xl rounded-tl-none flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-blue-400 animate-bounce [animation-delay:-0.3s]"></span>
-                  <span className="w-2 h-2 rounded-full bg-blue-400 animate-bounce [animation-delay:-0.15s]"></span>
-                  <span className="w-2 h-2 rounded-full bg-blue-400 animate-bounce"></span>
+                  <span className="w-2 h-2 rounded-full bg-main-400 animate-bounce [animation-delay:-0.3s]"></span>
+                  <span className="w-2 h-2 rounded-full bg-main-400 animate-bounce [animation-delay:-0.15s]"></span>
+                  <span className="w-2 h-2 rounded-full bg-main-400 animate-bounce"></span>
                   <span className="text-xs ml-1.5 text-slate-400">
                     {isEn ? "Thinking..." : "Đang suy nghĩ..."}
                   </span>
@@ -424,7 +424,7 @@ export default function ChatBot() {
                   key={idx}
                   type="button"
                   onClick={() => handleSendMessage(prompt)}
-                  className="text-[11px] text-slate-300 bg-slate-800/70 hover:bg-blue-600/30 hover:text-blue-200 border border-slate-700/60 hover:border-blue-500/50 rounded-full px-2.5 py-1 transition-all text-left"
+                  className="text-[11px] text-slate-300 bg-slate-800/70 hover:bg-main-600/30 hover:text-main-200 border border-slate-700/60 hover:border-main-500/50 rounded-full px-2.5 py-1 transition-all text-left"
                 >
                   💡 {prompt}
                 </button>
@@ -453,13 +453,13 @@ export default function ChatBot() {
                     : "Hỏi về kinh nghiệm, kỹ năng của Vy..."
                 }
                 disabled={isLoading}
-                className="flex-1 bg-slate-800/90 text-slate-100 placeholder-slate-400 text-xs sm:text-sm px-3.5 py-2.5 rounded-xl border border-slate-700 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all disabled:opacity-50"
+                className="flex-1 bg-slate-800/90 text-slate-100 placeholder-slate-400 text-xs sm:text-sm px-3.5 py-2.5 rounded-xl border border-slate-700 focus:outline-none focus:border-main-500 focus:ring-1 focus:ring-main-500 transition-all disabled:opacity-50"
               />
 
               <button
                 type="submit"
                 disabled={!inputMessage.trim() || isLoading}
-                className="bg-blue-600 hover:bg-blue-500 disabled:opacity-40 disabled:hover:bg-blue-600 text-white p-2.5 rounded-xl transition-all shadow-md flex items-center justify-center shrink-0"
+                className="bg-main-600 hover:bg-main-500 disabled:opacity-40 disabled:hover:bg-main-600 text-white p-2.5 rounded-xl transition-all shadow-md flex items-center justify-center shrink-0"
                 title={isEn ? "Send message" : "Gửi tin nhắn"}
               >
                 <svg
@@ -485,11 +485,11 @@ export default function ChatBot() {
       <button
         type="button"
         onClick={() => setIsOpen((prev) => !prev)}
-        className="group relative flex items-center gap-2.5 px-4 py-3 bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white rounded-full shadow-lg hover:shadow-blue-500/25 transition-all duration-300 hover:scale-105 active:scale-95 border border-blue-400/30"
+        className="group relative flex items-center gap-2.5 px-4 py-3 bg-gradient-to-r from-main-600 via-main-500 to-indigo-600 hover:from-main-500 hover:to-indigo-500 text-white rounded-full shadow-lg hover:shadow-main-500/25 transition-all duration-300 hover:scale-105 active:scale-95 border border-main-400/30"
         aria-label={isEn ? "Chat with AI" : "Trò chuyện với AI"}
       >
         {/* Glow pulsing ring behind button */}
-        <span className="absolute -inset-0.5 rounded-full bg-blue-500 opacity-40 blur group-hover:opacity-75 transition duration-300 animate-pulse"></span>
+        <span className="absolute -inset-0.5 rounded-full bg-main-500 opacity-40 blur group-hover:opacity-75 transition duration-300 animate-pulse"></span>
 
         <span className="relative flex items-center gap-2 text-sm font-medium">
           {isOpen ? (

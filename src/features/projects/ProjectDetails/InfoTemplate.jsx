@@ -113,7 +113,7 @@ function getLinkButtonStyles(type) {
     case 'demo':
       return {
         className:
-          'bg-emerald-600 hover:bg-emerald-500 text-white shadow-lg shadow-emerald-600/30 hover:shadow-emerald-500/50 active:scale-95',
+          'bg-sub-600 hover:bg-sub-500 text-white shadow-lg shadow-sub-600/30 hover:shadow-sub-500/50 active:scale-95',
         icon: (
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -154,7 +154,7 @@ function getLinkButtonStyles(type) {
     case 'github':
       return {
         className:
-          'bg-blue-600 hover:bg-blue-500 text-white shadow-lg shadow-blue-600/30 hover:shadow-blue-500/50 active:scale-95',
+          'bg-main-600 hover:bg-main-500 text-white shadow-lg shadow-main-600/30 hover:shadow-main-500/50 active:scale-95',
         icon: (
           <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
             <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
@@ -164,7 +164,7 @@ function getLinkButtonStyles(type) {
     default:
       return {
         className:
-          'border border-slate-700 bg-slate-900/90 hover:bg-slate-800 text-slate-200 hover:text-white hover:border-blue-500/50 active:scale-95',
+          'border border-slate-700 bg-slate-900/90 hover:bg-slate-800 text-slate-200 hover:text-white hover:border-main-500/50 active:scale-95',
         icon: (
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -176,7 +176,7 @@ function getLinkButtonStyles(type) {
 
 /**
  * InfoTemplate / Unified Project Detail Component
- * 
+ *
  * Renders the project details strictly following the exact field sequence in `portfolioData.json`:
  * 1. Type Badge, ID & Order
  * 2. Title
@@ -230,7 +230,7 @@ export default function InfoTemplate({ project }) {
               className={`inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-0.5 rounded-full text-[11px] sm:text-xs font-mono font-semibold uppercase ${
                 project.type === 'gallery'
                   ? 'bg-purple-950/80 text-purple-300 border border-purple-800/80'
-                  : 'bg-blue-950/80 text-blue-300 border border-blue-800/80'
+                  : 'bg-main-950/80 text-main-300 border border-main-800/80'
               }`}
             >
               <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse" />
@@ -276,7 +276,7 @@ export default function InfoTemplate({ project }) {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
           <div className="absolute bottom-2.5 sm:bottom-3 left-3 sm:left-4 right-3 sm:right-4 flex items-center justify-between text-[10px] sm:text-[11px] font-mono text-slate-300 pointer-events-none">
-            <span className="px-2 sm:px-2.5 py-0.5 sm:py-1 rounded bg-slate-950/80 backdrop-blur-sm border border-slate-800 text-blue-400 font-semibold shadow">
+            <span className="px-2 sm:px-2.5 py-0.5 sm:py-1 rounded bg-slate-950/80 backdrop-blur-sm border border-slate-800 text-main-400 font-semibold shadow">
               COVER IMAGE
             </span>
             <span className="px-2 sm:px-2.5 py-0.5 sm:py-1 rounded bg-slate-950/80 backdrop-blur-sm border border-slate-800 text-slate-300 font-semibold shadow flex items-center gap-1">
@@ -299,7 +299,7 @@ export default function InfoTemplate({ project }) {
                 key={tech}
                 className="text-xs font-mono px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-md
                   bg-slate-900 text-slate-200
-                  border border-slate-700 hover:border-blue-500/50 transition-colors"
+                  border border-slate-700 hover:border-main-500/50 transition-colors"
               >
                 {tech}
               </span>
@@ -310,7 +310,7 @@ export default function InfoTemplate({ project }) {
 
       {/* ─── 5. Summary (Executive Brief) ─────────────────────────────────────── */}
       {summary && (
-        <div className="p-3.5 sm:p-4 rounded-xl bg-blue-950/40 border border-blue-900/60 shadow-inner">
+        <div className="p-3.5 sm:p-4 rounded-xl bg-main-950/40 border border-main-900/60 shadow-inner">
           <p className="text-xs sm:text-sm md:text-base text-slate-200 leading-relaxed italic whitespace-pre-line">
             "{summary}"
           </p>
@@ -320,7 +320,7 @@ export default function InfoTemplate({ project }) {
       {/* ─── 6. Description (Architecture & System Workflow) ─────────────────── */}
       {description && (
         <div className="space-y-2">
-          <h3 className="text-xs font-mono font-bold tracking-wider text-blue-400 uppercase flex items-center gap-2">
+          <h3 className="text-xs font-mono font-bold tracking-wider text-main-400 uppercase flex items-center gap-2">
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
             </svg>
@@ -335,7 +335,7 @@ export default function InfoTemplate({ project }) {
       {/* ─── 7. Features (Key Capabilities) ──────────────────────────────────── */}
       {features && features.length > 0 && (
         <div className="space-y-2 sm:space-y-2.5 pt-1">
-          <h3 className="text-xs font-mono font-bold tracking-wider text-blue-400 uppercase flex items-center gap-2">
+          <h3 className="text-xs font-mono font-bold tracking-wider text-main-400 uppercase flex items-center gap-2">
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
@@ -344,7 +344,7 @@ export default function InfoTemplate({ project }) {
           <ul className="space-y-2 text-xs text-slate-300">
             {features.map((feature, idx) => (
               <li key={idx} className="flex items-start gap-2.5 bg-slate-900/60 p-2.5 sm:p-3 rounded-xl border border-slate-800/80">
-                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0" />
+                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-main-400 flex-shrink-0" />
                 <span className="leading-relaxed font-sans">{feature}</span>
               </li>
             ))}
@@ -356,7 +356,7 @@ export default function InfoTemplate({ project }) {
       {gallery && gallery.length > 0 && (
         <div className="space-y-3 pt-2">
           <div className="flex items-center justify-between border-b border-slate-800 pb-2">
-            <h3 className="text-xs font-mono font-bold tracking-wider text-blue-400 uppercase flex items-center gap-2">
+            <h3 className="text-xs font-mono font-bold tracking-wider text-main-400 uppercase flex items-center gap-2">
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
@@ -378,7 +378,7 @@ export default function InfoTemplate({ project }) {
                   onClick={() => setActiveLightboxImg({ ...img, caption, resolvedSrc })}
                   className="group relative cursor-pointer overflow-hidden rounded-xl
                     border border-slate-800 bg-slate-900 aspect-video
-                    hover:border-blue-500/60 transition-all duration-300 shadow-md hover:shadow-[0_0_20px_rgba(59,130,246,0.25)]"
+                    hover:border-main-500/60 transition-all duration-300 shadow-md hover:shadow-[0_0_20px_rgba(59,130,246,0.25)]"
                 >
                   {resolvedSrc ? (
                     <img
@@ -392,7 +392,7 @@ export default function InfoTemplate({ project }) {
                   ) : null}
 
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent p-2.5 sm:p-3 flex flex-col justify-between">
-                    <div className="flex items-center justify-between text-[10px] font-mono text-blue-400">
+                    <div className="flex items-center justify-between text-[10px] font-mono text-main-400">
                       <span className="px-1.5 py-0.5 rounded bg-slate-950/80 border border-slate-800">
                         #{idx + 1}
                       </span>
@@ -449,8 +449,8 @@ export default function InfoTemplate({ project }) {
               {/* Modal Top Header */}
               <div className="flex items-center justify-between border-b border-slate-800 pb-2.5 sm:pb-3">
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
-                  <span className="text-[11px] sm:text-xs font-mono font-semibold text-blue-400 uppercase tracking-wider">
+                  <span className="w-2 h-2 rounded-full bg-main-500 animate-pulse" />
+                  <span className="text-[11px] sm:text-xs font-mono font-semibold text-main-400 uppercase tracking-wider">
                     {activeLightboxImg.id || 'Photo Preview'}
                   </span>
                 </div>

@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 
 /**
  * LanguageToggle Component
- * 
+ *
  * Toggles application language between Vietnamese ('vi') and English ('en')
  * using react-i18next.
  */
@@ -20,12 +20,16 @@ export default function LanguageToggle({ className = '' }) {
       type="button"
       onClick={handleToggle}
       aria-label="Toggle Language"
-      className={`px-3 py-1.5 rounded-lg text-xs font-mono font-semibold
-        border border-brand-border dark:border-brand-border-dark
-        bg-brand-card/80 dark:bg-brand-card-dark/80
-        hover:border-brand-accent dark:hover:border-brand-accent-dark
-        text-brand-text dark:text-brand-text-dark
-        transition-all duration-200 active:scale-95 shadow-sm ${className}`}
+      className={`
+        px-3 py-1.5 rounded-lg text-xs font-mono font-semibold
+        bg-slate-900/80
+        text-slate-200
+        border border-slate-600/50
+        hover:border-main-500/50 hover:bg-slate-800/90 hover:text-white
+        focus:outline-none focus-visible:ring-2 focus-visible:ring-main-500/40 focus-visible:border-main-500/60
+        transition-all duration-200 active:scale-95 shadow-sm
+        ${className}
+      `}
     >
       🌐 {i18n.language === 'vi' ? 'VI' : 'EN'}
     </button>

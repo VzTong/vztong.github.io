@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 /**
  * SkillsSection Component (Interactive Vertical Stack / Hover Accordion)
- * 
+ *
  * Features:
  * - Dynamic loading of all categories from `portfolioData.json`
  * - Vertical stack layout: Compact list by default, smooth slide-out expansion on hover
@@ -22,7 +22,7 @@ export default function SkillsSection() {
   const containerRef = useRef(null)
 
   const skillsData = portfolioData.about?.skills || {}
-  
+
   // Transform dynamic skills object to ordered category array
   const categories = Object.entries(skillsData).map(([key, data], idx) => ({
     key,
@@ -63,12 +63,12 @@ export default function SkillsSection() {
       className="relative min-h-screen min-h-[100dvh] md:h-[100dvh] w-full overflow-hidden flex flex-col justify-between items-center pt-20 pb-6 px-4 sm:px-8 lg:px-12 max-w-5xl mx-auto select-none"
     >
       {/* Background Ambient Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] sm:w-[600px] h-[250px] sm:h-[350px] bg-blue-600/10 blur-[150px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] sm:w-[600px] h-[250px] sm:h-[350px] bg-main-600/10 blur-[150px] rounded-full pointer-events-none" />
 
       {/* ─── Section Header ─────────────────────────────────────────────────── */}
       <div className="text-center space-y-1 mb-2 relative z-10 w-full">
-        <div className="inline-flex items-center gap-2 px-3 py-0.5 rounded-full text-xs font-mono tracking-widest uppercase bg-slate-900/80 text-blue-400 border border-slate-800">
-          <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
+        <div className="inline-flex items-center gap-2 px-3 py-0.5 rounded-full text-xs font-mono tracking-widest uppercase bg-slate-900/80 text-main-400 border border-slate-800">
+          <span className="w-1.5 h-1.5 rounded-full bg-main-500 animate-pulse" />
           <span>02 / CAPABILITIES & STACK</span>
         </div>
 
@@ -99,7 +99,7 @@ export default function SkillsSection() {
               onClick={() => setActiveKey(cat.key)}
               className={`skill-stack-row group relative rounded-2xl transition-all duration-300 cursor-pointer overflow-hidden ${
                 isActive
-                  ? 'bg-slate-900/90 border border-blue-500/60 shadow-[0_0_30px_rgba(59,130,246,0.18)] p-3.5 sm:p-4 md:p-5'
+                  ? 'bg-slate-900/90 border border-main-500/60 shadow-[0_0_30px_rgba(59,130,246,0.18)] p-3.5 sm:p-4 md:p-5'
                   : 'bg-slate-900/40 border border-slate-800/80 hover:border-slate-700 hover:bg-slate-900/60 p-2.5 sm:p-3 md:p-3.5 opacity-80 hover:opacity-100'
               }`}
             >
@@ -110,7 +110,7 @@ export default function SkillsSection() {
                   <span
                     className={`font-mono text-[11px] sm:text-xs font-bold px-2 sm:px-2.5 py-0.5 rounded-md transition-colors flex-shrink-0 ${
                       isActive
-                        ? 'bg-blue-600/20 text-blue-400 border border-blue-500/40'
+                        ? 'bg-main-600/20 text-main-400 border border-main-500/40'
                         : 'bg-slate-950/80 text-slate-500 border border-slate-800'
                     }`}
                   >
@@ -139,7 +139,7 @@ export default function SkillsSection() {
                   <div
                     className={`w-5 h-5 sm:w-6 sm:h-6 rounded-full flex items-center justify-center transition-transform duration-300 ${
                       isActive
-                        ? 'bg-blue-600/20 text-blue-400 rotate-90'
+                        ? 'bg-main-600/20 text-main-400 rotate-90'
                         : 'bg-slate-950 text-slate-600 group-hover:text-slate-400'
                     }`}
                   >
@@ -163,12 +163,12 @@ export default function SkillsSection() {
                     <span
                       key={skill}
                       className="inline-flex items-center px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg sm:rounded-xl text-[11px] sm:text-xs font-mono font-medium
-                        bg-slate-950/80 text-blue-300 border border-blue-500/30
-                        hover:bg-blue-600/20 hover:text-white hover:border-blue-400
+                        bg-slate-950/80 text-main-300 border border-main-500/30
+                        hover:bg-main-600/20 hover:text-white hover:border-main-400
                         hover:shadow-[0_0_12px_rgba(59,130,246,0.3)]
                         transition-all duration-200 select-none cursor-default transform hover:scale-105"
                     >
-                      <span className="w-1.5 h-1.5 rounded-full bg-blue-400 mr-1.5 sm:mr-2 animate-pulse" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-main-400 mr-1.5 sm:mr-2 animate-pulse" />
                       {skill}
                     </span>
                   ))}

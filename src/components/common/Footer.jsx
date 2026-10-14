@@ -12,7 +12,7 @@ export default function Footer() {
     <footer className="w-full border-t border-brand-border/60 dark:border-brand-border-dark/60 py-8 text-center text-xs font-mono text-brand-muted dark:text-brand-muted-dark bg-brand-card/40 dark:bg-brand-card-dark/40">
       <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-blue-500 inline-block" />
+          <span className="w-2 h-2 rounded-full bg-main-500 inline-block" />
           <span>
             © {getCurrentYear()} {portfolioData.about.name}. All rights reserved.
           </span>
