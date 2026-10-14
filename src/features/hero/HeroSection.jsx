@@ -46,7 +46,6 @@ export default function HeroSection({ onExploreClick }) {
   const roleText =
     currentLang === "vi" ? "LẬP TRÌNH VIÊN PHẦN MỀM" : "SOFTWARE ENGINEER";
 
-  // Thay placeholder bằng tên thật của ní.
   const heroHeading =
     currentLang === "vi" ? "TỐNG NHÃ VY" : "TONG NHA VY";
 
