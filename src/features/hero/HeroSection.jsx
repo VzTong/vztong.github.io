@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 import { useTranslation } from "react-i18next";
 import { scrollToElement } from "../../utils/helpers";
 import DocumentsModal from "../../components/common/DocumentsModal";
+import pic5 from "../../assets/images/pic5.jpg";
 
 /**
  * HeroSection Component (SpaceX Aesthetic)
@@ -96,7 +97,7 @@ export default function HeroSection({ onExploreClick }) {
       <div
         className="absolute inset-0 pointer-events-none select-none"
         style={{
-          backgroundImage: `url('${import.meta.env.BASE_URL}pics/sys/pic5.jpg')`,
+          backgroundImage: `url("${pic5}")`,
           backgroundSize: "cover",
           backgroundPosition: "top right",
           backgroundRepeat: "no-repeat",
