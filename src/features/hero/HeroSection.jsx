@@ -131,7 +131,7 @@ export default function HeroSection({ onExploreClick }) {
         className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-8 md:px-16 lg:px-20 pb-20 sm:pb-28 md:pb-32 flex flex-col items-start text-left space-y-3 sm:space-y-4 my-auto md:my-0"
       >
         {/* Mission Subtitle */}
-        <p className="text-[11px] sm:text-xs md:text-sm font-mono tracking-[0.2em] sm:tracking-[0.3em] uppercase text-main-400 font-semibold">
+        <p className="text-[11px] sm:text-xs md:text-sm font-mono tracking-[0.2em] sm:tracking-[0.3em] uppercase text-main-400 font-semibold mb-3">
           {roleText}
         </p>
 
