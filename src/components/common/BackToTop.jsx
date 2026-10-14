@@ -1,39 +1,62 @@
 /**
- * ============================================================
- * BackToTop Component
- * ------------------------------------------------------------
- * Nút cuộn lên đầu trang.
- * Vị trí: fixed, nằm BÊN TRÁI nút Chat (Chat đang ở right-5).
+ * ============================================================================
+ * BackToTop — Nút cuộn về đầu trang / section hero
+ * ============================================================================
  *
- * - Hiện khi scrollY > 120
- * - Dùng brand-accent → tự đổi màu theo theme (hồng / xanh lá)
- * - z-index thấp hơn chat một chút để không đè chat window
+ * TÓM TẮT
+ * -------
+ * Hiện khi scrollY > THRESHOLD_PX. Click → ưu tiên #hero (scroll-snap),
+ * fallback window.scrollTo(0).
  *
- * Cách dùng: <BackToTop /> trong App hoặc MainLayout
- * ============================================================
+ * VỊ TRÍ
+ * ------
+ * fixed bottom-24 right-6 — cao hơn ChatBot (thường bottom-6) để không đè.
+ * z-[55] dưới theme toggle (60), trên nội dung thường.
+ *
+ * MÀU
+ * ---
+ * bg-blue-500 = accent neon sau override config. text-white giữ contrast.
+ *
+ * TÍCH HỢP
+ * --------
+ *   // App.jsx trong MainLayout
+ *   <ChatBot />
+ *   <BackToTop />
+ * ============================================================================
  */
-import React, { useState, useEffect } from 'react'
+
+import { useEffect, useState, useCallback } from 'react'
+
+/** Ngưỡng scroll (px) để hiện nút */
+const THRESHOLD_PX = 400
 
 export default function BackToTop() {
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
     const onScroll = () => {
-      setVisible(window.scrollY > 120)
+      setVisible(window.scrollY > THRESHOLD_PX)
     }
+    onScroll() // đúng state nếu refresh giữa trang
     window.addEventListener('scroll', onScroll, { passive: true })
-    onScroll() // check lần đầu
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const scrollToTop = () => {
+  const handleClick = useCallback(() => {
+    const hero = document.getElementById('hero')
+    if (hero) {
+      hero.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      return
+    }
     window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
+  }, [])
+
+  if (!visible) return null
 
   return (
     <button
       type="button"
-      onClick={scrollToTop}
+      onClick={handleClick}
       aria-label="Back to top"
       title="Back to top"
       className={`
