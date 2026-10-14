@@ -209,7 +209,7 @@ export default function Header() {
           {/* Language Toggle (Always accessible) */}
           <div className="flex items-center gap-2">
             <LanguageToggle />
-            <ThemeToggleButton />
+            {/* <ThemeToggleButton /> */}
           </div>
 
           {/* Mobile Hamburger Toggle Button (md:hidden) */}
