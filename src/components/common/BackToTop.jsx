@@ -60,11 +60,11 @@ export default function BackToTop() {
       aria-label="Back to top"
       title="Back to top"
       className={`
-        fixed z-[2]
-        bottom-5
+        fixed z-[9998]
+        bottom-20
         /* Nằm bên trái chat: chat ~ right-5 (20px), nút chat rộng ~140px
            → đặt right khoảng 11rem (176px) */
-        right-[11rem]
+        right
         w-12 h-12 rounded-full
         flex items-center justify-center
         bg-brand-accent dark:bg-brand-accent-dark

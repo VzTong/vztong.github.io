@@ -281,7 +281,7 @@ export default function ChatBot() {
   };
 
   return (
-    <div className="fixed bottom-5 right-5 z-[2] flex flex-col items-end">
+    <div className="fixed bottom-5 right-5 z-[9999] flex flex-col items-end">
       {/* ─── 1. Chat Window ──────────────────────────────────────────────── */}
       {isOpen && (
         <div className="w-[92vw] sm:w-[410px] h-[540px] max-h-[82vh] bg-slate-900/95 backdrop-blur-xl border border-slate-700/80 rounded-2xl shadow-2xl flex flex-col overflow-hidden mb-4 transition-all duration-300 animate-in fade-in zoom-in-95">
