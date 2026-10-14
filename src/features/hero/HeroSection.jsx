@@ -88,23 +88,37 @@ export default function HeroSection({ onExploreClick }) {
       className="relative min-h-screen min-h-[100dvh] w-full overflow-hidden bg-slate-950 text-white select-none flex flex-col justify-between"
     >
       {/* ─── Layered Cosmic & Tech Backgrounds ─────────────────────────────── */}
-      {/* 1. Deep Space Nebula Radial Gradients */}
+      {/* 1. Deep Space Nebula */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-900/30 via-slate-950 to-black" />
       <div className="absolute top-1/4 left-1/4 w-[300px] sm:w-[600px] h-[300px] sm:h-[600px] bg-blue-600/10 blur-[150px] rounded-full pointer-events-none" />
 
-      {/* 2. SpaceX Rocket Wallpaper (Optional external layer with graceful fallback) */}
+      {/* 2. Portrait full-bleed */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 mix-blend-screen transform scale-105 transition-transform duration-1000"
+        className="absolute inset-0 pointer-events-none select-none"
+        style={{
+          backgroundImage: `url('${import.meta.env.BASE_URL}pics/sys/pic5.jpg')`,
+          backgroundSize: "cover",
+          backgroundPosition: "top right",
+          backgroundRepeat: "no-repeat",
+          opacity: 0.22,
+          mixBlendMode: "luminosity",
+        }}
+        aria-hidden="true"
+      />
+
+      {/* 3. Rocket layer */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-25 mix-blend-screen transform scale-105 transition-transform duration-1000"
         style={{
           backgroundImage: `url('https://images.unsplash.com/photo-1517976487507-5b62b1b38f87?q=80&w=2000&auto=format&fit=crop')`,
         }}
       />
 
-      {/* 3. Dark Contrast Overlays */}
-      <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/50 to-transparent" />
+      {/* 4. Dark overlays – nhẹ hơn để ảnh không bị “nuốt” */}
+      <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/55 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-950/40 to-transparent" />
 
-      {/* 4. Subtle Starfield Grid */}
+      {/* 5. Starfield dots */}
       <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#60a5fa_1px,transparent_1px)] [background-size:28px_28px] pointer-events-none" />
 
       {/* Top spacer for navbar clearance */}

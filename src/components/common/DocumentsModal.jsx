@@ -1,8 +1,11 @@
-import React, { useEffect, useRef } from 'react'
-import { createPortal } from 'react-dom'
-import { useTranslation } from 'react-i18next'
-import portfolioData from '../../data/portfolioData.json'
-import { resolveDocumentUrl, resolveDocumentDownloadUrl } from '../../utils/helpers'
+import React, { useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
+import { useTranslation } from "react-i18next";
+import portfolioData from "../../data/portfolioData.json";
+import {
+  resolveDocumentUrl,
+  resolveDocumentDownloadUrl,
+} from "../../utils/helpers";
 
 /**
  * DocumentsModal Component (Streamlined Google Drive Version)
@@ -18,52 +21,57 @@ import { resolveDocumentUrl, resolveDocumentDownloadUrl } from '../../utils/help
  * - Light-dismiss on backdrop click & ESC key
  */
 export default function DocumentsModal({ isOpen, onClose }) {
-  const { i18n } = useTranslation('portfolio')
-  const currentLang = i18n.language === 'en' ? 'en' : 'vi'
-  const modalContentRef = useRef(null)
+  const { i18n } = useTranslation("portfolio");
+  const currentLang = i18n.language === "en" ? "en" : "vi";
+  const modalContentRef = useRef(null);
 
   const docData = portfolioData.documents || {
-    title: { vi: 'Hồ sơ & Tài liệu', en: 'Documents & Credentials' },
+    title: { vi: "Hồ sơ & Tài liệu", en: "Documents & Credentials" },
     subtitle: {
-      vi: 'Xem và tải trực tiếp Master CV và Bảng điểm đại học',
-      en: 'Preview and download Master CV and verified academic transcript',
+      vi: "Xem và tải trực tiếp Master CV và Bảng điểm đại học",
+      en: "Preview and download Master CV and verified academic transcript",
     },
-    driveFolderUrl: '',
+    driveFolderUrl: "",
     items: [],
-  }
+  };
 
   // Handle ESC key press and scroll locking
   useEffect(() => {
-    if (!isOpen) return
+    if (!isOpen) return;
 
-    const originalOverflow = document.body.style.overflow
-    document.body.style.overflow = 'hidden'
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
 
     const handleKeyDown = (e) => {
-      if (e.key === 'Escape') {
-        onClose()
+      if (e.key === "Escape") {
+        onClose();
       }
-    }
+    };
 
-    window.addEventListener('keydown', handleKeyDown)
+    window.addEventListener("keydown", handleKeyDown);
 
     return () => {
-      document.body.style.overflow = originalOverflow
-      window.removeEventListener('keydown', handleKeyDown)
-    }
-  }, [isOpen, onClose])
+      document.body.style.overflow = originalOverflow;
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isOpen, onClose]);
 
-  if (!isOpen || typeof document === 'undefined') return null
+  if (!isOpen || typeof document === "undefined") return null;
 
   // Light dismiss backdrop click handler
   const handleBackdropClick = (e) => {
-    if (modalContentRef.current && !modalContentRef.current.contains(e.target)) {
-      onClose()
+    if (
+      modalContentRef.current &&
+      !modalContentRef.current.contains(e.target)
+    ) {
+      onClose();
     }
-  }
+  };
 
-  const modalTitle = docData.title?.[currentLang] || docData.title?.vi || 'Hồ sơ & Tài liệu'
-  const modalSubtitle = docData.subtitle?.[currentLang] || docData.subtitle?.vi || ''
+  const modalTitle =
+    docData.title?.[currentLang] || docData.title?.vi || "Hồ sơ & Tài liệu";
+  const modalSubtitle =
+    docData.subtitle?.[currentLang] || docData.subtitle?.vi || "";
 
   return createPortal(
     <div
@@ -111,16 +119,25 @@ export default function DocumentsModal({ isOpen, onClose }) {
         {/* Modal Body: Document Cards for Master CV & Transcript */}
         <div className="p-4 sm:p-7 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 bg-slate-950">
           {docData.items?.map((item) => {
-            const title = item.title?.[currentLang] || item.title?.vi
-            const badge = item.badge?.[currentLang] || item.badge?.vi
-            const description = item.description?.[currentLang] || item.description?.vi
-            const rawUrl = item.url && !item.url.startsWith('/docs/') ? item.url : docData.driveFolderUrl
-            const fileUrl = rawUrl ? resolveDocumentUrl(rawUrl) : ''
-            const downloadUrl = rawUrl ? resolveDocumentDownloadUrl(rawUrl) : ''
-            const isCv = item.type === 'cv'
+            const title = item.title?.[currentLang] || item.title?.vi;
+            const badge = item.badge?.[currentLang] || item.badge?.vi;
+            const description =
+              item.description?.[currentLang] || item.description?.vi;
+            const rawUrl =
+              item.url && !item.url.startsWith("/docs/")
+                ? item.url
+                : docData.driveFolderUrl;
+            const fileUrl = rawUrl ? resolveDocumentUrl(rawUrl) : "";
+            const downloadUrl = rawUrl
+              ? resolveDocumentDownloadUrl(rawUrl)
+              : "";
+            const isCv = item.type === "cv";
             const highlights = Array.isArray(item.highlights)
               ? item.highlights
-              : (item.highlights?.[currentLang] || item.highlights?.vi || item.highlights?.en || [])
+              : item.highlights?.[currentLang] ||
+                item.highlights?.vi ||
+                item.highlights?.en ||
+                [];
 
             return (
               <div
@@ -132,11 +149,11 @@ export default function DocumentsModal({ isOpen, onClose }) {
                   <span
                     className={`text-[10px] sm:text-xs font-mono font-bold px-2.5 py-0.5 rounded-md uppercase border ${
                       isCv
-                        ? 'bg-blue-950/80 text-blue-300 border-blue-800/80'
-                        : 'bg-emerald-950/80 text-emerald-300 border-emerald-800/80'
+                        ? "bg-blue-950/80 text-blue-300 border-blue-800/80"
+                        : "bg-emerald-950/80 text-emerald-300 border-emerald-800/80"
                     }`}
                   >
-                    {badge || (isCv ? 'MASTER CV' : 'TRANSCRIPT')}
+                    {badge || (isCv ? "MASTER CV" : "TRANSCRIPT")}
                   </span>
                   <span className="text-[11px] font-mono text-slate-500 uppercase flex items-center gap-1">
                     <span>PDF</span>
@@ -149,12 +166,17 @@ export default function DocumentsModal({ isOpen, onClose }) {
                     <div
                       className={`w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 ${
                         isCv
-                          ? 'bg-blue-600/20 text-blue-400 border border-blue-500/30'
-                          : 'bg-emerald-600/20 text-emerald-400 border border-emerald-500/30'
+                          ? "bg-blue-600/20 text-blue-400 border border-blue-500/30"
+                          : "bg-emerald-600/20 text-emerald-400 border border-emerald-500/30"
                       }`}
                     >
                       {isCv ? (
-                        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg
+                          className="w-5 h-5"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
                           <path
                             strokeLinecap="round"
                             strokeLinejoin="round"
@@ -163,7 +185,12 @@ export default function DocumentsModal({ isOpen, onClose }) {
                           />
                         </svg>
                       ) : (
-                        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg
+                          className="w-5 h-5"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
                           <path
                             strokeLinecap="round"
                             strokeLinejoin="round"
@@ -186,7 +213,7 @@ export default function DocumentsModal({ isOpen, onClose }) {
                   {highlights && highlights.length > 0 && (
                     <div className="pt-2 space-y-1">
                       <span className="text-[10px] font-mono uppercase tracking-wider text-slate-500 font-semibold block">
-                        {currentLang === 'vi' ? 'ĐIỂM NỔI BẬT:' : 'HIGHLIGHTS:'}
+                        {currentLang === "vi" ? "ĐIỂM NỔI BẬT:" : "HIGHLIGHTS:"}
                       </span>
                       <div className="flex flex-wrap gap-1.5">
                         {highlights.map((h, idx) => (
@@ -205,56 +232,99 @@ export default function DocumentsModal({ isOpen, onClose }) {
                 {/* Footer Actions */}
                 <div className="pt-4 border-t border-slate-800/80 space-y-3">
                   <div className="flex items-center justify-between text-[11px] font-mono text-slate-500">
-                    <span>{item.filename || 'PDF Document'}</span>
+                    <span>{item.filename || "PDF Document"}</span>
                     <span>
-                      {currentLang === 'vi' ? 'Cập nhật' : 'Updated'}: {item.updatedAt || '2026'}
+                      {currentLang === "vi" ? "Cập nhật" : "Updated"}:{" "}
+                      {item.updatedAt || "2026"}
                     </span>
                   </div>
 
                   <div className="grid grid-cols-2 gap-2 sm:gap-3">
                     {/* View directly on Google Drive */}
                     <a
-                      href={fileUrl || '#'}
-                      target={fileUrl ? '_blank' : '_self'}
+                      href={fileUrl || "#"}
+                      target={fileUrl ? "_blank" : "_self"}
                       rel="noopener noreferrer"
                       onClick={(e) => {
                         if (!fileUrl) {
-                          e.preventDefault()
-                          alert(currentLang === 'vi' ? 'Vui lòng cập nhật link Google Drive trong src/data/portfolioData.json' : 'Please configure Google Drive link in src/data/portfolioData.json')
+                          e.preventDefault();
+                          alert(
+                            currentLang === "vi"
+                              ? "Vui lòng cập nhật link Google Drive trong src/data/portfolioData.json"
+                              : "Please configure Google Drive link in src/data/portfolioData.json",
+                          );
                         }
                       }}
                       className="px-3 py-2 sm:py-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-200 hover:text-white text-xs font-mono font-semibold tracking-wider uppercase text-center transition-all flex items-center justify-center gap-1.5 border border-slate-700 cursor-pointer"
                     >
-                      <svg className="w-3.5 h-3.5 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                      <svg
+                        className="w-3.5 h-3.5 text-blue-400"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                        />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                        />
                       </svg>
-                      <span>{currentLang === 'vi' ? 'XEM TRỰC TIẾP' : 'VIEW'}</span>
+                      <span>
+                        {currentLang === "vi" ? "XEM TRỰC TIẾP" : "VIEW"}
+                      </span>
                     </a>
 
                     {/* Download PDF via Drive */}
                     <a
-                      href={downloadUrl || fileUrl || '#'}
-                      target={downloadUrl || fileUrl ? '_blank' : '_self'}
+                      href={downloadUrl || fileUrl || "#"}
+                      target={downloadUrl || fileUrl ? "_blank" : "_self"}
                       download={item.filename}
                       rel="noopener noreferrer"
                       onClick={(e) => {
                         if (!downloadUrl && !fileUrl) {
-                          e.preventDefault()
-                          alert(currentLang === 'vi' ? 'Vui lòng cập nhật link Google Drive trong src/data/portfolioData.json' : 'Please configure Google Drive link in src/data/portfolioData.json')
+                          e.preventDefault();
+                          alert(
+                            currentLang === "vi"
+                              ? "Vui lòng cập nhật link Google Drive trong src/data/portfolioData.json"
+                              : "Please configure Google Drive link in src/data/portfolioData.json",
+                          );
                         }
                       }}
-                      className="px-3 py-2 sm:py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-mono font-semibold tracking-wider uppercase text-center shadow-md shadow-blue-600/30 hover:shadow-blue-500/50 transition-all flex items-center justify-center gap-1.5 cursor-pointer"
+                      className={`px-3 py-2 sm:py-2.5 rounded-xl text-white text-xs font-mono font-semibold tracking-wider uppercase text-center shadow-md transition-all flex items-center justify-center gap-1.5 cursor-pointer
+                      ${
+                        isCv
+                          ? "bg-blue-600 hover:bg-blue-500 shadow-blue-600/25"
+                          : "bg-emerald-600 hover:bg-emerald-500 shadow-emerald-600/25"
+                      }`}
                     >
-                      <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                      <svg
+                        className="w-3.5 h-3.5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                        />
                       </svg>
-                      <span>{currentLang === 'vi' ? 'TẢI VỀ' : 'DOWNLOAD'}</span>
+                      <span>
+                        {currentLang === "vi" ? "TẢI VỀ" : "DOWNLOAD"}
+                      </span>
                     </a>
                   </div>
                 </div>
               </div>
-            )
+            );
           })}
         </div>
 
@@ -265,11 +335,11 @@ export default function DocumentsModal({ isOpen, onClose }) {
             onClick={onClose}
             className="text-blue-400 hover:underline cursor-pointer"
           >
-            {currentLang === 'vi' ? 'Đóng cửa sổ' : 'Close window'} [ESC]
+            {currentLang === "vi" ? "Đóng cửa sổ" : "Close window"} [ESC]
           </button>
         </div>
       </div>
     </div>,
-    document.body
-  )
+    document.body,
+  );
 }
