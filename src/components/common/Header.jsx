@@ -147,7 +147,7 @@ export default function Header() {
         >
           <div className="w-10 h-10 sm:w-11 sm:h-11 shrink-0 flex items-center justify-center overflow-hidden rounded-xl transition-transform duration-300 group-hover:scale-105">
             <img
-              src="https://vytong.pages.dev/favicon.png"
+              src="favicon.png"
               alt="Logo"
               className="w-full h-full object-contain"
             />
