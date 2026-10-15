@@ -145,9 +145,14 @@ export default function Header() {
           // }}
           className="flex items-center gap-2.5 sm:gap-3 text-white group focus:outline-none cursor-pointer"
         >
-          <div className="w-8 h-8 rounded-lg bg-main-600/20 border border-main-500/40 flex items-center justify-center font-mono font-bold text-main-400 text-sm shadow-brand-glow group-hover:scale-105 transition-transform">
-            &lt;/&gt;
+          <div className="w-10 h-10 sm:w-11 sm:h-11 shrink-0 flex items-center justify-center overflow-hidden rounded-xl transition-transform duration-300 group-hover:scale-105">
+            <img
+              src="public/favicon.png"
+              alt="Logo"
+              className="w-full h-full object-contain"
+            />
           </div>
+
           <span className="font-mono font-black text-xs sm:text-sm tracking-[0.15em] sm:tracking-[0.2em] uppercase text-slate-900 dark:text-white group-hover:text-main-600 dark:group-hover:text-main-400 transition-colors truncate max-w-[170px] sm:max-w-none">
             {portfolioData.about.name}
           </span>

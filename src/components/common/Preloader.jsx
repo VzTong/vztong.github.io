@@ -21,15 +21,15 @@
  * ============================================================================
  */
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from "react";
 
-import '../../assets/preloader.css'
+import "../../assets/preloader.css";
 
 /** Thời gian chờ trước khi bắt đầu reveal (ms) */
-const SHOW_MS = 1000
+const SHOW_MS = 1000;
 
 /** Thời gian dành cho hiệu ứng reveal (ms) */
-const EXIT_MS = 850
+const EXIT_MS = 850;
 
 export default function Preloader() {
   // --------------------------------------------------------------------------
@@ -37,19 +37,19 @@ export default function Preloader() {
   // --------------------------------------------------------------------------
 
   /** Kích hoạt hiệu ứng kết thúc */
-  const [loaded, setLoaded] = useState(false)
+  const [loaded, setLoaded] = useState(false);
 
   /** Gỡ Preloader khỏi DOM */
-  const [hide, setHide] = useState(false)
+  const [hide, setHide] = useState(false);
 
   // --------------------------------------------------------------------------
   // LIFECYCLE
   // --------------------------------------------------------------------------
 
   useEffect(() => {
-    let showTimer
-    let hideTimer
-    let cancelled = false
+    let showTimer;
+    let hideTimer;
+    let cancelled = false;
 
     /**
      * Bắt đầu chu trình kết thúc sau khi tài nguyên trang đã tải xong.
@@ -57,51 +57,60 @@ export default function Preloader() {
     const finishLoading = () => {
       showTimer = window.setTimeout(() => {
         if (!cancelled) {
-          setLoaded(true)
+          setLoaded(true);
         }
-      }, SHOW_MS)
+      }, SHOW_MS);
 
       hideTimer = window.setTimeout(() => {
         if (!cancelled) {
-          setHide(true)
+          setHide(true);
         }
-      }, SHOW_MS + EXIT_MS)
-    }
+      }, SHOW_MS + EXIT_MS);
+    };
 
     // Không bỏ lỡ sự kiện load nếu trang đã tải xong trước khi mount.
-    if (document.readyState === 'complete') {
-      finishLoading()
+    if (document.readyState === "complete") {
+      finishLoading();
     } else {
-      window.addEventListener('load', finishLoading, { once: true })
+      window.addEventListener("load", finishLoading, { once: true });
     }
 
     // Dọn listener và timer khi component unmount.
     return () => {
-      cancelled = true
+      cancelled = true;
 
-      window.removeEventListener('load', finishLoading)
+      window.removeEventListener("load", finishLoading);
 
-      window.clearTimeout(showTimer)
-      window.clearTimeout(hideTimer)
-    }
-  }, [])
+      window.clearTimeout(showTimer);
+      window.clearTimeout(hideTimer);
+    };
+  }, []);
 
   // --------------------------------------------------------------------------
   // RENDER
   // --------------------------------------------------------------------------
 
-  if (hide) return null
+  if (hide) return null;
 
   return (
     <div
       id="preloader"
-      className={loaded ? 'loaded' : ''}
+      className={loaded ? "loaded" : ""}
       role="status"
       aria-label="Loading portfolio"
       aria-live="polite"
     >
-      {/* Đường nền mảnh và vệt sáng chuyển động ở trung tâm */}
       <div className="line" aria-hidden="true" />
+
+      <div className="preloader-logo" aria-hidden="true">
+        <div className="preloader-logo-half preloader-logo-left">
+          <img src="https://vytong.pages.dev/favicon.png" alt="" />
+        </div>
+
+        <div className="preloader-logo-half preloader-logo-right">
+          <img src="https://vytong.pages.dev/favicon.png" alt="" />
+        </div>
+      </div>
     </div>
-  )
+  );
 }

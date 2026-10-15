@@ -107,6 +107,84 @@
 }
 
 /* --------------------------------------------------------------------------
+   3.1 CENTER LOGO
+   Logo nằm chính giữa màn hình, phía trên đường sáng.
+   -------------------------------------------------------------------------- */
+/* Logo container */
+#preloader .preloader-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+
+  width: 64px;
+  height: 64px;
+
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+/* Hai nửa logo */
+#preloader .preloader-logo-half {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+
+  transition: transform 700ms cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+#preloader .preloader-logo-half img {
+  display: block;
+  width: 64px;
+  height: 64px;
+  max-width: none;
+  object-fit: contain;
+}
+
+/* Cắt ảnh thành hai nửa */
+#preloader .preloader-logo-left {
+  clip-path: inset(0 50% 0 0);
+}
+
+#preloader .preloader-logo-right {
+  clip-path: inset(0 0 0 50%);
+}
+
+/* Giữ nguyên vị trí ảnh bên trong mỗi nửa */
+#preloader .preloader-logo-left img,
+#preloader .preloader-logo-right img {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Khi reveal, mỗi nửa trượt về một phía */
+#preloader.loaded .preloader-logo-left {
+  transform: translateX(-50vw);
+}
+
+#preloader.loaded .preloader-logo-right {
+  transform: translateX(50vw);
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+
+  #preloader .preloader-logo,
+  #preloader .preloader-logo-half img {
+    width: 52px;
+    height: 52px;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  #preloader .preloader-logo-half {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
    4. LINE ENTRANCE
    Lõi sáng tăng chiều cao từ tâm đường line.
    -------------------------------------------------------------------------- */
@@ -126,12 +204,10 @@
 
   transform: translateY(-50%);
 
-  animation: preloader-line-in 900ms cubic-bezier(
-    0.16,
-    1,
-    0.3,
-    1
-  ) forwards;
+  animation: preloader-line-in 900ms cubic-bezier(0.16,
+      1,
+      0.3,
+      1) forwards;
 }
 
 /* --------------------------------------------------------------------------
@@ -149,23 +225,19 @@
   width: 1px;
   height: 45%;
 
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    var(--preloader-accent) 45%,
-    var(--preloader-highlight) 55%,
-    transparent 100%
-  );
+  background: linear-gradient(180deg,
+      transparent 0%,
+      var(--preloader-accent) 45%,
+      var(--preloader-highlight) 55%,
+      transparent 100%);
 
   opacity: 0;
   transform: translateY(110%);
 
-  animation: preloader-line-sweep 1100ms cubic-bezier(
-    0.65,
-    0,
-    0.35,
-    1
-  ) 900ms infinite;
+  animation: preloader-line-sweep 1100ms cubic-bezier(0.65,
+      0,
+      0.35,
+      1) 900ms infinite;
 }
 
 /* --------------------------------------------------------------------------
@@ -180,22 +252,18 @@
 
 /* Panel trái thu về cạnh trái */
 #preloader.loaded::before {
-  animation: preloader-panel-left 700ms cubic-bezier(
-    0.76,
-    0,
-    0.24,
-    1
-  ) 100ms forwards;
+  animation: preloader-panel-left 700ms cubic-bezier(0.76,
+      0,
+      0.24,
+      1) 100ms forwards;
 }
 
 /* Panel phải thu về cạnh phải */
 #preloader.loaded::after {
-  animation: preloader-panel-right 700ms cubic-bezier(
-    0.76,
-    0,
-    0.24,
-    1
-  ) 100ms forwards;
+  animation: preloader-panel-right 700ms cubic-bezier(0.76,
+      0,
+      0.24,
+      1) 100ms forwards;
 }
 
 /* Tắt vệt sáng khi bắt đầu kết thúc */
@@ -217,13 +285,11 @@
 
 /* Hai panel mở sang hai phía */
 #preloader.loaded::before {
-  animation: preloader-panel-left 700ms
-    cubic-bezier(0.76, 0, 0.24, 1) 100ms forwards;
+  animation: preloader-panel-left 700ms cubic-bezier(0.76, 0, 0.24, 1) 100ms forwards;
 }
 
 #preloader.loaded::after {
-  animation: preloader-panel-right 700ms
-    cubic-bezier(0.76, 0, 0.24, 1) 100ms forwards;
+  animation: preloader-panel-right 700ms cubic-bezier(0.76, 0, 0.24, 1) 100ms forwards;
 }
 
 /* Lớp overlay biến mất sau khi hai panel mở xong */
@@ -297,6 +363,7 @@
    -------------------------------------------------------------------------- */
 
 @media (prefers-reduced-motion: reduce) {
+
   #preloader *,
   #preloader::before,
   #preloader::after {
