@@ -4,6 +4,7 @@ import { gsap } from "gsap";
 import InfoTemplate from "./ProjectDetails/InfoTemplate";
 import GalleryTemplate from "./ProjectDetails/GalleryTemplate";
 import portfolioData from "../../data/portfolioData.json";
+import DustParticles from "../../components/common/DustParticles";
 import { resolveProjectImage } from "../../utils/helpers";
 
 /**
@@ -365,7 +366,7 @@ export default function ProjectBook() {
       {/* ─── Ambient Glow in Background ─── */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[350px] sm:w-[700px] h-[250px] sm:h-[350px] bg-main-600/10 blur-[160px] rounded-full pointer-events-none" />
       <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#60a5fa_1px,transparent_1px)] [background-size:32px_32px] pointer-events-none" />
-
+      <DustParticles />
       {/* ─── Section Header (SpaceX Minimalist Style - Compact Layout) ─── */}
       <div className="relative z-10 max-w-6xl mx-auto w-full flex items-center justify-between gap-3 sm:gap-4 pb-2 border-b border-brand-border dark:border-slate-800/80">
         <div className="flex items-center gap-2 sm:gap-3">
@@ -620,6 +621,7 @@ export default function ProjectBook() {
       </div>
 
       {/* ─── Bottom Navigation Controls (Compact Footer) ─── */}
+
       <div className="relative z-10 max-w-6xl mx-auto w-full flex items-center justify-between pt-2 pb-1 border-t border-brand-border dark:border-slate-800/80">
         <div className="text-[10px] sm:text-[11px] font-mono text-brand-muted dark:text-slate-400">
           <span className="hidden sm:inline">
@@ -643,11 +645,12 @@ export default function ProjectBook() {
             onClick={handlePrevPage}
             disabled={isFlipping}
             aria-label="Previous Page"
-            className="flex items-center gap-1.5 px-3.5 sm:px-4 py-1.5 rounded-full
-              border border-brand-border dark:border-slate-800 bg-brand-card/80 dark:bg-slate-900/80 hover:bg-white hover:text-black
-              text-brand-text dark:text-white text-[11px] font-mono tracking-wider uppercase transition-all active:scale-95 disabled:opacity-40 cursor-pointer min-h-[34px] sm:min-h-[36px]"
+            className="group flex items-center gap-1.5 px-3.5 sm:px-4 py-1.5 rounded-full border border-brand-border dark:border-slate-800 bg-brand-card/80 dark:bg-slate-900/80 text-brand-text dark:text-white text-[11px] font-mono tracking-wider uppercase transition-colors duration-200 ease-out hover:border-main-500/50 hover:bg-main-50/70 hover:text-main-700 dark:hover:border-main-500/40 dark:hover:bg-main-950/40 dark:hover:text-main-400 active:scale-95 disabled:opacity-40 disabled:pointer-events-none cursor-pointer min-h-[34px] sm:min-h-[36px]"
           >
-            <span>← PREV</span>
+            <span className="inline-block transition-transform duration-200 ease-out group-hover:-translate-x-0.5">
+              ←
+            </span>
+            <span>PREV</span>
           </button>
 
           <button
@@ -659,13 +662,18 @@ export default function ProjectBook() {
                 ? "Close book to Page 1"
                 : "Next Page"
             }
-            className="flex items-center gap-1.5 px-3.5 sm:px-4 py-1.5 rounded-full
-              border border-brand-border dark:border-slate-800 bg-brand-card/80 dark:bg-slate-900/80 hover:bg-white hover:text-black
-              text-brand-text dark:text-white text-[11px] font-mono tracking-wider uppercase transition-all active:scale-95 disabled:opacity-40 cursor-pointer min-h-[34px] sm:min-h-[36px]"
+            className="group flex items-center gap-1.5 px-3.5 sm:px-4 py-1.5 rounded-full border border-brand-border dark:border-slate-800 bg-brand-card/80 dark:bg-slate-900/80 text-brand-text dark:text-white text-[11px] font-mono tracking-wider uppercase transition-colors duration-200 ease-out hover:border-main-500/50 hover:bg-main-50/70 hover:text-main-700 dark:hover:border-main-500/40 dark:hover:bg-main-950/40 dark:hover:text-main-400 active:scale-95 disabled:opacity-40 disabled:pointer-events-none cursor-pointer min-h-[34px] sm:min-h-[36px]"
           >
-            <span>
-              {currentIndex >= totalProjects - 1 ? "RESET ↺" : "NEXT →"}
-            </span>
+            {currentIndex >= totalProjects - 1 ? (
+              <span>RESET ↺</span>
+            ) : (
+              <>
+                <span>NEXT</span>
+                <span className="inline-block transition-transform duration-200 ease-out group-hover:translate-x-0.5">
+                  →
+                </span>
+              </>
+            )}
           </button>
         </div>
       </div>

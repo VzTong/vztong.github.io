@@ -515,7 +515,8 @@
         }
       ],
       "links": {
-        "demo": "https://forgedoc.onrender.com"
+        "demo": "https://forgedoc.onrender.com",
+        "repository": "https://github.com/VzTong/DocForge"
       },
       "technicalSpec": {
         "architecture": "Monorepo Vue 3 FE + FastAPI BE. Mỗi công cụ = 1 page + 1 composable (FE) / 1 converter (BE). Converter registry dễ mở rộng.",
@@ -867,6 +868,7 @@
         }
       ],
       "links": {
+        "kaggleDataset": "https://www.kaggle.com/code/vztong/lungdx",
         "repository": "https://github.com/VzTong/LungDx"
       },
       "technicalSpec": {

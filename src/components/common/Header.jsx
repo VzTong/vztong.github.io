@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import LanguageToggle from "./LanguageToggle";
 import ThemeToggleButton from "./ThemeToggle";
@@ -23,6 +23,9 @@ export default function Header() {
   const [activeSection, setActiveSection] = useState("hero");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDocsModalOpen, setIsDocsModalOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const lastScrollY = useRef(0);
+  const lastScrollUpTime = useRef(0);
 
   const navLinks = [
     {
@@ -59,41 +62,104 @@ export default function Header() {
   ];
 
   // Auto-sync active section on scroll using IntersectionObserver
+  // Scroll spy: sync active section with viewport position
   useEffect(() => {
     const sectionIds = ["about", "skills", "experience", "projects", "contact"];
+
     const sections = sectionIds
       .map((id) => document.getElementById(id))
       .filter(Boolean);
 
+    if (!("IntersectionObserver" in window)) {
+      return undefined;
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
+        const visibleSections = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+
+        if (visibleSections.length > 0) {
+          setActiveSection(visibleSections[0].target.id);
+        }
       },
       {
-        threshold: 0.25,
-        rootMargin: "-60px 0px -20% 0px",
+        threshold: [0, 0.25, 0.5],
+        rootMargin: "-80px 0px -35% 0px",
       },
     );
 
-    sections.forEach((sec) => observer.observe(sec));
+    sections.forEach((section) => observer.observe(section));
 
+    return () => observer.disconnect();
+  }, []);
+
+  // Auto-hide on scroll down, reveal on scroll up
+  useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY < 180) {
+      const currentScrollY = window.scrollY;
+      const diff = currentScrollY - lastScrollY.current;
+
+      // Highlight hero near the top
+      if (currentScrollY < 180) {
         setActiveSection("hero");
+      }
+
+      // Always show header near the top
+      if (currentScrollY < 50) {
+        setIsVisible(true);
+        lastScrollY.current = currentScrollY;
+        return;
+      }
+
+      // Keep header visible while mobile navigation is open
+      if (isMobileMenuOpen) {
+        setIsVisible(true);
+        lastScrollY.current = currentScrollY;
+        return;
+      }
+
+      // Ignore tiny scroll changes
+      if (Math.abs(diff) < 10) {
+        return;
+      }
+
+      if (diff > 0) {
+        // Scrolling down: hide after the scroll-up cooldown
+        const timeSinceScrollUp = Date.now() - lastScrollUpTime.current;
+
+        if (timeSinceScrollUp > 800) {
+          setIsVisible(false);
+        }
+      } else {
+        // Scrolling up: reveal header
+        lastScrollUpTime.current = Date.now();
+        setIsVisible(true);
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    const handleMouseMove = (event) => {
+      if (event.clientY < 45) {
+        setIsVisible(true);
       }
     };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    window.addEventListener("mousemove", handleMouseMove, {
+      passive: true,
+    });
 
     return () => {
-      observer.disconnect();
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("mousemove", handleMouseMove);
     };
-  }, []);
+  }, [isMobileMenuOpen]);
 
   // Close mobile menu on resize to desktop
   useEffect(() => {
@@ -132,7 +198,11 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 w-full bg-white/80 dark:bg-slate-950/90 backdrop-blur-md border-b border-slate-200/80 dark:border-slate-800/80 transition-all duration-300">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 w-full bg-white/80 dark:bg-slate-950/90 backdrop-blur-md border-b border-slate-200/80 dark:border-slate-800/80 transition-all duration-300 ease-in-out will-change-transform ${
+        isVisible || isMobileMenuOpen ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-8 md:px-12 h-16 flex items-center justify-between">
         {/* Brand / Logo */}
         <a
@@ -169,6 +239,7 @@ export default function Header() {
                   key={link.id}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.id)}
+                  aria-current={isActive ? "location" : undefined}
                   className={`px-3.5 py-1.5 rounded-full text-xs font-mono tracking-widest uppercase transition-all duration-300 flex items-center gap-1.5 cursor-pointer ${
                     isActive
                       ? "bg-main-600/20 text-main-400 font-semibold border border-main-500/50 shadow-[0_0_12px_rgba(59,130,246,0.25)]"
@@ -221,8 +292,13 @@ export default function Header() {
           <button
             type="button"
             onClick={() => setIsMobileMenuOpen((prev) => !prev)}
-            aria-label="Toggle navigation menu"
+            aria-label={
+              isMobileMenuOpen
+                ? "Close navigation menu"
+                : "Open navigation menu"
+            }
             aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-navigation"
             className="md:hidden w-9 h-9 rounded-lg bg-slate-900/80 border border-slate-800 flex flex-col items-center justify-center gap-1.5 text-slate-300 hover:text-white hover:border-slate-700 transition-all cursor-pointer focus:outline-none"
           >
             <span
@@ -246,6 +322,7 @@ export default function Header() {
 
       {/* ─── Mobile Slide-Down Drawer Navigation ───────────────────────────────── */}
       <div
+        id="mobile-navigation"
         className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out border-b border-slate-200/80 dark:border-slate-800/80 bg-white/95 dark:bg-slate-950/95 backdrop-blur-xl ${
           isMobileMenuOpen
             ? "max-h-96 opacity-100 py-4 px-4"
@@ -260,6 +337,7 @@ export default function Header() {
                 key={link.id}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.id)}
+                aria-current={isActive ? "location" : undefined}
                 className={`px-4 py-3 rounded-xl text-xs font-mono tracking-widest uppercase transition-all flex items-center justify-between cursor-pointer ${
                   isActive
                     ? "bg-main-600/20 text-main-400 font-bold border border-main-500/40 shadow-sm"

@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { scrollToElement } from "../../utils/helpers";
 import Typed from "typed.js";
 import DocumentsModal from "../../components/common/DocumentsModal";
+import DustParticles from "../../components/common/DustParticles";
 import pic5 from "../../assets/images/pic5.jpg";
 
 /**
@@ -255,10 +256,11 @@ export default function HeroSection({ onExploreClick }) {
       />
 
       {/* BACKGROUND 5: Starfield dạng chấm nhỏ. */}
-      <div
+      {/* <div
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(#60a5fa_1px,transparent_1px)] [background-size:28px_28px] opacity-15"
         aria-hidden="true"
-      />
+      /> */}
+      <DustParticles />
 
       {/* Khoảng trống tránh navbar. */}
       <div className="relative z-10 h-16 w-full sm:h-20" />

@@ -254,19 +254,27 @@ export default function ExperienceSection() {
             <button
               type="button"
               onClick={handlePrev}
-              className="px-4 py-2 rounded-full border border-brand-border dark:border-slate-800 bg-brand-card/80 dark:bg-slate-900/80 hover:bg-white hover:text-black text-brand-text dark:text-white text-xs font-mono tracking-wider uppercase transition-all cursor-pointer min-h-[38px] flex items-center"
+              className="group px-4 py-2 rounded-full border border-brand-border dark:border-slate-800 bg-brand-card/80 dark:bg-slate-900/80 text-brand-text dark:text-white text-xs font-mono tracking-wider uppercase transition-colors duration-200 ease-out hover:border-main-500/50 hover:bg-main-50/70 hover:text-main-700 dark:hover:border-main-500/40 dark:hover:bg-main-950/40 dark:hover:text-main-400 cursor-pointer min-h-[38px] flex items-center"
             >
-              ← {t("ui.buttons.prevPage", "PREV")}
+              <span className="inline-block transition-transform duration-200 ease-out group-hover:-translate-x-0.5">
+                ←
+              </span>
+              <span className="ml-1.5">{t("ui.buttons.prevPage", "PREV")}</span>
             </button>
-            <span className="text-xs font-mono text-brand-muted dark:text-slate-400">
+
+            <span className="text-xs font-mono text-brand-muted dark:text-slate-400 tabular-nums select-none">
               {currentIndex + 1} / {totalExperiences}
             </span>
+
             <button
               type="button"
               onClick={handleNext}
-              className="px-4 py-2 rounded-full border border-brand-border dark:border-slate-800 bg-brand-card/80 dark:bg-slate-900/80 hover:bg-white hover:text-black text-brand-text dark:text-white text-xs font-mono tracking-wider uppercase transition-all cursor-pointer min-h-[38px] flex items-center"
+              className="group px-4 py-2 rounded-full border border-brand-border dark:border-slate-800 bg-brand-card/80 dark:bg-slate-900/80 text-brand-text dark:text-white text-xs font-mono tracking-wider uppercase transition-colors duration-200 ease-out hover:border-main-500/50 hover:bg-main-50/70 hover:text-main-700 dark:hover:border-main-500/40 dark:hover:bg-main-950/40 dark:hover:text-main-400 cursor-pointer min-h-[38px] flex items-center"
             >
-              {t("ui.buttons.nextPage", "NEXT")} →
+              <span>{t("ui.buttons.nextPage", "NEXT")}</span>
+              <span className="ml-1.5 inline-block transition-transform duration-200 ease-out group-hover:translate-x-0.5">
+                →
+              </span>
             </button>
           </div>
         )}

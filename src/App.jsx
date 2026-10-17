@@ -36,31 +36,31 @@
  * ============================================================================
  */
 
-import React, { useEffect } from 'react'
-import MainLayout from './components/layouts/MainLayout'
-import HeroSection from './features/hero/HeroSection'
-import AboutSection from './features/about/AboutSection'
-import SkillsSection from './features/skills/SkillsSection'
-import ExperienceSection from './features/experience/ExperienceSection'
-import ProjectBook from './features/projects/ProjectBook'
-import ContactSection from './features/contact/ContactSection'
-import ChatBot from './features/chat/ChatBot'
-import Preloader from './components/common/Preloader'
-import BackToTop from './components/common/BackToTop'
-import { scrollToElement } from './utils/helpers'
-import { trackVisit } from './services/tracker'
+import React, { useEffect } from "react";
+import MainLayout from "./components/layouts/MainLayout";
+import HeroSection from "./features/hero/HeroSection";
+import AboutSection from "./features/about/AboutSection";
+import SkillsSection from "./features/skills/SkillsSection";
+import ExperienceSection from "./features/experience/ExperienceSection";
+import ProjectBook from "./features/projects/ProjectBook";
+import ContactSection from "./features/contact/ContactSection";
+import ChatBot from "./features/chat/ChatBot";
+import Preloader from "./components/common/Preloader";
+import BackToTop from "./components/common/BackToTop";
+import { scrollToElement } from "./utils/helpers";
+import { trackVisit } from "./services/tracker";
 
 export default function App() {
   // Fire-and-forget background access tracking on initial page load
   // Ghi log truy cập 1 lần khi load trang (không chặn UI)
   useEffect(() => {
-    trackVisit()
-  }, [])
+    trackVisit();
+  }, []);
 
   /** CTA Hero → cuộn tới section projects (offset 80px tránh che header) */
   const handleExploreClick = () => {
-    scrollToElement('projects', 80)
-  }
+    scrollToElement("projects", 80);
+  };
 
   return (
     <>
@@ -93,5 +93,5 @@ export default function App() {
         <BackToTop />
       </MainLayout>
     </>
-  )
+  );
 }
