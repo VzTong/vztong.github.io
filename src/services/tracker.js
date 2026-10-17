@@ -7,7 +7,7 @@
  */
 
 const DEFAULT_TRACK_ENDPOINT =
-  'https://portfolio-gemini-worker.vztong-vztong.github.io.workers.dev/api/track'
+  'portfolio-gemini-worker.vzz95559.workers.dev/api/track'
 
 /**
  * Resolves the tracking API endpoint from environment variables or live fallback.
