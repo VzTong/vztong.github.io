@@ -288,8 +288,85 @@
       }
     },
     {
-      "id": "exp-365-ejsc-intern",
+      "id": "exp-mk-solar-intern",
       "order": 2,
+      "type": "fulltime-internship",
+      "role": {
+        "vi": "Thực tập sinh toàn thời gian",
+        "en": "Full-time Internship"
+      },
+      "company": {
+        "vi": "Mekong Solar",
+        "en": "Mekong Solar"
+      },
+      "period": {
+        "vi": "02/2025 - 05/2025",
+        "en": "02/2025 - 05/2025"
+      },
+      "location": {
+        "vi": "Cần Thơ, Việt Nam (Hybrid)",
+        "en": "Can Tho, Vietnam (Hybrid)"
+      },
+      "coverImage": "/assets/images/experiences/exp-mekong-solar.png",
+      "summary": {
+        "vi": "Phát triển hệ thống chẩn đoán bệnh phổi từ ảnh X-quang ngực bằng Deep Learning, sử dụng các kiến trúc CNN tùy chỉnh và các mô hình Transfer Learning như ResNet50, EfficientNetB0 và MobileNetV2. Tôi tham gia xây dựng pipeline tiền xử lý và tăng cường dữ liệu, thử nghiệm và tối ưu mô hình trên bộ dữ liệu hơn 10.000 ảnh từ Kaggle. Mô hình ResNet50 đạt độ chính xác 90,38%. Ngoài ra, tôi tích hợp mô hình tốt nhất vào ứng dụng web sử dụng Flask, hỗ trợ phản hồi chẩn đoán theo thời gian thực và lưu trữ lịch sử chẩn đoán.",
+        "en": "Developed a deep learning-based lung disease diagnosis system using chest X-ray images, leveraging custom CNN architectures and transfer learning models, including ResNet50, EfficientNetB0, and MobileNetV2. Contributed to building preprocessing and data augmentation pipelines, evaluating and optimizing models on a dataset of over 10,000 images from Kaggle. Achieved 90.38% accuracy with ResNet50. Integrated the best-performing model into a Flask-based web application featuring real-time diagnostic feedback and diagnostic history storage."
+      },
+      "technologies": [
+        "Python",
+        "TensorFlow",
+        "Keras",
+        "Flask",
+        "WebSocket",
+        "CNN",
+        "ResNet50",
+        "EfficientNetB0",
+        "MobileNetV2",
+        "CBAM",
+        "Transfer Learning",
+        "Deep Learning",
+        "Data Preprocessing",
+        "Data Augmentation",
+        "Git",
+        "Postman",
+        "JavaScript"
+      ],
+      "responsibilities": {
+        "vi": [
+          "Xây dựng, huấn luyện và tối ưu các mô hình Deep Learning để chẩn đoán bệnh phổi từ ảnh X-quang ngực bằng TensorFlow/Keras",
+          "Triển khai và so sánh hiệu năng giữa CNN tùy chỉnh, ResNet50, EfficientNetB0 và MobileNetV2, đồng thời tích hợp CBAM để thử nghiệm cải thiện khả năng trích xuất đặc trưng",
+          "Phát triển pipeline tiền xử lý và tăng cường dữ liệu nhằm nâng cao khả năng tổng quát hóa của mô hình trên bộ dữ liệu hơn 10.000 ảnh từ Kaggle",
+          "Tích hợp mô hình được lựa chọn vào ứng dụng web sử dụng Flask và WebSocket, hỗ trợ phản hồi chẩn đoán theo thời gian thực và lưu trữ lịch sử chẩn đoán",
+          "Phối hợp kiểm thử API bằng Postman, quản lý mã nguồn bằng Git và tham gia kiểm thử, triển khai ứng dụng phục vụ bài toán hỗ trợ chăm sóc sức khỏe"
+        ],
+        "en": [
+          "Built, trained, and optimized deep learning models for lung disease diagnosis from chest X-ray images using TensorFlow/Keras",
+          "Implemented and benchmarked custom CNN, ResNet50, EfficientNetB0, and MobileNetV2 architectures, while integrating CBAM to explore improvements in feature extraction",
+          "Developed preprocessing and data augmentation pipelines to improve model generalization using a Kaggle dataset containing over 10,000 images",
+          "Integrated the selected model into a Flask- and WebSocket-based web application, enabling real-time diagnostic feedback and diagnostic history storage",
+          "Collaborated on API testing with Postman, source code management with Git, and application testing and deployment for healthcare support use cases"
+        ]
+      },
+      "achievements": {
+        "vi": [
+          "Đạt độ chính xác 90,38% với mô hình ResNet50 sau quá trình thử nghiệm và so sánh nhiều kiến trúc Deep Learning",
+          "Xây dựng pipeline tiền xử lý và tăng cường dữ liệu nhằm cải thiện khả năng tổng quát hóa của mô hình trên dữ liệu ảnh X-quang ngực",
+          "Tích hợp mô hình Deep Learning vào ứng dụng web Flask, kết hợp WebSocket để cung cấp phản hồi theo thời gian thực và hỗ trợ lưu trữ lịch sử chẩn đoán"
+        ],
+        "en": [
+          "Achieved 90.38% accuracy with ResNet50 after evaluating and comparing multiple deep learning architectures",
+          "Developed preprocessing and data augmentation pipelines to improve model generalization on chest X-ray image data",
+          "Integrated a deep learning model into a Flask-based web application with WebSocket support for real-time diagnostic feedback and diagnostic history storage"
+        ]
+      },
+      "links": {
+        "company": "",
+        "reference": ""
+      }
+    },
+    {
+      "id": "exp-365-ejsc-intern",
+      "order": 3,
       "type": "fulltime-internship",
       "role": {
         "vi": "Thực tập sinh toàn thời gian",
