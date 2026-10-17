@@ -18,6 +18,9 @@ export default function ContactSection() {
   const email = portfolioData.contact?.email || "vztong@example.com";
   const githubUrl =
     portfolioData.contact?.github || "https://github.com/vztong";
+  const linkedinUrl =
+    portfolioData.contact?.linkedin ||
+    "https://www.linkedin.com/in/nha-vy-tong-vztong";
 
   return (
     <section
@@ -53,7 +56,7 @@ export default function ContactSection() {
 
         {/* Contact Action Cards */}
         <div
-          className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 max-w-xl mx-auto pt-2"
+          className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 max-w-4xl mx-auto pt-2"
           data-animate
         >
           {/* Email Card */}
@@ -115,13 +118,45 @@ export default function ContactSection() {
               </span>
             </div>
           </a>
+
+          {/* LinkedIn Card */}
+          <a
+            href={linkedinUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="p-4 sm:p-6 rounded-2xl bg-slate-100/80 dark:bg-slate-900/60 backdrop-blur-sm border border-brand-border dark:border-slate-800 hover:border-main-500/60 shadow-lg hover:shadow-[0_0_30px_rgba(10,102,194,0.2)] transition-all duration-300 flex flex-col items-center gap-2.5 sm:gap-3 group"
+          >
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-slate-200 dark:bg-slate-800 text-[#0A66C2] flex items-center justify-center group-hover:scale-110 transition-transform">
+              <svg
+                className="w-5 h-5 sm:w-6 sm:h-6"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.35V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286ZM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124ZM7.119 20.452H3.555V9h3.564v11.452ZM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003Z" />
+              </svg>
+            </div>
+
+            <div className="text-center w-full px-2">
+              <span className="text-[10px] sm:text-xs font-mono text-slate-500 uppercase tracking-wider block">
+                LinkedIn Profile
+              </span>
+              <span className="text-xs sm:text-sm font-semibold text-brand-text dark:text-white font-mono block mt-0.5">
+                in/vztong
+              </span>
+            </div>
+          </a>
         </div>
       </div>
 
       {/* Integrated Bottom Footer Bar */}
       <div className="w-full border-t border-brand-border dark:border-slate-800/80 pt-3 sm:pt-4 pb-1 sm:pb-0 flex flex-col sm:flex-row items-center justify-between text-[11px] sm:text-xs font-mono text-slate-500 z-10 gap-2 text-center sm:text-left">
         <div className="flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-main-500" />
+          <img
+            src="favicon.png"
+            alt="Logo"
+            className="w-4 h-4 object-contain"
+          />
           <span>
             © {getCurrentYear()} {portfolioData.about.name}. All rights
             reserved.
