@@ -7,7 +7,7 @@
  */
 
 const DEFAULT_TRACK_ENDPOINT =
-  'portfolio-gemini-worker.vzz95559.workers.dev/api/track'
+  'https://portfolio-gemini-worker.vzz95559.workers.dev/api/track'
 
 /**
  * Resolves the tracking API endpoint from environment variables or live fallback.
