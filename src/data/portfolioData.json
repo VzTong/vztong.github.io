@@ -109,8 +109,8 @@
           "en": "MASTER CV"
         },
         "description": {
-          "vi": "Hồ sơ năng lực kỹ sư toàn diện: nòng cốt Backend .NET Microservices & Clean Architecture, kết hợp Frontend React, Next.js và các dự án thực tế.",
-          "en": "Comprehensive developer resume detailing .NET, Microservices & Clean Architecture, paired with modern React and Next.js frontend delivery."
+          "vi": "Hồ sơ năng lực kỹ sư toàn diện: nòng cốt Backend .NET & Clean Architecture, kết hợp Frontend Vue.js, Next.js và các dự án thực tế.",
+          "en": "Comprehensive developer resume detailing .NET & Clean Architecture, paired with modern Vue.js and Next.js frontend delivery."
         },
         "filename": "Tong_Nha_Vy_Master_CV.pdf",
         "url": "https://drive.google.com/file/d/18tTzuwl3qyWigXQrFlw-IqMyTnLag2F3/view?usp=sharing",
@@ -119,14 +119,14 @@
         "updatedAt": "10/2026",
         "highlights": {
           "vi": [
-            ".NET / VueJS / Python",
-            "Clean Architecture & Microservices",
-            "SQL Server, PostgreSQL, Redis, Kafka"
+            ".NET / Vue.js / Python",
+            "Clean Architecture",
+            "SQL Server, PostgreSQL"
           ],
           "en": [
-            ".NET / VueJS / Python",
-            "Clean Architecture & Microservices",
-            "SQL Server, PostgreSQL, Redis, Kafka"
+            ".NET / Vue.js / Python",
+            "Clean Architecture",
+            "SQL Server, PostgreSQL"
           ]
         }
       },
@@ -251,7 +251,7 @@
         "vi": "Trong thời gian làm việc tại FPT Software, tôi đã tích lũy kinh nghiệm thực tế trong lĩnh vực phát triển phần mềm doanh nghiệp, tham gia các dự án cho khách hàng quốc tế, đặc biệt là khách hàng Nhật Bản. Quá trình này giúp tôi nâng cao năng lực kỹ thuật, tư duy giải quyết vấn đề và khả năng phối hợp hiệu quả trong môi trường phát triển phần mềm chuyên nghiệp.",
         "en": "During my time at FPT Software, I gained practical experience in enterprise software development, participating in projects for international clients, especially Japanese customers. This process helped me improve my technical skills, problem-solving thinking, and effective collaboration skills in a professional software development environment."
       },
-      "technologies": ["C#", "VB.NET", "Windows Form", "Oracle"],
+      "technologies": ["C#", "VB.NET", "Windows Form", "Oracle", "SVN"],
       "responsibilities": {
         "vi": [
           "Phát triển và bảo trì các chức năng cho ứng dụng doanh nghiệp sử dụng .NET",
@@ -326,10 +326,7 @@
         "Transfer Learning",
         "Deep Learning",
         "Data Preprocessing",
-        "Data Augmentation",
-        "Git",
-        "Postman",
-        "JavaScript"
+        "Data Augmentation"
       ],
       "responsibilities": {
         "vi": [
@@ -397,7 +394,10 @@
         "JWT",
         "XUnit",
         "Clean Architecture",
-        "CQRS"
+        "CQRS",
+        "gRPC",
+        "Git",
+        "Postman"
       ],
       "responsibilities": {
         "vi": [

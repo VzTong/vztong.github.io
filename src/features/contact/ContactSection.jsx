@@ -49,8 +49,8 @@ export default function ContactSection() {
           </h2>
           <p className="text-[11px] sm:text-xs md:text-sm text-brand-muted dark:text-slate-400 max-w-md mx-auto leading-relaxed font-mono uppercase tracking-wider px-2">
             {currentLang === "vi"
-              ? "TÔI LUÔN SẴN SÀNG TRAO ĐỔI VỀ CÁC DỰ ÁN BACKEND .NET, KIẾN TRÚC HỆ THỐNG VÀ MICROSERVICES."
-              : "ALWAYS OPEN TO DISCUSSING C# / .NET BACKEND ARCHITECTURE, SCALABLE MICROSERVICES, OR COLLABORATION."}
+              ? "SẴN SÀNG TRAO ĐỔI VỀ CÁC DỰ ÁN .NET BACKEND, KIẾN TRÚC HỆ THỐNG VÀ CƠ HỘI HỢP TÁC."
+              : "OPEN TO DISCUSSING .NET BACKEND PROJECTS, SYSTEM ARCHITECTURE, AND COLLABORATION OPPORTUNITIES."}
           </p>
         </div>
 

@@ -625,8 +625,27 @@ export default function CosmicBackground() {
 
       // Do not leave an altered alpha value for the next frame.
       ctx.globalAlpha = 1;
-      rafId = window.requestAnimationFrame(render);
+      if (!document.hidden) {
+        rafId = window.requestAnimationFrame(render);
+      } else {
+        rafId = 0;
+      }
     };
+
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        window.cancelAnimationFrame(rafId);
+        rafId = 0;
+        lastFrameTime = 0;
+        return;
+      }
+
+      if (rafId === 0) {
+        rafId = window.requestAnimationFrame(render);
+      }
+    };
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
 
     /**
      * Pointer events use client coordinates, which share the canvas's CSS-pixel
@@ -663,7 +682,11 @@ export default function CosmicBackground() {
       attributeFilter: ["class", "data-lens-card"],
     });
 
-    rafId = window.requestAnimationFrame(render);
+    if (!document.hidden) {
+      rafId = window.requestAnimationFrame(render);
+    } else {
+      rafId = 0;
+    }
 
     // Cleanup prevents duplicate loops/listeners if React unmounts this effect
     // or remounts the component during development's Strict Mode checks.
